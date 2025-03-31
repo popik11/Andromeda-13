@@ -381,19 +381,19 @@
 #undef MUTE_PREF
 #undef MUTE_RANGE
 
-/// Track datums, used in jukeboxes
+/// Исходные данные треков, используемые в музыкальных автоматах
 /datum/track
-	/// Readable name, used in the jukebox menu
+	/// Читаемое название, используемое в меню музыкального автомата
 	var/song_name = "generic"
-	/// Filepath of the song
+	/// Путь к файлу песни
 	var/song_path = null
-	/// How long is the song in deciseconds
+	/// Сколько длится песня в десятисекундах
 	var/song_length = 0
-	/// How long is a beat of the song in decisconds
-	/// Used to determine time between effects when played
+	/// Как долго длится такт песни в decisionconds
+	/// Используется для определения времени между эффектами при воспроизведении
 	var/song_beat = 0
 
-// Default track supplied for testing and also because it's a banger
+// Трек по умолчанию предоставлен для тестирования, а также потому, что он потрясающий
 /datum/track/default
 	song_path = 'sound/music/lobby_music/title3.ogg'
 	song_name = "Tintin on the Moon"
