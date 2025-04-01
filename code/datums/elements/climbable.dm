@@ -10,8 +10,8 @@
 
 /datum/element/climbable/Attach(
 	datum/target,
-	climb_time = 2 SECONDS,
-	climb_stun = 2 SECONDS,
+	climb_time = 1 SECONDS,
+	climb_stun = 0.5 SECONDS,
 )
 	. = ..()
 
