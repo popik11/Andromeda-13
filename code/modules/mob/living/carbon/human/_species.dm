@@ -93,6 +93,13 @@ GLOBAL_LIST_EMPTY(features_by_species)
 	///Replaces default appendix with a different organ.
 	var/obj/item/organ/appendix/mutantappendix = /obj/item/organ/appendix
 
+	var/obj/item/organ/testicles/mutanttesticles = /obj/item/organ/testicles
+
+	var/obj/item/organ/uterus/mutantuterus = /obj/item/organ/uterus
+
+	var/obj/item/organ/vagina/mutantvagina = /obj/item/organ/vagina
+
+
 	/// Store body marking defines. See mobs.dm for bitflags
 	var/list/body_markings = list()
 
