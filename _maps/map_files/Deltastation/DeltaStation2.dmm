@@ -39435,6 +39435,7 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
+/obj/machinery/jukebox,
 /turf/open/floor/iron,
 /area/station/commons/fitness/recreation)
 "jMB" = (
@@ -78898,6 +78899,10 @@
 /obj/effect/turf_decal/tile/red/half,
 /turf/open/floor/iron/half,
 /area/station/security/office)
+"tKS" = (
+/obj/machinery/jukebox,
+/turf/open/floor/carpet/green,
+/area/station/commons/lounge)
 "tKV" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/tile/neutral/fourcorners,
@@ -132556,7 +132561,7 @@ ocR
 pEk
 nnM
 deh
-ocR
+tKS
 ozU
 msR
 qGL
