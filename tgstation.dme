@@ -6596,13 +6596,6 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
-#include "modular_andromeda\code\__DEFINES\DNA.dm"
-#include "modular_andromeda\code\__DEFINES\hud.dm"
-#include "modular_andromeda\code\_onclick\screen_objects.dm"
-#include "modular_andromeda\code\modules\surgery\bodyparts\genitals.dm"
-#include "modular_andromeda\code\modules\surgery\organs\internal\genitals\_testicles.dm"
-#include "modular_andromeda\code\modules\surgery\organs\internal\genitals\_uterus.dm"
-#include "modular_andromeda\code\modules\surgery\organs\internal\genitals\_vagina.dm"
 // END_INCLUDE
 
 // BANDASTATION
