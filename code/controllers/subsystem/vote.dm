@@ -2,7 +2,7 @@
 #define vote_font(text) ("<font color='purple'>" + text + "</font>")
 
 SUBSYSTEM_DEF(vote)
-	name = "Vote"
+	name = "Голосование"
 	wait = 1 SECONDS
 	flags = SS_KEEP_TIMING
 	init_order = INIT_ORDER_VOTE
@@ -101,14 +101,14 @@ SUBSYSTEM_DEF(vote)
 
 	// stringify the winners to prevent potential unimplemented serialization errors.
 	// Perhaps this can be removed in the future and we assert that vote choices must implement serialization.
-	var/final_winner_string = (final_winner && "[final_winner]") || "NO WINNER"
+	var/final_winner_string = (final_winner && "[final_winner]") || "НЕТ ПОБЕДИТЕЛЕЙ"
 	var/list/winners_string = list()
 
 	if(length(winners))
 		for(var/winner in winners)
 			winners_string += "[winner]"
 	else
-		winners_string = list("NO WINNER")
+		winners_string = list("НЕТ ПОБЕДИТЕЛЕЙ")
 
 	var/list/vote_log_data = list(
 		"type" = "[current_vote.type]",
@@ -117,7 +117,7 @@ SUBSYSTEM_DEF(vote)
 		"winners" = winners_string,
 		"final_winner" = final_winner_string,
 	)
-	log_vote("vote finalized", vote_log_data)
+	log_vote("голосование закончено", vote_log_data)
 	if(to_display)
 		to_chat(world, span_infoplain(vote_font("[to_display]")))
 
@@ -212,7 +212,7 @@ SUBSYSTEM_DEF(vote)
 	// No valid vote found? No vote
 	if(!istype(to_vote))
 		if(vote_initiator)
-			to_chat(vote_initiator, span_warning("Invalid voting choice."))
+			to_chat(vote_initiator, span_warning("Недействительный выбор в голосовании."))
 		return FALSE
 
 	// Vote can't be initiated in our circumstances? No vote
@@ -239,13 +239,13 @@ SUBSYSTEM_DEF(vote)
 
 	log_vote(to_display)
 	to_chat(world, custom_boxed_message("purple_box center", span_infoplain(vote_font("[span_bold(to_display)]<br>\
-		Type <b>vote</b> or click <a href='byond://winset?command=vote'>here</a> to place your votes.\n\
-		You have [DisplayTimeText(duration)] to vote."))))
+		Тип <b>голосование</b> или нажмите <a href='byond://winset?command=vote'>here</a> чтобы проголосовать.\n\
+		У вас [DisplayTimeText(duration)] , чтобы проголосовать."))))
 
 	// And now that it's going, give everyone a voter action
 	for(var/client/new_voter as anything in GLOB.clients)
 		var/datum/action/vote/voting_action = new()
-		voting_action.name = "Vote: [current_vote.override_question || current_vote.name]"
+		voting_action.name = "Голосование: [current_vote.override_question || current_vote.name]"
 		voting_action.Grant(new_voter.mob)
 
 		new_voter.persistent_client.player_actions += voting_action
@@ -267,7 +267,7 @@ SUBSYSTEM_DEF(vote)
 	// Even if it's forced we can't vote before we're set up
 	if(!MC_RUNNING(init_stage))
 		if(vote_initiator)
-			to_chat(vote_initiator, span_warning("You cannot start a vote now, the server is not done initializing."))
+			to_chat(vote_initiator, span_warning("Вы не можете начать голосование сейчас, так как инициализация сервера еще не завершена."))
 		return FALSE
 
 	if(forced)
@@ -276,12 +276,12 @@ SUBSYSTEM_DEF(vote)
 	var/next_allowed_time = last_vote_time + CONFIG_GET(number/vote_delay)
 	if(next_allowed_time > world.time)
 		if(vote_initiator)
-			to_chat(vote_initiator, span_warning("A vote was initiated recently. You must wait [DisplayTimeText(next_allowed_time - world.time)] before a new vote can be started!"))
+			to_chat(vote_initiator, span_warning("Недавно было инициировано голосование. Вы должны подождать [DisplayTimeText(next_allowed_time - world.time)] прежде чем можно будет начать новое голосование!"))
 		return FALSE
 
 	if(current_vote)
 		if(vote_initiator)
-			to_chat(vote_initiator, span_warning("There is already a vote in progress! Please wait for it to finish."))
+			to_chat(vote_initiator, span_warning("Голосование уже проводится! Пожалуйста, дождитесь его окончания."))
 		return FALSE
 
 	return TRUE
@@ -289,10 +289,10 @@ SUBSYSTEM_DEF(vote)
 /datum/controller/subsystem/vote/proc/toggle_dead_voting(mob/toggle_initiator)
 	var/switch_deadvote_config = !CONFIG_GET(flag/no_dead_vote)
 	CONFIG_SET(flag/no_dead_vote, switch_deadvote_config)
-	var/text_verb = !switch_deadvote_config ? "enabled" : "disabled"
-	log_admin("[key_name(toggle_initiator)] [text_verb] Dead Vote.")
-	message_admins("[key_name_admin(toggle_initiator)] [text_verb] Dead Vote.")
-	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Dead Vote", text_verb))
+	var/text_verb = !switch_deadvote_config ? "вкл" : "выкл"
+	log_admin("[key_name(toggle_initiator)] [text_verb] Голосование мёртвых.")
+	message_admins("[key_name_admin(toggle_initiator)] [text_verb] Голосование мёртвых.")
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Переключить Голосование мёртвых", text_verb))
 
 /datum/controller/subsystem/vote/ui_state()
 	return GLOB.always_state
@@ -381,7 +381,7 @@ SUBSYSTEM_DEF(vote)
 	var/mob/voter = usr
 
 	switch(action)
-		if("cancel")
+		if("отменить")
 			if(!voter.client?.holder)
 				message_admins("[key_name(voter)] tried to cancel the current vote while having no admin holder, \
 					this is potentially a malicious exploit and worth noting.")
@@ -459,18 +459,18 @@ SUBSYSTEM_DEF(vote)
 /// Mob level verb that allows players to vote on the current vote.
 /mob/verb/vote()
 	set category = "OOC"
-	set name = "Vote"
+	set name = "Голосование"
 
 	if(!SSvote.initialized)
-		to_chat(usr, span_notice("<i>Voting is not set up yet!</i>"))
+		to_chat(usr, span_notice("<i>Голосование еще не назначено!</i>"))
 		return
 
 	SSvote.ui_interact(usr)
 
 /// Datum action given to mobs that allows players to vote on the current vote.
 /datum/action/vote
-	name = "Vote!"
-	button_icon_state = "vote"
+	name = "Голосовать!"
+	button_icon_state = "голосовать"
 	show_to_observers = FALSE
 
 /datum/action/vote/IsAvailable(feedback = FALSE)
