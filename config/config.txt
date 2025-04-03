@@ -141,7 +141,7 @@ MAX_ROCKING_VOTES 5
 VOTE_DELAY 6000
 
 ## time period (deciseconds) which voting session will last (default 1 minute)
-VOTE_PERIOD 600
+VOTE_PERIOD 1200
 
 ## prevents dead players from voting or starting votes
 # NO_DEAD_VOTE
@@ -393,6 +393,8 @@ ANNOUNCE_ADMIN_LOGOUT
 ## Uncomment to have an admin message sent anytime an admin connects to a round in play, you can edit the messages in admin.dm
 #ANNOUNCE_ADMIN_LOGIN
 
+
+###----КАРТА----
 ## Map rotation
 ## You should edit maps.txt to match your configuration when you enable this.
 MAPROTATION
@@ -400,8 +402,10 @@ MAPROTATION
 ## Map voting
 ## Allows players to vote with their preffered map setting
 ## When it's set to zero, the map will be randomly picked each round
-PREFERENCE_MAP_VOTING 1
+PREFERENCE_MAP_VOTING 0
 
+
+###----СВЯЗАННОЕ С АДМИНКОЙ----
 ## AUTOADMIN
 ## The default admin rank
 AUTOADMIN_RANK Game Master

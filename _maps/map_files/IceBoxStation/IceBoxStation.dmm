@@ -48952,6 +48952,17 @@
 	},
 /turf/open/floor/iron/dark/textured_edge,
 /area/station/security/prison)
+"nVa" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/obj/machinery/jukebox/no_access,
+/turf/open/floor/stone,
+/area/station/service/bar/atrium)
 "nVc" = (
 /obj/structure/cable,
 /obj/effect/turf_decal/trimline/yellow/filled/corner{
@@ -51205,6 +51216,17 @@
 /obj/effect/turf_decal/weather/snow/corner,
 /turf/open/misc/hay/icemoon,
 /area/icemoon/underground/explored)
+"oAq" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/obj/machinery/jukebox/disco,
+/turf/open/floor/stone,
+/area/station/service/bar/atrium)
 "oAs" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical,
@@ -252026,7 +252048,7 @@ pQD
 lsA
 xmD
 awe
-lsA
+nVa
 lEO
 atS
 lmQ
@@ -252797,7 +252819,7 @@ pQD
 lsA
 nwn
 fSs
-lsA
+oAq
 lEO
 ksc
 saF

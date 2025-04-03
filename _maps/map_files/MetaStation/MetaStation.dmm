@@ -6552,7 +6552,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/obj/machinery/jukebox,
+/obj/machinery/jukebox/no_access,
 /turf/open/floor/wood/large,
 /area/station/commons/lounge)
 "crg" = (
@@ -59296,6 +59296,13 @@
 /obj/effect/turf_decal/box,
 /turf/open/floor/plating,
 /area/station/maintenance/port/fore)
+"uSt" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/machinery/jukebox/no_access,
+/turf/open/floor/iron,
+/area/station/commons/fitness/recreation)
 "uSz" = (
 /obj/structure/table,
 /obj/item/phone{
@@ -106164,7 +106171,7 @@ sqH
 sox
 sdn
 sox
-kZq
+uSt
 kZq
 gNh
 aTD

@@ -103,9 +103,9 @@
 #define ORGAN_SLOT_VOICE "vocal_cords"
 #define ORGAN_SLOT_ZOMBIE "zombie_infection"
 /// Made in Andromeda
-#define	ORGAN_SLOT_TESTICLES "testicles"
-#define	ORGAN_SLOT_UTERUS "uterus"
-#define	ORGAN_SLOT_VAGINA "vagina"
+///#define	ORGAN_SLOT_TESTICLES "testicles"
+///#define	ORGAN_SLOT_UTERUS "uterus"
+///#define	ORGAN_SLOT_VAGINA "vagina"
 
 /// Organ slot external
 #define ORGAN_SLOT_EXTERNAL_TAIL "tail"

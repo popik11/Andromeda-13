@@ -39435,7 +39435,7 @@
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 8
 	},
-/obj/machinery/jukebox,
+/obj/machinery/jukebox/no_access,
 /turf/open/floor/iron,
 /area/station/commons/fitness/recreation)
 "jMB" = (
@@ -78900,7 +78900,7 @@
 /turf/open/floor/iron/half,
 /area/station/security/office)
 "tKS" = (
-/obj/machinery/jukebox,
+/obj/machinery/jukebox/no_access,
 /turf/open/floor/carpet/green,
 /area/station/commons/lounge)
 "tKV" = (
@@ -89217,6 +89217,14 @@
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /turf/open/floor/iron/dark,
 /area/station/engineering/hallway)
+"wnl" = (
+/obj/effect/turf_decal/tile/red/opposingcorners{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/yellow/opposingcorners,
+/obj/machinery/jukebox/disco,
+/turf/open/floor/iron,
+/area/station/commons/lounge)
 "wnn" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
@@ -132563,7 +132571,7 @@ nnM
 deh
 tKS
 ozU
-msR
+wnl
 qGL
 vnU
 tNO

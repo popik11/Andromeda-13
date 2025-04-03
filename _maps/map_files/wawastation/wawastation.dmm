@@ -14950,6 +14950,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/jukebox/no_access,
 /turf/open/floor/wood,
 /area/station/commons/lounge)
 "fne" = (
@@ -38097,6 +38098,7 @@
 	},
 /obj/machinery/camera/autoname/directional/north,
 /obj/machinery/light_switch/directional/north,
+/obj/machinery/jukebox/disco,
 /turf/open/floor/wood,
 /area/station/commons/lounge)
 "niv" = (

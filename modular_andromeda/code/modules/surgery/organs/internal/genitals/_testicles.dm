@@ -7,4 +7,4 @@
 
 	w_class = WEIGHT_CLASS_SMALL			/// Класс размера
 	zone = BODY_ZONE_PRECISE_GROIN			/// Место расположения органа
-	slot = ORGAN_SLOT_TESTICLES				/// Слот органа в теле
+///	slot = ORGAN_SLOT_TESTICLES				/// Слот органа в теле
