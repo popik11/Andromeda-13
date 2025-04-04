@@ -259,7 +259,7 @@
 	if(!rip_and_tear)
 		missiondesc += " Avoid civilian casualties when possible."
 
-	missiondesc += "<span class='warningplain'><BR><B>Your Mission</B> : [ert_team.mission.explanation_text]</span>"
+	missiondesc += "<span class='warningplain'><BR><B>Ваша миссия</B> : [ert_team.mission.explanation_text]</span>"
 	to_chat(owner,missiondesc)
 
 /datum/antagonist/ert/marine

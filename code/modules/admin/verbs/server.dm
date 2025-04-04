@@ -16,12 +16,12 @@ ADMIN_VERB(toggle_hub, R_SERVER, "Toggle Hub", "Toggles the server's visilibilit
 
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggled Hub Visibility", "[GLOB.hub_visibility ? "Enabled" : "Disabled"]")) // If you are copy-pasting this, ensure the 4th parameter is unique to the new proc!
 
-#define REGULAR_RESTART "Regular Restart"
-#define REGULAR_RESTART_DELAYED "Regular Restart (with delay)"
-#define HARD_RESTART "Hard Restart (No Delay/Feedback Reason)"
-#define HARDEST_RESTART "Hardest Restart (No actions, just reboot)"
-#define TGS_RESTART "Server Restart (Kill and restart DD)"
-ADMIN_VERB(restart, R_SERVER, "Reboot World", "Restarts the world immediately.", ADMIN_CATEGORY_SERVER)
+#define REGULAR_RESTART "Перезапуск сервера"
+#define REGULAR_RESTART_DELAYED "Перезапуск сервера (с задержкой)"
+#define HARD_RESTART "Жесткий перезапуск сервера (Отсутствие причины задержки/обратной связи)"
+#define HARDEST_RESTART "Самый сложный перезапуск (Никаких действий, просто перезагрузите компьютер)"
+#define TGS_RESTART "Перезапуск сервера (Убить и перезапустить DD)"
+ADMIN_VERB(restart, R_SERVER, "Перезапустить Сервер", "Раунд немедленно перезапускается.", ADMIN_CATEGORY_SERVER)
 	var/list/options = list(REGULAR_RESTART, REGULAR_RESTART_DELAYED, HARD_RESTART)
 
 	// this option runs a codepath that can leak db connections because it skips subsystem (specifically SSdbcore) shutdown
@@ -32,37 +32,37 @@ ADMIN_VERB(restart, R_SERVER, "Reboot World", "Restarts the world immediately.",
 		options += TGS_RESTART;
 
 	if(SSticker.admin_delay_notice)
-		if(alert(user, "Are you sure? An admin has already delayed the round end for the following reason: [SSticker.admin_delay_notice]", "Confirmation", "Yes", "No") != "Yes")
+		if(alert(user, "Вы уверены? Администратор уже отложил завершение раунда по следующей причине: [SSticker.admin_delay_notice]", "Подтверждение", "Да", "Нет") != "Да")
 			return FALSE
 
-	var/result = input(user, "Select reboot method", "World Reboot", options[1]) as null|anything in options
+	var/result = input(user, "Выберите метод перезагрузки", "Перезапустить Сервер", options[1]) as null|anything in options
 	if(isnull(result))
 		return
 
-	BLACKBOX_LOG_ADMIN_VERB("Reboot World")
-	var/init_by = "Initiated by [user.holder.fakekey ? "Admin" : user.key]."
+	BLACKBOX_LOG_ADMIN_VERB("Перезапустить Сервер")
+	var/init_by = "Инициировано [user.holder.fakekey ? "Администратор" : user.key]."
 	switch(result)
 		if(REGULAR_RESTART)
 			if(!user.is_localhost())
-				if(alert(user, "Are you sure you want to restart the server?","This server is live", "Restart", "Cancel") != "Restart")
+				if(alert(user, "Вы уверены, что хотите перезапустить сервер?","Этот сервер работает в режиме реального времени", "Рестарт", "Отмена") != "Рестарт")
 					return FALSE
-			SSticker.Reboot(init_by, "admin reboot - by [user.key] [user.holder.fakekey ? "(stealth)" : ""]", 10)
+			SSticker.Reboot(init_by, "перезагрузка администратора - с помощью [user.key] [user.holder.fakekey ? "(stealth)" : ""]", 10)
 		if(REGULAR_RESTART_DELAYED)
 			var/delay = input("What delay should the restart have (in seconds)?", "Restart Delay", 5) as num|null
 			if(!delay)
 				return FALSE
 			if(!user.is_localhost())
-				if(alert(user,"Are you sure you want to restart the server?","This server is live", "Restart", "Cancel") != "Restart")
+				if(alert(user,"Вы уверены, что хотите перезапустить сервер?","Этот сервер работает в режиме реального времени", "Рестарт", "Отмена") != "Рестарт")
 					return FALSE
-			SSticker.Reboot(init_by, "admin reboot - by [user.key] [user.holder.fakekey ? "(stealth)" : ""]", delay * 10)
+			SSticker.Reboot(init_by, "перезагрузка администратора - с помощью [user.key] [user.holder.fakekey ? "(stealth)" : ""]", delay * 10)
 		if(HARD_RESTART)
-			to_chat(world, "World reboot - [init_by]")
+			to_chat(world, "Перезапуск сервера - [init_by]")
 			world.Reboot()
 		if(HARDEST_RESTART)
-			to_chat(world, "Hard world reboot - [init_by]")
+			to_chat(world, "Жесткий перезапуск сервера - [init_by]")
 			world.Reboot(fast_track = TRUE)
 		if(TGS_RESTART)
-			to_chat(world, "Server restart - [init_by]")
+			to_chat(world, "Перезапуск сервера - [init_by]")
 			world.TgsEndProcess()
 
 #undef REGULAR_RESTART
@@ -71,18 +71,18 @@ ADMIN_VERB(restart, R_SERVER, "Reboot World", "Restarts the world immediately.",
 #undef HARDEST_RESTART
 #undef TGS_RESTART
 
-ADMIN_VERB(cancel_reboot, R_SERVER, "Cancel Reboot", "Cancels a pending world reboot.", ADMIN_CATEGORY_SERVER)
+ADMIN_VERB(cancel_reboot, R_SERVER, "Отменить перезагрузку", "Отменяет ожидающую перезагрузку раунда.", ADMIN_CATEGORY_SERVER)
 	if(!SSticker.cancel_reboot(user))
 		return
-	log_admin("[key_name(user)] cancelled the pending world reboot.")
-	message_admins("[key_name_admin(user)] cancelled the pending world reboot.")
+	log_admin("[key_name(user)] отменил ожидаемую перезагрузку раунда.")
+	message_admins("[key_name_admin(user)] отменил ожидаемую перезагрузку раунда.")
 
-ADMIN_VERB(end_round, R_SERVER, "End Round", "Forcibly ends the round and allows the server to restart normally.", ADMIN_CATEGORY_SERVER)
-	var/confirm = tgui_alert(user, "End the round and  restart the game world?", "End Round", list("Yes", "Cancel"))
-	if(confirm != "Yes")
+ADMIN_VERB(end_round, R_SERVER, "Закончить Рануд", "Принудительно завершает раунд и позволяет серверу перезагрузиться в обычном режиме.", ADMIN_CATEGORY_SERVER)
+	var/confirm = tgui_alert(user, "Завершить раунд и перезапустить раунд?", "Закончить Рануд", list("Да", "Отменить"))
+	if(confirm != "Да")
 		return
 	SSticker.force_ending = FORCE_END_ROUND
-	BLACKBOX_LOG_ADMIN_VERB("End Round")
+	BLACKBOX_LOG_ADMIN_VERB("Закончить Рануд")
 
 ADMIN_VERB(toggle_ooc, R_ADMIN, "Toggle OOC", "Toggle the OOC channel on or off.", ADMIN_CATEGORY_SERVER)
 	toggle_ooc()
@@ -99,32 +99,32 @@ ADMIN_VERB(toggle_ooc_dead, R_ADMIN, "Toggle Dead OOC", "Toggle the OOC channel 
 ADMIN_VERB(toggle_vote_dead, R_ADMIN, "Toggle Dead Vote", "Toggle the vote for dead players on or off.", ADMIN_CATEGORY_SERVER)
 	SSvote.toggle_dead_voting(user)
 
-ADMIN_VERB(start_now, R_SERVER, "Start Now", "Start the round RIGHT NOW.", ADMIN_CATEGORY_SERVER)
+ADMIN_VERB(start_now, R_SERVER, "Начать Раунд", "Начинайте раунд ПРЯМО СЕЙЧАС.", ADMIN_CATEGORY_SERVER)
 	var/static/list/waiting_states = list(GAME_STATE_PREGAME, GAME_STATE_STARTUP)
 	if(!(SSticker.current_state in waiting_states))
-		to_chat(user, span_warning(span_red("The game has already started!")))
+		to_chat(user, span_warning(span_red("Игра уже началась!")))
 		return
 
 	if(SSticker.start_immediately)
 		SSticker.start_immediately = FALSE
 		SSticker.SetTimeLeft(3 MINUTES)
-		to_chat(world, span_big(span_notice("The game will start in 3 minutes.")))
+		to_chat(world, span_big(span_notice("Игра начнется через 3 минуты.")))
 		SEND_SOUND(world, sound('sound/announcer/default/attention.ogg'))
-		message_admins(span_adminnotice("[key_name_admin(user)] has cancelled immediate game start. Game will start in 3 minutes."))
-		log_admin("[key_name(user)] has cancelled immediate game start.")
+		message_admins(span_adminnotice("[key_name_admin(user)] отменил немедленное начало игры. Игра начнется через 3 минуты.."))
+		log_admin("[key_name(user)] отменил немедленный запуск игры.")
 		return
 
 	if(!user.is_localhost())
-		var/response = tgui_alert(user, "Are you sure you want to start the round?", "Start Now", list("Start Now", "Cancel"))
-		if(response != "Start Now")
+		var/response = tgui_alert(user, "Вы уверены, что хотите начать раунд?", "Начать Раунд", list("Да", "Отмена"))
+		if(response != "Да")
 			return
 	SSticker.start_immediately = TRUE
 
-	log_admin("[key_name(user)] has started the game.")
-	message_admins("[key_name_admin(user)] has started the game.")
+	log_admin("[key_name(user)] запустил игру.")
+	message_admins("[key_name_admin(user)] запустил игру.")
 	if(SSticker.current_state == GAME_STATE_STARTUP)
-		message_admins("The server is still setting up, but the round will be started as soon as possible.")
-	BLACKBOX_LOG_ADMIN_VERB("Start Now")
+		message_admins("Сервер все еще настраивается, но раунд будет запущен как можно скорее.")
+	BLACKBOX_LOG_ADMIN_VERB("Начать Раунд")
 
 ADMIN_VERB(delay_round_end, R_SERVER, "Delay Round End", "Prevent the server from restarting.", ADMIN_CATEGORY_SERVER)
 	if(SSticker.delay_end)

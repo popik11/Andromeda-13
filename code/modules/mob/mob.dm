@@ -749,7 +749,7 @@
  * Only works if flag/allow_respawn is allowed in config
  */
 /mob/verb/abandon_mob()
-	set name = "Respawn"
+	set name = "В ЛОББИ"
 	set category = "OOC"
 
 	switch(CONFIG_GET(flag/allow_respawn))

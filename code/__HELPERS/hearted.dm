@@ -24,7 +24,7 @@
 
 /// Once the round is actually over, cycle through the ckeys in the hearts list and give them the hearted status
 /datum/controller/subsystem/ticker/proc/handle_hearts()
-	var/list/message = list("The following players were commended this round: ")
+	var/list/message = list("В этом раунде были отмечены следующие игроки: ")
 	var/i = 0
 	for(var/hearted_ckey in hearts)
 		i++

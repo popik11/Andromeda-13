@@ -142,7 +142,7 @@
 
 /datum/station_trait/announcement_medbot/New()
 	. = ..()
-	SSstation.announcer = /datum/centcom_announcer/medbot
+	SSstation.announcer = /datum/centcom_announcer/default
 
 /datum/station_trait/colored_assistants
 	name = "Colored Assistants"

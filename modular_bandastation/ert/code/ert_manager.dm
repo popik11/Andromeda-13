@@ -7,13 +7,13 @@
 GLOBAL_VAR_INIT(ert_request_answered, FALSE)
 GLOBAL_LIST_EMPTY(ert_request_messages)
 
-ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATEGORY_GAME)
+ADMIN_VERB(ert_manager, R_NONE, "Управление ОБР", "Управляйте запросами ОБР.", ADMIN_CATEGORY_GAME)
 	var/datum/ert_manager/tgui = new(user)
 	tgui.ui_interact(user.mob)
-	BLACKBOX_LOG_ADMIN_VERB("ERT Manager")
+	BLACKBOX_LOG_ADMIN_VERB("Управление ОБР")
 
 /datum/ert_manager
-	var/name = "ERT Manager"
+	var/name = "Управление ОБР"
 	var/ert_type = "Red"
 	var/admin_slots = 0 // default
 	var/commander_slots = 1 // defaults for open slots
@@ -89,7 +89,7 @@ ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATE
 				if("Gamma")
 					new_ert = new /datum/ert/gamma
 				else
-					to_chat(usr, "<span class='userdanger'>Invalid ERT type.</span>")
+					to_chat(usr, "<span class='userdanger'>Недопустимый тип ОБР.</span>")
 					return
 
 			if((commander_slots + medical_slots + janitor_slots + inquisitor_slots + security_slots + engineering_slots) == 0)
@@ -117,8 +117,8 @@ ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATE
 				slots_list += "inquisitor: [inquisitor_slots]"
 
 			var/slot_text = english_list(slots_list)
-			message_admins("[key_name_admin(usr)] dispatched a [ert_type] ERT. Slots: [slot_text]")
-			log_admin("[key_name(usr)] dispatched a [ert_type] ERT. Slots: [slot_text]")
+			message_admins("[key_name_admin(usr)] отправил сообщение [ert_type] ОБР. Слоты: [slot_text]")
+			log_admin("[key_name(usr)] отправлено сообщение [ert_type] ОБР. Слоты: [slot_text]")
 			if(should_be_announced)
 				priority_announce("Внимание, [station_name()]. Мы рассматриваем возможность отправки ОБР, ожидайте.", "Активирован протокол ОБР")
 			makeERTFromSlots(new_ert, admin_slots, commander_slots, security_slots, medical_slots, engineering_slots, janitor_slots, inquisitor_slots)
@@ -130,7 +130,7 @@ ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATE
 			GLOB.ert_request_answered = TRUE
 			var/message = "[station_name()], к сожалению, в данный момент мы не можем направить к вам ОБР."
 			if(params["reason"])
-				message += " Your ERT request has been denied for the following reasons:\n\n[params["reason"]]"
+				message += " Ваш запрос ОБР был отклонен по следующим причинам:\n\n[params["reason"]]"
 			priority_announce(message, "ОБР недоступно")
 		else
 			return FALSE
@@ -292,7 +292,7 @@ ADMIN_VERB(ert_manager, R_NONE, "ERT Manager", "Manage ERT reqests.", ADMIN_CATE
 				if("Amber")
 					priority_announce("Внимание, [station_name()]. Мы направляем стандартный отряд быстрого реагирования кода «ЭМБЕР». Ожидайте.", "ОБР в пути")
 				if("Red")
-					priority_announce("Внимание, [station_name()]. Мы направляем усиленный отряд быстрого реагирования кода «РЭД». Ожидайте.", "ОБР в пути")
+					priority_announce("Внимание, [station_name()]. Мы направляем усиленный отряд быстрого реагирования кода «КРАСНЫЙ». Ожидайте.", "ОБР в пути")
 				if("Gamma")
 					priority_announce("Внимание, [station_name()]. Мы направляем элитный отряд быстрого реагирования кода «ГАММА». Ожидайте.", "ОБР в пути")
 

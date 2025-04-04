@@ -52,9 +52,9 @@
 	roles = list(/datum/antagonist/ert/deathsquad)
 	leader_role = /datum/antagonist/ert/deathsquad/leader
 	rename_team = "Deathsquad"
-	code = "Delta"
+	code = "Epsilon"
 	mission = "Leave no witnesses."
-	polldesc = "an elite Nanotrasen Strike Team"
+	polldesc = "Эскадрон смерти"
 
 /datum/ert/marine
 	leader_role = /datum/antagonist/ert/marine

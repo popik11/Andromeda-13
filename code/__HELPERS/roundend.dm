@@ -249,11 +249,11 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 	SSgamemode.store_roundend_data() // store data on roundend for next round
 	// BANDASTATION EDIT END - STORYTELLER
 
-	to_chat(world, span_infoplain(span_big(span_bold("<BR><BR><BR>The round has ended."))))
-	log_game("The round has ended.")
+	to_chat(world, span_infoplain(span_big(span_bold("<BR><BR><BR>Раунд закончился."))))
+	log_game("Раунд закончился.")
 	for(var/channel_tag in CONFIG_GET(str_list/channel_announce_end_game))
-		send2chat(new /datum/tgs_message_content("[GLOB.round_id ? "Round [GLOB.round_id]" : "The round has"] just ended."), channel_tag)
-	send2adminchat("Server", "Round just ended.")
+		send2chat(new /datum/tgs_message_content("[GLOB.round_id ? "Раунд [GLOB.round_id]" : "Раунд"] только что закончился."), channel_tag)
+	send2adminchat("Сервер", "Раунд только что закончился.")
 
 	if(length(CONFIG_GET(keyed_list/cross_server)))
 		send_news_report()
@@ -261,7 +261,7 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 	CHECK_TICK
 
 	handle_hearts()
-	set_observer_default_invisibility(0, span_warning("The round is over! You are now visible to the living."))
+	set_observer_default_invisibility(0, span_warning("Раунд окончен! Теперь вас могут видеть живые."))
 
 	CHECK_TICK
 
@@ -279,7 +279,7 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 	CHECK_TICK
 
 	//Now print them all into the log!
-	log_game("Antagonists at round end were...")
+	log_game("Антагонисты в конце раунда были...")
 	for(var/antag_name in total_antagonists)
 		var/list/L = total_antagonists[antag_name]
 		log_game("[antag_name]s :[L.Join(", ")].")
@@ -305,7 +305,7 @@ GLOBAL_LIST_INIT(achievements_unlocked, list())
 		if(GLOB.station_was_nuked)
 			Reboot("Station destroyed by Nuclear Device.", "nuke")
 		else
-			Reboot("Round ended.", "proper completion")
+			Reboot("Раунд закончился.", "proper completion")
 	else
 		CRASH("Attempted standard reboot without ticker roundend completion")
 

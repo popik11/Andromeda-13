@@ -327,7 +327,7 @@ GLOBAL_PROTECT(tracy_init_reason)
 			message_admins("[key_name_admin(usr)] Has requested an immediate world restart via client side debugging tools")
 		to_chat(world, span_boldannounce("Rebooting World immediately due to host request."))
 	else
-		to_chat(world, span_boldannounce("Rebooting world..."))
+		to_chat(world, span_boldannounce("Сервер перезагружается..."))
 		Master.Shutdown() //run SS shutdowns
 
 	#ifdef UNIT_TESTS

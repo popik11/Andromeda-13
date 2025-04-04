@@ -138,7 +138,7 @@
 	// say goodbye to that shuttle of yours
 	if(SSshuttle.emergency.mode != SHUTTLE_ESCAPE)
 		priority_announce(
-			text = "Fatal error occurred in emergency shuttle uplink during transit. Unable to reestablish connection.",
+			text = "Во время транзита произошла фатальная ошибка в системе аварийной передачи данных шаттла. Не удалось восстановить соединение.",
 			title = "Shuttle Failure",
 			sound =  'sound/announcer/announcement/announce_dig.ogg',
 			sender_override = "Система оповещения эвакуационного шаттла",

@@ -24,16 +24,16 @@ SUBSYSTEM_DEF(statpanels)
 		num_fires++
 		var/datum/map_config/cached = SSmap_vote.next_map_config
 		global_data = list(
-			"Map: [SSmapping.current_map?.map_name || "Loading..."]",
-			cached ? "Next Map: [cached.map_name]" : null,
-			"Storyteller: [!SSgamemode.secret_storyteller && SSgamemode.current_storyteller ? SSgamemode.current_storyteller.name : "Secret"]", // BANDASTATION ADDITION - STORYTELLER
-			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
-			"Players Connected: [LAZYLEN(GLOB.clients)]", // BANDASTATION ADD
-			"Players in Lobby: [LAZYLEN(GLOB.new_player_list)]", // BANDASTATION ADD
-			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss", world.timezone)]",
-			"[SSticker.round_start_time ? "Round Time" : "Lobby Time"]: [ROUND_TIME()]", // BANDASTATION ADD
-			"Station Time: [station_time_timestamp()]",
-			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
+			"Карта: [SSmapping.current_map?.map_name || "Загрузка..."]",
+			cached ? "Следующая карта: [cached.map_name]" : null,
+			"Рассказчик: [!SSgamemode.secret_storyteller && SSgamemode.current_storyteller ? SSgamemode.current_storyteller.name : "Secret"]", // BANDASTATION ADDITION - STORYTELLER
+			"ID Раунда: [GLOB.round_id ? GLOB.round_id : "NULL"]",
+			"Подключенные игроки: [LAZYLEN(GLOB.clients)]", // BANDASTATION ADD
+			"Игроки в лобби: [LAZYLEN(GLOB.new_player_list)]", // BANDASTATION ADD
+			"Серверное время UTC+3 (GMT+3, МСК): [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss", world.timezone)]",
+			"[SSticker.round_start_time ? "Время раунда" : "Время лобби"]: [ROUND_TIME()]", // BANDASTATION ADD
+			"Станционное время: [station_time_timestamp()]",
+			"Замедление времени: [round(SStime_track.time_dilation_current,1)]% В среднем:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
 		)
 
 		if(SSshuttle.emergency)
@@ -108,7 +108,7 @@ SUBSYSTEM_DEF(statpanels)
 		return
 	target.stat_panel.send_message("update_stat", list(
 		"global_data" = global_data,
-		"ping_str" = "Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)",
+		"ping_str" = "Пинг: [round(target.lastping, 1)]мс (Среднее значение: [round(target.avgping, 1)]мс)",
 		"other_str" = target.mob?.get_status_tab_items(),
 	))
 

@@ -596,7 +596,7 @@ SUBSYSTEM_DEF(dynamic)
 	return TRUE
 
 /datum/controller/subsystem/dynamic/proc/display_roundstart_logout_report()
-	var/list/msg = list("[span_boldnotice("Roundstart logout report")]\n\n")
+	var/list/msg = list("[span_boldnotice("Отчет о выходе из системы Roundstart")]\n\n")
 	for(var/i in GLOB.mob_living_list)
 		var/mob/living/L = i
 		var/mob/living/carbon/C = L
