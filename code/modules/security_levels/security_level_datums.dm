@@ -102,7 +102,7 @@
 	name = "delta"
 	name_shortform = "Δ"
 	announcement_color = "purple"
-	sound = 'sound/announcer/alarm/airraid.ogg' // Air alarm to signify importance
+	sound = 'sound/announcer/alarm/delta.ogg' // Air alarm to signify importance
 	number_level = SEC_LEVEL_DELTA
 	status_display_icon_state = "deltaalert"
 	fire_alarm_light_color = LIGHT_COLOR_INTENSE_RED

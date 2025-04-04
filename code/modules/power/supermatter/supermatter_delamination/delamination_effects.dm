@@ -80,10 +80,10 @@
 	var/turf/sm_turf = get_turf(sm)
 	//Dear mappers, balance the sm max explosion radius to 17.5, 37, 39, 41
 	explosion(origin = sm_turf,
-		devastation_range = explosion_power * max(power_scaling, 0.205) * 0.5,
-		heavy_impact_range = explosion_power * max(power_scaling, 0.205) + 2,
-		light_impact_range = explosion_power * max(power_scaling, 0.205) + 4,
-		flash_range = explosion_power * max(power_scaling, 0.205) + 6,
+		devastation_range = explosion_power * max(power_scaling, 0.205) * 0.5, ///диапазон разрушений
+		heavy_impact_range = explosion_power * max(power_scaling, 0.205) + 2, ///диапазон сильных воздействий
+		light_impact_range = explosion_power * max(power_scaling, 0.205) + 4, ///диапазон легких воздействий
+		flash_range = explosion_power * max(power_scaling, 0.205) + 6, ///диапазон вспышек
 		adminlog = TRUE,
 		ignorecap = TRUE
 	)
