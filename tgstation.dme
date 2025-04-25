@@ -10183,4 +10183,7 @@
 #include "modular_zzplurt\code\modules\vending\vending.dm"
 #include "modular_zzplurt\code\modules\wiremod\core\integrated_circuit.dm"
 #include "modular_zzz\code\controllers\configuration\entries\dbconfig.dm"
+#include "modular_zzz\code\game\hos_color_changer.dm"
+#include "modular_zzz\code\modules\projectiles\projectile.dm"
+#include "modular_zzz\code\modules\security\lockers.dm"
 // END_INCLUDE
