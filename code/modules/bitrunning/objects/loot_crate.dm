@@ -34,7 +34,7 @@
 /obj/structure/closet/crate/secure/bitrunning/decrypted/Initialize(
 	mapload,
 	datum/lazy_template/virtual_domain/completed_domain,
-	rewards_multiplier = 1,
+	rewards_multiplier = 5,
 	)
 	. = ..()
 	playsound(src, 'sound/effects/magic/blink.ogg', 50, TRUE)

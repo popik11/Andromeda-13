@@ -10186,4 +10186,8 @@
 #include "modular_zzz\code\game\hos_color_changer.dm"
 #include "modular_zzz\code\modules\projectiles\projectile.dm"
 #include "modular_zzz\code\modules\security\lockers.dm"
+#include "modular_zzz\code\modules\storytellers\storyteller_0_extended.dm"
+#include "modular_zzz\code\modules\storytellers\storyteller_1_low.dm"
+#include "modular_zzz\code\modules\storytellers\storyteller_2_medium.dm"
+#include "modular_zzz\code\modules\storytellers\storyteller_3_high.dm"
 // END_INCLUDE
