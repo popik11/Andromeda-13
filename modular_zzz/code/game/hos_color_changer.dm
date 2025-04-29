@@ -48,11 +48,13 @@ GLOBAL_LIST_EMPTY(security_closets)
 		for(var/obj/machinery/door/airlock/security/security_doors as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/door/airlock/security))
 			security_doors.icon = 'modular_skyrat/modules/aesthetics/airlock/icons/airlocks/station/security2.dmi'
 			security_doors.update_icon()
-		for(var/obj/effect/turf_decal/security_decals1 in GLOB.red_decals)
-			security_decals1.color = "#DE3A3A"
-			security_decals1.update_icon()
+		// for(var/obj/effect/turf_decal/security_decals1 in GLOB.red_decals)
+		// 	security_decals1.color = "#DE3A3A"
+		// 	security_decals1.Initialize()
+		// 	T.AddElement(/datum/element/decal, icon, icon_state, dir, null, layer, alpha, color, null, FALSE, null)
 		for(var/obj/structure/closet/secure_closet/security/sec/security_closet in GLOB.security_closets)
 			security_closet.icon = 'icons/obj/storage/closet.dmi'
+			security_closet.update_icon()
 		priority_announce("Кто-то перекрасил Бриг в Красный!", "Red Brig", 'sound/announcer/announcement/announce.ogg', "Central Command")
 
 	qdel(src)
