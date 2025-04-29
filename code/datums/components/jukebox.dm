@@ -28,7 +28,7 @@
 
 	/// Volume of the songs played. Also serves as the max volume.
 	/// Do not set directly, use set_new_volume() instead.
-	VAR_PROTECTED/volume = 50
+	VAR_PROTECTED/volume = 100
 
 	/// Range at which the sound plays to players, can also be a view "XxY" string
 	VAR_PROTECTED/sound_range
