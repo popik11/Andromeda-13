@@ -1,3 +1,30 @@
+GLOBAL_LIST_EMPTY(red_decals)
+GLOBAL_LIST_EMPTY(security_closets)
+
+/obj/effect/turf_decal/trimline/red/Initialize(mapload)
+	. = ..()
+	GLOB.red_decals += src
+
+/obj/effect/turf_decal/trimline/red/Destroy(force)
+	. = ..()
+	GLOB.red_decals -= src
+
+/obj/effect/turf_decal/siding/red/Initialize(mapload)
+	. = ..()
+	GLOB.red_decals += src
+
+/obj/effect/turf_decal/siding/red/Destroy(force)
+	. = ..()
+	GLOB.red_decals -= src
+
+/obj/structure/closet/secure_closet/security/sec/Initialize(mapload)
+	. = ..()
+	GLOB.security_closets += src
+
+/obj/structure/closet/secure_closet/security/sec/Destroy()
+	. = ..()
+	GLOB.security_closets -= src
+
 /obj/item/hos_color_changer
 	name = "Brig Color Changer"
 	desc = "Brig Color Changer."
@@ -21,13 +48,10 @@
 		for(var/obj/machinery/door/airlock/security/security_doors as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/door/airlock/security))
 			security_doors.icon = 'modular_skyrat/modules/aesthetics/airlock/icons/airlocks/station/security2.dmi'
 			security_doors.update_icon()
-		for(var/obj/effect/turf_decal/siding/red/security_decals1 as anything in typesof(/obj/effect/turf_decal/siding/red))
+		for(var/obj/effect/turf_decal/security_decals1 in GLOB.red_decals)
 			security_decals1.color = "#DE3A3A"
 			security_decals1.update_icon()
-		for(var/obj/effect/turf_decal/trimline/red/security_decals2 as anything in typesof(/obj/effect/turf_decal/trimline/red))
-			security_decals2.color = "#DE3A3A"
-			security_decals2.update_icon()
-		for(var/obj/structure/closet/secure_closet/security/sec/security_closet as anything in typesof(/obj/structure/closet/secure_closet/security/sec))
+		for(var/obj/structure/closet/secure_closet/security/sec/security_closet in GLOB.security_closets)
 			security_closet.icon = 'icons/obj/storage/closet.dmi'
 		priority_announce("Кто-то перекрасил Бриг в Красный!", "Red Brig", 'sound/announcer/announcement/announce.ogg', "Central Command")
 
