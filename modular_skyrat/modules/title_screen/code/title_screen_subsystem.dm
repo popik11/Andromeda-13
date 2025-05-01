@@ -36,7 +36,7 @@ SUBSYSTEM_DEF(title)
 
 	title_html = dat
 
-	var/list/provisional_title_screens = flist("[global.config.directory]/title_screens/images/")
+	var/list/provisional_title_screens = flist("[global.config.directory]/title_screens/screens/")
 	var/list/local_title_screens = list()
 
 	for(var/screen in provisional_title_screens)
@@ -45,7 +45,7 @@ SUBSYSTEM_DEF(title)
 			local_title_screens += screen
 
 		if(LAZYLEN(formatted_list) > 1 && LOWER_TEXT(formatted_list[1]) == "startup_splash")
-			var/file_path = "[global.config.directory]/title_screens/images/[screen]"
+			var/file_path = "[global.config.directory]/title_screens/screens/[screen]"
 			splashscreen_name = screen // SPLURT EDIT ADDITION - Roundend Embeds
 			ASSERT(fexists(file_path))
 			startup_splash = new(fcopy_rsc(file_path))
@@ -61,7 +61,7 @@ SUBSYSTEM_DEF(title)
 
 	if(length(local_title_screens))
 		for(var/i in local_title_screens)
-			var/file_path = "[global.config.directory]/title_screens/images/[i]"
+			var/file_path = "[global.config.directory]/title_screens/screens/[i]"
 			ASSERT(fexists(file_path))
 			var/icon/title2use = new(fcopy_rsc(file_path))
 			title_screens += title2use

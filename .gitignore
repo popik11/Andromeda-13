@@ -215,6 +215,15 @@ Temporary Items
 /config/title_screens/images/*
 !/config/title_screens/images/exclude
 
+
+/config/jukebox_music/music/*
+!/config/jukebox_music/music/exclude
+/config/title_music/music/*
+!/config/title_music/music/exclude
+/config/title_screens/screens/*
+!/config/title_screens/screens/exclude
+
+
 #Linux docker
 /tools/tgs_test/.vs/*
 /tools/tgs_test/bin/*

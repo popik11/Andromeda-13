@@ -25,9 +25,9 @@ map deltastation
 	votable
 endmap
 
-map icebox
-	votable
-endmap
+#map icebox
+#	votable
+#endmap
 
 map metastation
 	minplayers 25
