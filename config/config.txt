@@ -31,15 +31,15 @@ $include splurt/game_options.txt
 ###---СЕРВЕР---
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
 ## Название сервера: оно отображается в верхней части экрана в игре и в BYOND hub. Раскомментируйте и замените "tgstation" на название по вашему выбору.
-SERVERNAME Andromeda-13 [+18, MRP]
+SERVERNAME Andromeda-13 [+18, MRP, ERP]
 
 ## Server tagline: This will appear right below the server's title.
 ## Слоган сервера: он появится прямо под названием сервера.
-# SERVERTAGLINE A generic TG-based server
+SERVERTAGLINE Russian-language server.
 
 ## Discord Link: This is the link to Nova Sector's discord server
 ## Ссылка на Discord: Это ссылка на сервер discord
-# DISCORD_LINK https://discord.gg/novasector
+DISCORD_LINK https://discord.gg/7An9evC6Ys
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 ## Имя SQL сервера: Это имя, используемое для идентификации сервера в базе данных SQL, отличается от SERVERNAME, поскольку оно должно содержать не более 32 символов.
