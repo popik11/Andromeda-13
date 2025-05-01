@@ -1,2 +1,2 @@
 /obj/projectile
-	speed = 2.5
+	speed = 3.5
