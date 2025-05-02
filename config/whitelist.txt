@@ -26,7 +26,7 @@ SaltSniffer
 DELUZ
 Kokosino
 Blizzard0
-Officer Wiza
+Officer_Wiza
 loginsirs
 Ilivor
 solevoitoropiga
@@ -69,7 +69,7 @@ Nikkiller_4k
 Sargares
 ZhoporezRus
 FLAITSAS
-Gusya Hybrid
+Gusya_Hybrid
 playerunknown14
 misfortunePUB
 JopoFeu
