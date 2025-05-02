@@ -2,16 +2,12 @@
 # Basically, a list of ckeys who make it past user connection                                 #
 # Case is not important for ckey.                                                             #
 ###############################################################################################
-
-# Свита А-13
 Rewokin
 MlsKira
 NIKforest321
 ZiIuyeer
 POPik
 YanNikk
-
-# Игроки
 Saneksotka
 JayJacobs
 Loonel
