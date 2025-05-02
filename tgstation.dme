@@ -10189,6 +10189,7 @@
 #include "modular_zzplurt\code\modules\vending\vending.dm"
 #include "modular_zzplurt\code\modules\wiremod\core\integrated_circuit.dm"
 #include "modular_zzz\code\changeling\powers\tiny_prick.dm"
+#include "modular_zzz\code\controllers\configuration\entries\bluemoon_config_entries.dm"
 #include "modular_zzz\code\controllers\configuration\entries\dbconfig.dm"
 #include "modular_zzz\code\game\hos_color_changer.dm"
 #include "modular_zzz\code\game\machinery\dance_machine.dm"
@@ -10200,4 +10201,5 @@
 #include "modular_zzz\code\modules\storytellers\storyteller_1_low.dm"
 #include "modular_zzz\code\modules\storytellers\storyteller_2_medium.dm"
 #include "modular_zzz\code\modules\storytellers\storyteller_3_high.dm"
+#include "modular_zzz\code\modules\tgs\roundspoke.dm"
 // END_INCLUDE
