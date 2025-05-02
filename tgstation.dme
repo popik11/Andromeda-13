@@ -10203,4 +10203,5 @@
 #include "modular_zzz\code\modules\storytellers\storyteller_2_medium.dm"
 #include "modular_zzz\code\modules\storytellers\storyteller_3_high.dm"
 #include "modular_zzz\code\modules\tgs\roundspoke.dm"
+#include "modular_zzz\modules\customization\modules\mob\dead\new_player\sprite_accessories\taur_types.dm"
 // END_INCLUDE
