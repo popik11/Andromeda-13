@@ -35,7 +35,8 @@ FEEDBACK_LOGIN root
 FEEDBACK_PASSWORD root
 
 ## Database for all SQL functions, not just feedback.
-FEEDBACK_DATABASE_WHITELIST feedback
+## База данных для всех функций SQL, а не только для обратной связи (feedback).
+FEEDBACK_DATABASE_WHITELIST tgstation_schema
 
 ## Time in seconds for asynchronous queries to timeout
 ## Set to 0 for infinite

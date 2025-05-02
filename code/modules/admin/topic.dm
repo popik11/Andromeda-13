@@ -1486,7 +1486,7 @@
 					dat += "<b>Server: </b> [sanitize(ban["sourceName"])]<br>"
 					dat += "<b>RP Level: </b> [sanitize(ban["sourceRoleplayLevel"])]<br>"
 					dat += "<b>Type: </b> [sanitize(ban["type"])]<br>"
-					dat += "<b>Banned By: </b> [sanitize(ban["bannedBy"])]<br>"
+					dat += "<b>Блокировка от: </b> [sanitize(ban["bannedBy"])]<br>"
 					dat += "<b>Reason: </b> [sanitize(ban["reason"])]<br>"
 					dat += "<b>Datetime: </b> [sanitize(ban["bannedOn"])]<br>"
 					var/expiration = ban["expires"]
