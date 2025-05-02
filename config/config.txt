@@ -244,7 +244,7 @@ IPINTEL_REJECT_BAD
 ###---ВЛ---
 ## Set to prevent anyone but those ckeys listed in config/whitelist.txt and config/admins.txt from joining your server
 ## Установлен таким образом, чтобы никто, кроме тех ckeys, которые указаны в config/whitelist.txt и config/admins.txt , не мог подключиться к вашему серверу
-USEWHITELIST
+# USEWHITELIST
 
 
 ###---ХАБ---
