@@ -2,7 +2,7 @@
 # Basically, a list of ckeys who make it past user connection                                 #
 # Case is not important for ckey.                                                             #
 ###############################################################################################
-Rewokin
+#Rewokin
 MlsKira
 NIKforest321
 ZiIuyeer
