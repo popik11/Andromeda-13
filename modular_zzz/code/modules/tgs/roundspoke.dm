@@ -60,8 +60,8 @@
 	embed_text += ":bar_chart: Состояние станции:                [station_integrity]%"
 
 	embed.description = embed_text
-	var/datum/tgs_chat_embed/field/joinat = new ("Заходи на cервер!","https://white.ss13-bluemoon.ru/")
-	embed.fields = list(joinat)
+	// var/datum/tgs_chat_embed/field/joinat = new ("Заходи на cервер!","https://white.ss13-bluemoon.ru/")
+	// embed.fields = list(joinat)
 	send2chat(message, channel_tag)
 
 	if (CONFIG_GET(string/roundend_chat_command_enabled))
