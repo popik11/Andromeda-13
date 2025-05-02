@@ -58,13 +58,13 @@
 	if(!real_bans_only && !C && CONFIG_GET(flag/usewhitelist))
 		if(!check_whitelist(ckey))
 			if (admin)
-				log_admin("The admin [ckey] has been allowed to bypass the whitelist")
+				log_admin("Администратору [ckey]  было разрешено обойти белый список")
 				if (message)
-					message_admins(span_adminnotice("The admin [ckey] has been allowed to bypass the whitelist"))
-					addclientmessage(ckey,span_adminnotice("You have been allowed to bypass the whitelist"))
+					message_admins(span_adminnotice("Администратору [ckey] было разрешено обойти белый список"))
+					addclientmessage(ckey,span_adminnotice("Вам было разрешено обойти белый список"))
 			else
-				log_access("Failed Login: [ckey] - Not on whitelist")
-				return list("reason"="whitelist", "desc" = "\nReason: You are not on the white list for this server")
+				log_access("Ошибка входа в систему: [ckey] - Отсутствует в белом списке")
+				return list("reason"="whitelist", "desc" = "\nПричина: Вас нет в белом списке этого сервера, получите ВЛ в Дискорде.")
 
 	//Guest Checking
 	if(!real_bans_only && !C && is_guest_key(key))
