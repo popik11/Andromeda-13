@@ -253,3 +253,11 @@
 /datum/loadout_item/pocket_items/donator/vape
 	name = "E-Cigarette"
 	item_path = /obj/item/vape
+
+
+/*
+*	ANDROMEDA-13
+*/
+/datum/loadout_item/pocket_items/jukebox
+	name = "Жужубоксик"
+	item_path = /obj/item/jukebox
