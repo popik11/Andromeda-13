@@ -39,7 +39,7 @@
 
 	. = ..()
 
-/datum/controller/subsystem/ticker/generate_roundend_embed(popcount)
+/datum/controller/subsystem/ticker/proc/generate_roundend_embed(popcount)
 	if (!CONFIG_GET(string/roundend_status_enabled))
 		return
 	var/num_survivors = popcount[POPCOUNT_SURVIVORS]
