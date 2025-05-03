@@ -1,10 +1,10 @@
-/datum/controller/subsystem/ticker/declare_completion(was_forced)
-	if(!CONFIG_GET(flag/roundend_embeds)) // SPLURT EDIT - Discord rounded embeds.
-		return ..()
+// /datum/controller/subsystem/ticker/declare_completion(was_forced)
+// 	if(!CONFIG_GET(flag/roundend_embeds)) // SPLURT EDIT - Discord rounded embeds.
+// 		return ..()
 
-	generate_roundend_embed()
+// 	generate_roundend_embed()
 
-	. = ..()
+// 	. = ..()
 
 /datum/controller/subsystem/ticker/generate_quote_of_the_round(embed = FALSE)
 	if(!embed)
@@ -31,67 +31,67 @@
 
 	return data
 
-/datum/controller/subsystem/ticker/proc/generate_roundend_embed()
-	var/list/quote_of_the_round_data = generate_quote_of_the_round(TRUE)
-	var/news_report = send_news_report()
+// /datum/controller/subsystem/ticker/proc/generate_roundend_embed()
+// 	var/list/quote_of_the_round_data = generate_quote_of_the_round(TRUE)
+// 	var/news_report = send_news_report()
 
-	var/first_death = ""
-	if(findtext(news_report, "NT Sanctioned Psykers proudly confirm reports that nobody died this shift!"))
-		first_death = "NT Sanctioned Psykers proudly confirm reports that nobody died this shift!"
-		news_report = replacetext(news_report, first_death, "")
-	else if(findtext(news_report, "NT Sanctioned Psykers picked up faint traces of someone near the station, allegedly having had died. Their name was:"))
-		var/start_pos = findtext(news_report, "NT Sanctioned Psykers picked up faint traces of someone near the station, allegedly having had died. Their name was:")
-		var/end_pos = findtext(news_report, "(Shift on", start_pos)
-		first_death = copytext(news_report, start_pos, end_pos)
-		news_report = replacetext(news_report, first_death, "")
+// 	var/first_death = ""
+// 	if(findtext(news_report, "NT Sanctioned Psykers proudly confirm reports that nobody died this shift!"))
+// 		first_death = "NT Sanctioned Psykers proudly confirm reports that nobody died this shift!"
+// 		news_report = replacetext(news_report, first_death, "")
+// 	else if(findtext(news_report, "NT Sanctioned Psykers picked up faint traces of someone near the station, allegedly having had died. Their name was:"))
+// 		var/start_pos = findtext(news_report, "NT Sanctioned Psykers picked up faint traces of someone near the station, allegedly having had died. Their name was:")
+// 		var/end_pos = findtext(news_report, "(Shift on", start_pos)
+// 		first_death = copytext(news_report, start_pos, end_pos)
+// 		news_report = replacetext(news_report, first_death, "")
 
-	var/datum/tgs_chat_embed/structure/embed = new
+// 	var/datum/tgs_chat_embed/structure/embed = new
 
-	embed.url = null //Placeholder, apparently it does not support byond:// links.
+// 	embed.url = null //Placeholder, apparently it does not support byond:// links.
 
-	embed.colour = "#[CONFIG_GET(string/roundend_embed_color)]"
+// 	embed.colour = "#[CONFIG_GET(string/roundend_embed_color)]"
 
-	// Author
-	embed.author = new("S.P.L.U.R.T. Round Reports")
-	embed.author.url = embed.url
+// 	// Author
+// 	embed.author = new("S.P.L.U.R.T. Round Reports")
+// 	embed.author.url = embed.url
 
-	// Title
-	embed.title = quote_of_the_round_data["map_text"]
+// 	// Title
+// 	embed.title = quote_of_the_round_data["map_text"]
 
-	// Description
-	embed.description = "The current round has ended. Please standby for your shift interlude Nanotrasen News Network's report!"
-	if(length(trim(news_report)))
-		embed.description += "\n\n```\n[news_report]\n```"
+// 	// Description
+// 	embed.description = "The current round has ended. Please standby for your shift interlude Nanotrasen News Network's report!"
+// 	if(length(trim(news_report)))
+// 		embed.description += "\n\n```\n[news_report]\n```"
 
-	// Fields
-	embed.fields = list()
-	if(length(first_death))
-		embed.fields += new /datum/tgs_chat_embed/field(
-			"First Death",
-			"```\n[first_death]\n```"
-		)
-	embed.fields += new /datum/tgs_chat_embed/field(
-		"Quote of the round",
-		quote_of_the_round_data["quote_presentation"] + (quote_of_the_round_data["quote_text"] ? "\n\n[quote_of_the_round_data["quote_text"]]\n[quote_of_the_round_data["quote_attribution"]]" : "")
-	)
+// 	// Fields
+// 	embed.fields = list()
+// 	if(length(first_death))
+// 		embed.fields += new /datum/tgs_chat_embed/field(
+// 			"First Death",
+// 			"```\n[first_death]\n```"
+// 		)
+// 	embed.fields += new /datum/tgs_chat_embed/field(
+// 		"Quote of the round",
+// 		quote_of_the_round_data["quote_presentation"] + (quote_of_the_round_data["quote_text"] ? "\n\n[quote_of_the_round_data["quote_text"]]\n[quote_of_the_round_data["quote_attribution"]]" : "")
+// 	)
 
-	// Embed Image
-	var/image_url = CONFIG_GET(string/roundend_image_url)
-	if(CONFIG_GET(string/roundend_splashscreen_url) && CONFIG_GET(string/splashscreen_webserver_path))
-		image_url = "[CONFIG_GET(string/roundend_splashscreen_url)][SStitle.splashscreen_name]"
-	if(image_url && length(image_url))
-		embed.image = new(image_url)
+// 	// Embed Image
+// 	var/image_url = CONFIG_GET(string/roundend_image_url)
+// 	if(CONFIG_GET(string/roundend_splashscreen_url) && CONFIG_GET(string/splashscreen_webserver_path))
+// 		image_url = "[CONFIG_GET(string/roundend_splashscreen_url)][SStitle.splashscreen_name]"
+// 	if(image_url && length(image_url))
+// 		embed.image = new(image_url)
 
-	// Thumbnail
-	var/thumbnail_url = CONFIG_GET(string/roundend_thumbnail_url)
-	if(thumbnail_url && length(thumbnail_url))
-		embed.thumbnail = new(thumbnail_url)
+// 	// Thumbnail
+// 	var/thumbnail_url = CONFIG_GET(string/roundend_thumbnail_url)
+// 	if(thumbnail_url && length(thumbnail_url))
+// 		embed.thumbnail = new(thumbnail_url)
 
-	// Footer
-	embed.footer = new("Round #[GLOB.round_id] ([SSgamemode.storyteller.name])")
-	embed.timestamp = time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")
+// 	// Footer
+// 	embed.footer = new("Round #[GLOB.round_id] ([SSgamemode.storyteller.name])")
+// 	embed.timestamp = time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")
 
-	var/datum/tgs_message_content/message = new("# Round #[GLOB.round_id] ([SSgamemode.storyteller.name]) just ended. [CONFIG_GET(string/roundend_ping_role) ? "<@[CONFIG_GET(string/roundend_ping_role)]>" : ""]")
-	message.embed = embed
-	for(var/channel_tag in CONFIG_GET(str_list/channel_announce_new_game))
-		send2chat(message, channel_tag)
+// 	var/datum/tgs_message_content/message = new("# Round #[GLOB.round_id] ([SSgamemode.storyteller.name]) just ended. [CONFIG_GET(string/roundend_ping_role) ? "<@[CONFIG_GET(string/roundend_ping_role)]>" : ""]")
+// 	message.embed = embed
+// 	for(var/channel_tag in CONFIG_GET(str_list/channel_announce_new_game))
+// 		send2chat(message, channel_tag)

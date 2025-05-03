@@ -31,8 +31,15 @@
 	new_author.icon_url = icon
 	return new_author
 
+/datum/controller/subsystem/ticker/declare_completion(was_forced)
+	if(!CONFIG_GET(flag/roundend_embeds))
+		return ..()
 
-/datum/controller/subsystem/ticker/proc/send_roundend_stats_tgs_message(popcount)
+	generate_roundend_embed()
+
+	. = ..()
+
+/datum/controller/subsystem/ticker/generate_roundend_embed(popcount)
 	if (!CONFIG_GET(string/roundend_status_enabled))
 		return
 	var/num_survivors = popcount[POPCOUNT_SURVIVORS]
