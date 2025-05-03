@@ -180,7 +180,7 @@ window "infowindow"
 		anchor1 = 0,0
 		anchor2 = 15,0
 		saved-params = "is-checked"
-		text = "Изменения"
+		text = "Changelog"
 		command = "changelog"
 	elem "rules"
 		type = BUTTON
