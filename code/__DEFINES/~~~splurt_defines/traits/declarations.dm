@@ -81,7 +81,7 @@
 /// Trait for quirk: Trashcan
 #define TRAIT_TRASHCAN			"trashcan"
 /// Trait for quirk: Quick Step
-#define TRAIT_SPEEDY_STEP		"speedy_step"
+// #define TRAIT_SPEEDY_STEP		"speedy_step"
 
 ///
 // Element traits

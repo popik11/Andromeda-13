@@ -1,2 +1,2 @@
-/datum/quirk/quick_step
-	value = 6
+// /datum/quirk/quick_step
+// 	value = 6
