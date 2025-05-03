@@ -197,9 +197,9 @@ export function JobSelection(props) {
           buttons={
             <Button
               onClick={() => act('select_job', { job: 'Random' })}
-              tooltip="Roll target random job. You can re-roll or cancel your random job if you don't like it."
+              tooltip="Предлагает рандомную профессию. Вы можете повторно зарандомить, если оно вам не понравится."
             >
-              Random Job!
+              Рандом!
             </Button>
           }
           fill
@@ -210,11 +210,11 @@ export function JobSelection(props) {
               {
                 // SKYRAT EDIT ADDITION - Alert level on jobs menu
                 <NoticeBox color={data.alert_level.color}>
-                  The current alert level is: {data.alert_level.name}
+                  Текущий уровень кода: {data.alert_level.name}
                 </NoticeBox>
               }
               <Box as="span" color="label">
-                It is currently {round_duration} into the shift.
+                В настоящее время в смена идёт {round_duration}.
               </Box>
             </>
           }

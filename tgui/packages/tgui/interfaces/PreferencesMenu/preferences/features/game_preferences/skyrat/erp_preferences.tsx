@@ -2,140 +2,140 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const master_erp_pref: FeatureToggle = {
-  name: 'Show/Hide Erotic Roleplay Preferences',
-  category: 'ERP',
-  description: 'This shows/hides ERP preferences.',
+  name: 'Показать / Скрыть предпочтения ЕРП',
+  category: 'ЕРП',
+  description: 'Это показывает/скрывает предпочтения ERP.',
   component: CheckboxInput,
 };
 
 export const erp_pref: FeatureToggle = {
-  name: 'Erotic Roleplay Interaction',
-  category: 'ERP',
-  description: 'This informs players of if you wish to engage in ERP.',
+  name: 'Эротическое ролевое взаимодействие',
+  category: 'ЕРП',
+  description: 'Это информирует игроков о том, хотите ли вы участвовать в ERP.',
   component: CheckboxInput,
 };
 
 export const erp_sounds_pref: FeatureToggle = {
-  name: 'ERP sounds',
-  category: 'ERP',
-  description: 'Toggles if you want to hear sounds from ERP mechanics.',
+  name: 'ЕРП звуки',
+  category: 'ЕРП',
+  description:
+    'Переключается, если вы хотите слышать звуки, издаваемые механиками ERP.',
   component: CheckboxInput,
 };
 
 export const bimbofication_pref: FeatureToggle = {
-  name: 'Bimbofication',
-  category: 'ERP',
+  name: 'Бимбофикация',
+  category: 'ЕРП',
   description:
-    'Toggles if you are able to react to the effects of bimbofication.',
+    'Переключается, если вы в состоянии реагировать на последствия бимбофикации.',
   component: CheckboxInput,
 };
 
 export const aphro_pref: FeatureToggle = {
-  name: 'Aphrodisiacs',
-  category: 'ERP',
-  description:
-    'Toggles whether you wish to receive the effects of aphrodisiacs',
+  name: 'Афродизиак',
+  category: 'ЕРП',
+  description: 'Определяет, хотите ли вы получать эффекты афродизиаков',
   component: CheckboxInput,
 };
 
 export const sextoy_pref: FeatureToggle = {
-  name: 'Sex toy interaction',
-  category: 'ERP',
-  description: 'When enabled, you will be able to interact with sex toys.',
+  name: 'Взаимодействие с секс-игрушками',
+  category: 'ЕРП',
+  description: 'После включения вы сможете взаимодействовать с секс-игрушками.',
   component: CheckboxInput,
 };
 
 export const sextoy_sounds_pref: FeatureToggle = {
-  name: 'Sex toy sounds',
-  category: 'ERP',
-  description: 'Toggles if you will hear sounds from sex toys.',
+  name: 'Звуки секс-игрушек',
+  category: 'ЕРП',
+  description: 'Переключает, будете ли вы слышать звуки от секс-игрушек.',
   component: CheckboxInput,
 };
 
 export const vore_enable_pref: FeatureToggle = {
-  name: 'Enable Mechanical Vore',
-  category: 'ERP',
-  description: 'Toggles if you are able to use vore mechanics.',
+  name: 'Включить механ Vore',
+  category: 'ЕРП',
+  description: 'Переключается, если вы хотите использовать механику vore.',
   component: CheckboxInput,
 };
 
 // BUBBER EDIT START: MECHANICAL HYPNOSIS PREF
 export const hypnosis_pref: FeatureToggle = {
-  name: 'Hypnosis',
-  category: 'ERP',
+  name: 'Гипноз',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to allow hypnosis/hypnosis chemicals in a lewd manner.',
+    'Определяет, хотите ли вы разрешить использование гипноза/химических веществ для гипноза непристойным образом.',
   component: CheckboxInput,
 };
 // BUBBER EDIT END
 
 export const breast_enlargement_pref: FeatureToggle = {
-  name: 'Breast enlargement',
-  category: 'ERP',
+  name: 'Увеличение груди',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to receive the effects of breast enlargement chemicals.',
+    'Определяет, хотите ли вы получить эффект от химикатов для увеличения груди.',
   component: CheckboxInput,
 };
 
 export const breast_shrinkage_pref: FeatureToggle = {
-  name: 'Breast shrinkage',
-  category: 'ERP',
+  name: 'Уменьшение груди',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to receive the effects of breast shrinkage chemicals.',
+    'Определяет, хотите ли вы получить эффект от химикатов для уменьшения груди.',
   component: CheckboxInput,
 };
 
 export const breast_removal_pref: FeatureToggle = {
-  name: 'Complete breast shrinkage',
-  category: 'ERP',
+  name: 'Полное уменьшение груди',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to receive the full effects of breast shrinkage chemicals.',
+    'Определяет, хотите ли вы получить полный эффект от применения химических препаратов для уменьшения груди.',
   component: CheckboxInput,
 };
 
 export const penis_enlargement_pref: FeatureToggle = {
-  name: 'Penis enlargement',
-  category: 'ERP',
+  name: 'Увеличение пениса',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to receive the effects of penis enlargement chemicals.',
+    'Определите, хотите ли вы получить эффект от химических препаратов для увеличения пениса.',
   component: CheckboxInput,
 };
 
 export const penis_shrinkage_pref: FeatureToggle = {
-  name: 'Penis shrinkage',
-  category: 'ERP',
+  name: 'Уменьшение пениса',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to receive the effects of penis shrinkage chemicals.',
+    'Определите, хотите ли вы получить эффект от химических препаратов для уменьшения пениса.',
   component: CheckboxInput,
 };
 
 export const gender_change_pref: FeatureToggle = {
-  name: 'Forced gender change',
-  category: 'ERP',
-  description: 'Determines if you wish to allow forced gender changing.',
+  name: 'Принудительное изменение пола',
+  category: 'ЕРП',
+  description: 'Определяет, хотите ли вы разрешить принудительную смену пола.',
   component: CheckboxInput,
 };
 
 export const autocum_pref: FeatureToggle = {
-  name: 'Autocum',
-  category: 'ERP',
+  name: 'Авто кончить',
+  category: 'ЕРП',
   description:
-    'Toggles whether you automatically cum using the arousal system, or if you need to do it manually.',
+    'Определяет, будете ли вы автоматически кончать, используя систему возбуждения или вам нужно сделать это вручную.',
   component: CheckboxInput,
 };
 
 export const autoemote_pref: FeatureToggle = {
-  name: 'Auto Emote',
-  category: 'ERP',
+  name: 'Авто эмоции',
+  category: 'ЕРП',
   description:
-    'Toggles whether you automatically emote using the arousal system, or if you need to do it manually.',
+    'Определяет, будете ли вы автоматически проявлять эмоции, используя систему возбуждения или вам нужно сделать это вручную.',
   component: CheckboxInput,
 };
 
 /* SPLURT EDIT REMOVAL - No
 export const erp_sexuality_pref: FeatureChoiced = {
   name: 'Sexuality Preference',
-  category: 'ERP',
+  category: 'ЕРП',
   description:
     'Determines what sexual content you see, limited use. None will show all content.',
   component: FeatureDropdownInput,
@@ -143,33 +143,33 @@ export const erp_sexuality_pref: FeatureChoiced = {
 */ // SPLURT EDIT REMOVAL END
 
 export const genitalia_removal_pref: FeatureToggle = {
-  name: 'ERP Genitalia Removal',
-  category: 'ERP',
+  name: 'Удаление гениталий',
+  category: 'ЕРП',
   description:
-    'If checked, allows drugs to remove existing genitalia on your character.',
+    'Если флажок установлен, это позволяет химикатам удалять существующие гениталии у вашего персонажа.',
   component: CheckboxInput,
 };
 
 export const new_genitalia_growth_pref: FeatureToggle = {
-  name: 'ERP New Genitalia Growth',
-  category: 'ERP',
+  name: 'Наращивание новых гениталий',
+  category: 'ЕРП',
   description:
-    'If checked, allows drugs to grow new genitalia on your character.',
+    'Если флажок установлен, это позволяет химикатам вырастить новые гениталии у вашего персонажа.',
   component: CheckboxInput,
 };
 
 export const vore_overlays: FeatureToggle = {
-  name: 'Vore Overlays',
-  category: 'ERP',
+  name: 'Vore оверлеи',
+  category: 'ЕРП',
   description:
-    'When enabled, will you be shown fullscreen vore overlays while inside of a soulcatcher?',
+    'Если включить эту функцию, то во время нахождения в душегубке вам будут показываться полноэкранные оверлеи vore?',
   component: CheckboxInput,
 };
 
 export const vore_overlay_options: FeatureToggle = {
-  name: 'Vore Overlay Options',
-  category: 'ERP',
+  name: 'Vore оверлеи опции',
+  category: 'ЕРП',
   description:
-    'Do you want to see fullscreen vore overlays as an option for soulcatcher overlays?',
+    'Хотите ли вы видеть полноэкранные оверлей vore в качестве опции к оверлей soulcatcher?',
   component: CheckboxInput,
 };

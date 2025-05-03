@@ -6,11 +6,11 @@ import {
 } from '../../base';
 
 export const custom_blood_color: FeatureToggle = {
-  name: 'Custom Blood Color Enable',
+  name: 'Возможность настройки цвета крови',
   component: CheckboxInput,
 };
 
 export const blood_color: Feature<string> = {
-  name: 'Custom Blood Color',
+  name: 'Пользовательский цвет крови',
   component: FeatureColorInput,
 };

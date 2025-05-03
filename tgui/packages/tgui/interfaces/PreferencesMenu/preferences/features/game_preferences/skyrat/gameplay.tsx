@@ -2,9 +2,9 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const soulcatcher_overlays: FeatureToggle = {
-  name: 'Soulcatcher Overlays',
-  category: 'GAMEPLAY',
+  name: 'Оверлей душеловки',
+  category: 'ГЕЙМПЛЕЙ',
   description:
-    'When enabled, will you be shown fullscreen overlays while inside of a soulcatcher?',
+    'Если включить эту функцию, вы будете видеть полноэкранные оверлеи, находясь в душеловке?',
   component: CheckboxInput,
 };

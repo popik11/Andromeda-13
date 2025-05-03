@@ -1,8 +1,8 @@
-#define PREVIEW_PREF_JOB "Job"
-#define PREVIEW_PREF_LOADOUT "Loadout"
-#define PREVIEW_PREF_UNDERWEAR "Underwear"
-#define PREVIEW_PREF_NAKED "Naked"
-#define PREVIEW_PREF_NAKED_AROUSED "Naked - Aroused"
+#define PREVIEW_PREF_JOB "Профессия"
+#define PREVIEW_PREF_LOADOUT "Лодаут"
+#define PREVIEW_PREF_UNDERWEAR "Нижнее белье"
+#define PREVIEW_PREF_NAKED "Голый"
+#define PREVIEW_PREF_NAKED_AROUSED "Голый - возбужденный"
 
 /// for tri color prefs: doesn't check type_to_check pref
 #define TRICOLOR_NO_CHECK 0

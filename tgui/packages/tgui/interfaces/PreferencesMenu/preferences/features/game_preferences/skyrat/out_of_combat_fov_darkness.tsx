@@ -2,7 +2,7 @@
 import { Feature, FeatureNumberInput } from '../../base';
 
 export const out_of_combat_fov_darkness: Feature<number> = {
-  name: 'Out of Combat Field of View Darkness',
-  category: 'GAMEPLAY',
+  name: 'Темнота в поле зрения вне боя', // Out of Combat Field of  View Darkness Не ебу как перевести -Rewokin
+  category: 'ГЕЙМПЛЕЙ',
   component: FeatureNumberInput,
 };

@@ -2,11 +2,11 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const face_cursor_combat_mode: FeatureToggle = {
-  name: 'Face cursor with combat mode',
-  category: 'GAMEPLAY',
+  name: 'Следить за курсором',
+  category: 'ГЕЙМПЛЕЙ',
   description: `
-    When toggled, you will now face towards the cursor
-    with combat mode enabled.
+    При переключении вы будете стоять лицом к курсору,
+    если включён режим боя.
   `,
   component: CheckboxInput,
 };

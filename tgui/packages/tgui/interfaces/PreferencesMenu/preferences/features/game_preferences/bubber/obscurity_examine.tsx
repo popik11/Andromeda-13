@@ -1,8 +1,9 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const obscurity_examine_pref: FeatureToggle = {
-  name: 'Obscure examine panel',
-  category: 'GAMEPLAY',
-  description: 'Toggles whether your examine panel is hidden when unknown.',
+  name: 'Неизвестная панель осмотра',
+  category: 'ГЕЙМПЛЕЙ',
+  description:
+    'Определяет, будет ли ваша панель проверки скрыта, если она неизвестна.',
   component: CheckboxInput,
 };

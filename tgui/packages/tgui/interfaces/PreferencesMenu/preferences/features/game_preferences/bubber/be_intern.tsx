@@ -1,9 +1,9 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const be_intern: FeatureToggle = {
-  name: 'Be Tagged As Intern',
-  category: 'GAMEPLAY',
+  name: 'Быть помеченным как Стажер (Новичёк)',
+  category: 'ГЕЙМПЛЕЙ',
   description:
-    'Toggles whether you will be tagged as an intern in jobs where you have low playtime.',
+    'Определяет, будете ли вы отмечены как стажер на работах, где у вас мало игрового времени.',
   component: CheckboxInput,
 };

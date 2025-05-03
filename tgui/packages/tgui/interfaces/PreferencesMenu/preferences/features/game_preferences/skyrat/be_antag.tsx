@@ -1,8 +1,8 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const be_antag_pref: FeatureToggle = {
-  name: 'Be antagonist',
-  category: 'GAMEPLAY',
-  description: 'Toggles whether you wish to be an antagonist or not.',
+  name: 'Быть антагонистом',
+  category: 'ГЕЙМПЛЕЙ',
+  description: 'Определяет, хотите ли вы быть антагонистом или нет.',
   component: CheckboxInput,
 };

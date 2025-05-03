@@ -2,12 +2,12 @@
 import { Feature, FeatureShortTextInput } from '../../base';
 
 export const headshot: Feature<string> = {
-  name: 'Headshot',
+  name: 'Аватар',
   description:
-    'Requires a link ending with .png, .jpeg, or .jpg, starting with \
-    https://, and hosted on Catbox, Imgbox, Gyazo, Lensdump, or F-List. \
-    Renders the image underneath your character preview in the examine more window. \
-    Image larger than 250x250 will be resized to 250x250. \
-    Aim for 250x250 whenever possible',
+    'Требуется ссылка, заканчивающаяся на .png, .jpeg или .jpg, начинающаяся с \
+    https://, и размещенная на Catbox, Imgbox, Gyazo, Lensdump или F-List. \
+    Отображает изображение под предварительным просмотром персонажа в окне «Подробнее». \
+    Изображение размером более 250x250 будет уменьшено до 250x250. \
+    По возможности старайтесь использовать размер 250x250',
   component: FeatureShortTextInput,
 };

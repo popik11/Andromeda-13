@@ -1,6 +1,6 @@
-#define JOB_CHOICE_YES "Yes"
-#define JOB_CHOICE_REROLL "Reroll"
-#define JOB_CHOICE_CANCEL "Cancel"
+#define JOB_CHOICE_YES "Да"
+#define JOB_CHOICE_REROLL "Повторить"
+#define JOB_CHOICE_CANCEL "Отмена"
 
 GLOBAL_DATUM_INIT(latejoin_menu, /datum/latejoin_menu, new)
 
@@ -31,12 +31,12 @@ GLOBAL_DATUM_INIT(latejoin_menu, /datum/latejoin_menu, new)
 			user.jobs_menu_mounted = FALSE
 			addtimer(CALLBACK(src, PROC_REF(scream_at_player), user), 5 SECONDS)
 
-		ui = new(user, src, "JobSelection", "Latejoin Menu")
+		ui = new(user, src, "JobSelection", "Позднее Присоединение")
 		ui.open()
 
 /datum/latejoin_menu/proc/scream_at_player(mob/dead/new_player/player)
 	if(!player.jobs_menu_mounted)
-		to_chat(player, span_notice("If the late join menu isn't showing, hold CTRL while clicking the join button!"))
+		to_chat(player, span_notice("Если меню 'Позднее присоединение' не отображается, удерживая нажатой клавишу CTRL, нажмите кнопку 'Присоединиться'!"))
 
 /datum/latejoin_menu/ui_data(mob/user)
 	var/mob/dead/new_player/owner = user
@@ -217,7 +217,7 @@ GLOBAL_DATUM_INIT(latejoin_menu, /datum/latejoin_menu, new)
 		var/random = pick_n_take(dept_data)
 		var/list/random_job_options = list(JOB_CHOICE_YES, JOB_CHOICE_REROLL, JOB_CHOICE_CANCEL)
 
-		random_job = tgui_alert(owner, "[random]?", "Random Job", random_job_options)
+		random_job = tgui_alert(owner, "[random]?", "Рандомная Профессия", random_job_options)
 
 		if(random_job == JOB_CHOICE_CANCEL)
 			return

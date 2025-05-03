@@ -1,8 +1,9 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const autopunctuation: FeatureToggle = {
-  name: 'Autopunctuation',
-  category: 'CHAT',
-  description: 'When enabled, messages lacking punctuation will have it added.',
+  name: 'Автопунктуация',
+  category: 'ЧАТ',
+  description:
+    'Если эта функция включена, в сообщениях, в которых отсутствуют знаки препинания, они будут добавлены.',
   component: CheckboxInput,
 };

@@ -2,8 +2,9 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const emote_panel: FeatureToggle = {
-  name: 'Emote panel',
-  category: 'CHAT',
-  description: 'Toggles Emote panel (requires reconnect if in-game to apply)',
+  name: 'Панель эмоций',
+  category: 'ЧАТ',
+  description:
+    'Переключает панель эмоций (для применения необходимо переподключиться, если вы находитесь в игре)',
   component: CheckboxInput,
 };

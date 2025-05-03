@@ -2,9 +2,9 @@ import { FeatureChoiced } from '../../base';
 import { FeatureDropdownInput } from '../../dropdowns';
 
 export const show_flavor_text_nsfw: FeatureChoiced = {
-  name: 'NSFW Flavor Visibility',
+  name: 'NSFW Видимость аромата',
   description:
-    'How you would like your NSFW flavor text to be shown. Silicons always show NSFW flavor text, unless set to "never".',
-  category: 'ERP',
+    'Как вы хотите, чтобы отображался текст NSFW. Синты всегда показывают NSFW-текст, если не установлено значение «никогда».',
+  category: 'ЕРП',
   component: FeatureDropdownInput,
 };

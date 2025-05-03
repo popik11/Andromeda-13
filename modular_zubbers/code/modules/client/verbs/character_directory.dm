@@ -127,13 +127,13 @@ GLOBAL_DATUM(character_directory, /datum/character_directory)
 
 //Make a verb to open the character directory
 /client/verb/show_character_directory()
-	set name = "Character Directory"
+	set name = "Справочник Персонажа"
 	set category = "OOC"
 	set desc = "Shows a listing of all active characters, along with their associated OOC notes, flavor text, and more."
 
 	// This is primarily to stop malicious users from trying to lag the server by spamming this verb
 	if(!COOLDOWN_FINISHED(src, char_directory_cooldown))
-		to_chat(src, span_alert("Hold your horses! It's still refreshing!"))
+		to_chat(src, span_alert("Попридержите коней! Это все еще освежает!"))
 		return
 	COOLDOWN_START(src, char_directory_cooldown, 10)
 
@@ -151,7 +151,7 @@ GLOBAL_DATUM(character_directory, /datum/character_directory)
 /datum/character_directory/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "ZubbersCharacterDirectory", "Character Directory")
+		ui = new(user, src, "ZubbersCharacterDirectory", "Справочник Персонажа")
 		ui.open()
 
 //We want this information to update any time the player updates their preferences, not just when the panel is refreshed

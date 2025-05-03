@@ -2,9 +2,9 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const delete_sparks_pref: FeatureToggle = {
-  name: 'Deletion sparks',
-  category: 'ADMIN',
+  name: 'Искры удаления',
+  category: 'АДМИН',
   description:
-    'Toggles if you want to play a sparking animation when deleting things as an admin.',
+    'Переключается, если вы хотите воспроизвести зажигательную анимацию при удалении объектов от имени администратора.',
   component: CheckboxInput,
 };

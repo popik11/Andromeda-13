@@ -764,7 +764,7 @@ export function MainPage(props: MainPageProps) {
                   page={PrefPage.Visual}
                   setPage={setCurrentPrefPage}
                 >
-                  Character Visuals
+                  Визуализация персонажей
                 </PageButton>
               </Stack.Item>
               <Stack.Item grow={2}>
@@ -773,7 +773,7 @@ export function MainPage(props: MainPageProps) {
                   page={PrefPage.Lore}
                   setPage={setCurrentPrefPage}
                 >
-                  Character Lore
+                  История персонажа
                 </PageButton>
               </Stack.Item>
               <Stack.Item grow={0.98}>
@@ -791,7 +791,7 @@ export function MainPage(props: MainPageProps) {
                     } // check if existing chars more than one
                     onClick={() => setDeleteCharacterPopupOpen(true)}
                   >
-                    Delete Character
+                    Удалить персонажа
                   </Button>
                 </Box>
               </Stack.Item>

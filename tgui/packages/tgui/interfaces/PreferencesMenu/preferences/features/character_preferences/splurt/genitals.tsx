@@ -13,13 +13,13 @@ import {
 import { FeatureDropdownInput } from '../../dropdowns';
 
 export const scaled_appearance: FeatureToggle = {
-  name: 'Scaled Appearance',
-  description: 'Make your character use a sharp or fuzzy appearance.',
+  name: 'Чёткость внешнего вида',
+  description: 'Придайте своему персонажу резкий или нечеткий вид.',
   component: CheckboxInput,
 };
 
 export const feature_butt: Feature<string> = {
-  name: 'Butt Choice',
+  name: 'Выбор задницы',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -28,54 +28,54 @@ export const feature_butt: Feature<string> = {
 };
 
 export const butt_skin_tone: FeatureToggle = {
-  name: 'Butt uses Skin Tone',
+  name: 'Задница использует Тон кожи',
   component: CheckboxInput,
 };
 
 export const butt_skin_color: FeatureToggle = {
-  name: 'Butt uses Skin Color',
+  name: 'Задница использует Цвет кожи',
   component: CheckboxInput,
 };
 
 export const butt_color: Feature<string[]> = {
-  name: 'Butt Color',
+  name: 'Цвет задницы',
   component: FeatureTriColorInput,
 };
 
 export const butt_emissive: Feature<boolean[]> = {
-  name: 'Butt Emissives',
-  description: 'Emissive parts glow in the dark.',
+  name: 'Эмиссары задницы',
+  description: 'Детали светятся в темноте.',
   component: FeatureTriBoolInput,
 };
 
 export const butt_size: FeatureNumeric = {
-  name: 'Butt Size',
+  name: 'Размер задницы',
   component: FeatureNumberInput,
 };
 
 export const anus_skin_tone: FeatureToggle = {
-  name: 'Anus uses Skin Tone',
+  name: 'Анус использует Тон кожи',
   component: CheckboxInput,
 };
 
 export const anus_skin_color: FeatureToggle = {
-  name: 'Anus uses Skin Color',
+  name: 'Анус использует Цвет кожи',
   component: CheckboxInput,
 };
 
 export const anus_color: Feature<string[]> = {
-  name: 'Anus Color',
+  name: 'Цвет Ануса',
   component: FeatureTriColorInput,
 };
 
 export const anus_emissive: Feature<boolean[]> = {
-  name: 'Anus Emissives',
-  description: 'Emissive parts glow in the dark.',
+  name: 'Эмиссары ануса',
+  description: 'Детали светятся в темноте.',
   component: FeatureTriBoolInput,
 };
 
 export const feature_belly: Feature<string> = {
-  name: 'Belly Choice',
+  name: 'Выбор живота',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -84,33 +84,33 @@ export const feature_belly: Feature<string> = {
 };
 
 export const belly_size: FeatureNumeric = {
-  name: 'Belly Size',
+  name: 'Размер живота',
   component: FeatureNumberInput,
 };
 
 export const belly_skin_tone: FeatureToggle = {
-  name: 'Belly uses Skin Tone',
+  name: 'Живот использует Тон кожи',
   component: CheckboxInput,
 };
 
 export const belly_skin_color: FeatureToggle = {
-  name: 'Belly uses Skin Color',
+  name: 'Живот использует Цвет кожи',
   component: CheckboxInput,
 };
 
 export const belly_color: Feature<string[]> = {
-  name: 'Belly Color',
+  name: 'Цвет живота',
   component: FeatureTriColorInput,
 };
 
 export const belly_emissive: Feature<boolean[]> = {
-  name: 'Belly Emissives',
-  description: 'Emissive parts glow in the dark.',
+  name: 'Эмиссары живота',
+  description: 'Детали светятся в темноте.',
   component: FeatureTriBoolInput,
 };
 
 export const erp_status_pref_extm: FeatureChoiced = {
-  name: 'Extreme ERP verbs',
+  name: 'Экстремальное ЕРП',
   component: FeatureDropdownInput,
 };
 
@@ -120,45 +120,45 @@ export const erp_status_pref_extmharm: FeatureChoiced = {
 };
 
 export const erp_status_pref_unholy: FeatureChoiced = {
-  name: 'Unholy ERP verbs',
+  name: 'Нечестивые ЕРП',
   component: FeatureDropdownInput,
 };
 
 export const erp_lust_tolerance_pref: FeatureNumeric = {
-  name: 'Lust tolerance multiplier',
+  name: 'Множитель толерантности к похоти',
   description:
-    'Set your lust tolerance multiplier. \n(0.5 = half tolerance, 2 = double tolerance)',
+    'Установите множитель толерантности похоти. \n(0.5 = половинная толерантность, 2 = двойная толерантность)',
   component: FeatureNumberInput,
 };
 
 export const erp_sexual_potency_pref: FeatureNumeric = {
-  name: 'Sexual potency multiplier',
+  name: 'Множитель сексуальной потенции',
   description:
-    'Set your sexual potency multiplier. \n(0.5 = half potency, 2 = double potency)',
+    'Установите множитель сексуальной потенции. \n(0.5 = половина потенции, 2 = двойная потенция)',
   component: FeatureNumberInput,
 };
 
 // Genital fluid preferences
 export const testicles_fluid: FeatureChoiced = {
-  name: 'Testicles Fluid',
-  description: 'The type of fluid produced by the testicles.',
+  name: 'Жидкость яичек',
+  description: 'Тип жидкости, вырабатываемой яичками.',
   component: FeatureDropdownInput,
 };
 
 export const breasts_fluid: FeatureChoiced = {
-  name: 'Breasts Fluid',
-  description: 'The type of fluid produced by the breasts.',
+  name: 'Жидкость груди',
+  description: 'Тип жидкости, вырабатываемой грудью.',
   component: FeatureDropdownInput,
 };
 
 export const vagina_fluid: FeatureChoiced = {
-  name: 'Vagina Fluid',
-  description: 'The type of fluid produced by the vagina.',
+  name: 'Жидкость влагины',
+  description: 'Тип жидкости, вырабатываемой влагалищем.',
   component: FeatureDropdownInput,
 };
 
 export const cumflates_partners_pref: FeatureToggle = {
-  name: 'Cumflates Partners',
-  description: 'Your character cumflates partners.',
+  name: 'Кончать от партнёров',
+  description: 'Ваш персонаж кончает с партнером.',
   component: CheckboxInput,
 };

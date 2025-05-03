@@ -56,9 +56,9 @@ export const ZubbersCharacterDirectory = (props) => {
   return (
     <Window width={900} height={640} resizeable>
       <Window.Content scrollable>
-        <Section title="Controls">
+        <Section title="Управление">
           <LabeledList>
-            <LabeledList.Item label="Visibility">
+            <LabeledList.Item label="Видимость">
               <Button fluid>
                 {personalVisibility ? 'Shown' : 'Not Shown'}
               </Button>
@@ -166,22 +166,22 @@ const CharacterDirectoryList = (props) => {
 
   return (
     <Section
-      title="Directory"
+      title="Каталог"
       buttons={
         <>
           <Button icon="sync" onClick={() => act('refresh')}>
-            {'Refresh'}
+            {'Обновить'}
           </Button>
-          <Tooltip content="Display a random player's advert. Click if you dare.">
+          <Tooltip content="Показать рекламу случайного игрока. Нажмите, если осмелитесь.">
             <Button icon="random" onClick={handleRandomView}>
-              {'I Feel Lucky'}
+              {'Я чуствую удачу'}
             </Button>
           </Tooltip>
         </>
       }
     >
       <Input
-        placeholder="Search name..."
+        placeholder="Поиск по имени..."
         onChange={(e) => setSearchTerm(e.target.value)}
         value={searchTerm}
         mb={2}

@@ -2,9 +2,9 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const soulcatcher_join_action: FeatureToggle = {
-  name: 'Join soulcatcher action',
-  category: 'GHOST',
+  name: 'Присоединяйтесь к ивенту душегуба',
+  category: 'ПРИЗРАК',
   description:
-    'Toggles whether you wish to have the action to join a soulcatcher as a ghost shown to you. You still have access to the verb regardless.',
+    'Переключает, хотите ли вы, чтобы действие присоединения к ловцу душ в качестве призрака было показано вам. Вы все равно будете иметь доступ к ивенту, независимо от этого.',
   component: CheckboxInput,
 };

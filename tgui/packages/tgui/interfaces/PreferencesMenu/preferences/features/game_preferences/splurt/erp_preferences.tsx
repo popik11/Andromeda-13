@@ -1,55 +1,55 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const butt_enlargement_pref: FeatureToggle = {
-  name: 'Butt enlargement',
-  category: 'ERP',
+  name: 'Увеличение ягодиц',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to receive the effects of butt enlargement chemicals.',
+    'Определяет, хотите ли вы получить эффект от химических препаратов для увеличения попы.',
   component: CheckboxInput,
 };
 
 export const butt_shrinkage_pref: FeatureToggle = {
-  name: 'Butt shrinkage',
-  category: 'ERP',
+  name: 'Уменьшение ягодиц',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to receive the effects of butt shrinkage chemicals.',
+    'Определяет, хотите ли вы получить эффект от химических препаратов для уменьшения попы.',
   component: CheckboxInput,
 };
 
 export const belly_enlargement_pref: FeatureToggle = {
-  name: 'Belly enlargement',
-  category: 'ERP',
+  name: 'Увеличение живота',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to receive the effects of belly enlargement chemicals.',
+    'Определяет, хотите ли вы получить эффект от химических препаратов для увеличения живота.',
   component: CheckboxInput,
 };
 
 export const belly_shrinkage_pref: FeatureToggle = {
-  name: 'Belly shrinkage',
-  category: 'ERP',
+  name: 'Уменьшение живота',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to receive the effects of belly shrinkage chemicals.',
+    'Определяет, хотите ли вы получить эффект от химических препаратов для уменьшения живота.',
   component: CheckboxInput,
 };
 
 export const forced_neverboner_pref: FeatureToggle = {
-  name: 'Forced neverboner',
-  category: 'ERP',
+  name: 'Вынужденный невербонер',
+  category: 'ЕРП',
   description:
-    'Determines if you wish to receive the effects of forced neverboner chemicals.',
+    'Определяет, хотите ли вы получить эффект от принудительного применения химикатов neverboner.',
   component: CheckboxInput,
 };
 
 export const custom_genital_fluids_pref: FeatureToggle = {
-  name: 'Custom genital fluids',
-  category: 'ERP',
-  description: 'Allow custom genital fluids.',
+  name: 'Кастомные генитальные жидкости',
+  category: 'ЕРП',
+  description: 'Разрешите использовать кастомные половые жидкости.',
   component: CheckboxInput,
 };
 
 export const cumflation_pref: FeatureToggle = {
-  name: 'Cumflation',
-  category: 'ERP',
-  description: 'Allow your genitals to get cumflated.',
+  name: 'Кумфляция',
+  category: 'ЕРП',
+  description: 'Позвольте своим гениталиям кончить.',
   component: CheckboxInput,
 };

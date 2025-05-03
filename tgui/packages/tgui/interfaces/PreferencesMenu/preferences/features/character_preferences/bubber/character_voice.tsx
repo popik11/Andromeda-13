@@ -34,46 +34,46 @@ const FeatureBlooperDropdownInput = (props) => {
 };
 
 export const blooper_pitch_range: FeatureNumeric = {
-  name: 'Character Voice Range',
+  name: 'Диапазон голоса персонажа',
   description:
-    '[0.1 - 0.8] Lower number, less range. Higher number, more range.',
+    '[0,1 - 0,8] Меньшее число - меньший диапазон. Большее число - больший диапазон.',
   component: FeatureNumberInput,
 };
 
 export const blooper_speech: FeatureChoiced = {
-  name: 'Character Voice',
+  name: 'Голос персонажа',
   component: FeatureBlooperDropdownInput,
 };
 
 export const blooper_speech_speed: FeatureNumeric = {
-  name: 'Character Voice Speed',
+  name: 'Скорость голоса персонажа',
   description:
-    '[2 - 16] Lower number, faster speed. Higher number, slower voice.',
+    '[2 - 16] Меньшее число - более быстрая скорость. Большее число - более медленный голос.',
   component: FeatureNumberInput,
 };
 
 export const blooper_speech_pitch: FeatureNumeric = {
-  name: 'Character Voice Pitch',
+  name: 'Высота голоса персонажа',
   description:
-    '[0.4 - 2] Lower number, deeper pitch. Higher number, higher pitch.',
+    '[0,4 - 2] Меньшее число - более глубокий тон. Большее число - более высокий шаг.',
   component: FeatureNumberInput,
 };
 
 export const hear_sound_blooper: FeatureToggle = {
-  name: 'Enable Vocal Bark hearing',
-  category: 'SOUND',
+  name: 'Включить прослушивания барков (голосов)',
+  category: 'ЗВУК',
   component: CheckboxInput,
 };
 
 export const sound_blooper_volume: Feature<number> = {
-  name: 'Vocal Bark Volume',
-  category: 'SOUND',
-  description: 'The volume that the Vocal Barks sounds will play at.',
+  name: 'Громкость барков (голосов)',
+  category: 'ЗВУК',
+  description: 'Громкость, с которой будут воспроизводиться барки.',
   component: FeatureSliderInput,
 };
 
 export const send_sound_blooper: FeatureToggle = {
-  name: 'Enable Vocal Bark sending',
-  category: 'SOUND',
+  name: 'Включить отправку голосовых сообщений',
+  category: 'ЗВУК',
   component: CheckboxInput,
 };

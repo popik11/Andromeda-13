@@ -14,7 +14,7 @@ import {
 import { FeatureDropdownInput } from '../../dropdowns';
 
 export const feature_penis: Feature<string> = {
-  name: 'Penis Choice',
+  name: 'Выбор пениса',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -23,28 +23,28 @@ export const feature_penis: Feature<string> = {
 };
 
 export const penis_skin_tone: FeatureToggle = {
-  name: 'Penis uses Skin Tone',
+  name: 'Пенис использует Тон кожи',
   component: CheckboxInput,
 };
 
 export const penis_skin_color: FeatureToggle = {
-  name: 'Penis uses Skin Color',
+  name: 'Пенис использует Цвет кожи',
   component: CheckboxInput,
 };
 
 export const penis_color: Feature<string[]> = {
-  name: 'Penis Color',
+  name: 'Цвет пениса',
   component: FeatureTriColorInput,
 };
 
 export const penis_emissive: Feature<boolean[]> = {
-  name: 'Penis Emissives',
-  description: 'Emissive parts glow in the dark.',
+  name: 'Эмиссары пениса',
+  description: 'Детали светятся в темноте.',
   component: FeatureTriBoolInput,
 };
 
 export const penis_sheath: Feature<string> = {
-  name: 'Penis Sheath',
+  name: 'Оболочка пениса',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -53,35 +53,35 @@ export const penis_sheath: Feature<string> = {
 };
 
 export const penis_length: FeatureNumeric = {
-  name: 'Penis Length',
+  name: 'Длина пениса',
   description:
-    'Value is measured in inches.\
-     This value is limited to 20 for characters with a body size <= 1, \
-     or without the oversized trait. The maximum allowed value scales up\
-     based on the body size of a character, up to a max of 36.',
+    'Значение измеряется в дюймах.\
+     Это значение ограничено 20 для персонажей с размером тела <= 1 \
+     или без признака чрезмерной величины. Максимально допустимое значение увеличивается\
+     в зависимости от размера тела персонажа, вплоть до 36.',
   component: FeatureNumberInput,
 };
 
 export const penis_girth: FeatureNumeric = {
-  name: 'Penis Girth',
+  name: 'Обхват пениса',
   description:
-    'Value is circumference, measured in inches.\
-    This value is limited to 15 for characters with a body size <= 1, \
-    or without the oversized trait. The maximum allowed value scales up\
-    based on the body size of a character, up to a max of 20.',
+    'Значение - это окружность, измеряемая в дюймах.\
+    Это значение ограничено 15 для персонажей с размером тела <= 1 \
+    или без признака чрезмерной величины. Максимально допустимое значение увеличивается\
+    в зависимости от размера тела персонажа, до максимального значения 20.',
   component: FeatureNumberInput,
 };
 
 export const penis_taur_mode_toggle: FeatureToggle = {
-  name: 'Penis Taur Mode',
+  name: 'Режим пениса Таура',
   description:
-    'If the chosen taur body has a penis sprite, it will be used \
-    instead of the usual.',
+    'Если у выбранного тела тавра есть спрайт пениса, он будет использован \
+    вместо обычного.',
   component: CheckboxInput,
 };
 
 export const feature_testicles: Feature<string> = {
-  name: 'Testicles Choice',
+  name: 'Выбор яичек',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -90,33 +90,33 @@ export const feature_testicles: Feature<string> = {
 };
 
 export const testicles_skin_tone: FeatureToggle = {
-  name: 'Testicles uses Skin Tone',
+  name: 'Яички используют Тон кожи',
   component: CheckboxInput,
 };
 
 export const testicles_skin_color: FeatureToggle = {
-  name: 'Testicles uses Skin Color',
+  name: 'Яички используют Цвет кожи',
   component: CheckboxInput,
 };
 
 export const testicles_color: Feature<string[]> = {
-  name: 'Testicles Color',
+  name: 'Цвет яичек',
   component: FeatureTriColorInput,
 };
 
 export const testicles_emissive: Feature<boolean[]> = {
-  name: 'Testicles Emissives',
-  description: 'Emissive parts glow in the dark.',
+  name: 'Эмиссары яичек',
+  description: 'Детали светятся в темноте.',
   component: FeatureTriBoolInput,
 };
 
 export const balls_size: FeatureNumeric = {
-  name: 'Testicles Size',
+  name: 'Размер яичек',
   component: FeatureNumberInput,
 };
 
 export const feature_vagina: Feature<string> = {
-  name: 'Vagina Choice',
+  name: 'Выбор вагины',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -125,28 +125,28 @@ export const feature_vagina: Feature<string> = {
 };
 
 export const vagina_skin_tone: FeatureToggle = {
-  name: 'Vagina uses Skin Tone',
+  name: 'Вагина использует Тон кожи',
   component: CheckboxInput,
 };
 
 export const vagina_skin_color: FeatureToggle = {
-  name: 'Vagina uses Skin Color',
+  name: 'Вагина использует Цвет кожи',
   component: CheckboxInput,
 };
 
 export const vagina_color: Feature<string[]> = {
-  name: 'Vagina Color',
+  name: 'Цвет вагины',
   component: FeatureTriColorInput,
 };
 
 export const vagina_emissive: Feature<boolean[]> = {
-  name: 'Vagina Emissives',
-  description: 'Emissive parts glow in the dark.',
+  name: 'Эмиссары вагины',
+  description: 'Детали светятся в темноте.',
   component: FeatureTriBoolInput,
 };
 
 export const feature_womb: Feature<string> = {
-  name: 'Womb Choice',
+  name: 'Выбор матки',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -155,7 +155,7 @@ export const feature_womb: Feature<string> = {
 };
 
 export const feature_breasts: Feature<string> = {
-  name: 'Breast Choice',
+  name: 'Выбор груди',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -164,33 +164,33 @@ export const feature_breasts: Feature<string> = {
 };
 
 export const breasts_skin_tone: FeatureToggle = {
-  name: 'Breasts use Skin Tone',
+  name: 'Грудь использует Тон кожи',
   component: CheckboxInput,
 };
 
 export const breasts_skin_color: FeatureToggle = {
-  name: 'Breasts use Skin Color',
+  name: 'Грудь использует Цвет кожи',
   component: CheckboxInput,
 };
 
 export const breasts_color: Feature<string[]> = {
-  name: 'Breast Color',
+  name: 'Цвет груди',
   component: FeatureTriColorInput,
 };
 
 export const breasts_emissive: Feature<boolean[]> = {
-  name: 'Breast Emissives',
-  description: 'Emissive parts glow in the dark.',
+  name: 'Эмиссары груди',
+  description: 'Детали светятся в темноте.',
   component: FeatureTriBoolInput,
 };
 
 export const breasts_lactation_toggle: FeatureToggle = {
-  name: 'Breast Lactation',
+  name: 'Грудная лактация',
   component: CheckboxInput,
 };
 
 export const breasts_size: Feature<string> = {
-  name: 'Breast Size',
+  name: 'Размер груди',
   component: (
     props: FeatureValueProps<string, string, FeatureChoicedServerData>,
   ) => {
@@ -199,40 +199,40 @@ export const breasts_size: Feature<string> = {
 };
 
 export const feature_anus: Feature<string> = {
-  name: 'Anus Choice',
+  name: 'Выбор ануса',
   component: FeatureDropdownInput,
 };
 
 export const body_size: FeatureNumeric = {
-  name: 'Body Size',
+  name: 'Размер тела',
   component: FeatureNumberInput,
 };
 
 export const erp_status_pref: FeatureChoiced = {
-  name: 'ERP Status',
+  name: 'Статус ЕРП',
   description:
-    'All ERP status preferences are merely markers to other players of \
-  your preference towards various broad categories of ERP. Selecting no will virtually isolate you from \
-  all directed ERP.',
+    'Все предпочтения по статусу ЕРП являются лишь маркерами для других игроков \
+  о ваших предпочтениях в отношении различных широких категорий ЕРП. Выбрав «нет», вы практически изолируете себя от \
+  всех направленных ЕРП.',
   component: FeatureDropdownInput,
 };
 
 export const erp_status_pref_nc: FeatureChoiced = {
-  name: 'ERP Non-Con Status',
+  name: 'Статус ЕРП Non-Con (изнасилование)',
   component: FeatureDropdownInput,
 };
 
 export const erp_status_pref_v: FeatureChoiced = {
-  name: 'ERP Vore Status',
+  name: 'Статус ЕРП воре',
   component: FeatureDropdownInput,
 };
 
 export const erp_status_pref_hypnosis: FeatureChoiced = {
-  name: 'ERP Hypnosis Status',
+  name: 'Статус ЕРП гипноза',
   component: FeatureDropdownInput,
 };
 
 export const erp_status_pref_mechanics: FeatureChoiced = {
-  name: 'ERP Mechanical Status',
+  name: 'Статус ЕРП механа',
   component: FeatureDropdownInput,
 };

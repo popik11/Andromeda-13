@@ -2,9 +2,9 @@
 import { CheckboxInput, FeatureToggle } from '../../base';
 
 export const do_emote_overlay: FeatureToggle = {
-  name: 'Show/Hide my emote effect overlays',
-  category: 'CHAT',
+  name: 'Показать/скрыть оверлей моих эффектов эмоций',
+  category: 'ЧАТ',
   description:
-    'This shows/hides the animated overlays displayed on emotes for yourself.',
+    'Это показывает/скрывает анимированные оверлеи, отображаемые в эмоциях.',
   component: CheckboxInput,
 };
