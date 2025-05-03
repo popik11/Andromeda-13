@@ -42,19 +42,19 @@ SUBSYSTEM_DEF(statpanels)
 		//BUBBER EDIT ADDITION: Time in the world (as in, in-game date)
 		var/timeinworld = "[time2text(world.realtime, "DD of Month,")] [CURRENT_STATION_YEAR]"
 		global_data = list(
-			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
-			"Map: [SSmapping.current_map?.map_name || "Loading..."]",
-			cached ? "Next Map: [cached.map_name]" : null,
-			"Storyteller: [SSgamemode.storyteller ? SSgamemode.storyteller.name : "N/A"]", // BUBBER EDIT ADDITION
-			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
-			"Connected: [GLOB.clients.len] | Active: [active_players]/[CONFIG_GET(number/hard_popcap)] | Observing: [observing_players]", //BUBBER EDIT: ACTIVE AND OBSERVING PLAYERS
+			"Замедление времени: [round(SStime_track.time_dilation_current,1)]% В среднем:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
+			"Карта: [SSmapping.current_map?.map_name || "Загрузка..."]",
+			cached ? "Следующая карта: [cached.map_name]" : null,
+			"Рассказчик: [SSgamemode.storyteller ? SSgamemode.storyteller.name : "N/A"]", // BUBBER EDIT ADDITION
+			"ID Раунда: [GLOB.round_id ? GLOB.round_id : "NULL"]",
+			"Подключенные игроки: [GLOB.clients.len] | Активные: [active_players]/[CONFIG_GET(number/hard_popcap)] | Наблюдают: [observing_players]", //BUBBER EDIT: ACTIVE AND OBSERVING PLAYERS
 			" ",
-			"OOC: [GLOB.ooc_allowed ? "Enabled" : "Disabled"]",
+			"OOC: [GLOB.ooc_allowed ? "Включенный" : "Выключенный"]",
 			" ",
-			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
-			"Station Time: [time_to_twelve_hour(station_time(), format = "hh:mm")], [timeinworld]", //BUBBER EDIT: READABLE STATION TIME
-			"Round Timer: [round_time > MIDNIGHT_ROLLOVER ? "[round(round_time/MIDNIGHT_ROLLOVER)]:[worldtime2text()]" : worldtime2text()]",
-			"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]"
+			"Серверное время UTC+3 (GMT+3, МСК): [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
+			"Станционное время: [time_to_twelve_hour(station_time(), format = "hh:mm")], [timeinworld]", //BUBBER EDIT: READABLE STATION TIME
+			"Время с начала смены: [round_time > MIDNIGHT_ROLLOVER ? "[round(round_time/MIDNIGHT_ROLLOVER)]:[worldtime2text()]" : worldtime2text()]",
+			"Время с перезапуска: [time2text(real_round_time, "hh:mm:ss", 0)]"
 		)
 		// SKYRAT EDIT END
 
@@ -66,10 +66,10 @@ SUBSYSTEM_DEF(statpanels)
 		if(SSticker.reboot_timer)
 			var/reboot_time = timeleft(SSticker.reboot_timer)
 			if(reboot_time)
-				global_data += "Reboot: [DisplayTimeText(reboot_time, 1)]"
+				global_data += "Рестарт: [DisplayTimeText(reboot_time, 1)]"
 		// admin must have delayed round end
 		else if(SSticker.ready_for_reboot)
-			global_data += "Reboot: DELAYED"
+			global_data += "Рестарт: ОТЛОЖЕННЫЙ"
 
 		src.currentrun = GLOB.clients.Copy()
 		mc_data = null
@@ -130,7 +130,7 @@ SUBSYSTEM_DEF(statpanels)
 		return
 	target.stat_panel.send_message("update_stat", list(
 		"global_data" = global_data,
-		"ping_str" = "Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)",
+		"ping_str" = "Пинг: [round(target.lastping, 1)]мс (Среднее значение: [round(target.avgping, 1)]мс)",
 		"other_str" = target.mob?.get_status_tab_items(),
 	))
 
@@ -196,14 +196,14 @@ SUBSYSTEM_DEF(statpanels)
 
 /datum/controller/subsystem/statpanels/proc/generate_mc_data()
 	mc_data = list(
-		list("CPU:", world.cpu),
-		list("Instances:", "[num2text(world.contents.len, 10)]"),
-		list("World Time:", "[world.time]"),
-		list("Globals:", GLOB.stat_entry(), text_ref(GLOB)),
+		list("Процессор:", world.cpu),
+		list("Экземпляры:", "[num2text(world.contents.len, 10)]"),
+		list("Мировое время:", "[world.time]"),
+		list("Глобальные:", GLOB.stat_entry(), text_ref(GLOB)),
 		list("[config]:", config.stat_entry(), text_ref(config)),
 		list("Byond:", "(FPS:[world.fps]) (TickCount:[world.time/world.tick_lag]) (TickDrift:[round(Master.tickdrift,1)]([round((Master.tickdrift/(world.time/world.tick_lag))*100,0.1)]%)) (Internal Tick Usage: [round(MAPTICK_LAST_INTERNAL_TICK_USAGE,0.1)]%)"),
-		list("Master Controller:", Master.stat_entry(), text_ref(Master)),
-		list("Failsafe Controller:", Failsafe.stat_entry(), text_ref(Failsafe)),
+		list("Мастер Контроллер:", Master.stat_entry(), text_ref(Master)),
+		list("Бесперебойный Контроллер:", Failsafe.stat_entry(), text_ref(Failsafe)),
 		list("","")
 	)
 #if defined(MC_TAB_TRACY_INFO) || defined(SPACEMAN_DMM)
