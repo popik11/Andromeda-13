@@ -34,7 +34,7 @@
 /obj/structure/closet/crate/secure/bitrunning/decrypted/Initialize(
 	mapload,
 	datum/lazy_template/virtual_domain/completed_domain,
-	rewards_multiplier = 100000,
+	rewards_multiplier = 1,
 	)
 	. = ..()
 	playsound(src, 'sound/effects/magic/blink.ogg', 50, TRUE)
@@ -66,8 +66,8 @@
 
 /// Handles generating random numbers & calculating loot totals
 /obj/structure/closet/crate/secure/bitrunning/decrypted/proc/calculate_loot(reward_points, rewards_multiplier, ore_multiplier)
-	var/base = reward_points * rewards_multiplier
-	var/random_sum = rand(0.5, 1) + 0.5 * base
+	var/base = rewards_multiplier + reward_points
+	var/random_sum = (rand() + 0.5) * base
 	return ROUND_UP(random_sum * ore_multiplier)
 
 /// Handles spawning completion loot. This tries to handle bad flat and assoc lists
