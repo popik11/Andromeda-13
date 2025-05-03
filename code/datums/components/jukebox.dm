@@ -192,7 +192,7 @@
 
 /// Helper to kickstart the music for all mobs in hearing range of the jukebox.
 /datum/jukebox/proc/start_music()
-	for(var/mob/nearby in hearers(sound_range, parent))
+	for(var/mob/nearby in hearers(sound_range, parent.loc))
 		register_listener(nearby)
 
 /// Helper to get all mobs currently, ACTIVELY listening to the jukebox.
