@@ -1,0 +1,4 @@
+/// ADD ANDROMEDA-13 (@Rewokin): Cyrillic - наше слонярское
+#include "_cyrillic_fixes.dm"
+
+#include "code/cyrillic_fixes.dm"
