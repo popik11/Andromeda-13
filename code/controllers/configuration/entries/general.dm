@@ -321,16 +321,16 @@
 /datum/config_entry/string/banappeals
 
 /datum/config_entry/string/wikiurl
-	default = "http://tgstation13.org/wiki"
+	default = "https://discord.gg/7An9evC6Ys"
 
 /datum/config_entry/string/forumurl
-	default = "http://tgstation13.org/phpBB/index.php"
+	default = "https://bs.ss220.club/index.php/Заглавная_страница"
 
 /datum/config_entry/string/rulesurl
-	default = "http://tgstation13.org/wiki/Rules"
+	default = "https://discord.gg/7An9evC6Ys"
 
 /datum/config_entry/string/githuburl
-	default = "https://www.github.com/tgstation/tgstation"
+	default = "https://github.com/Lyutsikkk/Andromeda-13"
 
 /datum/config_entry/string/discordbotcommandprefix
 	default = "?"

@@ -396,23 +396,20 @@ export const BubberChangelog = (props) => {
 
   const header = (
     <Section>
-      <h1>WhiteMoon-Station</h1>
+      <h1>Андромеда-13</h1>
       <p>
-        <b>Thanks to: </b>
-        /tg/station 13, Effigy, Stellar Haven, Baystation 12, /vg/station,
-        NTstation, CDK Station devs, FacepunchStation, GoonStation devs, the
-        original Space Station 13 developers, and the countless others who have
-        contributed to the game.
+        <b>Благодаря: </b>
+        Всему комьюнити Space Station 13
       </p>
       <p>
-        <a href="https://github.com/BlueMoon-Labs/WhiteMoon-Station">
-          Репозиторий тута
+        <a href="https://github.com/Lyutsikkk/Andromeda-13">
+          Репозиторий Андромеды-13
         </a>
         .
       </p>
       <p>
         {'Вы можете присоединиться к нашему Дискорд-Серверу '}
-        <a href="https://discord.gg/NAp3NykhCM">вот здесь</a>!
+        <a href="https://discord.gg/7An9evC6Ys">вот здесь</a>!
       </p>
       <DateDropdown
         dates={dates}

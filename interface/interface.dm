@@ -1,7 +1,7 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
 /client/verb/wiki(query as text)
 	set name = "wiki"
-	set desc = "Type what you want to know about.  This will open the wiki in your web browser. Type nothing to go to the main page."
+	set desc = "Введите информацию, о которой вы хотите узнать.  Это откроет вики в вашем веб-браузере. Чтобы перейти на главную страницу, введите «ничего»."
 	set hidden = TRUE
 	var/wikiurl = CONFIG_GET(string/wikiurl)
 	if(wikiurl)
@@ -11,68 +11,68 @@
 		else if (query != null)
 			src << link(wikiurl)
 	else
-		to_chat(src, span_danger("The wiki URL is not set in the server configuration."))
+		to_chat(src, span_danger("URL-адрес wiki не задан в конфигурации сервера."))
 	return
 
 /client/verb/forum()
 	set name = "forum"
-	set desc = "Visit the forum."
+	set desc = "Посетите форум."
 	set hidden = TRUE
 	var/forumurl = CONFIG_GET(string/forumurl)
 	if(forumurl)
-		if(tgui_alert(src, "This will open the forum in your browser. Are you sure?",, list("Yes","No"))!="Yes")
+		if(tgui_alert(src, "Это откроет форум в вашем браузере. Вы уверены?",, list("Да","Нет"))!="Да")
 			return
 		src << link(forumurl)
 	else
-		to_chat(src, span_danger("The forum URL is not set in the server configuration."))
+		to_chat(src, span_danger("URL-адрес форума не задан в конфигурации сервера."))
 	return
 
 /client/verb/rules()
 	set name = "rules"
-	set desc = "Show Server Rules."
+	set desc = "Показать правила сервера."
 	set hidden = TRUE
 	var/rulesurl = CONFIG_GET(string/rulesurl)
 	if(rulesurl)
-		if(tgui_alert(src, "This will open the rules in your browser. Are you sure?",, list("Yes","No"))!="Yes")
+		if(tgui_alert(src, "Это откроет правила в вашем браузере. Вы уверены?",, list("Да","Нет"))!="Да")
 			return
 		src << link(rulesurl)
 	else
-		to_chat(src, span_danger("The rules URL is not set in the server configuration."))
+		to_chat(src, span_danger("URL-адрес правил не задан в конфигурации сервера."))
 	return
 
 /client/verb/github()
 	set name = "github"
-	set desc = "Visit Github"
+	set desc = "Посетите GitHub"
 	set hidden = TRUE
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
-		if(tgui_alert(src, "This will open the Github repository in your browser. Are you sure?",, list("Yes","No"))!="Yes")
+		if(tgui_alert(src, "Это откроет репозиторий GitHub в вашем браузере. Вы уверены?",, list("Да","Нет"))!="Да")
 			return
 		src << link(githuburl)
 	else
-		to_chat(src, span_danger("The Github URL is not set in the server configuration."))
+		to_chat(src, span_danger("URL-адрес GitHub не задан в конфигурации сервера."))
 	return
 
 /client/verb/reportissue()
 	set name = "report-issue"
-	set desc = "Report an issue"
+	set desc = "Сообщить о проблеме"
 	set hidden = TRUE
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(!githuburl)
-		to_chat(src, span_danger("The Github URL is not set in the server configuration."))
+		to_chat(src, span_danger("URL-адрес GitHub не задан в конфигурации сервера."))
 		return
 
 	var/testmerge_data = GLOB.revdata.testmerge
 	var/has_testmerge_data = (length(testmerge_data) != 0)
 
-	var/message = "This will open the Github issue reporter in your browser. Are you sure?"
+	var/message = "Это откроет отчет о проблеме на GitHub в вашем браузере. Вы уверены?"
 	if(has_testmerge_data)
-		message += "<br>The following experimental changes are active and are probably the cause of any new or sudden issues you may experience. If possible, please try to find a specific thread for your issue instead of posting to the general issue tracker:<br>"
+		message += "<br>Следующие экспериментальные изменения активны и, вероятно, являются причиной любых новых или внезапных проблем, с которыми вы можете столкнуться. Если возможно, постарайтесь найти конкретную тему для вашей проблемы, а не писать в общий трекер проблем:<br>"
 		message += GLOB.revdata.GetTestMergeInfo(FALSE)
 
 	// We still use tgalert here because some people were concerned that if someone wanted to report that tgui wasn't working
 	// then the report issue button being tgui-based would be problematic.
-	if(tgalert(src, message, "Report Issue","Yes","No") != "Yes")
+	if(tgalert(src, message, "Сообщить о проблеме","Да","Нет") != "Да")
 		return
 
 	var/base_link = githuburl + "/issues/new?template=bug_report_form.yml"
@@ -99,7 +99,7 @@
 
 
 /client/verb/changelog()
-	set name = "Changelog"
+	set name = "Изменения"
 	set category = "OOC"
 	if(!GLOB.changelog_tgui)
 		GLOB.changelog_tgui = new /datum/changelog()
@@ -111,7 +111,7 @@
 		winset(src, "infowindow.changelog", "font-style=;")
 
 /client/verb/hotkeys_help()
-	set name = "Hotkeys Help"
+	set name = "Хоткеи"
 	set category = "OOC"
 
 	if(!GLOB.hotkeys_tgui)

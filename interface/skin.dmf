@@ -180,7 +180,7 @@ window "infowindow"
 		anchor1 = 0,0
 		anchor2 = 15,0
 		saved-params = "is-checked"
-		text = "Changelog"
+		text = "Изменения"
 		command = "changelog"
 	elem "rules"
 		type = BUTTON
@@ -189,7 +189,7 @@ window "infowindow"
 		anchor1 = 15,0
 		anchor2 = 29,0
 		saved-params = "is-checked"
-		text = "Rules"
+		text = "Правила"
 		command = "rules"
 	elem "wiki"
 		type = BUTTON
@@ -198,7 +198,7 @@ window "infowindow"
 		anchor1 = 29,0
 		anchor2 = 43,0
 		saved-params = "is-checked"
-		text = "Wiki"
+		text = "Вики"
 		command = "wiki"
 	elem "forum"
 		type = BUTTON
@@ -207,7 +207,7 @@ window "infowindow"
 		anchor1 = 43,0
 		anchor2 = 57,0
 		saved-params = "is-checked"
-		text = "Forum"
+		text = "Форум"
 		command = "forum"
 	elem "github"
 		type = BUTTON
@@ -216,7 +216,7 @@ window "infowindow"
 		anchor1 = 57,0
 		anchor2 = 71,0
 		saved-params = "is-checked"
-		text = "Github"
+		text = "ГитХаб"
 		command = "github"
 	elem "report-issue"
 		type = BUTTON
@@ -225,7 +225,7 @@ window "infowindow"
 		anchor1 = 71,0
 		anchor2 = 85,0
 		saved-params = "is-checked"
-		text = "Report Issue"
+		text = "Баг"
 		command = "report-issue"
 	elem "fullscreen-toggle"
 		type = BUTTON
