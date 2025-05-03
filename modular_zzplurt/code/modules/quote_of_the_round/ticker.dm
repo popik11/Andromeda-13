@@ -103,7 +103,7 @@
 		embed.thumbnail = new(thumbnail_url)
 
 	// Footer
-	embed.footer = new("Round #[GLOB.round_id] ([SSgamemode.storyteller.name])")
+	embed.footer = new("Раунд #[GLOB.round_id] ([SSgamemode.storyteller.name])")
 	embed.timestamp = time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")
 
 	var/datum/tgs_message_content/message = new("# Раунд под номером #[GLOB.round_id] ([SSgamemode.storyteller.name]) только что закончился. [CONFIG_GET(string/roundend_ping_role) ? "<@[CONFIG_GET(string/roundend_ping_role)]>" : ""]")
