@@ -35,17 +35,17 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 		return
 	var/time_remaining = SSticker.GetTimeLeft()
 	if(time_remaining > 0)
-		. += "Time To Start: [round(time_remaining/10)]s"
+		. += "Время до старта: [round(time_remaining/10)]s"
 	else if(time_remaining == -10)
-		. += "Time To Start: DELAYED"
+		. += "Время до старта: ОТЛОЖЕН"
 	else
-		. += "Time To Start: SOON"
+		. += "Время до старта: СКОРО"
 
-	. += "Players: [LAZYLEN(GLOB.clients)]"
-	. += "Players Ready: [SSticker.totalPlayersReady]" //Bubberstation edit
+	. += "Игроки: [LAZYLEN(GLOB.clients)]"
+	. += "Игроков готово: [SSticker.totalPlayersReady]" //Bubberstation edit
 	if(client.holder)
 		// . += "Players Ready: [SSticker.totalPlayersReady]" Bubberstation edit
-		. += "Admins Ready: [SSticker.total_admins_ready] / [length(GLOB.admins)]"
+		. += "Админов готово: [SSticker.total_admins_ready] / [length(GLOB.admins)]"
 
 #define SERVER_HOPPER_TRAIT "server_hopper"
 
