@@ -565,7 +565,7 @@ SUBSYSTEM_DEF(gamemode)
 //Reports player logouts//
 //////////////////////////
 /proc/display_roundstart_logout_report()
-	var/list/msg = list("[span_boldnotice("Roundstart logout report")]\n\n")
+	var/list/msg = list("[span_boldnotice("Раундстарт(Начало раунда) выходит из системы")]\n\n")
 	for(var/i in GLOB.mob_living_list)
 		var/mob/living/L = i
 		var/mob/living/carbon/C = L
@@ -702,7 +702,7 @@ SUBSYSTEM_DEF(gamemode)
 		vote_message += "[storyboy.desc]"
 		vote_message += ""
 	var/finalized_message = "[vote_message.Join("\n")]"
-	to_chat(world, custom_boxed_message("purple_box", vote_font("[span_bold("Storyteller Vote")]\n<hr>[finalized_message]")))
+	to_chat(world, custom_boxed_message("purple_box", vote_font("[span_bold("Голосование за рассказчика")]\n<hr>[finalized_message]")))
 	return choices
 
 /datum/controller/subsystem/gamemode/proc/storyteller_vote_result(winner_name)
@@ -747,9 +747,9 @@ SUBSYSTEM_DEF(gamemode)
 	point_thresholds[EVENT_TRACK_CREWSET] = track_data.threshold_crewset * CONFIG_GET(number/crewset_point_threshold)
 	point_thresholds[EVENT_TRACK_GHOSTSET] = track_data.threshold_ghostset * CONFIG_GET(number/ghostset_point_threshold)
 
-	to_chat(world, span_notice("<b>Storyteller is [storyteller.name]!</b>"))
+	to_chat(world, span_notice("<b>Рассказчик - это [storyteller.name]!</b>"))
 	to_chat(world, span_notice("[storyteller.welcome_text]"))
-	log_admin_private("Storyteller switched to [storyteller.name]. [forced ? "Forced by admin ckey [force_ckey]" : ""]")
+	log_admin_private("Рассказчик переключился на[storyteller.name]. [forced ? "Принудительно отправлено администратором [force_ckey]" : ""]")
 
 /**
  * halt_storyteller

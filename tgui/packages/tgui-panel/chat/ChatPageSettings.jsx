@@ -35,7 +35,7 @@ export const ChatPageSettings = (props) => {
             <Button
               color="blue"
               icon="angles-left"
-              tooltip="Reorder tab to the left"
+              tooltip="Перестройте вкладку влево"
               onClick={() =>
                 dispatch(
                   moveChatPageLeft({
@@ -65,7 +65,7 @@ export const ChatPageSettings = (props) => {
             <Button
               color="blue"
               icon="angles-right"
-              tooltip="Reorder tab to the right"
+              tooltip="Перестроить вкладку вправо"
               onClick={() =>
                 dispatch(
                   moveChatPageRight({
@@ -80,7 +80,7 @@ export const ChatPageSettings = (props) => {
           <Button.Checkbox
             checked={page.hideUnreadCount}
             icon={page.hideUnreadCount ? 'bell-slash' : 'bell'}
-            tooltip="Disables unread counter"
+            tooltip="Отключение счетчика непрочитанных сообщений"
             onClick={() =>
               dispatch(
                 updateChatPage({
@@ -90,7 +90,7 @@ export const ChatPageSettings = (props) => {
               )
             }
           >
-            Mute
+            Мут
           </Button.Checkbox>
         </Stack.Item>
         {!page.isMain && (
@@ -106,13 +106,13 @@ export const ChatPageSettings = (props) => {
                 )
               }
             >
-              Remove
+              Удалить
             </Button>
           </Stack.Item>
         )}
       </Stack>
       <Divider />
-      <Section title="Messages to display" level={2}>
+      <Section title="Отображение сообщений" level={2}>
         {MESSAGE_TYPES.filter(
           (typeDef) => !typeDef.important && !typeDef.admin,
         ).map((typeDef) => (
@@ -131,7 +131,7 @@ export const ChatPageSettings = (props) => {
             {typeDef.name}
           </Button.Checkbox>
         ))}
-        <Collapsible mt={1} color="transparent" title="Admin stuff">
+        <Collapsible mt={1} color="transparent" title="Админские штучки">
           {MESSAGE_TYPES.filter(
             (typeDef) => !typeDef.important && typeDef.admin,
           ).map((typeDef) => (

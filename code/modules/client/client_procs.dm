@@ -485,7 +485,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		var/stealth_admin = mob.client?.holder?.fakekey
 		var/announce_leave = mob.client?.prefs?.read_preference(/datum/preference/toggle/broadcast_login_logout)
 		if (!stealth_admin)
-			deadchat_broadcast(" has reconnected.", "<b>[mob][mob.get_realname_string()]</b>", follow_target = mob, turf_target = get_turf(mob), message_type = DEADCHAT_LOGIN_LOGOUT, admin_only=!announce_leave)
+			deadchat_broadcast(" снова подключился.", "<b>[mob][mob.get_realname_string()]</b>", follow_target = mob, turf_target = get_turf(mob), message_type = DEADCHAT_LOGIN_LOGOUT, admin_only=!announce_leave)
 	add_verbs_from_config()
 
 	// This needs to be before the client age from db is updated as it'll be updated by then.
@@ -537,7 +537,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	apply_clickcatcher()
 
 	if(prefs.lastchangelog != GLOB.changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, span_info("You have unread updates in the changelog."))
+		to_chat(src, span_info("У вас есть непрочитанные обновления в журнале изменений."))
 		if(CONFIG_GET(flag/aggressive_changelog))
 			changelog()
 		else
@@ -594,7 +594,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		var/stealth_admin = mob.client?.holder?.fakekey
 		var/announce_join = mob.client?.prefs?.read_preference(/datum/preference/toggle/broadcast_login_logout)
 		if (!stealth_admin)
-			deadchat_broadcast(" has disconnected.", "<b>[mob][mob.get_realname_string()]</b>", follow_target = mob, turf_target = get_turf(mob), message_type = DEADCHAT_LOGIN_LOGOUT, admin_only=!announce_join)
+			deadchat_broadcast(" отключился.", "<b>[mob][mob.get_realname_string()]</b>", follow_target = mob, turf_target = get_turf(mob), message_type = DEADCHAT_LOGIN_LOGOUT, admin_only=!announce_join)
 		mob.become_uncliented()
 
 	GLOB.clients -= src
@@ -1268,22 +1268,22 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	if (isnull(cheesy_messages))
 		cheesy_messages = list(
-			"Forever alone :(",
-			"I have no admins online!",
-			"I need a hug :(",
-			"I need someone on me :(",
-			"I want a man :(",
-			"I'm all alone :(",
-			"I'm feeling lonely :(",
-			"I'm so lonely :(",
-			"Someone come hold me :(",
-			"What happened? Where has everyone gone?",
-			"Where has everyone gone?",
-			"Why does nobody love me? :(",
+			"Навсегда один :(",
+			"У меня нет админов онлайн!",
+			"Мне нужны объятия :(",
+			"Мне нужен кто-то на мне :(",
+			"Мне нужен мужчина :(",
+			"Я совсем одна :(",
+			"Я чувствую себя одинокой :(",
+			"Мне так одиноко :(",
+			"Кто-нибудь, обнимите меня :(",
+			"Что случилось? Куда все подевались?",
+			"Куда все подевались?",
+			"Почему меня никто не любит? :(",
 		)
 
 	message_to_send += pick(cheesy_messages)
-	message_to_send += "(No admins online)"
+	message_to_send += "(Нет администраторов в Сети)"
 
 	send2adminchat("Server", jointext(message_to_send, " "))
 

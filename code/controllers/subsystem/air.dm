@@ -603,7 +603,7 @@ SUBSYSTEM_DEF(air)
 
 		log_active_turfs() // invoke this here so we can count the time it takes to run this proc as "wasted time", quite simple honestly.
 
-		var/msg = "HEY! LISTEN! [DisplayTimeText(world.timeofday - timer, 0.00001)] were wasted processing [starting_ats] turf(s) (connected to [ending_ats - starting_ats] other turfs) with atmos differences at round start."
+		var/msg = "ХЭЙ! СЛУШАЙТЕ! [DisplayTimeText(world.timeofday - timer, 0.00001)] было потрачено впустую, обрабатывая [starting_ats] turf(s) (соединенные с [ending_ats - starting_ats] other turfs) с разницей в atmos в начале раунда"
 		to_chat(world, span_boldannounce("[msg]"))
 		warning(msg)
 

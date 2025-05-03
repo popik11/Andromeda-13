@@ -11,7 +11,7 @@
 	if(self_destruct)
 		if(self_destruct.r_code == NUKE_CODE_UNSET)
 			self_destruct.r_code = random_nukecode()
-			message_admins("Through salt PRs, the self-destruct code was set to \"[self_destruct.r_code]\".")
+			message_admins("Код от ядерки \"[self_destruct.r_code]\". Уверяю вас, вы можете доверить его Арматурову.")
 		if(self_destruct.r_code == pr_number)
 			thing_to_remove = "the station's nuclear self-destruct device" //Just made every senior admin shit themselves with this line. 1 in 140,000 chance, by the way.
 

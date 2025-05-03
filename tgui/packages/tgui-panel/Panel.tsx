@@ -47,7 +47,7 @@ export const Panel = (props) => {
                   color="grey"
                   selected={emotes.visible}
                   icon="asterisk"
-                  tooltip="Emote Panel"
+                  tooltip="Панель эмоций"
                   tooltipPosition="bottom-start"
                   onClick={() => emotes.toggle()}
                 />
@@ -58,7 +58,7 @@ export const Panel = (props) => {
                   color="grey"
                   selected={audio.visible}
                   icon="music"
-                  tooltip="Music player"
+                  tooltip="Музыкальный проигрыватель"
                   tooltipPosition="bottom-start"
                   onClick={() => audio.toggle()}
                 />
@@ -68,7 +68,7 @@ export const Panel = (props) => {
                   icon={settings.visible ? 'times' : 'cog'}
                   selected={settings.visible}
                   tooltip={
-                    settings.visible ? 'Close settings' : 'Open settings'
+                    settings.visible ? 'Закрыть настройки' : 'Открыть настройки'
                   }
                   tooltipPosition="bottom-start"
                   onClick={() => settings.toggle()}
@@ -106,14 +106,13 @@ export const Panel = (props) => {
             <Notifications>
               {game.connectionLostAt && (
                 <Notifications.Item rightSlot={<ReconnectButton />}>
-                  You are either AFK, experiencing lag or the connection has
-                  closed.
+                  Вы либо AFK, либо испытываете лаги, либо соединение закрыто.
                 </Notifications.Item>
               )}
               {game.roundRestartedAt && (
                 <Notifications.Item>
-                  The connection has been closed because the server is
-                  restarting. Please wait while you automatically reconnect.
+                  Соединение было закрыто из-за перезапуска сервера. Пожалуйста,
+                  подождите, пока произойдет автоматическое переподключение.
                 </Notifications.Item>
               )}
             </Notifications>

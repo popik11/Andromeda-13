@@ -50,23 +50,23 @@ export const NowPlayingWidget = (props) => {
                   </Flex.Item>
                 )}
                 <Flex.Item grow={1} color="label">
-                  Duration: {duration}
+                  Длительность: {duration}
                 </Flex.Item>
                 {Artist !== 'Song Artist Hidden' &&
                   Artist !== 'Unknown Artist' && (
                     <Flex.Item grow={1} color="label">
-                      Artist: {Artist}
+                      Артист: {Artist}
                     </Flex.Item>
                   )}
                 {album !== 'Song Album Hidden' && album !== 'Unknown Album' && (
                   <Flex.Item grow={1} color="label">
-                    Album: {album}
+                    Альбом: {album}
                   </Flex.Item>
                 )}
                 {upload_date !== 'Song Upload Date Hidden' &&
                   upload_date !== 'Unknown Date' && (
                     <Flex.Item grow={1} color="label">
-                      Uploaded: {date}
+                      Загружено: {date}
                     </Flex.Item>
                   )}
               </Section>
@@ -75,7 +75,7 @@ export const NowPlayingWidget = (props) => {
         </Flex.Item>
       )) || (
         <Flex.Item grow={1} color="label">
-          Nothing to play.
+          Ничего не играет.
         </Flex.Item>
       )}
       {audio.playing && (

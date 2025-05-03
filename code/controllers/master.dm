@@ -139,9 +139,9 @@ GLOBAL_REAL(Master, /datum/controller/master)
 	sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_init))
 	reverse_range(subsystems)
 	for(var/datum/controller/subsystem/ss in subsystems)
-		log_world("Shutting down [ss.name] subsystem...")
+		log_world("Выключение подсистемы [ss.name]...")
 		if (ss.slept_count > 0)
-			log_world("Warning: Subsystem `[ss.name]` slept [ss.slept_count] times.")
+			log_world("Предупреждение: Подсистема `[ss.name]` перешла в режим ожидания [ss.slept_count] время.")
 		ss.Shutdown()
 	log_world("Shutdown complete")
 
@@ -294,10 +294,10 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 		LAZYINITLIST(BadBoy.failure_strikes)
 		switch(++BadBoy.failure_strikes[BadBoy.type])
 			if(2)
-				msg = "The [BadBoy.name] subsystem was the last to fire for 2 controller restarts. It will be recovered now and disabled if it happens again."
+				msg = "Подсистема  [BadBoy.name] сработала последней за 2 перезапуска контроллера. Теперь она будет восстановлена и отключена, если это произойдет снова."
 				FireHim = TRUE
 			if(3)
-				msg = "The [BadBoy.name] subsystem seems to be destabilizing the MC and will be put offline."
+				msg = "Подсистема [BadBoy.name] похоже, дестабилизирует работу MC и будет отключена."
 				BadBoy.flags |= SS_NO_FIRE
 		if(msg)
 			to_chat(GLOB.admins, span_boldannounce("[msg]"))
@@ -310,7 +310,7 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 		current_runlevel = Master.current_runlevel
 		StartProcessing(10)
 	else
-		to_chat(world, span_boldannounce("The Master Controller is having some issues, we will need to re-initialize EVERYTHING"))
+		to_chat(world, span_boldannounce("У главного контроллера возникли проблемы, вам нужно заново инициализировать ВСЁ."))
 		Initialize(20, TRUE, FALSE)
 
 // Please don't stuff random bullshit here,
@@ -327,7 +327,7 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 	init_stage_completed = 0
 	var/mc_started = FALSE
 
-	add_startup_message("Initializing subsystems...") //SKYRAT EDIT CHANGE - Custom HTML Lobby Screen
+	add_startup_message("Инициализация подсистем...") //SKYRAT EDIT CHANGE - Custom HTML Lobby Screen
 	// to_chat(world, span_boldannounce("Initializing subsystems..."), MESSAGE_TYPE_DEBUG) SKYRAT EDIT ORIGINAL
 
 	var/list/stage_sorted_subsystems = new(INITSTAGE_MAX)
@@ -340,7 +340,7 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 	for (var/datum/controller/subsystem/subsystem as anything in subsystems)
 		var/subsystem_init_stage = subsystem.init_stage
 		if (!isnum(subsystem_init_stage) || subsystem_init_stage < 1 || subsystem_init_stage > INITSTAGE_MAX || round(subsystem_init_stage) != subsystem_init_stage)
-			stack_trace("ERROR: MC: subsystem `[subsystem.type]` has invalid init_stage: `[subsystem_init_stage]`. Setting to `[INITSTAGE_MAX]`")
+			stack_trace("ОШИБКА: MC: подсистема `[subsystem.type]` имеет недопустимый init_stage: `[subsystem_init_stage]`. Установите значение `[INITSTAGE_MAX]`")
 			subsystem_init_stage = subsystem.init_stage = INITSTAGE_MAX
 		stage_sorted_subsystems[subsystem_init_stage] += subsystem
 
@@ -362,14 +362,14 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 				SetRunLevel(1) // Intentionally not using the defines here because the MC doesn't care about them
 			// Loop.
 			Master.StartProcessing(0)
-			add_startup_message("Clearing clutter...") //SKYRAT EDIT ADDITION
+			add_startup_message("Открываем пиво...") //SKYRAT EDIT ADDITION
 
 
 	var/time = (REALTIMEOFDAY - start_timeofday) / 10
 
 
 
-	var/msg = "Initializations complete within [time] second[time == 1 ? "" : "s"]!"
+	var/msg = "Инициализация завершается в за [time] секунд!"
 	to_chat(world, span_boldannounce("[msg]"), MESSAGE_TYPE_DEBUG)
 	log_world(msg)
 
@@ -424,11 +424,11 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 
 	// Gave invalid return value.
 	if(result && !(result in valid_results))
-		warning("[subsystem.name] subsystem initialized, returning invalid result [result]. This is a bug.")
+		warning("Подсистема [subsystem.name] инициализирована, возвращает неверный результат [result]. Это ошибка.")
 
 	// just returned ..() or didn't implement Initialize() at all
 	if(result == SS_INIT_NONE)
-		warning("[subsystem.name] subsystem does not implement Initialize() or it returns ..(). If the former is true, the SS_NO_INIT flag should be set for this subsystem.")
+		warning("Подсистема [subsystem.name] не реализует Initialize() или возвращает ..(). Если верно первое, то для этой подсистемы должен быть установлен флаг SS_NO_INIT.")
 
 	if(result != SS_INIT_FAILURE)
 		// Some form of success, implicit failure, or the SS in unused.
@@ -448,19 +448,19 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 
 	switch(result)
 		if(SS_INIT_FAILURE)
-			message_prefix = "Failed to initialize [subsystem.name] subsystem after"
+			message_prefix = "Не удалось инициализировать подсистему [subsystem.name] из-за"
 			chat_warning = TRUE
 		if(SS_INIT_SUCCESS, SS_INIT_NO_MESSAGE)
-			message_prefix = "Initialized [subsystem.name] subsystem within"
+			message_prefix = "Инициализирована подсистема [subsystem.name] за"
 		if(SS_INIT_NO_NEED)
 			// This SS is disabled or is otherwise shy.
 			return
 		else
 			// SS_INIT_NONE or an invalid value.
-			message_prefix = "Initialized [subsystem.name] subsystem with errors within"
+			message_prefix = "Инициализирована подсистема [subsystem.name] с ошибками за"
 			chat_warning = TRUE
 
-	var/message = "[message_prefix] [seconds] second[seconds == 1 ? "" : "s"]!"
+	var/message = "[message_prefix] [seconds] секунд!"
 	// SKYRAT EDIT REMOVAL BEGIN -- chat_message not used anymore due to change below
 	// var/chat_message = chat_warning ? span_boldwarning(message) : span_boldannounce(message)
 	// SKYRAT EDIT REMOVAL END
@@ -496,10 +496,10 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 		return //this was suppose to happen.
 	//loop ended, restart the mc
 	log_game("MC crashed or runtimed, restarting")
-	message_admins("MC crashed or runtimed, restarting")
+	message_admins("MC потерпел крах или сбой в работе, перезапуск")
 	var/rtn2 = Recreate_MC()
 	if (rtn2 <= 0)
-		log_game("Failed to recreate MC (Error code: [rtn2]), it's up to the failsafe now")
+		log_game("Не удалось воссоздать MC (код ошибки: [rtn2]), теперь дело за отказоустойчивостью")
 		message_admins("Failed to recreate MC (Error code: [rtn2]), it's up to the failsafe now")
 		Failsafe.defcon = 2
 
@@ -539,7 +539,7 @@ ADMIN_VERB(cmd_controller_view_ui, R_SERVER|R_DEBUG, "Controller Overview", "Vie
 				runlevel_sorted_subsystems[I] += SS
 				added_to_any = TRUE
 		if(!added_to_any)
-			WARNING("[SS.name] subsystem is not SS_NO_FIRE but also does not have any runlevels set!")
+			WARNING("Подсистема [SS.name] не является SS_NO_FIRE, но в ней также не установлены уровни выполнения!")
 
 	queue_head = null
 	queue_tail = null

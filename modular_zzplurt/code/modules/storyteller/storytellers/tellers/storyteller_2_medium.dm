@@ -1,8 +1,8 @@
 /datum/storyteller/medium
-	name = "Medium Chaos"
-	desc = "Medium Chaos is the default Storyteller, and the comparison point for every other Storyteller. \
-	More frequent events than Low Chaos, but less frequent events than High Chaos. Best for an average, varied experience."
-	welcome_text = "If I chopped you up in a meat grinder..."
+	name = "Средний хаос"
+	desc = "Средний Хаос - это рассказчик по умолчанию и точка сравнения для всех остальных рассказчиков. \
+	События происходят чаще, чем в «Низком хаосе», но реже, чем в «Высоком хаосе». Лучше всего подходит для среднего, разнообразного опыта."
+	welcome_text = "Если бы я измельчил тебя в мясорубке..."
 	antag_divisor = 8
 
 	tag_multipliers = list(

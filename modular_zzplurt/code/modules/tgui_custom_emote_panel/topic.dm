@@ -33,7 +33,7 @@
  */
 /datum/tgui_panel/proc/emotes_create(emote_key, emote_name)
 	if (length(client.prefs.custom_emote_panel) > TGUI_PANEL_MAX_EMOTES)
-		to_chat(client, span_warning("Maximum number of emotes reached: [TGUI_PANEL_MAX_EMOTES]"))
+		to_chat(client, span_warning("Достигнуто максимальное количество эмоций: [TGUI_PANEL_MAX_EMOTES]"))
 		return FALSE
 
 	client.prefs.custom_emote_panel[emote_key] = emote_name
@@ -50,8 +50,8 @@
  * Returns TRUE on success, FALSE on cancellation
  */
 /datum/tgui_panel/proc/emotes_remove(emote_key, old_emote_name)
-	var/confirmation = tgui_alert(client.mob, "Are you sure you want to remove emote \"[old_emote_name]\" ([emote_key])?", "Confirmation", list("Remove", "Cancel"))
-	if (confirmation != "Remove")
+	var/confirmation = tgui_alert(client.mob, "Вы уверены, что хотите удалить эмоцию \"[old_emote_name]\" ([emote_key])?", "Подтверждение", list("Удалить", "Отмена"))
+	if (confirmation != "Удалить")
 		return FALSE
 
 	client.prefs.custom_emote_panel.Remove(emote_key)
@@ -68,7 +68,7 @@
  * Returns TRUE on success, FALSE on cancellation
  */
 /datum/tgui_panel/proc/emotes_rename(emote_key, old_emote_name)
-	var/emote_name = tgui_input_text(client.mob, "Choose new name for emote [emote_key]:", "Emote Name", old_emote_name, 32)
+	var/emote_name = tgui_input_text(client.mob, "Выберите новое имя для эмоции [emote_key]:", "Название эмоции", old_emote_name, 32)
 	if (!emote_name)
 		return FALSE
 
@@ -111,7 +111,7 @@
 
 			// Validate emote exists in user's panel to prevent JS injection
 			if (isnull(client.prefs.custom_emote_panel[emote_key]))
-				to_chat(client, span_warning("Emote [emote_key] not found in your panel!"))
+				to_chat(client, span_warning("Эмоция [emote_key] не найдена в вашей панели!"))
 				return FALSE
 
 			if (isliving(client?.mob))
@@ -122,21 +122,21 @@
 
 		if ("emotes/create")
 			if (length(client.prefs.custom_emote_panel) > TGUI_PANEL_MAX_EMOTES)
-				to_chat(client, span_warning("Maximum number of emotes reached: [TGUI_PANEL_MAX_EMOTES]"))
+				to_chat(client, span_warning("Максимальное количество эмоций достигнуто: [TGUI_PANEL_MAX_EMOTES]"))
 				return FALSE
 
-			var/emote_key = tgui_input_list(client.mob, "Which emote to add to panel?", "Choose Emote", all_emotes - client.prefs.custom_emote_panel)
+			var/emote_key = tgui_input_list(client.mob, "Какую эмоцию добавить на панель?", "Выберите эмоцию", all_emotes - client.prefs.custom_emote_panel)
 			if (!emote_key)
-				to_chat(client, span_warning("Emote addition cancelled."))
+				to_chat(client, span_warning("Добавление эмоции отменено."))
 				return
 
 			if (!(emote_key in all_emotes))
-				to_chat(client, span_warning("Emote [emote_key] doesn't exist!"))
+				to_chat(client, span_warning("Эмоция '[emote_key]' не существует!"))
 				return
 
-			var/emote_name = tgui_input_text(client.mob, "What name should emote [emote_key] have in panel?", "Emote Name", emote_key, 32)
+			var/emote_name = tgui_input_text(client.mob, "Какое название должена иметь эмоция '[emote_key]' в панели?", "Название эмоции", emote_key, 32)
 			if (!emote_name)
-				to_chat(client, span_warning("Invalid emote name!"))
+				to_chat(client, span_warning("Неверное название эмоций!"))
 				return
 
 			if(emotes_create(emote_key, emote_name))
@@ -153,16 +153,16 @@
 
 			var/old_emote_name = client.prefs.custom_emote_panel[emote_key]
 			if (isnull(old_emote_name))
-				to_chat(client, span_warning("Emote [emote_key] not found in your panel!"))
+				to_chat(client, span_warning("Эмоция '[emote_key]'' не найдена в вашей панели!"))
 				return FALSE
 
-			var/action = tgui_alert(client.mob, "What would you like to do with emote \"[old_emote_name]\" ([emote_key])?", "Choose Action", list("Edit", "Remove"))
+			var/action = tgui_alert(client.mob, "Что бы вы хотели сделать с эмоцией \"[old_emote_name]\" ([emote_key])?", "Выберите действие", list("Изменить", "Удалить"))
 
 			switch (action)
-				if ("Remove")
+				if ("Удалить")
 					if (emotes_remove(emote_key, old_emote_name))
 						emotes_send_list()
-				if ("Edit")
+				if ("Изменить")
 					if (emotes_rename(emote_key, old_emote_name))
 						emotes_send_list()
 

@@ -163,11 +163,11 @@ SUBSYSTEM_DEF(ticker)
 				start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
-			to_chat(world, span_notice("<b>Welcome to [station_name()]!</b>"))
+			to_chat(world, span_notice("<b>Добро пожаловать на [station_name()]!</b>"))
 			for(var/channel_tag in CONFIG_GET(str_list/channel_announce_new_game))
 				// BUBBER EDIT CHANGE BEGIN - Replace with more rich message
 				// send2chat(new /datum/tgs_message_content("New round starting on [SSmapping.current_map.map_name]!"), channel_tag)
-				send2chat(new /datum/tgs_message_content("<@&[CONFIG_GET(string/game_alert_role_id)]> Round **[GLOB.round_id]** starting on [SSmapping.current_map.map_name], [CONFIG_GET(string/servername)]! \nIf you wish to be pinged for game related stuff, go to <#[CONFIG_GET(string/role_assign_channel_id)]> and assign yourself the roles."), channel_tag)
+				send2chat(new /datum/tgs_message_content("<@&[CONFIG_GET(string/game_alert_role_id)]> Раунд **[GLOB.round_id]** начинается на [SSmapping.current_map.map_name], [CONFIG_GET(string/servername)]! \neсли вы хотите, чтобы вам приходили сообщения о событиях, связанных с игрой, зайдите в <#[CONFIG_GET(string/role_assign_channel_id)]> и назначьте себе роли."), channel_tag)
 				// BUBBER EDIT CHANGE END - Replace with more rich message
 			current_state = GAME_STATE_PREGAME
 		// BUBBERSTATION EDIT START
@@ -248,7 +248,7 @@ SUBSYSTEM_DEF(ticker)
 	return FALSE
 
 /datum/controller/subsystem/ticker/proc/setup()
-	to_chat(world, span_boldannounce("Starting game..."))
+	to_chat(world, span_boldannounce("Начинаем игру..."))
 	var/init_start = world.timeofday
 
 	CHECK_TICK
@@ -306,17 +306,17 @@ SUBSYSTEM_DEF(ticker)
 	real_round_start_time = REALTIMEOFDAY //SKYRAT EDIT ADDITION
 	SSautotransfer.new_shift(real_round_start_time) //SKYRAT EDIT ADDITION
 
-	log_world("Game start took [(world.timeofday - init_start)/10]s")
+	log_world("Начало игры заняло [(world.timeofday - init_start)/10]с")
 	INVOKE_ASYNC(SSdbcore, TYPE_PROC_REF(/datum/controller/subsystem/dbcore,SetRoundStart))
 
-	to_chat(world, span_notice(span_bold("Welcome to [station_name()], enjoy your stay!")))
+	to_chat(world, span_notice(span_bold("Добро пожаловать на [station_name()], приятного вам пребывания!")))
 	SEND_SOUND(world, sound(SSstation.announcer.get_rand_welcome_sound()))
 
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)
 
 	if(length(GLOB.holidays))
-		to_chat(world, span_notice("and..."))
+		to_chat(world, span_notice("и..."))
 		for(var/holidayname in GLOB.holidays)
 			var/datum/holiday/holiday = GLOB.holidays[holidayname]
 			to_chat(world, span_info(holiday.greet()))
@@ -735,17 +735,17 @@ SUBSYSTEM_DEF(ticker)
 
 	var/skip_delay = check_rights()
 	if(delay_end && !skip_delay)
-		to_chat(world, span_boldannounce("An admin has delayed the round end."))
+		to_chat(world, span_boldannounce("Администратор отложил окончание раунда."))
 		return
 
-	to_chat(world, span_boldannounce("Rebooting World in [DisplayTimeText(delay)]. [reason]"))
+	to_chat(world, span_boldannounce("Перезагрузка мира в [DisplayTimeText(delay)]. [reason]"))
 
 	var/statspage = CONFIG_GET(string/roundstatsurl)
 	var/gamelogloc = CONFIG_GET(string/gamelogurl)
 	if(statspage)
-		to_chat(world, span_info("Round statistics and logs can be viewed <a href=\"[statspage][GLOB.round_id]\">at this website!</a>"))
+		to_chat(world, span_info("Статистику раундов и логи можно просмотреть <a href=\"[statspage][GLOB.round_id]\">на этом веб-сайте!</a>"))
 	else if(gamelogloc)
-		to_chat(world, span_info("Round logs can be located <a href=\"[gamelogloc]\">at this website!</a>"))
+		to_chat(world, span_info("Логи раунда можно посмотреть <a href=\"[gamelogloc]\">на этом веб-сайте!</a>"))
 
 	var/start_wait = world.time
 	UNTIL(round_end_sound_sent || (world.time - start_wait) > (delay * 2)) //don't wait forever
@@ -756,7 +756,7 @@ SUBSYSTEM_DEF(ticker)
 	if(end_string)
 		end_state = end_string
 
-	log_game(span_boldannounce("Rebooting World. [reason]"))
+	log_game(span_boldannounce("Перезагрузка мира. [reason]"))
 
 	world.Reboot()
 
@@ -768,9 +768,9 @@ SUBSYSTEM_DEF(ticker)
  */
 /datum/controller/subsystem/ticker/proc/cancel_reboot(mob/user)
 	if(!reboot_timer)
-		to_chat(user, span_warning("There is no pending reboot!"))
+		to_chat(user, span_warning("Перезагрузки не будет!"))
 		return FALSE
-	to_chat(world, span_boldannounce("An admin has delayed the round end."))
+	to_chat(world, span_boldannounce("Администратор отложил окончание раунда."))
 	deltimer(reboot_timer)
 	reboot_timer = null
 	return TRUE

@@ -46,13 +46,13 @@ export function TextHighlightSettings(props) {
                 dispatch(addHighlightSetting());
               }}
             >
-              Add Highlight Setting
+              Добавить настройку выделения
             </Button>
             {highlightSettings.length >= WARN_AFTER_HIGHLIGHT_AMT && (
               <Box inline fontSize="0.9em" ml={1} color="red">
                 <Icon mr={1} name="triangle-exclamation" />
-                Large amounts of highlights can potentially cause performance
-                issues!
+                Большое количество выделенных объектов может привести к
+                проблемам с производительностью!
               </Box>
             )}
           </Box>
@@ -61,10 +61,10 @@ export function TextHighlightSettings(props) {
       <Divider />
       <Box>
         <Button icon="check" onClick={() => dispatch(rebuildChat())}>
-          Apply now
+          Применить сейчас
         </Button>
         <Box inline fontSize="0.9em" ml={1} color="label">
-          Can freeze the chat for a while.
+          Может заморозить чат на некоторое время.
         </Box>
       </Box>
     </Section>
@@ -98,13 +98,13 @@ function TextHighlightSetting(props) {
               )
             }
           >
-            Delete
+            Удалить
           </Button>
         </Stack.Item>
         <Stack.Item>
           <Button.Checkbox
             checked={highlightWholeMessage}
-            tooltip="If this option is selected, the entire message will be highlighted in yellow."
+            tooltip="Если выбрать этот параметр, все сообщение будет выделено желтым цветом."
             onClick={() =>
               dispatch(
                 updateHighlightSetting({
@@ -114,14 +114,14 @@ function TextHighlightSetting(props) {
               )
             }
           >
-            Whole Message
+            Целое сообщение
           </Button.Checkbox>
         </Stack.Item>
         <Stack.Item>
           <Button.Checkbox
             checked={matchWord}
             tooltipPosition="bottom-start"
-            tooltip="If this option is selected, only exact matches (no extra letters before or after) will trigger. Not compatible with punctuation. Overriden if regex is used."
+            tooltip="Если выбран этот параметр, срабатывают только точные совпадения (без лишних букв до или после). Не совместимо с пунктуацией. Отменяется, если используется regex."
             onClick={() =>
               dispatch(
                 updateHighlightSetting({
@@ -131,12 +131,12 @@ function TextHighlightSetting(props) {
               )
             }
           >
-            Exact
+            Точное
           </Button.Checkbox>
         </Stack.Item>
         <Stack.Item>
           <Button.Checkbox
-            tooltip="If this option is selected, the highlight will be case-sensitive."
+            tooltip="Если выбран этот параметр, выделение будет чувствительно к регистру."
             checked={matchCase}
             onClick={() =>
               dispatch(
@@ -147,7 +147,7 @@ function TextHighlightSetting(props) {
               )
             }
           >
-            Case
+            Чуств.
           </Button.Checkbox>
         </Stack.Item>
         <Stack.Item>
@@ -171,7 +171,7 @@ function TextHighlightSetting(props) {
       <TextArea
         height="3em"
         value={highlightText}
-        placeholder="Put words to highlight here. Separate terms with commas, i.e. (term1, term2, term3)"
+        placeholder="Поставьте здесь слова, которые нужно выделить. Выделяйте термины запятыми, например (термин1, термин2, термин3)"
         onChange={(e, value) =>
           dispatch(
             updateHighlightSetting({

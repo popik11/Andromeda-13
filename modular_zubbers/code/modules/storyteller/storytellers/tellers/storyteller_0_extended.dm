@@ -1,7 +1,7 @@
 /datum/storyteller/extended
-	name = "Extended (No Chaos)"
-	desc = "Extended is the absence of a Storyteller. It will not spawn a single event of any sort, or run any Antagonists. Best for rounds where the population is so low that not even peaceful storytellers are low enough."
-	welcome_text = "How is dorms already full? The shift hasn't even started yet."
+	name = "Расширенный (Без хаоса)"
+	desc = "Расширение - это отсутствие Рассказчика. Он не породит ни одного события и не запустит ни одного антагониста. Лучше всего подходит для раундов, где население настолько мало, что даже мирные рассказчики не могут быть достаточно низкими."
+	welcome_text = "Как это дормы уже переполнены? Смена еще даже не началась."
 	disable_distribution = TRUE
 	population_max = 40
 	antag_divisor = 32
