@@ -144,7 +144,7 @@ class KeybindingButton extends Component<{
         }}
         selected={typingHotkey !== undefined}
       >
-        {typingHotkey || currentHotkey || 'Unbound'}
+        {typingHotkey || currentHotkey || 'Не назначено'}
       </Button>
     );
 
@@ -201,7 +201,7 @@ function ResetToDefaultButton(props: ResetToDefaultButtonProps) {
         });
       }}
     >
-      Reset to Defaults
+      По умолчанию
     </Button>
   );
 }
@@ -470,7 +470,7 @@ export class KeybindingsPage extends Component<{}, KeybindingsPageState> {
 
           <Stack.Item align="center">
             <Button.Confirm onClick={() => act('reset_all_keybinds')}>
-              Reset all keybindings
+              Сбросить все хоткеи
             </Button.Confirm>
           </Stack.Item>
         </Stack>

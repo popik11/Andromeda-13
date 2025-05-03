@@ -1,8 +1,8 @@
 /datum/keybinding/mob/item_pixel_shift
 	hotkey_keys = list("V")
 	name = "item_pixel_shift"
-	full_name = "Item Pixel Shift"
-	description = "Shift a pulled item's offset"
+	full_name = "Сдвиг пикселя элемента"
+	description = "Сдвиг смещения вытащенного элемента"
 	category = CATEGORY_MISC
 	keybind_signal = COMSIG_KB_MOB_ITEM_PIXEL_SHIFT_DOWN
 
@@ -20,8 +20,8 @@
 /datum/keybinding/mob/pixel_shift
 	hotkey_keys = list("B")
 	name = "pixel_shift"
-	full_name = "Pixel Shift"
-	description = "Shift your characters offset."
+	full_name = "Пиксельный сдвиг"
+	description = "Сместите персонажей в сторону."
 	category = CATEGORY_MOVEMENT
 	keybind_signal = COMSIG_KB_MOB_PIXEL_SHIFT_DOWN
 
@@ -39,8 +39,8 @@
 /datum/keybinding/mob/pixel_tilting
 	hotkey_keys = list("N")
 	name = "Pixel Tilting"
-	full_name = "Pixel Tilt"
-	description = "Shift a mob's rotational value"
+	full_name = "Пиксельный наклон"
+	description = "Смещение значения вращения моба"
 	category = CATEGORY_MOVEMENT
 	keybind_signal = COMSIG_KB_MOB_PIXEL_TILT_DOWN
 
