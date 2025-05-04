@@ -119,6 +119,7 @@
 	var/datum/tgs_message_content/random_message = new(last_roundend_message)
 	for(var/channel_tag in CONFIG_GET(str_list/channel_announce_new_game))
 		send2chat(message, channel_tag)
-		send2chat(random_message, channel_tag)
+		spawn(5)
+			send2chat(random_message, channel_tag)
 
 #undef FUNNY_VIDEOS_FILE_NAME
