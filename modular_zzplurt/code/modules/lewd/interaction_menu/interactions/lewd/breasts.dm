@@ -272,18 +272,32 @@
 		"Покрывает грудь %USER% в своих соках!"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"%TARGET% Обильно кончает на вашу грудь!",
-		"%TARGET% Обильно кончает на вашу грудь и попадает в ваше лицо!",
-		"%TARGET% Стреляет семенем в ваши сиськи!",
-		"%TARGET% Неумолимо стреляет семенем в ваши сиськи, пачкая ваше лицо вдобавок!",
-		"%TARGET% Покрывает вашу грудь семенем, пульсируя между ваших сисек!"
+//		"%TARGET% Обильно кончает на вашу грудь!",
+//		"%TARGET% Обильно кончает на вашу грудь и попадает в ваше лицо!",
+//		"%TARGET% Стреляет семенем в ваши сиськи!",
+//		"%TARGET% Неумолимо стреляет семенем в ваши сиськи, пачкая ваше лицо вдобавок!",
+//		"%TARGET% Покрывает вашу грудь семенем, пульсируя между ваших сисек!"
+
+		"%TARGET% Cumming profusely on your breasts!!",
+		"%TARGET% Cumming profusely on your breasts and getting in your face!",
+		"%TARGET% Shooting seed at your tits!",
+		"%TARGET% Relentlessly shooting seed into your boobs, dirtying your face on top of that!",
+		"%TARGET% Coats your breasts with seed, pulsing between your tits!"
+
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"Вы обильно кончаете на грудь %USER%!",
-		"Вы неаккуратно кончаете на грудь %USER% попадая в лицо!",
-		"Вы кончаете прямо в сиськи %USER%!",
-		"Вы неаккуратно стреляете в грудь %USER% пачкая лицо!",
-		"Вы покрываете титьки %USER% своим семенем!"
+//		"Вы обильно кончаете на грудь %USER%!",
+//		"Вы неаккуратно кончаете на грудь %USER% попадая в лицо!",
+//		"Вы кончаете прямо в сиськи %USER%!",
+//		"Вы неаккуратно стреляете в грудь %USER% пачкая лицо!",
+//		"Вы покрываете титьки %USER% своим семенем!"
+
+		"You cum profusely on the %USER%'s breasts!",
+		"You sloppy cum on your chest %USER% getting in your face!",
+		"You're cumming right in %USER%'s tits!",
+		"You sloppily shoot your chest %USER% dirtying your face!",
+		"You're covering %USER%'s tits with your seed!"
+
 	))
 	message = list(
 		"Обхватывает грудью пенис %TARGET%.",
