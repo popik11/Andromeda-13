@@ -1,5 +1,5 @@
-/datum/interaction/lewd/breastfeed
-	name = "Кормежка Грудью" ///Translate + addon's with message + redacted by MissKira
+/datum/interaction/lewd/breastfeed	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+	name = "Кормежка Грудью"
 	description = "Накормить своего партнера своей грудью."
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH, INTERACTION_REQUIRE_SELF_HUMAN)

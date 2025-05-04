@@ -1,4 +1,4 @@
-/datum/interaction/lewd/oral_vagina
+/datum/interaction/lewd/oral_vagina	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Perform Oral"
 	description = "Go down on them."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)

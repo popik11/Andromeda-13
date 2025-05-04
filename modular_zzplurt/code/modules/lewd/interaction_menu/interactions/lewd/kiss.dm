@@ -1,4 +1,4 @@
-/datum/interaction/lewd/kiss /// Translate + addons for messages by MissKira
+/datum/interaction/lewd/kiss	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Поцеловать"
 	description = "Целуй глубоко, крепко и страстно."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH, INTERACTION_REQUIRE_TARGET_MOUTH)

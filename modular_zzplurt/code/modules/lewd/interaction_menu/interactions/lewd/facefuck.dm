@@ -1,5 +1,5 @@
-/datum/interaction/lewd/facefuck_vagina
-	name = "Гладиться о лицо (Вагина)" ///Translate by MissKira
+/datum/interaction/lewd/facefuck_vagina	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+	name = "Гладиться о лицо (Вагина)"
 	description = "Погладьтесь своей Киской о чье-нибудь лицо."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)

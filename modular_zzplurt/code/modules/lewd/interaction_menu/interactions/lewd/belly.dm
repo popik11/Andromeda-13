@@ -1,5 +1,5 @@
-/datum/interaction/lewd/bellyfuck
-	name = "Трахаться о живот" ///Translate by MissKira
+/datum/interaction/lewd/bellyfuck	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+	name = "Трахаться о живот"
 	description = "Трахнись о животик своего партнера."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_TOPLESS)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)

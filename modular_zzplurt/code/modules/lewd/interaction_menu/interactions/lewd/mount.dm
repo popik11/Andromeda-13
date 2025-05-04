@@ -1,4 +1,4 @@
-/datum/interaction/lewd/mount_vagina ///Translate + very more addons for messages + redacted by MissKira
+/datum/interaction/lewd/mount_vagina	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Оседлать (Вагина)"
 	description = "Оседлай кого-нибудь своей сильной Вагиной."
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)

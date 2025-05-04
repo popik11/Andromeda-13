@@ -1,5 +1,5 @@
-/datum/interaction/lewd/finger
-	name = "Фингеринг Киски" ///Translate + addons with messages + redacted by MissKira
+/datum/interaction/lewd/finger	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+	name = "Фингеринг Киски"
 	description = "Засунь свои пальцы в чью-нибудь Кису."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)

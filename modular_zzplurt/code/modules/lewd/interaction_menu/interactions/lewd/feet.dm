@@ -1,5 +1,5 @@
-/datum/interaction/lewd/grindface
-	name = "Прижать ногой лицо" ///Translate + small addons with messages by MissKira
+/datum/interaction/lewd/grindface	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+	name = "Прижать ногой лицо"
 	description = "Прижмите чье-нибудь лицо своей ножкой."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET, INTERACTION_REQUIRE_TARGET_MOUTH)
 	message = list(

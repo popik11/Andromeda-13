@@ -1,4 +1,4 @@
-/datum/interaction/lewd/nipplefuck
+/datum/interaction/lewd/nipplefuck	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Nipplefuck"
 	description = "Fuck their nipple."
 	interaction_requires = list(

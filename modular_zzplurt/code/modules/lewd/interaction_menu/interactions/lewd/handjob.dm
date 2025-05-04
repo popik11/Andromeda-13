@@ -1,4 +1,4 @@
-/datum/interaction/lewd/handjob ///Translate by MissKira
+/datum/interaction/lewd/handjob	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Ручная Работа(ХэндДжоб)"
 	description = "Поработай ручками с кем-нибудь."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)

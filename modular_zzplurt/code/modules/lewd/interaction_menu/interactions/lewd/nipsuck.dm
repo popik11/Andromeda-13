@@ -1,4 +1,4 @@
-/datum/interaction/lewd/nipsuck
+/datum/interaction/lewd/nipsuck	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Suck Nipples"
 	description = "Suck their nipples."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)

@@ -1,4 +1,4 @@
-/datum/interaction/lewd/nuts
+/datum/interaction/lewd/nuts	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Nuts to Face"
 	description = "Put your balls in their face."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)

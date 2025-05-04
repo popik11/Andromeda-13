@@ -1,4 +1,4 @@
-/datum/interaction/lewd/grope_ass ///Translate by MissKira
+/datum/interaction/lewd/grope_ass	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Потрогать Задницу"
 	description = "Потрогай чью-нибудь задницу."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)

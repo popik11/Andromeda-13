@@ -1,5 +1,5 @@
-/datum/interaction/lewd/armpit_fuck
-	name = "Трахать в подмышку" ///Translate by MissKira
+/datum/interaction/lewd/armpit_fuck	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+	name = "Трахать в подмышку"
 	description = "Трахните подмышку партнера."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_TOPLESS)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)

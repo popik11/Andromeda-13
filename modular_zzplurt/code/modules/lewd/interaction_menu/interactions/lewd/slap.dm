@@ -1,4 +1,4 @@
-/datum/interaction/lewd/slap ///Translate by MissKira
+/datum/interaction/lewd/slap	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Шлепнуть по Попе"
 	description = "Шлепни кого-нибудь по заднице."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)

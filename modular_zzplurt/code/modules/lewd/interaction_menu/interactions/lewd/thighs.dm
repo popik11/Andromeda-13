@@ -1,4 +1,4 @@
-/datum/interaction/lewd/thighs_penis
+/datum/interaction/lewd/thighs_penis	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Thigh Smother (Penis)"
 	description = "Smother them with your penis."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)

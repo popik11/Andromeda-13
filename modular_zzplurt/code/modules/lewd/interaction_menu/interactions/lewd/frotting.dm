@@ -1,4 +1,4 @@
-/datum/interaction/lewd/frotting ///Translate + addons with messages + redacted by MissKira
+/datum/interaction/lewd/frotting	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Фроттинг(Гомосексуальный Секс)"
 	description = "Потри свой о чужой."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)

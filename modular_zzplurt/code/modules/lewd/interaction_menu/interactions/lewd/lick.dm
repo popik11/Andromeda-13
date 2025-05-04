@@ -1,4 +1,4 @@
-/datum/interaction/lewd/rimjob
+/datum/interaction/lewd/rimjob	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Полизать Зад(Римминг)"
 	description = "Полижи чей-нибудь зад, не будь пуськой."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)

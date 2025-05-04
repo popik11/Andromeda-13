@@ -1,4 +1,4 @@
-/datum/interaction/lewd/fuck ///Translate + very more addons with messages + very redacted by MissKira
+/datum/interaction/lewd/fuck	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
 	name = "Вагинальный Секс"
 	description = "Займись Вагинальным Сексом, для нормальных робастеров."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
