@@ -10210,5 +10210,13 @@
 #include "modular_zzz\code\modules\storytellers\storyteller_1_low.dm"
 #include "modular_zzz\code\modules\storytellers\storyteller_2_medium.dm"
 #include "modular_zzz\code\modules\storytellers\storyteller_3_high.dm"
+#include "modular_zzz\code\modules\storytellers\event_defines\crewset\assault_ops.dm"
+#include "modular_zzz\code\modules\storytellers\event_defines\crewset\blob.dm"
+#include "modular_zzz\code\modules\storytellers\event_defines\crewset\blood_cult.dm"
+#include "modular_zzz\code\modules\storytellers\event_defines\crewset\borers.dm"
+#include "modular_zzz\code\modules\storytellers\event_defines\crewset\clown_ops.dm"
+#include "modular_zzz\code\modules\storytellers\event_defines\crewset\nuke_ops.dm"
+#include "modular_zzz\code\modules\storytellers\event_defines\crewset\ratvar_cult.dm"
+#include "modular_zzz\code\modules\storytellers\event_defines\crewset\space_pirates.dm"
 #include "modular_zzz\modules\customization\modules\mob\dead\new_player\sprite_accessories\taur_types.dm"
 // END_INCLUDE
