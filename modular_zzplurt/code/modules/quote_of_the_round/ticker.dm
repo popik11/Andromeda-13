@@ -12,6 +12,8 @@
 		if (entry["content"])
 			contents += entry["content"]
 
+	return contents
+
 /datum/controller/subsystem/ticker/declare_completion(was_forced)
 	if(!CONFIG_GET(flag/roundend_embeds)) // SPLURT EDIT - Discord rounded embeds.
 		return ..()
