@@ -1,12 +1,12 @@
 /obj/item/jukebox
 	name = "Handled Jukebox"
 	desc = "A classic music player."
+	icon_state = "raiqbawks"
+	base_icon_state = "raiqbawks"
+	inhand_icon_state = "raiqbawks"
 	icon = 'modular_zzz/icons/obj/boombox.dmi'
 	righthand_file = 'modular_zzz/icons/obj/boombox_righthand.dmi'
 	lefthand_file = 'modular_zzz/icons/obj/boombox_lefthand.dmi'
-	base_icon_state = "raiqbawks"
-	icon_state = "raiqbawks"
-	inhand_icon_state = "raiqbawks"
 	verb_say = "states"
 	density = TRUE
 	/// Cooldown between "Error" sound effects being played
