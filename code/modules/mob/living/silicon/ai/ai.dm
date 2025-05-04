@@ -1022,18 +1022,18 @@
 		end_multicam()
 
 /mob/living/silicon/ai/up()
-	set name = "Move Upwards"
+	set name = "Двигаться вверх"
 	set category = "IC"
 
 	if(eyeobj.zMove(UP, z_move_flags = ZMOVE_FEEDBACK))
-		to_chat(src, span_notice("You move upwards."))
+		to_chat(src, span_notice("Ты двигаешься вверх."))
 
 /mob/living/silicon/ai/down()
-	set name = "Move Down"
+	set name = "Двигаться вниз"
 	set category = "IC"
 
 	if(eyeobj.zMove(DOWN, z_move_flags = ZMOVE_FEEDBACK))
-		to_chat(src, span_notice("You move down."))
+		to_chat(src, span_notice("Ты двигаешься вниз."))
 
 /// Proc to hook behavior to the changes of the value of [aiRestorePowerRoutine].
 /mob/living/silicon/ai/proc/setAiRestorePowerRoutine(new_value)
@@ -1049,7 +1049,7 @@
 
 /mob/living/silicon/ai/proc/show_camera_list()
 	var/list/cameras = GLOB.cameranet.get_available_camera_by_tag_list(network)
-	var/camera_tag = tgui_input_list(src, "Choose which camera you want to view", "Cameras", cameras)
+	var/camera_tag = tgui_input_list(src, "Выберите камеру для просмотра", "Камеры", cameras)
 	if(isnull(camera_tag))
 		return
 

@@ -22,16 +22,16 @@
 
 /// Prompts the parent mob to send a say message to the soulcatcher. Returns False if no soulcatcher or message could be found.
 /mob/living/proc/carrier_say()
-	set name = "Carrier Say"
+	set name = "Носителя Say"
 	set category = "IC"
-	set desc = "Send a Say message to your currently targeted carrier room."
+	set desc = "Отправьте сообщение «Скажи» в текущую целевую комнату носителя."
 
 	var/datum/carrier_room/room_to_send_to = get_current_carrier_room()
 	if(!istype(room_to_send_to))
-		to_chat(src, span_warning("You do not have a carrier you can send messages to!"))
+		to_chat(src, span_warning("У вас нет оператора, которому можно отправлять сообщения!"))
 		return FALSE
 
-	var/message_to_send = tgui_input_text(usr, "Input the message you want to send", "Carrier", multiline = TRUE)
+	var/message_to_send = tgui_input_text(usr, "Введите сообщение, которое вы хотите отправить", "Носитель", multiline = TRUE)
 	if(!message_to_send)
 		return FALSE
 
@@ -46,16 +46,16 @@
 
 /// Prompts the parent mob to send a emote to the soulcatcher. Returns False if no soulcatcher or emote could be found.
 /mob/living/proc/carrier_emote()
-	set name = "Carrier Me"
+	set name = "Носителя Me"
 	set category = "IC"
-	set desc = "Send a emote to your currently targeted carrier room."
+	set desc = "Отправьте эмоцию в комнату, на которую в данный момент нацелен носитель."
 
 	var/datum/carrier_room/room_to_send_to = get_current_carrier_room()
 	if(!istype(room_to_send_to))
-		to_chat(src, span_warning("You do not have a carrier you can send emotes to!"))
+		to_chat(src, span_warning("У вас нет носителя, которому можно отправить эмодзи!"))
 		return FALSE
 
-	var/message_to_send = tgui_input_text(usr, "Input the emote you want to send", "Soulcatcher", multiline = TRUE)
+	var/message_to_send = tgui_input_text(usr, "Введите эмоцию, которую вы хотите отправить", "Душегуб", multiline = TRUE)
 	if(!message_to_send)
 		return FALSE
 

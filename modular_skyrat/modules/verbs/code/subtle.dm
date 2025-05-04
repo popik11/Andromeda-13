@@ -13,18 +13,18 @@
 
 /datum/emote/living/subtle/run_emote(mob/user, params, type_override = null)
 	if(!can_run_emote(user))
-		to_chat(user, span_warning("You can't emote at this time."))
+		to_chat(user, span_warning("В это время вы не можете использовать эмоции."))
 		return FALSE
 	var/subtle_message
 	var/subtle_emote = params
 	if(SSdbcore.IsConnected() && is_banned_from(user, "emote"))
-		to_chat(user, "You cannot send subtle emotes (banned).")
+		to_chat(user, "Вы не можете отправлять подробные эмоции (бан).")
 		return FALSE
 	else if(user.client?.prefs.muted & MUTE_IC)
-		to_chat(user, "You cannot send IC messages (muted).")
+		to_chat(user, "Вы не можете отправлять IC-сообщения (мут).")
 		return FALSE
 	else if(!params)
-		subtle_emote = tgui_input_text(user, "Choose an emote to display.", "Subtle", null, MAX_MESSAGE_LEN, TRUE)
+		subtle_emote = tgui_input_text(user, "Выберите эмоцию для отображения.", "Подробные эмоции", null, MAX_MESSAGE_LEN, TRUE)
 		if(!subtle_emote)
 			return FALSE
 		subtle_message = subtle_emote
@@ -34,7 +34,7 @@
 			emote_type = type_override
 
 	if(!can_run_emote(user))
-		to_chat(user, span_warning("You can't emote at this time."))
+		to_chat(user, span_warning("В это время вы не можете использовать эмоции."))
 		return FALSE
 
 	user.log_message(subtle_message, LOG_SUBTLE)
@@ -78,7 +78,7 @@
 
 /datum/emote/living/subtler/run_emote(mob/user, params, type_override = null)
 	if(!can_run_emote(user))
-		to_chat(user, span_warning("You can't emote at this time."))
+		to_chat(user, span_warning("В это время вы не можете использовать эмоции."))
 		return FALSE
 	var/subtler_message
 	var/subtler_emote = params
@@ -86,13 +86,13 @@
 	var/subtler_range = SUBTLE_DEFAULT_DISTANCE
 
 	if(SSdbcore.IsConnected() && is_banned_from(user, "emote"))
-		to_chat(user, span_warning("You cannot send subtle emotes (banned)."))
+		to_chat(user, span_warning("Вы не можете отправлять подробные эмоции (бан)."))
 		return FALSE
 	else if(user.client?.prefs.muted & MUTE_IC)
-		to_chat(user, span_warning("You cannot send IC messages (muted)."))
+		to_chat(user, span_warning("Вы не можете отправлять IC-сообщения (мут)."))
 		return FALSE
 	else if(!subtler_emote)
-		subtler_emote = tgui_input_text(user, "Choose an emote to display.", "Subtler Anti-Ghost" , null, MAX_MESSAGE_LEN, TRUE)
+		subtler_emote = tgui_input_text(user, "Выберите эмоцию для отображения.", "Подробные эмоции Анти-Призрак" , null, MAX_MESSAGE_LEN, TRUE)
 		if(!subtler_emote)
 			return FALSE
 
@@ -113,7 +113,7 @@
 			in_view.Remove(mob)
 
 		var/list/targets = list(SUBTLE_ONE_TILE_TEXT, SUBTLE_SAME_TILE_TEXT) + in_view
-		target = tgui_input_list(user, "Pick a target", "Target Selection", targets)
+		target = tgui_input_list(user, "Выберите цель", "Выбор цели", targets)
 		if(!target)
 			return FALSE
 
@@ -130,7 +130,7 @@
 			emote_type = type_override
 
 	if(!can_run_emote(user))
-		to_chat(user, span_warning("You can't emote at this time."))
+		to_chat(user, span_warning("В это время вы не можете использовать эмоции."))
 		return FALSE
 
 	user.log_message(subtler_message, LOG_SUBTLER)
@@ -150,7 +150,7 @@
 			if(prefs && prefs.read_preference(/datum/preference/toggle/subtler_sound))
 				target_mob.playsound_local(get_turf(target_mob), 'sound/effects/achievement/glockenspiel_ping.ogg', 50)
 		else
-			to_chat(user, span_warning("Your emote was unable to be sent to your target: Too far away."))
+			to_chat(user, span_warning("Вашу эмоцию не удалось отправить цели: Слишком далеко."))
 	else if(istype(target, /obj/effect/overlay/holo_pad_hologram))
 		var/obj/effect/overlay/holo_pad_hologram/hologram = target
 		if(hologram.Impersonation?.client)
@@ -190,10 +190,10 @@
 	return subtle(message)
 
 /mob/living/verb/subtle()
-	set name = "Subtle"
+	set name = "Подробные эмоции"
 	set category = "IC"
 	if(GLOB.say_disabled)	// This is here to try to identify lag problems
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
+		to_chat(usr, span_danger("В настоящее время речь отключена администратором."))
 		return
 	usr.emote("subtle")
 
@@ -202,10 +202,10 @@
 */
 
 /mob/living/verb/subtler()
-	set name = "Subtler Anti-Ghost"
+	set name = "Подробные эмоции Анти-Призрак"
 	set category = "IC"
 	if(GLOB.say_disabled)	// This is here to try to identify lag problems
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
+		to_chat(usr, span_danger("В настоящее время речь отключена администратором."))
 		return
 	usr.emote("subtler")
 

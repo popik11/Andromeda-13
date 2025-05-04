@@ -1,7 +1,7 @@
 /datum/skill/athletics
-	name = "Athletics"
-	title = "Athlete"
-	desc = "Twinkle twinkle little star, hit the gym and lift the bar."
+	name = "Атлетика"
+	title = "Босс качалки"
+	desc = "Хватит себя жалеть! Билли смотрит на тебя с небес и ждёт, когда ты станешь боссом качалки."
 	// The skill value modifier effects the max duration that is possible for /datum/status_effect/exercised; The rands modifier determines block probability and crit probability while boxing against boxers
 	modifiers = list(
 		SKILL_VALUE_MODIFIER = list(
@@ -28,7 +28,7 @@
 
 /datum/skill/athletics/New()
 	. = ..()
-	levelUpMessages[SKILL_LEVEL_NOVICE] = span_nicegreen("I am just getting started on my [name] journey! I think I should be able to identify other people who are working to improve their body by sight.")
+	levelUpMessages[SKILL_LEVEL_NOVICE] = span_nicegreen("Я только начинаю свой путь к [name]! Думаю, я должен уметь определять других людей, которые работают над улучшением своего тела, по внешнему виду.")
 
 /datum/skill/athletics/level_gained(datum/mind/mind, new_level, old_level, silent)
 	. = ..()

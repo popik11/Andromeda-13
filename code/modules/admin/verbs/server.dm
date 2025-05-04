@@ -120,8 +120,8 @@ ADMIN_VERB(start_now, R_SERVER, "Start Now", "Start the round RIGHT NOW.", ADMIN
 			return
 	SSticker.start_immediately = TRUE
 
-	log_admin("[key_name(user)] has started the game.")
-	message_admins("[key_name_admin(user)] has started the game.")
+	log_admin("[key_name(user)] начал игру.")
+	message_admins("[key_name_admin(user)] начал игру.")
 	if(SSticker.current_state == GAME_STATE_STARTUP)
 		message_admins("The server is still setting up, but the round will be started as soon as possible.")
 	BLACKBOX_LOG_ADMIN_VERB("Start Now")

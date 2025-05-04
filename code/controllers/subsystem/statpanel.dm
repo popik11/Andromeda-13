@@ -47,7 +47,7 @@ SUBSYSTEM_DEF(statpanels)
 			cached ? "Следующая карта: [cached.map_name]" : null,
 			"Рассказчик: [SSgamemode.storyteller ? SSgamemode.storyteller.name : "N/A"]", // BUBBER EDIT ADDITION
 			"ID Раунда: [GLOB.round_id ? GLOB.round_id : "NULL"]",
-			"Подключенные игроки: [GLOB.clients.len] | Активные: [active_players]/[CONFIG_GET(number/hard_popcap)] | Наблюдают: [observing_players]", //BUBBER EDIT: ACTIVE AND OBSERVING PLAYERS
+			"Подключенные игроки: [GLOB.clients.len] | Активные: [active_players][CONFIG_GET(number/hard_popcap)] | Наблюдают: [observing_players]", //BUBBER EDIT: ACTIVE AND OBSERVING PLAYERS
 			" ",
 			"OOC: [GLOB.ooc_allowed ? "Включенный" : "Выключенный"]",
 			" ",

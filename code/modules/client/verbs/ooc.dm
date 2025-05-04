@@ -7,7 +7,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set category = "OOC"
 
 	if(GLOB.say_disabled) //This is here to try to identify lag problems
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
+		to_chat(usr, span_danger("Общение было заблокировано администрацией."))
 		return
 
 	var/client_initalized = VALIDATE_CLIENT_INITIALIZATION(src)
@@ -179,9 +179,9 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 		to_chat(src, span_notice("There are no admin notices at the moment."))
 
 /client/verb/motd()
-	set name = "MOTD"
+	set name = "Титульный лист"
 	set category = "OOC"
-	set desc ="Check the Message of the Day"
+	set desc ="Проверьте сообщение дня"
 
 	var/motd = global.config.motd
 	if(motd)
@@ -190,20 +190,20 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 		to_chat(src, span_notice("The Message of the Day has not been set."))
 
 /client/proc/self_notes()
-	set name = "View Admin Remarks"
+	set name = "Просмотр замечаний администратора"
 	set category = "OOC"
-	set desc = "View the notes that admins have written about you"
+	set desc = "Просмотрите заметки, которые администраторы написали о вас"
 
 	if(!CONFIG_GET(flag/see_own_notes))
-		to_chat(usr, span_notice("Sorry, that function is not enabled on this server."))
+		to_chat(usr, span_notice("К сожалению, эта функция не включена на данном сервере."))
 		return
 
 	browse_messages(null, usr.ckey, null, TRUE)
 
 /client/proc/self_playtime()
-	set name = "View tracked playtime"
+	set name = "Наигранные часы"
 	set category = "OOC"
-	set desc = "View the amount of playtime for roles the server has tracked."
+	set desc = "Просмотр количества игрового времени для ролей, отслеживаемого сервером."
 
 	if(!CONFIG_GET(flag/use_exp_tracking))
 		to_chat(usr, span_notice("Sorry, tracking is currently disabled."))
@@ -213,9 +213,9 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 
 // Ignore verb
 /client/verb/select_ignore()
-	set name = "Ignore"
+	set name = "Игнорировать в OOC"
 	set category = "OOC"
-	set desc ="Ignore a player's messages on the OOC channel"
+	set desc ="Игнорировать сообщения игроков в OOC"
 
 	// Make a list to choose players from
 	var/list/players = list()
@@ -258,7 +258,7 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 	// Check if the list is empty
 	if(!length(players))
 		// Express that there are no players we can ignore in chat
-		to_chat(src, span_infoplain("There are no other players you can ignore!"))
+		to_chat(src, span_infoplain("Нет других игроков, которых вы могли бы игнорировать!"))
 
 		// Stop running
 		return
@@ -279,7 +279,7 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 	// Check if the selected player is on our ignore list
 	if(selection in prefs.ignoring)
 		// Express that the selected player is already on our ignore list in chat
-		to_chat(src, span_infoplain("You are already ignoring [selection]!"))
+		to_chat(src, span_infoplain("Вы уже игнорируете [selection]!"))
 
 		// Stop running
 		return
@@ -291,18 +291,18 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 	prefs.save_preferences()
 
 	// Express that we've ignored the selected player in chat
-	to_chat(src, span_infoplain("You are now ignoring [selection] on the OOC channel."))
+	to_chat(src, span_infoplain("Теперь вы игнорируете [selection] в канале OOC."))
 
 // Unignore verb
 /client/verb/select_unignore()
-	set name = "Unignore"
+	set name = "Не игнорировать в OOC"
 	set category = "OOC"
-	set desc = "Stop ignoring a player's messages on the OOC channel"
+	set desc = "Прекратите игнорировать сообщения игроков в OOC"
 
 	// Check if we've ignored any players
 	if(!length(prefs.ignoring))
 		// Express that we haven't ignored any players in chat
-		to_chat(src, span_infoplain("You haven't ignored any players!"))
+		to_chat(src, span_infoplain("Вы не игнорируете ни одного игрока!"))
 
 		// Stop running
 		return
@@ -317,7 +317,7 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 	// Check if the selected player is not on our ignore list
 	if(!(selection in prefs.ignoring))
 		// Express that the selected player is not on our ignore list in chat
-		to_chat(src, span_infoplain("You are not ignoring [selection]!"))
+		to_chat(src, span_infoplain("Вы не игнорируете [selection]!"))
 
 		// Stop running
 		return
@@ -329,26 +329,26 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 	prefs.save_preferences()
 
 	// Express that we've unignored the selected player in chat
-	to_chat(src, span_infoplain("You are no longer ignoring [selection] on the OOC channel."))
+	to_chat(src, span_infoplain("Вы больше не игнорируете  [selection] в канале OOC."))
 
 /client/proc/show_previous_roundend_report()
-	set name = "Your Last Round"
+	set name = "Итог вашего последнего раунда"
 	set category = "OOC"
-	set desc = "View the last round end report you've seen"
+	set desc = "Просмотрите отчет о завершении последнего раунда, который вы видели"
 
 	SSticker.show_roundend_report(src, report_type = PERSONAL_LAST_ROUND)
 
 /client/proc/show_servers_last_roundend_report()
-	set name = "Server's Last Round"
+	set name = "Итог прошлого раунда"
 	set category = "OOC"
-	set desc = "View the last round end report from this server"
+	set desc = "Просмотрите отчет о завершении последнего раунда с этого сервера"
 
 	SSticker.show_roundend_report(src, report_type = SERVER_LAST_ROUND)
 
 /client/verb/fit_viewport()
-	set name = "Fit Viewport"
+	set name = "Подогнать разрешение экрана"
 	set category = "OOC"
-	set desc = "Fit the width of the map window to match the viewport"
+	set desc = "Установите ширину окна карты в соответствии с видовым экраном"
 
 	// Fetch aspect ratio
 	var/view_size = getviewsize(view)
@@ -430,8 +430,8 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 		addtimer(CALLBACK(src, VERB_REF(fit_viewport), 1 SECONDS))
 
 /client/verb/policy()
-	set name = "Show Policy"
-	set desc = "Show special server rules related to your current character."
+	set name = "ПРАВИЛА СЕРВЕРА"
+	set desc = "Покажите специальные правила сервера, относящиеся к вашему текущему персонажу."
 	set category = "OOC"
 
 	//Collect keywords
@@ -446,29 +446,29 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 			policytext += "<hr>"
 			anything = TRUE
 	if(!anything)
-		policytext += "No related rules found."
+		policytext += "Правил не найдено."
 
-	var/datum/browser/browser = new(usr, "policy", "Server Policy", 600, 500)
+	var/datum/browser/browser = new(usr, "policy", "ПРАВИЛА СЕРВЕРА", 600, 500)
 	browser.set_content(policytext.Join(""))
 	browser.open()
 
 /client/verb/fix_stat_panel()
-	set name = "Fix Stat Panel"
+	set name = "Исправить панель статистики"
 	set hidden = TRUE
 
 	init_verbs()
 
 /client/proc/export_preferences()
-	set name = "Export Preferences"
-	set desc = "Export your current preferences to a file."
+	set name = "Экспорт настроек"
+	set desc = "Экспортируйте ваши текущие настройки в файл."
 	set category = "OOC"
 
-	ASSERT(prefs, "User attempted to export preferences while preferences were null!") // what the fuck
+	ASSERT(prefs, "Пользователь попытался экспортировать настройки, но настройки были нулевыми!") // what the fuck
 
 	prefs.savefile.export_json_to_client(usr, ckey)
 
 /client/verb/map_vote_tally_count()
-	set name = "Show Map Vote Tallies"
-	set desc = "View the current map vote tally counts."
+	set name = "База очков у Карт"
+	set desc = "Просмотрите текущий подсчет голосов на карте."
 	set category = "Server"
 	to_chat(mob, SSmap_vote.tally_printout)

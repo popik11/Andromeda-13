@@ -100,7 +100,7 @@ SUBSYSTEM_DEF(mapping)
 		var/datum/map_config/old_config = current_map
 		current_map = config.defaultmap
 		if(!current_map || current_map.defaulted)
-			to_chat(world, span_boldannounce("Unable to load next or default map config, defaulting to [old_config.map_name]."))
+			to_chat(world, span_boldannounce("Невозможно загрузить следующую или стандартную конфигурацию карты, по умолчанию используется [old_config.map_name]."))
 			current_map = old_config
 	plane_offset_to_true = list()
 	true_to_offset_planes = list()
@@ -428,7 +428,7 @@ Used by the AI doomsday and the self-destruct nuke.
 		SSautomapper.load_templates_from_cache(files)
 	// SKYRAT EDIT ADDITION END
 	if(!silent)
-		add_startup_message("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!") //SKYRAT EDIT CHANGE
+		add_startup_message("Загрузили [name] за [(REALTIMEOFDAY - start_time)/10]с!") //SKYRAT EDIT CHANGE
 	return parsed_maps
 
 /datum/controller/subsystem/mapping/proc/loadWorld()
@@ -440,8 +440,8 @@ Used by the AI doomsday and the self-destruct nuke.
 
 	// load the station
 	station_start = world.maxz + 1
-	INIT_ANNOUNCE("Loading [current_map.map_name]...")
-	LoadGroup(FailedZs, "Station", current_map.map_path, current_map.map_file, current_map.traits, ZTRAITS_STATION, height_autosetup = current_map.height_autosetup)
+	INIT_ANNOUNCE("Загрузка [current_map.map_name]...")
+	LoadGroup(FailedZs, "Станция", current_map.map_path, current_map.map_file, current_map.traits, ZTRAITS_STATION, height_autosetup = current_map.height_autosetup)
 
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_round_map_name = SSdbcore.NewQuery({"
@@ -453,7 +453,7 @@ Used by the AI doomsday and the self-destruct nuke.
 #ifndef LOWMEMORYMODE
 
 	if(current_map.minetype == "lavaland")
-		LoadGroup(FailedZs, "Lavaland", "map_files/Mining", "Lavaland.dmm", default_traits = ZTRAITS_LAVALAND)
+		LoadGroup(FailedZs, "Лаваленд", "map_files/Mining", "Lavaland.dmm", default_traits = ZTRAITS_LAVALAND)
 	else if (!isnull(current_map.minetype) && current_map.minetype != "none")
 		INIT_ANNOUNCE("WARNING: An unknown minetype '[current_map.minetype]' was set! This is being ignored! Update the maploader code!")
 #endif

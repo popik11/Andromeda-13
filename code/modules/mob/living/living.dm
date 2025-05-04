@@ -560,7 +560,7 @@
 //mob verbs are a lot faster than object verbs
 //for more info on why this is not atom/pull, see examinate() in mob.dm
 /mob/living/verb/pulled(atom/movable/AM as mob|obj in oview(1))
-	set name = "Pull"
+	set name = "Тянуть"
 	set category = "Object"
 
 	if(istype(AM) && Adjacent(AM))
@@ -576,7 +576,7 @@
 	update_pull_hud_icon()
 
 /mob/living/verb/stop_pulling1()
-	set name = "Stop Pulling"
+	set name = "Перестань тянуть"
 	set category = "IC"
 	stop_pulling()
 
@@ -590,28 +590,27 @@
 /mob/living/_pointed(atom/pointing_at)
 	if(!..())
 		return FALSE
-	log_message("points at [pointing_at]", LOG_EMOTE)
-	visible_message(span_infoplain("[span_name("[src]")] points at [pointing_at]."), span_notice("You point at [pointing_at]."))
+	log_message("указывает на [pointing_at]", LOG_EMOTE)
+	visible_message(span_infoplain("[span_name("[src]")] указывает на [pointing_at]."), span_notice("Вы указываете на [pointing_at]."))
 
 /mob/living/verb/succumb(whispered as num|null)
 	set hidden = TRUE
 	if (!CAN_SUCCUMB(src))
 		if(HAS_TRAIT(src, TRAIT_SUCCUMB_OVERRIDE))
 			if(whispered)
-				to_chat(src, span_notice("Your immortal body is keeping you alive! Unless you just press the UI button."), type=MESSAGE_TYPE_INFO)
+				to_chat(src, span_notice("Ваше бессмертное тело не даёт вам умереть! Пока вы не нажмёте кнопку на экране."), type=MESSAGE_TYPE_INFO)
 				return
 		else
-			to_chat(src, span_warning("You are unable to succumb to death! This life continues."), type=MESSAGE_TYPE_INFO)
+			to_chat(src, span_warning("Вы не можете сдаться смерти! Эта жизнь продолжается."), type=MESSAGE_TYPE_INFO)
 			return
 	log_message("Has [whispered ? "whispered his final words" : "succumbed to death"] with [round(health, 0.1)] points of health!", LOG_ATTACK)
-	balloon_alert_to_viewers("succumbed to their wounds...", "succumbed...", 9) // BUBBER EDIT ADDITION - ALERT OBSERVERS THAT THEY SUCCUMBED
+	balloon_alert_to_viewers("скончался от ран...", "сдался...", 9) // BUBBER EDIT ADDITION - ALERT OBSERVERS THAT THEY SUCCUMBED
 	adjustOxyLoss(health - HEALTH_THRESHOLD_DEAD)
 	updatehealth()
 	if(!whispered)
-		to_chat(src, span_notice("You have given up life and succumbed to death."))
-	investigate_log("has succumbed to death.", INVESTIGATE_DEATHS)
+		to_chat(src, span_notice("Вы сдались и отдались смерти."))
+	investigate_log("умер своей смертью.", INVESTIGATE_DEATHS)
 	death()
-
 // Remember, anything that influences this needs to call update_incapacitated somehow when it changes
 // Most often best done in [code/modules/mob/living/init_signals.dm]
 /mob/living/build_incapacitated(flags)
@@ -654,14 +653,14 @@
 // MOB PROCS //END
 
 /mob/living/proc/mob_sleep()
-	set name = "Sleep"
+	set name = "Спать"
 	set category = "IC"
 
 	if(IsSleeping())
-		to_chat(src, span_warning("You are already sleeping!"))
+		to_chat(src, span_warning("Вы уже спите!"))
 		return
 	else
-		if(tgui_alert(usr, "You sure you want to sleep for a while?", "Sleep", list("Yes", "No")) == "Yes")
+		if(tgui_alert(usr, "Вы уверены, что хотите немного поспать?", "Сон", list("Да", "Нет")) == "Да")
 			SetSleeping(400) //Short nap
 
 
@@ -712,7 +711,7 @@
 		return account
 
 /mob/living/proc/toggle_resting()
-	set name = "Rest"
+	set name = "Упасть/встать"
 	set category = "IC"
 
 	set_resting(!resting, FALSE)
@@ -730,21 +729,21 @@
 	if(new_resting)
 		if(body_position == LYING_DOWN)
 			if(!silent)
-				to_chat(src, span_notice("You will now try to stay lying down on the floor."))
+				to_chat(src, span_notice("Теперь попробуйте остаться лежачем положении."))
 		else if(HAS_TRAIT(src, TRAIT_FORCED_STANDING) || (buckled && buckled.buckle_lying != NO_BUCKLE_LYING))
 			if(!silent)
-				to_chat(src, span_notice("You will now lay down as soon as you are able to."))
+				to_chat(src, span_notice("Теперь вы ляжете, как только сможете."))
 		else
 			if(!silent)
-				to_chat(src, span_notice("You lay down."))
+				to_chat(src, span_notice("Вы ложитесь."))
 			set_lying_down()
 	else
 		if(body_position == STANDING_UP)
 			if(!silent)
-				to_chat(src, span_notice("You will now try to remain standing up."))
+				to_chat(src, span_notice("Теперь постарайтесь остаться в стоячем положении."))
 		else if(HAS_TRAIT(src, TRAIT_FLOORED) || (buckled && buckled.buckle_lying != NO_BUCKLE_LYING))
 			if(!silent)
-				to_chat(src, span_notice("You will now stand up as soon as you are able to."))
+				to_chat(src, span_notice("Теперь встаньте, как только сможете."))
 		else
 			/*if(!silent) SKYRAT EDIT REMOVAL
 				to_chat(src, "<span class='notice'>You stand up.</span>")*/
@@ -779,21 +778,21 @@
 			get_up_speed = GET_UP_SLOW
 	if(!instant)
 		if(get_up_speed == GET_UP_SLOW) //Slow getups are easily noticable
-			visible_message(span_notice("[src] weakly attempts to stand up."), span_notice("You weakly attempt to stand up."))
+			visible_message(span_notice("[src] слабо пытается встать.."), span_notice("Вы слабо пытаетесь встать."))
 			if(!do_after(src, 1 SECONDS, src, timed_action_flags = (IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM), extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob/living, rest_checks_callback)), interaction_key = DOAFTER_SOURCE_GETTING_UP, hidden = TRUE))
 				if(!body_position == STANDING_UP)
-					visible_message(span_warning("[src] fails to stand up."), span_warning("You fail to stand up."))
+					visible_message(span_warning("[src] не удалось встать."), span_warning("Вы не можете встать."))
 				return
 		else
 			if(!do_after(src, 1 SECONDS, src, timed_action_flags = (IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM), extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob/living, rest_checks_callback)), interaction_key = DOAFTER_SOURCE_GETTING_UP, hidden = TRUE))
 				return
 	if(pulledby && pulledby.grab_state)
-		to_chat(src, span_warning("You fail to stand up, you're restrained!"))
+		to_chat(src, span_warning("Если вы не можете встать, вас удерживают!"))
 	// SKYRAT EDIT ADDITION END
 		return
 	if(resting || body_position == STANDING_UP || HAS_TRAIT(src, TRAIT_FLOORED))
 		return
-	to_chat(src, span_notice("You stand up.")) // SKYRAT EDIT ADDITION
+	to_chat(src, span_notice("Вы встаете.")) // SKYRAT EDIT ADDITION
 	set_body_position(STANDING_UP)
 	set_lying_angle(0)
 
@@ -1267,7 +1266,7 @@
 	return TRUE
 
 /mob/living/verb/resist()
-	set name = "Resist"
+	set name = "Сопротивляться"
 	set category = "IC"
 
 	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(execute_resist)))
@@ -3047,11 +3046,11 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 	BLACKBOX_LOG_ADMIN_VERB("Give Guardian Spirit")
 
 /mob/living/verb/lookup()
-	set name = "Look Up"
+	set name = "Глянуть вверх"
 	set category = "IC"
 
 	if(looking_vertically)
-		to_chat(src, "You set your head straight again.")
+		to_chat(src, "Вы снова смотрите вперед.")
 		end_look_up()
 		return
 
@@ -3060,19 +3059,19 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 
 	//Check if turf above exists
 	if(!above_turf)
-		to_chat(src, span_warning("There's nothing interesting above. Better keep your eyes ahead."))
+		to_chat(src, span_warning("Сверху нет ничего интересного. Лучше смотрите вперед."))
 		return
 
-	to_chat(src, "You tilt your head upwards.")
+	to_chat(src, "Вы наклоняете голову вверх.")
 	look_up()
 
 /mob/living/verb/lookdown()
-	set name = "Look Down"
+	set name = "Глянуть вниз"
 	set category = "IC"
 
 	if(looking_vertically)
-		to_chat(src, "You set your head straight again.")
-		end_look_down()
+		to_chat(src, "Вы снова смотрите вперёд.")
+		end_look_up()
 		return
 
 	var/turf/current_turf = get_turf(src)
@@ -3080,10 +3079,10 @@ GLOBAL_LIST_EMPTY(fire_appearances)
 
 	//Check if turf below exists
 	if(!below_turf)
-		to_chat(src, span_warning("There's nothing interesting below. Better keep your eyes ahead."))
+		to_chat(src, span_warning("Снизу нет ничего интересного. Лучше смотрите вперед."))
 		return
 
-	to_chat(src, "You tilt your head downwards.")
+	to_chat(src, "Вы наклоняете голову вниз.")
 	look_down()
 
 /**

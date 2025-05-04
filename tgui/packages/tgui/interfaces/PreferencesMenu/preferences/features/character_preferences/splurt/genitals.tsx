@@ -115,12 +115,12 @@ export const erp_status_pref_extm: FeatureChoiced = {
 };
 
 export const erp_status_pref_extmharm: FeatureChoiced = {
-  name: 'Harmful ERP verbs',
+  name: 'Максимально экстремальное ЕРП',
   component: FeatureDropdownInput,
 };
 
 export const erp_status_pref_unholy: FeatureChoiced = {
-  name: 'Нечестивые ЕРП',
+  name: 'Грязное ЕРП',
   component: FeatureDropdownInput,
 };
 

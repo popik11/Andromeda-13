@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 /obj/machinery/announcement_system
 	density = TRUE
 	name = "\improper Automated Announcement System"
-	desc = "An automated announcement system that handles minor announcements over the radio."
+	desc = "Автоматизированная система оповещения, которая обрабатывает незначительные объявления по радио."
 	icon = 'icons/obj/machines/telecomms.dmi'
 	icon_state = "AAS_On"
 	base_icon_state = "AAS"
@@ -273,9 +273,9 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 */
 
 /datum/aas_config_entry/arrival
-	name = "Arrival Announcement"
+	name = "Объявление о прибытии"
 	announcement_lines_map = list(
-		"Message" = "%PERSON has signed up as %RANK")
+		"Message" = "%PERSON прибывает на станцию в должности %RANK")
 	vars_and_tooltips_map = list(
 		"PERSON" = "will be replaced with their name.",
 		"RANK" = "with their job."
@@ -291,9 +291,9 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 		"ERR)#: DA#AB@#E NOT F(*ND!")
 
 /datum/aas_config_entry/newhead
-	name = "Departmental Head Announcement"
+	name = "Объявление руководителя департамента"
 	announcement_lines_map = list(
-		"Message" = "%PERSON, %RANK, is the department head.")
+		"Message" = "%PERSON, %RANK, является руководителем отдела.")
 	vars_and_tooltips_map = list(
 		"PERSON" = "will be replaced with their name.",
 		"RANK" = "with their job."

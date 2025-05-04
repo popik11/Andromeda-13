@@ -346,19 +346,19 @@
 	UnregisterSignal(remove_from, list(COMSIG_LIVING_UNARMED_ATTACK, COMSIG_LIVING_GRAB, COMSIG_LIVING_TABLE_SLAMMING, COMSIG_LIVING_TABLE_LIMB_SLAMMING))
 
 /mob/living/proc/verb_switch_style()
-	set name = "Swap Style"
-	set desc = "Switch to a different martial arts style."
+	set name = "Сменить сталь"
+	set desc = "Перейдите на другой стиль боевых искусств."
 	set category = "IC"
 
 	var/datum/martial_art/current = GET_ACTIVE_MARTIAL_ART(src)
 	var/datum/martial_art/next = GET_NEXT_MARTIAL_ART(src)
 
 	if(current.locked_to_use)
-		to_chat(src, span_warning("You can't stop practicing [current]! It's too ingrained in your muscle memory."))
+		to_chat(src, span_warning("Вы не можете перестать заниматься [current]! Это слишком прочно укоренилось в вашей мышечной памяти."))
 		return
 
 	switch_style(GET_ACTIVE_MARTIAL_ART(src), GET_NEXT_MARTIAL_ART(src))
-	to_chat(src, span_notice("You stop practicing [current] and start practicing [next]."))
+	to_chat(src, span_notice("Вы прекращаете практиковать [current] и начинаете практиковать [next]."))
 
 /// Deactivates the current martial art and activates the next one.
 /mob/living/proc/switch_style(datum/martial_art/current_martial, datum/martial_art/next_martial)

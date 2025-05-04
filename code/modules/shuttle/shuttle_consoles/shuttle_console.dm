@@ -169,7 +169,7 @@
 		return SHUTTLE_CONSOLE_DESTINVALID
 	switch(SSshuttle.moveShuttle(shuttleId, dest_id, TRUE))
 		if(DOCKING_SUCCESS)
-			say("Shuttle departing. Please stand away from the doors.")
+			say("Шаттл отправляется. Пожалуйста, отойдите подальше от дверей.")
 			log_shuttle("[key_name(user)] has sent shuttle \"[shuttleId]\" towards \"[dest_id]\", using [src].")
 			return SHUTTLE_CONSOLE_SUCCESS
 		else

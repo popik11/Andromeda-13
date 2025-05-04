@@ -675,14 +675,14 @@ GLOBAL_LIST_INIT(interaction_menu_preferences, typecacheof(list(
 			return FALSE
 
 /mob/living/proc/interact_with() 	// SPLURT EDIT - INTERACTIONS - All mobs should be interactable
-	set name = "Interact With"
-	set desc = "Perform an interaction with someone."
+	set name = "Взаимодействуйте с.."
+	set desc = "Выполнить взаимодействие с кем-либо."
 	set category = "IC"
 	set src in view(usr.client)
 
 	var/datum/component/interactable/menu = GetComponent(/datum/component/interactable)
 	if(!menu)
-		to_chat(src, span_warning("You must have done something really bad to not have an interaction component."))
+		to_chat(src, span_warning("Вы, должно быть, сделали что-то очень плохое, раз у вас нет компонента взаимодействия."))
 		return
 
 	menu.open_interaction_menu(src, usr)

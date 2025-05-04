@@ -98,7 +98,7 @@
 		var/list/legacy_configs = list("game_options.txt", "dbconfig.txt", "comms.txt")
 		for(var/I in legacy_configs)
 			if(fexists("[directory]/[I]"))
-				log_config("No $include directives found in config.txt! Loading legacy [legacy_configs.Join("/")] files...")
+				log_config("В файле config.txt не найдено директив $include! Загрузка унаследованных файлов(старых конфигов) [legacy_configs.Join("/")]...")
 				for(var/J in legacy_configs)
 					LoadEntries(J)
 				break
@@ -209,7 +209,7 @@
 		return
 	stack = stack + filename_to_test
 
-	log_config("Loading config file [filename]...")
+	log_config("Загрузка файла конфигурации [filename]...")
 	var/list/lines = world.file2list("[directory]/[filename]")
 	var/list/_entries = entries
 	for(var/L in lines)
@@ -379,7 +379,7 @@ Example config:
 			policy = parsed
 
 /datum/controller/configuration/proc/loadmaplist(filename)
-	log_config("Loading config file [filename]...")
+	log_config("Загрузка файла конфигурации [filename]...")
 	filename = "[directory]/[filename]"
 	var/list/Lines = world.file2list(filename)
 
@@ -442,7 +442,7 @@ Example config:
 		load_legacy_chat_filter()
 		return
 
-	log_config("Loading config file word_filter.toml...")
+	log_config("Загрузка файла конфигурации word_filter.toml...")
 	var/list/result = rustg_raw_read_toml_file("[directory]/word_filter.toml")
 	if(!result["success"])
 		var/message = "The word filter is not configured correctly! [result["content"]]"
@@ -464,7 +464,7 @@ Example config:
 	if (!fexists("[directory]/in_character_filter.txt"))
 		return
 
-	log_config("Loading config file in_character_filter.txt...")
+	log_config("Загрузка файла конфигурации in_character_filter.txt...")
 
 	ic_filter_reasons = list()
 	ic_outside_pda_filter_reasons = list()

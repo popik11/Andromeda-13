@@ -54,7 +54,7 @@
 		waiting = FALSE
 
 		if(console && console.last_cancel_announce + CONSOLE_ANNOUNCE_COOLDOWN <= world.time)
-			console.say("Lifesigns detected onboard, automatic return aborted.")
+			console.say("На борту обнаружены признаки жизни, автоматическое возвращение отменено.")
 			console.last_cancel_announce = world.time
 
 		return
@@ -66,7 +66,7 @@
 	waiting = TRUE
 
 	if(console && console.last_depart_announce + CONSOLE_ANNOUNCE_COOLDOWN <= world.time)
-		console.say("Commencing automatic return subroutine in [wait_time / 10] seconds.")
+		console.say("Запуск подпрограммы автоматического возврата через [wait_time / 10] секунд.")
 		console.last_depart_announce = world.time
 
 /obj/docking_port/mobile/arrivals_skyrat/getModeStr()

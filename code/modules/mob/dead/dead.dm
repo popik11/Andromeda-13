@@ -51,9 +51,9 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 
 /mob/dead/proc/server_hop()
 	set category = "OOC"
-	set name = "Server Hop"
-	set desc= "Jump to the other server"
-	if(HAS_TRAIT(src, TRAIT_NO_TRANSFORM)) // in case the round is ending and a cinematic is already playing we don't wanna clash with that (yes i know)
+	set name = "Переход к серверу"
+	set desc= "Перейти на другой сервер"
+	if(HAS_TRAIT(src, TRAIT_NO_TRANSFORM)) // in case the round is ending and a cinematic is already playing we don't wanna clash with that (yes i know) /// в случае, если раунд заканчивается, а фильм уже идет, мы не хотим с этим сталкиваться (да, я знаю).
 		return
 	var/list/our_id = CONFIG_GET(string/cross_comms_name)
 	var/list/csa = CONFIG_GET(keyed_list/cross_server) - our_id
@@ -61,22 +61,22 @@ INITIALIZE_IMMEDIATE(/mob/dead)
 	switch(length(csa))
 		if(0)
 			remove_verb(src, /mob/dead/proc/server_hop)
-			to_chat(src, span_notice("Server Hop has been disabled."))
+			to_chat(src, span_notice("Переход к серверу был отключен."))
 		if(1)
 			pick = csa[1]
 		else
-			pick = tgui_input_list(src, "Server to jump to", "Server Hop", csa)
+			pick = tgui_input_list(src, "Сервер для перехода", "Переход на сервер", csa)
 
 	if(isnull(pick))
 		return
 
 	var/addr = csa[pick]
 
-	if(tgui_alert(usr, "Jump to server [pick] ([addr])?", "Server Hop", list("Yes", "No")) != "Yes")
+	if(tgui_alert(usr, "Перейти на сервер [pick] ([addr])?", "Переход на сервер", list("Да", "Нет")) != "Да")
 		return
 
 	var/client/hopper = client
-	to_chat(hopper, span_notice("Sending you to [pick]."))
+	to_chat(hopper, span_notice("Отправляю вас на [pick]."))
 	var/atom/movable/screen/splash/fade_in = new(null, src, hopper, FALSE)
 	fade_in.Fade(FALSE)
 

@@ -185,10 +185,11 @@ GLOBAL_VAR_INIT(combat_indicator_overlay, GenerateCombatOverlay())
 
 // Surrender shit
 /atom/movable/screen/alert/status_effect/surrender/
-	desc = "You're either in combat or being held up. Click here to surrender and show that you don't wish to fight. You will be incapacitated. (You can also say '*surrender' at any time to do this.)"
+	desc = "Вы либо в бою, либо задержаны. Нажмите здесь, чтобы сдаться и показать, что вы не хотите сражаться. Вы будете выведены из строя. (Вы также можете «сдаться» в любой момент, чтобы сделать это~)." // Я сдаюсь злой дядя синдикат~ АХ АХ АХ
 
 /datum/emote/living/surrender
-	message = "drops to the floor and raises their hands defensively! They surrender%s!"
+//	message = "drops to the floor and raises their hands defensively! They surrender%s!"
+	message = "падает лицом вниз и сдаётся!"
 	stat_allowed = SOFT_CRIT
 
 /datum/emote/living/surrender/run_emote(mob/user, params, type_override, intentional)
@@ -200,5 +201,6 @@ GLOBAL_VAR_INIT(combat_indicator_overlay, GenerateCombatOverlay())
 /datum/emote/living/surrender/select_message_type(mob/user, intentional)
 	var/mob/living/living_mob = user
 	if(living_mob?.body_position == LYING_DOWN)
-		return "raises their hands defensively! They surrender%s!"
+//		return "raises their hands defensively! They surrender%s!"
+		return "падает лицом вниз и сдаётся!"
 	. = ..()

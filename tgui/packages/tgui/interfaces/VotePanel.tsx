@@ -54,7 +54,6 @@ type UserData = {
 enum VoteSystem {
   VOTE_SINGLE = 1,
   VOTE_MULTI = 2,
-  VOTE_RANKED = 3, // SPLURT EDIT ADDITION - Ranked Choice Voting
 }
 
 type Data = {
@@ -73,7 +72,7 @@ export const VotePanel = (props) => {
   /**
    * Adds the voting type to title if there is an ongoing vote.
    */
-  let windowTitle = 'Vote';
+  let windowTitle = 'Голосование';
   if (currentVote) {
     windowTitle +=
       ': ' +
@@ -87,14 +86,14 @@ export const VotePanel = (props) => {
       <Window.Content>
         <Stack fill vertical>
           <Section
-            title="Create Vote"
+            title="Создать голосование"
             buttons={
               !!user.isLowerAdmin && (
                 <Stack>
                   <Stack.Item>
                     <Button
                       icon="refresh"
-                      content="Reset Cooldown"
+                      content="Сбросить КД"
                       disabled={LastVoteTime + VoteCD <= 0}
                       onClick={() => act('resetCooldown')}
                     />
@@ -102,7 +101,7 @@ export const VotePanel = (props) => {
                   <Stack.Item>
                     <Button
                       icon="skull"
-                      content="Toggle dead vote"
+                      content="Переключить голоса от мёртвых"
                       disabled={!user.isUpperAdmin}
                       onClick={() => act('toggleDeadVote')}
                     />
@@ -130,7 +129,7 @@ const VoteOptionDimmer = (props) => {
     <Dimmer>
       <Box textAlign="center">
         <Box fontSize={2} bold>
-          Vote Cooldown
+          КД на голосования
         </Box>
         <Box fontSize={1.5}>{Math.floor((VoteCD + LastVoteTime) / 10)}s</Box>
       </Box>
@@ -148,7 +147,7 @@ const VoteOptions = (props) => {
 
   return (
     <Stack.Item>
-      <Collapsible title="Start a Vote">
+      <Collapsible title="Начать голосование">
         <Section>
           {LastVoteTime + VoteCD > 0 && <VoteOptionDimmer />}
           <Stack vertical justify="space-between">
@@ -167,13 +166,11 @@ const VoteOptions = (props) => {
                         }
                         tooltip={
                           option.config === VoteConfig.None
-                            ? 'This vote cannot be disabled.'
+                            ? 'Это голосование не может быть отключено.'
                             : null
                         }
                         content={
-                          option.config === VoteConfig.Enabled
-                            ? 'Enabled'
-                            : 'Disabled'
+                          option.config === VoteConfig.Enabled ? 'Вкл' : 'Выкл'
                         }
                         onClick={() =>
                           act('toggleVote', {
@@ -217,7 +214,7 @@ const VotersList = (props) => {
   return (
     <Stack.Item>
       <Collapsible
-        title={`View Active Voters${
+        title={`Просмотр активных голосующих${
           data.voting.length ? ` (${data.voting.length})` : ''
         }`}
       >
@@ -241,9 +238,9 @@ const ChoicesPanel = (props) => {
 
   return (
     <Stack.Item grow>
-      <Section fill scrollable title="Active Vote">
+      <Section fill scrollable title="Активные голосования">
         {currentVote && currentVote.countMethod === VoteSystem.VOTE_SINGLE ? (
-          <NoticeBox success>Select one option</NoticeBox>
+          <NoticeBox success>Выберите один из вариантов</NoticeBox>
         ) : null}
         {currentVote &&
         currentVote.choices.length !== 0 &&
@@ -257,7 +254,7 @@ const ChoicesPanel = (props) => {
                   buttons={
                     <Button
                       tooltip={
-                        user.isGhost && 'Ghost voting was disabled by an admin.'
+                        user.isGhost && 'Голоса от мёртвых отключено админином.'
                       }
                       disabled={
                         user.singleSelection === choice.name || user.isGhost
@@ -266,7 +263,7 @@ const ChoicesPanel = (props) => {
                         act('voteSingle', { voteOption: choice.name });
                       }}
                     >
-                      Vote
+                      Голос
                     </Button>
                   }
                 >
@@ -279,8 +276,7 @@ const ChoicesPanel = (props) => {
                         name="vote-yea"
                       />
                     )}
-                  {currentVote.displayStatistics ||
-                  user.isLowerAdmin /* SKYRAT EDIT*/
+                  {currentVote.displayStatistics
                     ? choice.votes + ' Votes'
                     : null}
                 </LabeledList.Item>
@@ -290,7 +286,7 @@ const ChoicesPanel = (props) => {
           </LabeledList>
         ) : null}
         {currentVote && currentVote.countMethod === VoteSystem.VOTE_MULTI ? (
-          <NoticeBox success>Select any number of options</NoticeBox>
+          <NoticeBox success>Выберите любое количество вариантов</NoticeBox>
         ) : null}
         {currentVote &&
         currentVote.choices.length !== 0 &&
@@ -304,14 +300,14 @@ const ChoicesPanel = (props) => {
                   buttons={
                     <Button
                       tooltip={
-                        user.isGhost && 'Ghost voting was disabled by an admin.'
+                        user.isGhost && 'Голоса от мёртвых отключено админином.'
                       }
                       disabled={user.isGhost}
                       onClick={() => {
                         act('voteMulti', { voteOption: choice.name });
                       }}
                     >
-                      Vote
+                      Голос
                     </Button>
                   }
                 >
@@ -319,143 +315,14 @@ const ChoicesPanel = (props) => {
                   user.multiSelection[user.ckey.concat(choice.name)] === 1 ? (
                     <Icon align="right" mr={2} color="blue" name="vote-yea" />
                   ) : null}
-                  {
-                    user.isLowerAdmin
-                      ? `${choice.votes} Votes`
-                      : '' /* SKYRAT EDIT*/
-                  }
+                  {choice.votes} Голоса
                 </LabeledList.Item>
                 <LabeledList.Divider />
               </Box>
             ))}
           </LabeledList>
         ) : null}
-        {/* SPLURT EDIT ADDITION - Ranked Choice Voting */}
-        {currentVote && currentVote.countMethod === VoteSystem.VOTE_RANKED ? (
-          <NoticeBox success>
-            Click options to rank them in order of preference. Click again to
-            remove.
-          </NoticeBox>
-        ) : null}
-        {currentVote &&
-        currentVote.choices.length !== 0 &&
-        currentVote.countMethod === VoteSystem.VOTE_RANKED ? (
-          <LabeledList>
-            {currentVote.choices
-              .map((choice) => {
-                // Get all current ranks for this user
-                const userRanks: Record<string, number> = {};
-                let maxRank = 0;
-                currentVote.choices.forEach((c) => {
-                  const rankKey = `${user.ckey}_${c.name}`;
-                  const rank = user.multiSelection?.[rankKey] || 0;
-                  if (rank > 0) {
-                    userRanks[c.name] = rank;
-                    maxRank = Math.max(maxRank, rank);
-                  }
-                });
-
-                // Get this choice's current rank
-                const rankKey = `${user.ckey}_${choice.name}`;
-                const currentRank = user.multiSelection?.[rankKey] || 0;
-
-                return {
-                  choice,
-                  currentRank,
-                  userRanks,
-                  maxRank,
-                };
-              })
-              // Sort by rank (unranked at bottom)
-              .sort((a, b) => {
-                if (a.currentRank === 0 && b.currentRank === 0) {
-                  // If both unranked, sort alphabetically
-                  return a.choice.name.localeCompare(b.choice.name);
-                }
-                if (a.currentRank === 0) return 1; // a is unranked, move to bottom
-                if (b.currentRank === 0) return -1; // b is unranked, move to bottom
-                return a.currentRank - b.currentRank; // sort by rank
-              })
-              .map(({ choice, currentRank, userRanks, maxRank }) => {
-                // Function to get button text
-                const getButtonText = () => {
-                  if (currentRank === 0) {
-                    return 'Vote';
-                  }
-                  return `Choice #${currentRank}`;
-                };
-
-                // Function to handle vote click
-                const handleVoteClick = () => {
-                  if (currentRank > 0) {
-                    // Remove this rank and shift others up
-                    const newRanks: Record<string, number> = {};
-                    Object.entries(userRanks).forEach(
-                      ([name, rank]: [string, number]) => {
-                        if (name === choice.name) {
-                          return; // Skip this one as we're removing it
-                        }
-                        if (rank > currentRank) {
-                          newRanks[name] = rank - 1; // Shift up
-                        } else {
-                          newRanks[name] = rank; // Keep same
-                        }
-                      },
-                    );
-                    // Send all rank updates
-                    Object.entries(newRanks).forEach(
-                      ([name, newRank]: [string, number]) => {
-                        act('voteRanked', {
-                          voteOption: name,
-                          voteRank: newRank,
-                        });
-                      },
-                    );
-                    // Remove this rank
-                    act('voteRanked', {
-                      voteOption: choice.name,
-                      voteRank: 0,
-                    });
-                  } else {
-                    // Add as next rank
-                    act('voteRanked', {
-                      voteOption: choice.name,
-                      voteRank: maxRank + 1,
-                    });
-                  }
-                };
-
-                return (
-                  <Box key={choice.name}>
-                    <LabeledList.Item
-                      label={choice.name.replace(/^\w/, (c) => c.toUpperCase())}
-                      textAlign="right"
-                      buttons={
-                        <Button
-                          tooltip={
-                            user.isGhost &&
-                            'Ghost voting was disabled by an admin.'
-                          }
-                          selected={currentRank > 0}
-                          disabled={user.isGhost}
-                          onClick={handleVoteClick}
-                        >
-                          {getButtonText()}
-                        </Button>
-                      }
-                    >
-                      {currentVote.displayStatistics || user.isLowerAdmin
-                        ? `${choice.votes} Votes`
-                        : null}
-                    </LabeledList.Item>
-                    <LabeledList.Divider />
-                  </Box>
-                );
-              })}
-          </LabeledList>
-        ) : null}
-        {/* SPLURT EDIT ADDITION - End */}
-        {currentVote ? null : <NoticeBox>No vote active!</NoticeBox>}
+        {currentVote ? null : <NoticeBox>Голосование неактивно!</NoticeBox>}
       </Section>
     </Stack.Item>
   );
@@ -474,7 +341,7 @@ const TimePanel = (props) => {
       <Section>
         <Stack justify="space-between">
           <Box fontSize={1.5}>
-            Time Remaining:&nbsp;
+            Оставшееся время:&nbsp;
             {currentVote?.timeRemaining || 0}s
           </Box>
           {!!user.isLowerAdmin && (
@@ -485,7 +352,7 @@ const TimePanel = (props) => {
                   disabled={!user.isLowerAdmin || !currentVote}
                   onClick={() => act('endNow')}
                 >
-                  End Now
+                  Закончить сейчас
                 </Button>
               </Stack.Item>
               <Stack.Item>
@@ -494,7 +361,7 @@ const TimePanel = (props) => {
                   disabled={!user.isLowerAdmin || !currentVote}
                   onClick={() => act('cancel')}
                 >
-                  Cancel Vote
+                  Отменить голосование
                 </Button>
               </Stack.Item>
             </Stack>

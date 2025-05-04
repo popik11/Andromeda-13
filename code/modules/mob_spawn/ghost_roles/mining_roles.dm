@@ -267,7 +267,7 @@
 	src.forceMove(eggshell)
 	if(spawner_area)
 		notify_ghosts(
-			"An ash walker egg is ready to hatch in \the [spawner_area.name].",
+			"Яйцо пепельного ходока готово к вылуплению в [spawner_area.name].",
 			source = src,
 			header = "Ash Walker Egg",
 			click_interact = TRUE,

@@ -357,8 +357,8 @@
 	alert_type = /atom/movable/screen/alert/status_effect/surrender
 
 /atom/movable/screen/alert/status_effect/surrender
-	name = "Surrender"
-	desc = "Looks like you're in trouble now, bud. Click here to surrender. (Warning: You will be incapacitated.)"
+	name = "Сдаться"
+	desc = "Похоже, теперь у тебя проблемы, приятель. Нажмите здесь, чтобы сдаться. (Предупреждение: вы будете временно дееспособны/беспомощным)."
 	icon_state = "surrender"
 	clickable_glow = TRUE
 

@@ -1,32 +1,32 @@
 /client/verb/check_antag_tickets()
-	set name = "Check Antag Tickets"
+	set name = "Проверьте тикет на антага"
 	set category = "OOC"
 
 	var/antag_ticket_rate = CONFIG_GET(number/antag_tickets_per_update)
 
 	if(!antag_ticket_rate)
-		to_chat(src,span_notice("Antag tickets are currently disabled."))
+		to_chat(src,span_notice("В настоящее время тикеты на антага не раздаются."))
 		return
 
 	var/antag_ticket_count = get_antag_tickets()
 	var/antag_ticket_gain = antag_ticket_multiplier()*antag_ticket_rate
 
-	to_chat(src,span_notice("You currently have <b>[antag_ticket_count]</b> antag tickets, and are [antag_ticket_gain >= 0 ? "gaining" : "losing"] <b>[abs(antag_ticket_gain)]</b> antag tickets every [DisplayTimeText(SSblackbox.wait,1)]."))
+	to_chat(src,span_notice("В данный момент у вас есть <b>[antag_ticket_count]</b> тикет антаг, и [antag_ticket_gain >= 0 ? "выигрыш" : "проигрыш"] <b>[abs(antag_ticket_gain)]</b> каждый раз отменяются тикеты [DisplayTimeText(SSblackbox.wait,1)]."))
 
 /client/verb/antag_tickets_info()
-	set name = "What are antag tickets?"
+	set name = "Что такое тикеты антага?"
 	set category = "OOC"
 
 	var/antag_ticket_rate = CONFIG_GET(number/antag_tickets_per_update)
 
 	if(!antag_ticket_rate)
-		to_chat(span_notice("Antag tickets are currently disabled, so you don't have to worry about them."))
+		to_chat(span_notice("Тикеты на антага в данный момент отключены, поэтому вы можете не беспокоиться о них."))
 		return
 
 	var/information = "\
-	Antag tickets are a way to balance playtime between being an antagonist and being a non-antagonist. \
-	Having more antag tickets makes you more likely to be chosen as an antagonist, while having less makes you less likely to be chosen as one. \
-	Antag tickets are gained when you're playing as a crew role while not being an antagonist, while antag tickets are spent when you're playing as an antagonist. \
-	Note that as an antagonist, you do not lose antag tickets when you're handcuffed, restrained, dead, crit, incapacitated, or in prison."
+	Антаговские тикет - это способ сбалансировать игровое время между антагонистом и неантагонистом. \
+	Если у вас больше антагонистических билетов, вы с большей вероятностью будете выбраны антагонистом, а если меньше - с меньшей. \
+	Тикеты антага приобретаются, когда вы играете за команду и не являетесь антагонистом, а тикеты антага тратятся, когда вы играете за антагониста. \
+	Обратите внимание, что, будучи антагонистом, вы не теряете антаг-тикеты, если на вас надеты наручники, вы скованы, мертвы, крит, недееспособны или находитесь в тюрьме."
 
 	to_chat(src,span_notice(information))

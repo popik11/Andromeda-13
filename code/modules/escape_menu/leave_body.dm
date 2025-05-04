@@ -6,13 +6,13 @@
 		if (MC_RUNNING(SSatoms.init_stage)) // We're about to create a bunch of atoms for a human
 			dead_clown = create_dead_clown()
 		else
-			stack_trace("The leave body menu was opened before the atoms SS. This shouldn't be possible, as the leave body menu should only be accessible when you have a body.")
+			stack_trace("Меню «Покинуть тело» было открыто до появления атомов SS. Этого не должно быть, так как меню покинуть тело должно быть доступно только при наличии тела.")
 
 	page_holder.give_screen_object(new /atom/movable/screen/escape_menu/leave_body_button(
 		null,
 		/* hud_owner = */ null,
-		"Suicide",
-		"Perform a dramatic suicide in game",
+		"Самоубийство",
+		"Совершите драматическое самоубийство в игре",
 		/* pixel_offset = */ -105,
 		// CALLBACK(src, PROC_REF(leave_suicide)), // SKYRAT EDIT REMOVAL
 		/* button_overlay = */ dead_clown,
@@ -22,8 +22,8 @@
 		new /atom/movable/screen/escape_menu/leave_body_button(
 			null,
 			/* hud_owner = */ null,
-			"Ghost",
-			"Exit quietly, leaving your body",
+			"Призрак",
+			"Выходите тихо, оставляя свое тело",
 			/* pixel_offset = */ 0,
 			CALLBACK(src, PROC_REF(leave_ghost)),
 			/* button_overlay = */ "ghost",
@@ -34,7 +34,7 @@
 		new /atom/movable/screen/escape_menu/leave_body_button(
 			null,
 			/* hud_owner = */ null,
-			"Back",
+			"Назад",
 			/* tooltip_text = */ null,
 			/* pixel_offset = */ 105,
 			CALLBACK(src, PROC_REF(open_home_page)),

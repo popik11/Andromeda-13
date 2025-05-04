@@ -63,8 +63,8 @@ SUBSYSTEM_DEF(decay)
 	if(!severity_modifier || severity_modifier == 5)
 		severity_modifier = rand(1, 4)
 
-	message_admins("SSDecay severity modifier set to [severity_modifier]")
-	log_world("SSDecay severity modifier set to [severity_modifier]")
+	message_admins("Модификатор тяжести SSDecay установлен на [severity_modifier]")
+	log_world("Модификатор тяжести SSDecay установлен на [severity_modifier]")
 
 	do_common()
 

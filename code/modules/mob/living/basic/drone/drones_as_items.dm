@@ -27,7 +27,7 @@
 	var/area/area = get_area(src)
 	if(area)
 		notify_ghosts(
-			"A drone shell has been created in \the [area.name].",
+			"В [area.name] была создана оболочка дрона..",
 			source = src,
 			header = "Drone Shell Created",
 			click_interact = TRUE,

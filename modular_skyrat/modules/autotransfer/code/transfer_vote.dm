@@ -2,12 +2,12 @@
 #define CHOICE_CONTINUE "Continue Playing"
 
 /datum/vote/transfer_vote
-	name = "Transfer"
+	name = "Шаттл"
 	default_choices = list(
 		CHOICE_TRANSFER,
 		CHOICE_CONTINUE,
 	)
-	default_message = "Vote to initiate a crew transfer."
+	default_message = "Проголосуйте за то, чтобы вызов шаттла."
 
 /datum/vote/transfer_vote/toggle_votable()
 	CONFIG_SET(flag/allow_vote_transfer, !CONFIG_GET(flag/allow_vote_transfer))
@@ -24,7 +24,7 @@
 		return VOTE_AVAILABLE
 
 	if(!CONFIG_GET(flag/autotransfer) || !CONFIG_GET(flag/allow_vote_transfer))
-		return "Transfer voting is disabled."
+		return "Голосование за шаттл отключено."
 
 	return VOTE_AVAILABLE
 
@@ -39,7 +39,7 @@
 			comms_console.post_status("shuttle")
 		return
 
-	CRASH("[type] wasn't passed a valid winning choice. (Got: [winning_option || "null"])")
+	CRASH("[type] не был передан правильный вариант выигрыша. (Получено: [winning_option || "null"])")
 
 #undef CHOICE_TRANSFER
 #undef CHOICE_CONTINUE

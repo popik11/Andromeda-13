@@ -6,25 +6,25 @@
 	return ..()
 
 /mob/verb/opposing_force()
-	set name = "Opposing Force"
+	set name = "Противостоящая сила"
 	set category = "OOC"
-	set desc = "View your opposing force panel, or request one."
+	set desc = "Ознакомьтесь с панелью противоборствующих сил или запросите ее."
 	// Mind checks
 	if(!mind)
-		var/fail_message = "You have no mind!"
+		var/fail_message = "У вас нет разума!"
 		if(isobserver(src))
-			fail_message += " You have to be in the current round at some point to have one."
+			fail_message += " Чтобы получить его, вы должны быть в текущем раунде в определенный момент."
 		to_chat(src, span_warning(fail_message))
 		return
 	if(mind?.assigned_role.title == ROLE_GHOST_CAFE)
-		to_chat(src, span_warning("You have to be inside the current round to request an opfor."))
+		to_chat(src, span_warning("Чтобы запросить опфор, вы должны находиться в текущем раунде."))
 		return
 	if(is_banned_from(ckey, BAN_ANTAGONIST))
-		to_chat(src, span_warning("You are antagonist banned!"))
+		to_chat(src, span_warning("У вас блокировка антагониста!"))
 		return
 
 	if(is_banned_from(ckey, BAN_OPFOR))
-		to_chat(src, span_warning("You are OPFOR banned!"))
+		to_chat(src, span_warning("У вас блокировка OPFOR!"))
 		return
 
 	if(!mind.opposing_force)

@@ -1,20 +1,20 @@
 /client/verb/looc(msg as text)
 	set name = "LOOC"
-	set desc = "Local OOC, seen only by those in view."
+	set desc = "Местный OOC, видимый только тем, кто в поле зрения."
 	set category = "OOC"
 
 	looc_message(msg)
 
 /client/verb/looc_wallpierce(msg as text)
-	set name = "LOOC (Wallpierce)"
-	set desc = "Local OOC, seen by anyone within 7 tiles of you."
+	set name = "LOOC (Через стену)"
+	set desc = "Местный OOC, его видят все, кто находится в радиусе 7 плиток от вас."
 	set category = "OOC"
 
 	looc_message(msg, TRUE)
 
 /client/proc/looc_message(msg, wall_pierce)
 	if(GLOB.say_disabled)
-		to_chat(usr, span_danger("Speech is currently admin-disabled."))
+		to_chat(usr, span_danger("В настоящее время LOOC (Через стену) отключен администратором."))
 		return
 
 	if(!mob)
@@ -26,25 +26,25 @@
 
 	if(!holder)
 		if(!GLOB.looc_allowed)
-			to_chat(src, span_danger("LOOC is globally muted."))
+			to_chat(src, span_danger("LOOC глобально отключен."))
 			return
 		if(handle_spam_prevention(msg, MUTE_OOC))
 			return
 		if(findtext(msg, "byond://"))
-			to_chat(src, span_boldannounce("<B>Advertising other servers is not allowed.</B>"))
-			log_admin("[key_name(src)] has attempted to advertise in LOOC: [msg]")
+			to_chat(src, span_boldannounce("<B>Реклама других серверов запрещена.</B>"))
+			log_admin("[key_name(src)] попытался разместить рекламу в LOOC: [msg]")
 			return
 		if(prefs.muted & MUTE_LOOC)
-			to_chat(src, span_danger("You cannot use LOOC (muted)."))
+			to_chat(src, span_danger("Вы не можете использовать LOOC (мут)."))
 			return
 		if(is_banned_from(ckey, BAN_LOOC))
-			to_chat(src, span_warning("You are LOOC banned!"))
+			to_chat(src, span_warning("Вы заблокированы в LOOC!"))
 			return
 		if(mob.stat == DEAD)
-			to_chat(src, span_danger("You cannot use LOOC while dead."))
+			to_chat(src, span_danger("Вы не можете использовать LOOC когда вы мертвы."))
 			return
 		if(istype(mob, /mob/dead))
-			to_chat(src, span_danger("You cannot use LOOC while ghosting."))
+			to_chat(src, span_danger("Вы не можете использовать LOOC когда вы призрак."))
 			return
 
 	msg = emoji_parse(msg)

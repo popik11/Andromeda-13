@@ -23,7 +23,7 @@ export const SkillPanel = (props) => {
   const { act, data } = useBackend();
   const skills = data.skills || [];
   return (
-    <Window title="Manage Skills" width={600} height={500}>
+    <Window title="Управление навыками" width={600} height={500}>
       <Window.Content scrollable>
         <Section title={skills.playername}>
           <LabeledList>
@@ -33,9 +33,9 @@ export const SkillPanel = (props) => {
                 <br />
                 <Level skill_lvl_num={skill.lvlnum} skill_lvl={skill.lvl} />
                 <br />
-                Total Experience: [{skill.exp} XP]
+                Суммарный опыт: [{skill.exp} XP]
                 <br />
-                XP To Next Level:
+                XP до следующего уровня:
                 {skill.exp_req !== 0 ? (
                   <span>
                     [{skill.exp_prog} / {skill.exp_req}]
@@ -44,7 +44,7 @@ export const SkillPanel = (props) => {
                   <span style={skillgreen}>[MAXXED]</span>
                 )}
                 <br />
-                Overall Skill Progress: [{skill.exp} / {skill.max_exp}]
+                Общий прогресс мастерства: [{skill.exp} / {skill.max_exp}]
                 <ProgressBar value={skill.exp_percent} color="good" />
                 <br />
                 <Button
@@ -86,7 +86,7 @@ const Level = (props) => {
   const { skill_lvl_num, skill_lvl } = props;
   return (
     <Box inline>
-      Level: [
+      Уровень: [
       <Box inline bold textColor={`hsl(${skill_lvl_num * 50}, 50%, 50%)`}>
         {skill_lvl}
       </Box>

@@ -10,17 +10,17 @@
 
 /// Checks if the mob wants to leave the soulcatcher. If they do and are able to leave, they are booted out.
 /mob/living/soulcatcher_soul/verb/leave_soulcatcher()
-	set name = "Leave Soulcatcher"
+	set name = "Покинуть Душегуба"
 	set category = "IC"
 
 	if(!able_to_leave)
-		to_chat(src, span_warning("You are unable to leave the soulcatcher."))
+		to_chat(src, span_warning("Вы не можете покинуть душегуба."))
 		return FALSE
 
-	if(tgui_alert(src, "Are you sure you wish to leave the soulcatcher? IF you had a body, this will return you to your body", "Soulcatcher", list("Yes", "No")) != "Yes")
+	if(tgui_alert(src, "Вы уверены, что хотите покинуть душегуба? Если у вас было тело, это вернет вас в ваше тело.", "Душегуб", list("Да", "Нет")) != "Да")
 		return FALSE
 
-	if(tgui_alert(src, "Are you really sure about this?", "Soulcatcher", list("Yes", "No")) != "Yes")
+	if(tgui_alert(src, "Вы действительно уверены в этом?", "Душегуб", list("Да", "Нет")) != "Да")
 		return FALSE
 
 	return_to_body()
@@ -89,7 +89,7 @@
 		target_body.grab_ghost(TRUE)
 
 /mob/living/soulcatcher_soul/Destroy()
-	log_message("[key_name(src)] has exited a soulcatcher.", LOG_GAME)
+	log_message("[key_name(src)] вышел из душегубки.", LOG_GAME)
 	var/datum/component/carrier_user/soul_component = GetComponent(/datum/component/carrier_user)
 	if(soul_component && soul_component.current_room)
 		var/datum/carrier_room/room = soul_component.current_room.resolve()
@@ -104,7 +104,7 @@
 	mob_type_blacklist_typecache = list(/mob/living/brain, /mob/living/soulcatcher_soul)
 
 /datum/action/innate/leave_carrier
-	name = "Leave Soulcatcher"
+	name = "Покинуть Душегуба"
 	background_icon = 'modular_skyrat/master_files/icons/mob/actions/action_backgrounds.dmi'
 	background_icon_state = "android"
 	button_icon = 'modular_skyrat/master_files/icons/mob/actions/actions_nif.dmi'

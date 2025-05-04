@@ -90,5 +90,5 @@ ADMIN_VERB(force_event, R_FUN, "Trigger Event", "Forces an event to occur.", ADM
 			var/always_announce_chance = 100
 			var/no_announce_chance = 0
 			event.run_event(announce_chance_override = announce_event ? always_announce_chance : no_announce_chance, admin_forced = TRUE)
-			message_admins("[key_name_admin(usr)] has triggered an event. ([event.name])")
-			log_admin("[key_name(usr)] has triggered an event. ([event.name])")
+			message_admins("[key_name_admin(usr)] вызвал событие. ([event.name])")
+			log_admin("[key_name(usr)] вызвал событие. ([event.name])")

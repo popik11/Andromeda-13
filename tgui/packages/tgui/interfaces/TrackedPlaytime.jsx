@@ -24,7 +24,7 @@ const PlaytimeSection = (props) => {
   );
 
   if (!sortedPlaytimes.length) {
-    return 'No recorded playtime hours for this section.';
+    return 'В этом разделе нет зарегистрированных часов игры.';
   }
 
   const mostPlayed = sortedPlaytimes[0][1];
@@ -52,7 +52,7 @@ const PlaytimeSection = (props) => {
                       minimumFractionDigits: 1,
                       maximumFractionDigits: 1,
                     })}
-                    h
+                    часов
                   </Flex.Item>
                 </Flex>
               </ProgressBar>
@@ -77,17 +77,17 @@ export const TrackedPlaytime = (props) => {
     adminTime,
   } = data;
   return (
-    <Window title="Tracked Playtime" width={550} height={650}>
+    <Window title="Отслеживание времени игры" width={550} height={650}>
       <Window.Content scrollable>
         {(failReason &&
           ((failReason === JOB_REPORT_MENU_FAIL_REASON_TRACKING_DISABLED && (
-            <Box>This server has disabled tracking.</Box>
+            <Box>На этом сервере отключено отслеживание.</Box>
           )) ||
             (failReason === JOB_REPORT_MENU_FAIL_REASON_NO_RECORDS && (
-              <Box>You have no records.</Box>
+              <Box>У вас нет записей.</Box>
             )))) || (
           <Box>
-            <Section title="Total">
+            <Section title="Всего">
               <PlaytimeSection
                 playtimes={{
                   Ghost: ghostTime,
@@ -97,21 +97,21 @@ export const TrackedPlaytime = (props) => {
               />
             </Section>
             <Section
-              title="Jobs"
+              title="Профессия"
               buttons={
                 !!isAdmin && (
                   <Button.Checkbox
                     checked={!!exemptStatus}
                     onClick={() => act('toggle_exempt')}
                   >
-                    Job Playtime Exempt
+                    Отключить проверку часов
                   </Button.Checkbox>
                 )
               }
             >
               <PlaytimeSection playtimes={jobPlaytimes} />
             </Section>
-            <Section title="Special">
+            <Section title="Специальные">
               <PlaytimeSection playtimes={specialPlaytimes} />
             </Section>
           </Box>

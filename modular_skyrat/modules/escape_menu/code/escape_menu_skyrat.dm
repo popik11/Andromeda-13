@@ -16,7 +16,7 @@
 			null,
 			/* hud_owner = */ src,
 			src,
-			"Ghost",
+			"Призрак",
 			/* offset = */ 7,
 			CALLBACK(src, PROC_REF(home_ghost)),
 		)
@@ -27,7 +27,7 @@
 			null,
 			/* hud_owner = */ src,
 			src,
-			"Respawn",
+			"В лобби",
 			/* offset = */ 5,
 			CALLBACK(src, PROC_REF(home_respawn)),
 		)

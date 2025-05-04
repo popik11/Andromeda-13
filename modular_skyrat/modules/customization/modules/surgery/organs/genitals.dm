@@ -526,11 +526,11 @@
 
 /mob/living/carbon/human/verb/toggle_genitals()
 	set category = "IC"
-	set name = "Expose/Hide genitals"
-	set desc = "Allows you to toggle which genitals should show through clothes or not."
+	set name = "(ЕРП)Показать/скрыть гениталии"
+	set desc = "Позволяет переключать, какие гениталии должны быть видны сквозь одежду, а какие нет."
 
 	if(stat != CONSCIOUS)
-		to_chat(usr, span_warning("You can't toggle genitals visibility right now..."))
+		to_chat(usr, span_warning("Вы не можете переключить видимость гениталий прямо сейчас..."))
 		return
 
 	var/list/genital_list = list()
@@ -541,13 +541,13 @@
 		return
 	//Full list of exposable genitals created
 	var/obj/item/organ/genital/picked_organ
-	picked_organ = input(src, "Choose which genitalia to expose/hide", "Expose/Hide genitals") as null|anything in genital_list
+	picked_organ = input(src, "Выберите, какие гениталии показывать/скрывать", "Показать/скрыть гениталии") as null|anything in genital_list
 	if(picked_organ && (picked_organ in organs))
-		var/list/gen_vis_trans = list("Never show" = GENITAL_NEVER_SHOW,
-												"Hidden by clothes" = GENITAL_HIDDEN_BY_CLOTHES,
-												"Always show" = GENITAL_ALWAYS_SHOW
+		var/list/gen_vis_trans = list("Никогда не показывать" = GENITAL_NEVER_SHOW,
+												"Скрыто одеждой" = GENITAL_HIDDEN_BY_CLOTHES,
+												"Всегда показывать" = GENITAL_ALWAYS_SHOW
 												)
-		var/picked_visibility = input(src, "Choose visibility setting", "Expose/Hide genitals") as null|anything in gen_vis_trans
+		var/picked_visibility = input(src, "Выберите настройку видимости", "Показать/скрыть гениталии") as null|anything in gen_vis_trans
 		if(picked_visibility && picked_organ && (picked_organ in organs))
 			picked_organ.visibility_preference = gen_vis_trans[picked_visibility]
 			update_body()
@@ -562,11 +562,11 @@
 
 /mob/living/carbon/human/verb/toggle_arousal()
 	set category = "IC"
-	set name = "Toggle Arousal"
-	set desc = "Allows you to toggle how aroused your private parts are."
+	set name = "(ЕРП)Переключить возбуждение"
+	set desc = "Позволяет переключать степень возбуждения ваших интимных частей."
 
 	if(stat != CONSCIOUS)
-		to_chat(usr, span_warning("You can't toggle arousal right now..."))
+		to_chat(usr, span_warning("Вы не можете переключить возбуждение прямо сейчас..."))
 		return
 
 	var/list/genital_list = list()
@@ -577,12 +577,12 @@
 		return
 	//Full list of exposable genitals created
 	var/obj/item/organ/genital/picked_organ
-	picked_organ = input(src, "Choose which genitalia to change arousal", "Expose/Hide genitals") as null|anything in genital_list
+	picked_organ = input(src, "Выберите гениталии для изменения возбуждения", "Возбуждение") as null|anything in genital_list
 	if(picked_organ && (picked_organ in organs))
 		var/list/gen_arous_trans = list(
-			"Not aroused" = AROUSAL_NONE,
-			"Partly aroused" = AROUSAL_PARTIAL,
-			"Very aroused" = AROUSAL_FULL,
+			"Не возбужден" = AROUSAL_NONE,
+			"Частично возбужден" = AROUSAL_PARTIAL,
+			"Очень возбужден" = AROUSAL_FULL,
 		)
 		var/picked_arousal = input(src, "Choose arousal", "Toggle Arousal") as null|anything in gen_arous_trans
 		if(picked_arousal && picked_organ && (picked_organ in organs))

@@ -552,7 +552,7 @@
  * for why this isn't atom/verb/examine()
  */
 /mob/verb/examinate(atom/examinify as mob|obj|turf in view()) //It used to be oview(12), but I can't really say why
-	set name = "Examine"
+	set name = "Исследовать"
 	set category = "IC"
 
 	DEFAULT_QUEUE_OR_CALL_VERB(VERB_CALLBACK(src, PROC_REF(run_examinate), examinify))
@@ -581,7 +581,7 @@
 		if(examine_time && (world.time - examine_time < EXAMINE_MORE_WINDOW))
 			var/list/result = examinify.examine_more(src)
 			if(!length(result))
-				result += span_notice("<i>You examine [examinify] closer, but find nothing of interest...</i>")
+				result += span_notice("<i>Вы осматриваете [examinify] подробнее, но не находите ничего интересного...</i>")
 			result_combined = boxed_message(jointext(result, "<br>"))
 			result_combined = replacetext(result_combined, "<hr><br>", "<hr>") // BUBBER EDIT ADDITION - bit of a hack here to make sure we don't get linebreaks coming after headers
 
@@ -632,8 +632,8 @@
 	if(DOING_INTERACTION_WITH_TARGET(src, examined_thing))
 		return FALSE
 
-	to_chat(src, span_notice("You start feeling around for something..."))
-	visible_message(span_notice(" [name] begins feeling around for \the [examined_thing.name]..."))
+	to_chat(src, span_notice("Вы начинаете прощупывать вокруг..."))
+	visible_message(span_notice(" [name] начинает прощупывать вокруг [examined_thing.name]..."))
 
 	/// how long it takes for the blind person to find the thing they're examining
 	var/examine_delay_length = rand(1 SECONDS, 2 SECONDS)
@@ -647,7 +647,7 @@
 		examine_delay_length *= 2
 
 	if(examine_delay_length > 0 && !do_after(src, examine_delay_length, target = examined_thing))
-		to_chat(src, span_notice("You can't get a good feel for what is there."))
+		to_chat(src, span_notice("Вы не можете ощупом понять, что это такое."))
 		return FALSE
 
 	//now we touch the thing we're examining
@@ -694,13 +694,13 @@
 	if(examined_mob.is_face_visible() && SEND_SIGNAL(src, COMSIG_MOB_EYECONTACT, examined_mob, TRUE) != COMSIG_BLOCK_EYECONTACT)
 		var/obj/item/clothing/eye_cover = examined_mob.is_eyes_covered()
 		if (!eye_cover || (!eye_cover.tint && !eye_cover.flash_protect))
-			var/msg = span_smallnotice("You make eye contact with [examined_mob].")
+			var/msg = span_smallnotice("Вы смотрите в глаза [examined_mob].")
 			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), src, msg), 0.3 SECONDS) // so the examine signal has time to fire and this will print after
 
 	if(!imagined_eye_contact && is_face_visible() && !examined_mob.is_blind() && SEND_SIGNAL(examined_mob, COMSIG_MOB_EYECONTACT, src, FALSE) != COMSIG_BLOCK_EYECONTACT)
 		var/obj/item/clothing/eye_cover = is_eyes_covered()
 		if (!eye_cover || (!eye_cover.tint && !eye_cover.flash_protect))
-			var/msg = span_smallnotice("[src] makes eye contact with you.")
+			var/msg = span_smallnotice("[src] смотрит вам в глаза.")
 			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), examined_mob, msg), 0.3 SECONDS)
 
 /**
@@ -758,7 +758,7 @@
  * Calls attack self on the item and updates the inventory hud for hands
  */
 /mob/verb/mode()
-	set name = "Activate Held Object"
+	set name = "Активировать удерживаемый объект"
 	set category = "Object"
 	set src = usr
 
@@ -788,12 +788,12 @@
  * Only works if flag/allow_respawn is allowed in config
  */
 /mob/verb/abandon_mob()
-	set name = "Respawn"
+	set name = "В ЛОББИ"
 	set category = "OOC"
 
 	switch(CONFIG_GET(flag/allow_respawn))
 		if(RESPAWN_FLAG_NEW_CHARACTER)
-			if(tgui_alert(usr, "Note, respawning is only allowed as another character. If you don't have another free slot you may not be able to respawn.", "Respawn", list("Ok", "Nevermind")) != "Ok")
+			if(tgui_alert(usr, "Заметьте, что возвращаться в игру с лобби необходимо другим персонажем. Если у вас не осталось неиспользованных в раунде слотов, вы не сможете вернуться в лобби.", "Respawn", list("Хорошо", "Забудьте")) != "Хорошо")
 				return
 
 		if(RESPAWN_FLAG_FREE)
@@ -801,13 +801,13 @@
 
 		if(RESPAWN_FLAG_DISABLED)
 			if (!check_rights_for(usr.client, R_ADMIN))
-				to_chat(usr, span_boldnotice("Respawning is not enabled!"))
+				to_chat(usr, span_boldnotice("Возврат в лобби отключен!"))
 				return
-			if (tgui_alert(usr, "Respawning is currently disabled, do you want to use your permissions to circumvent it?", "Respawn", list("Yes", "No")) != "Yes")
+			if (tgui_alert(usr, "Возврат в лобби отключен, хотите ли вы воспользоваться своими правами для обхода?", "Respawn", list("Да", "Нет")) != "Да")
 				return
 
 	if (stat != DEAD)
-		to_chat(usr, span_boldnotice("You must be dead to use this!"))
+		to_chat(usr, span_boldnotice("Вы должны быть мертвы, чтобы использовать это!"))
 		return
 
 	if(!check_respawn_delay())
@@ -868,7 +868,7 @@
  * Sometimes helps if the user is stuck in another perspective or camera
  */
 /mob/verb/cancel_camera()
-	set name = "Cancel Camera View"
+	set name = "Отменить просмотр с камеры"
 	set category = "OOC"
 	reset_perspective(null)
 
@@ -1494,7 +1494,7 @@
 
 ///Show the language menu for this mob
 /mob/verb/open_language_menu_verb()
-	set name = "Open Language Menu"
+	set name = "Меню языков"
 	set category = "IC"
 
 	get_language_holder().open_language_menu(usr)
@@ -1621,13 +1621,13 @@
 
 ///Shows a tgui window with memories
 /mob/verb/memory()
-	set name = "Memories"
+	set name = "Воспоминания"
 	set category = "IC"
-	set desc = "View your character's memories."
+	set desc = "Просмотрите воспоминания вашего персонажа."
 	if(!mind)
-		var/fail_message = "You have no mind!"
+		var/fail_message = "У вас нет разума!"
 		if(isobserver(src))
-			fail_message += " You have to be in the current round at some point to have one."
+			fail_message += " Вы должны поучавствовать в раунде, чтобы получить разум."
 		to_chat(src, span_warning(fail_message))
 		return
 	if(!mind.memory_panel)
@@ -1676,7 +1676,7 @@
 
 /mob/verb/view_skills()
 	set category = "IC"
-	set name = "View Skills"
+	set name = "Просмотр навыков"
 
 	mind?.print_levels(src)
 

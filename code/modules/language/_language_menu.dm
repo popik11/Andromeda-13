@@ -68,52 +68,52 @@
 				. = TRUE
 		if("grant_language")
 			if((is_admin || isobserver(speaker)) && language_datum)
-				var/list/choices = list("Only Spoken", "Only Understood", "Both")
-				var/choice = tgui_input_list(user, "How do you want to add this language?", "[language_datum]", choices)
+				var/list/choices = list("Только разговорный", "Только понимание", "Полное владение")
+				var/choice = tgui_input_list(user, "Как вы хотите добавить этот язык?", "[language_datum]", choices)
 				if(isnull(choice))
 					return
 				var/adding_flags = NONE
 				switch(choice)
-					if("Only Spoken")
+					if("Только разговорный")
 						adding_flags |= SPOKEN_LANGUAGE
-					if("Only Understood")
+					if("Только понимание")
 						adding_flags |= UNDERSTOOD_LANGUAGE
-					if("Both")
+					if("Полное владение")
 						adding_flags |= ALL
 
 				if(LAZYACCESS(language_holder.blocked_languages, language_datum))
-					choice = tgui_alert(user, "Do you want to lift the blockage that's also preventing the language to be spoken or understood?", "[language_datum]", list("Yes", "No"))
-					if(choice == "Yes")
+					choice = tgui_alert(user, "Хотите ли вы снять блокировку, которая мешает разговаривать или понимать язык?", "[language_datum]", list("Да", "Нет"))
+					if(choice == "Нет")
 						language_holder.remove_blocked_language(language_datum, LANGUAGE_ALL)
 				language_holder.grant_language(language_datum, adding_flags)
 				if(is_admin)
-					message_admins("[key_name_admin(user)] granted the [language_name] language to [key_name_admin(speaker)].")
-					log_admin("[key_name(user)] granted the language [language_name] to [key_name(speaker)].")
+					message_admins("[key_name_admin(user)] даровал понимание язык [language_name] игроку [key_name_admin(speaker)].")
+					log_admin("[key_name(user)] даровал понимание язык [language_name] игроку [key_name(speaker)].")
 				. = TRUE
 		if("remove_language")
 			if((is_admin || isobserver(speaker)) && language_datum)
-				var/list/choices = list("Only Spoken", "Only Understood", "Both")
-				var/choice = tgui_input_list(user, "Which part do you wish to remove?", "[language_datum]", choices)
+				var/list/choices = list("Только разговорный", "Только понимание", "Полное владение")
+				var/choice = tgui_input_list(user, "Какую именно часть вы хотите удалить?", "[language_datum]", choices)
 				if(isnull(choice))
 					return
 				var/removing_flags = NONE
 				switch(choice)
-					if("Only Spoken")
+					if("Только разговорный")
 						removing_flags |= SPOKEN_LANGUAGE
-					if("Only Understood")
+					if("Только понимание")
 						removing_flags |= UNDERSTOOD_LANGUAGE
-					if("Both")
+					if("Полное владение")
 						removing_flags |= ALL
 
 				language_holder.remove_language(language_datum, removing_flags)
 				if(is_admin)
-					message_admins("[key_name_admin(user)] removed the [language_name] language to [key_name_admin(speaker)].")
-					log_admin("[key_name(user)] removed the language [language_name] to [key_name(speaker)].")
+					message_admins("[key_name_admin(user)] лишил понимание языка [language_name] у игрока [key_name_admin(speaker)].")
+					log_admin("[key_name(user)] лишил понимание языка [language_name] у игрока [key_name(speaker)].")
 				. = TRUE
 		if("toggle_omnitongue")
 			if(is_admin || isobserver(speaker))
 				language_holder.omnitongue = !language_holder.omnitongue
 				if(is_admin)
-					message_admins("[key_name_admin(user)] [language_holder.omnitongue ? "enabled" : "disabled"] the ability to speak all languages (that they know) of [key_name_admin(speaker)].")
-					log_admin("[key_name(user)] [language_holder.omnitongue ? "enabled" : "disabled"] the ability to speak all languages (that_they know) of [key_name(speaker)].")
+					message_admins("[key_name_admin(user)] [language_holder.omnitongue ? "включил" : "отключил"] способность (Полиглот) говорить на всех языках игрку [key_name_admin(speaker)].")
+					log_admin("[key_name(user)] [language_holder.omnitongue ? "включил" : "отключил"] способность (Полиглот) говорить на всех языках игрку [key_name(speaker)].")
 				. = TRUE

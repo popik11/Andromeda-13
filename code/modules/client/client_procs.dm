@@ -1220,9 +1220,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	observer.ManualFollow(target)
 
 /client/verb/stop_client_sounds()
-	set name = "Stop Sounds"
+	set name = "Остановить звуки"
 	set category = "OOC"
-	set desc = "Stop Current Sounds"
+	set desc = "Остановить текущие звуки"
 	SEND_SOUND(usr, sound(null))
 	tgui_panel?.stop_music()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Stop Self Sounds"))
@@ -1237,7 +1237,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	attempt_auto_fit_viewport()
 
 /client/verb/toggle_status_bar()
-	set name = "Toggle Status Bar"
+	set name = "Переключить строку состояния"
 	set category = "OOC"
 
 	show_status_bar = !show_status_bar

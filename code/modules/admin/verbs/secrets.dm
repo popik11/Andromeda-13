@@ -220,8 +220,8 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 					if(admin_setup_datum.prompt_admins() == ADMIN_CANCEL_EVENT)
 						return
 			event.run_event(admin_forced = TRUE)
-			message_admins("[key_name_admin(usr)] has triggered an event. ([event.name])")
-			log_admin("[key_name(usr)] has triggered an event. ([event.name])")
+			message_admins("[key_name_admin(usr)] вызвал событие. ([event.name])")
+			log_admin("[key_name(usr)] вызвал событие. ([event.name])")
 
 		if("allspecies")
 			if(!is_funmin)

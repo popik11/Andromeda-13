@@ -48,7 +48,7 @@ SUBSYSTEM_DEF(autotransfer)
 	var/init_vote = CONFIG_GET(number/vote_autotransfer_initial) // Check if an admin has manually set an override in the pre-game lobby
 	starttime = real_round_start_time
 	targettime = starttime + init_vote
-	log_game("Autotransfer enabled, first vote in [DisplayTimeText(targettime - starttime)]")
-	message_admins("Autotransfer enabled, first vote in [DisplayTimeText(targettime - starttime)]")
+	log_game("Автоматический шаттл включен, первое голосование через [DisplayTimeText(targettime - starttime)]")
+	message_admins("Автоматический шаттл включен, первое голосование через  [DisplayTimeText(targettime - starttime)]")
 
 #undef NO_MAXVOTES_CAP

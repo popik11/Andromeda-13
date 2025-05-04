@@ -2,11 +2,11 @@
 
 /datum/quirk/modularlimbs
 	name = "Modular Limbs"
-	desc = "You've undergone an experimental ligament hook surgery, allowing your limbs to be attached and detached easily. Unfortunately, this means everyone else can alter your limbs too!"
+	desc = "Вы перенесли экспериментальную операцию по зацеплению связок, благодаря которой ваши конечности можно легко присоединять и отсоединять. К сожалению, это означает, что все остальные тоже могут изменять ваши конечности!"
 	value = 0
-	gain_text = span_notice("Your limbs feel like they could come off with a bit of effort.")
-	lose_text = span_notice("Your limbs feel more firmly attached.")
-	medical_record_text = "Patient has detachable limbs."
+	gain_text = span_notice("Кажется, что ваши конечности могут оторваться при небольшом усилии.")
+	lose_text = span_notice("Ваши конечности чувствуют себя более прочно.")
+	medical_record_text = "У пациента отсоединяемые конечности."
 	mob_trait = TRAIT_MODULAR_LIMBS
 	icon = FA_ICON_PUZZLE_PIECE
 
@@ -52,8 +52,8 @@
 // Variant of self amputation spell
 /datum/action/cooldown/spell/modularlimbs
 	// More descriptive text, with warning
-	name = "Eject a random limb"
-	desc = "Eject a random limb from your body."
+	name = "Выброс случайной конечности"
+	desc = "Выбросьте случайную конечность из своего тела."
 	button_icon_state = "autotomy"
 
 	cooldown_time = 1 SECONDS
@@ -71,7 +71,7 @@
 /datum/action/cooldown/spell/modularlimbs/cast(mob/living/carbon/cast_on)
 	. = ..()
 	if(HAS_TRAIT(cast_on, TRAIT_NODISMEMBER))
-		to_chat(cast_on, span_notice("You concentrate really hard, but nothing happens."))
+		to_chat(cast_on, span_notice("Вы очень сильно концентрируетесь, но ничего не происходит."))
 		return
 
 	var/list/parts = list()
@@ -83,7 +83,7 @@
 		parts += to_remove
 
 	if(!length(parts))
-		to_chat(cast_on, span_notice("You can't shed any more limbs!"))
+		to_chat(cast_on, span_notice("Вы не можете больше отбрасывать конечности!"))
 		return
 
 	var/obj/item/bodypart/to_remove = pick(parts)
@@ -93,8 +93,8 @@
 // New verb to alter limbs
 /mob/living/proc/alterlimbs()
 	// Verb definitions
-	set name = "Alter Limbs"
-	set desc = "Remove or attach a limb!"
+	set name = "Изменение конечностей"
+	set desc = "Удалите или прикрепите конечность!"
 	set category = "IC"
 	set src in view(usr.client)
 
@@ -106,13 +106,13 @@
 	// This causes a runtime error
 	if(mob_initiator == mob_target)
 		// Alert initiator and return
-		to_chat(mob_initiator, span_warning("You cannot alter your own limbs! Ask someone else for help."))
+		to_chat(mob_initiator, span_warning("Вы не можете изменить свои собственные конечности! Попросите кого-нибудь другого о помощи."))
 		return
 
 	// Check if initiator is adjacent
 	if(!mob_target.Adjacent(mob_initiator))
 		// Alert initiator and return
-		to_chat(mob_initiator, span_warning("You must be adjacent to [mob_target] to do this!"))
+		to_chat(mob_initiator, span_warning("Для этого вы должны находиться рядом с [mob_target]!"))
 		return
 
 	// Note: Limb attachment is redundant with TRAIT_LIMBATTACHMENT
@@ -126,12 +126,12 @@
 		// Check if a limb already exists
 		if(mob_target.get_bodypart(part_held.body_zone))
 			// Alert initiator and return
-			to_chat(mob_initiator, span_warning("[mob_target.p_They()] already [mob_target.p_have()] a limb attached there!"))
+			to_chat(mob_initiator, span_warning("У [mob_target.p_They()] уже [mob_target.p_have()] есть прикрепленная конечность!"))
 			return
 
 		// Limb does not already exist!
 		// Alert target of interaction attempt
-		mob_target.visible_message(span_warning("[mob_initiator] is attempting to attach \the [part_held] onto [mob_target]!"), span_userdanger("[mob_initiator] is attempting to attach \the [part_held] to you!"))
+		mob_target.visible_message(span_warning("[mob_initiator]  пытается прикрепить \the [part_held] к [mob_target]!"), span_userdanger("[mob_initiator] пытается прикрепить \the [part_held] к вам!"))
 
 		// Attempt interaction timer
 		if(do_after(mob_initiator, MODLIMB_TIME_ADJUST, target = mob_target))
@@ -139,13 +139,13 @@
 			part_held.try_attach_limb(mob_target)
 
 			// Alert users and return
-			mob_target.visible_message(span_warning("[mob_initiator] successfully attaches \the [part_held] onto [mob_target]"), span_warning("[mob_initiator] has successfully attached \the [part_held.name] onto you; you can use that limb again!"))
+			mob_target.visible_message(span_warning("[mob_initiator] успешно прикрепляет \the [part_held] к [mob_target]"), span_warning("[mob_initiator] успешно прикрепил \the [part_held.name] к вам; вы можете снова использовать эту конечность!"))
 			return
 
 		// Interaction timer failed
 		else
 			// Alert users and return
-			to_chat(mob_initiator, span_warning("You and [mob_target] must both stand still for you to alter their limbs!"))
+			to_chat(mob_initiator, span_warning("Вы и [mob_target] должны оба стоять неподвижно, чтобы вы могли изменить их конечности!"))
 			return
 
 	// Initiator is not holding a body part!
@@ -153,11 +153,11 @@
 	// Check for valid target region
 	if(mob_initiator.zone_selected == BODY_ZONE_CHEST || mob_initiator.zone_selected == BODY_ZONE_HEAD)
 		// Alert initiator and return
-		to_chat(mob_initiator, span_warning("You must target either an arm or a leg!"))
+		to_chat(mob_initiator, span_warning("Вы должны выбрать руку или ногу!"))
 		return
 	if(mob_initiator.zone_selected == BODY_ZONE_PRECISE_GROIN || mob_initiator.zone_selected == BODY_ZONE_PRECISE_EYES || mob_initiator.zone_selected == BODY_ZONE_PRECISE_MOUTH)
 		// Alert initiator and return
-		to_chat(mob_initiator, span_warning("There is no limb here; select an arm or a leg!"))
+		to_chat(mob_initiator, span_warning("Здесь нет конечности; выберите руку или ногу!"))
 		return
 
 	// Define target body part
@@ -166,13 +166,13 @@
 	// Check if the limb exists to be removed
 	if(!part_target)
 		// Alert initiator and return
-		to_chat(mob_initiator, span_warning("[mob_target.p_They()] [mob_target.p_are()] already missing that limb!"))
+		to_chat(mob_initiator, span_warning("[mob_target.p_They()] [mob_target.p_are()] уже лишен этой конечности!"))
 		return
 
 	// Check if part is irremovable
 	if(part_target.bodypart_flags & BODYPART_UNREMOVABLE)
 		// Alert initiator and return
-		to_chat(mob_initiator, span_warning("[mob_target.p_Their()] limb is too firmly attached!"))
+		to_chat(mob_initiator, span_warning("[mob_target.p_Their()] конечность прикреплена слишком прочно!"))
 		return
 
 	// Region is valid and has a limb!
@@ -181,7 +181,7 @@
 	var/part_name = part_target.name
 
 	// Alert users of interaction attempt
-	mob_target.visible_message(span_warning("[mob_initiator] is attempting to remove [mob_target]'s [part_name]!"), span_userdanger("[mob_initiator] is attempting to disconnect your [part_name]!"))
+	mob_target.visible_message(span_warning("[mob_initiator] пытается отсоединить [mob_target] [part_name]!"), span_userdanger("[mob_initiator] пытается отсоединить вашу [part_name]!"))
 
 	// Attempt interaction timer
 	if(do_after(mob_initiator, MODLIMB_TIME_ADJUST, target = mob_target))
@@ -191,7 +191,7 @@
 		// Check if redefined target matches
 		if(part_target != part_target_check)
 			// Alert initiator and return
-			to_chat(mob_initiator, span_warning("You cannot target a different limb while already removing one!"))
+			to_chat(mob_initiator, span_warning("Вы не можете выбрать другую конечность, когда уже убрали одну!"))
 			return
 
 		// Remove targeted limb
@@ -205,13 +205,13 @@
 		mob_target.update_equipment_speed_mods()
 
 		// Alert users and return
-		mob_target.visible_message(span_warning("[mob_initiator] forcefully disconnects [mob_target]'s [part_name]!"), span_userdanger("[mob_initiator] has forcefully disconnected your [part_name]!"))
+		mob_target.visible_message(span_warning("[mob_initiator] принудительно отключает [mob_target]'s [part_name]!"), span_userdanger("[mob_initiator] принудительно отключил вашу [part_name]!"))
 		return
 
 	// Interaction timer failed
 	else
 		// Alert users and return
-		to_chat(mob_initiator, span_warning("You and [mob_target] must both stand still for you to alter their limbs!"))
+		to_chat(mob_initiator, span_warning("Вы и [mob_target] должны оба стоять неподвижно, чтобы вы могли изменить их конечности!"))
 		return
 
 #undef MODLIMB_TIME_ADJUST

@@ -6,5 +6,5 @@
 		if(client.next_circuit_grief_warning < world.time)
 			var/turf/T = get_turf(src)
 			client.next_circuit_grief_warning = world.time + 15 MINUTES // Wait 15 minutes before alerting admins again
-			message_admins("[span_adminhelp("ANTI-GRIEF:")] New player [ADMIN_LOOKUPFLW(user)] has touched \a [src] at [ADMIN_VERBOSEJMP(T)].")
+			message_admins("[span_adminhelp("АНТИ-ГРИФ:")] Новый игрок [ADMIN_LOOKUPFLW(user)] коснулся \a [src] на [ADMIN_VERBOSEJMP(T)].")
 			client.touched_circuit = TRUE
