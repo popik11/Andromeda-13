@@ -110,6 +110,8 @@
 
 	var/list/random_links = init_discord_videos()
 	var/random_link = pick(random_links)
+	if(!random_links)
+		random_link = "Видосики не найдены."
 	var/message_for_video = pick(CONFIG_GET(str_list/randomizing_message_for_video))
 	var/last_roundend_message = "**[message_for_video]**\n [random_link]"
 	var/datum/tgs_message_content/random_message = new(last_roundend_message)
