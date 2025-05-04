@@ -107,8 +107,6 @@
 
 	var/datum/tgs_message_content/message = new("# Раунд под номером #[GLOB.round_id] ([SSgamemode.storyteller.name]) только что закончился. [CONFIG_GET(string/roundend_ping_role) ? "<@[CONFIG_GET(string/roundend_ping_role)]>" : ""]")
 	message.embed = embed
-	for(var/channel_tag in CONFIG_GET(str_list/channel_announce_new_game))
-		send2chat(message, channel_tag)
 
 	var/list/random_links = init_discord_videos()
 	var/random_link = pick(random_links)
@@ -116,6 +114,7 @@
 	var/last_roundend_message = "**[message_for_video]**\n [random_link]"
 	var/datum/tgs_message_content/random_message = new(last_roundend_message)
 	for(var/channel_tag in CONFIG_GET(str_list/channel_announce_new_game))
+		send2chat(message, channel_tag)
 		send2chat(random_message, channel_tag)
 
 #undef FUNNY_VIDEOS_FILE_NAME
