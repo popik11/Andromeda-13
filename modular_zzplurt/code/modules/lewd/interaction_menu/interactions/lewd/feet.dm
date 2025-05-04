@@ -1,14 +1,14 @@
 /datum/interaction/lewd/grindface
-	name = "Grind Face"
-	description = "Feet grind their face."
+	name = "Прижать ногой лицо" ///Translate + small addons with messages by MissKira
+	description = "Прижмите чье-нибудь лицо своей ножкой."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET, INTERACTION_REQUIRE_TARGET_MOUTH)
 	message = list(
-		"grinds their %FEET% into %TARGET%'s face.",
-		"presses their %FEET% down hard on %TARGET%'s face.",
-		"rubs off the dirt from their %FEET% onto %TARGET%'s face.",
-		"plants their %FEET% ontop of %TARGET%'s face.",
-		"rests their %FEET% on %TARGET%'s face and presses down hard.",
-		"harshly places their %FEET% atop %TARGET%'s face."
+		"Размашисто проходится своей %FEET% по лицу %TARGET%.",
+		"Сильно жмется своей %FEET% к лицу %TARGET%.",
+		"Натирается своей %FEET% о лицо %TARGET%.",
+		"Кладет свою %FEET% прямо на лицо %TARGET%.",
+		"Кладет свою %FEET% на лицо %TARGET% и сильно давит.",
+		"Резко кладет свою %FEET% на лицо %TARGET%."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/foot_dry1.ogg',
@@ -36,16 +36,16 @@
 	message = original_messages
 
 /datum/interaction/lewd/grindmouth
-	name = "Grind Mouth"
-	description = "Feet grind their mouth."
+	name = "Пройтись ножкой в рот"
+	description = "Пройдитесь своей ногой кому-нибудь в рот."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET, INTERACTION_REQUIRE_TARGET_MOUTH)
 	message = list(
-		"roughly shoves their %FEET% deeper into %TARGET%'s mouth.",
-		"harshly forces another inch of their %FEET% into %TARGET%'s mouth.",
-		"presses their weight down, their %FEET% prying deeper into %TARGET%'s mouth.",
-		"forces their %FEET% deep into %TARGET%'s mouth.",
-		"presses the tip of their %FEET% against %TARGET%'s lips and shoves inwards.",
-		"readies themselves and in one swift motion, shoves their %FEET% into %TARGET%'s mouth."
+		"Грубо пихает свою %FEET% глубже в рот %TARGET%.",
+		"Грубо заталкивает еще один дюйм своей %FEET% в ротик %TARGET%.",
+		"Давит свои весом, проталкивая свою %FEET% глубже в ротик %TARGET%.",
+		"Заталкивает свою %FEET% глубоко в рот %TARGET%.",
+		"Прижимает кончик своей %FEET% к губам %TARGET% и надавливает во-внутрь.",
+		"Готовится и одним быстрым движением засовывает свою %FEET% глубоко в ротик %TARGET%."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/foot_wet1.ogg',
@@ -71,36 +71,36 @@
 	message = original_messages
 
 /datum/interaction/lewd/footjob
-	name = "Footjob"
-	description = "Jerk them off with your foot."
+	name = "Работа ножкой(ФутДжоб)"
+	description = "Вздрочните кому-нибудь своей ножкой."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
-		"jerks %TARGET% off with their %FEET%.",
-		"rubs their %FEET% on %TARGET%'s shaft.",
-		"works their %FEET% up and down on %TARGET%'s cock."
+		"Дрочит член %TARGET% используя свою %FEET%.",
+		"Трется своей %FEET% о ствол %TARGET%",
+		"Работает своей %FEET% вверх и вниз на пенисе %TARGET%."
 	)
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"cums all over %USER%'s %FEET%.",
-			"covers %USER%'s %FEET% in cum.",
-			"shoots their load onto %USER%'s %FEET%."
+			"Кончает по всей %FEET% %USER% своим семенем!!",
+			"Покрывает %FEET% %USER% в своем смени!",
+			"Выпрыскивает все соки прямо на %FEET% %USER%!"
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"you cum all over %USER%'s %FEET%.",
-			"you cover %USER%'s %FEET% in cum.",
-			"you shoot your load onto %USER%'s %FEET%."
+			"Вы кончаете по всей %FEET% %USER% своим семенем!",
+			"Вы покрываете семенем всю %FEET% %USER%!",
+			"Вы выпрыскиваете все свои соки прямо на %FEET% %USER%!"
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%TARGET% cums all over your %FEET%.",
-			"%TARGET% covers your %FEET% in cum.",
-			"%TARGET% shoots their load onto your %FEET%."
+			"%TARGET% Обильно кончает прямо на вашу %FEET%!",
+			"%TARGET% Покрывает вашу %FEET% своим семенем!",
+			"%TARGET% Выстреливает все что есть на вашу %FEET%!"
 		)
 	)
 	sound_possible = list(
@@ -157,13 +157,13 @@
 	cum_partner_text_overrides[position] = original_partner_overrides
 
 /datum/interaction/lewd/footjob/double
-	name = "Double Footjob"
-	description = "Jerk them off with both of your feet."
+	name = "Двойная работа ножкой(ДаблФутДжоб)"
+	description = "Вздрочните кому-нибудь своими ножками."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET)
 	message = list(
-		"jerks %TARGET% off with their %FEET%.",
-		"rubs their %FEET% on %TARGET%'s shaft.",
-		"works their %FEET% up and down on %TARGET%'s cock."
+		"Вздрачивает член %TARGET% своими %FEET%.",
+		"Трется своими %FEET% о пенис %TARGET%",
+		"Работает двумя своими %FEET% вверх-вниз, заглаживая член %TARGET%."
 	)
 	user_pleasure = 0
 	target_pleasure = 5
@@ -182,36 +182,48 @@
 	message = original_messages
 
 /datum/interaction/lewd/footjob/vagina
-	name = "Vaginal Footjob"
-	description = "Rub their vagina with your foot."
+	name = "Вагинальная работа ножкой(ВагинальныйФутДжоб)"
+	description = "Поработайте своей ножкой с чьей-нибудь вагиной."
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	message = list(
-		"rubs %TARGET%'s clit with their %FEET%.",
-		"rubs their %FEET% on %TARGET%'s coochie.",
-		"rubs their %FEET% on %TARGET%'s pussy.",
-		"rubs their foot up and down on %TARGET%'s pussy."
+		"Трет клитор %TARGET% используя свою %FEET%.",
+		"Трется своей %FEET% о целку %TARGET%.",
+		"Трется своей %FEET% о киску %TARGET%.",
+		"Натирает своей %FEET% киску %TARGET%.",
+		"Давит своей %FEET% киску %TARGET% попутно растирая её.",
+		"Слегка толкается своей %FEET% в киску %TARGET% прижимая ту.",
+		"Трет своей %FEET% вверх-вниз по кисе %TARGET%."
 	)
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"squirts all over %USER%'s %FEET%.",
-			"orgasms on %USER%'s %FEET%.",
-			"coats %USER%'s %FEET% with their juices."
+			"Сквиртует прямо на %FEET% %USER%!",
+			"Сквиртует на %FEET% %USER% запыхаясь!",
+			"Обильно сквиртит прямо на %FEET% %USER%!",
+			"Оргазмирует на %FEET% %USER%!",
+			"Обильно оргазмирует прямо на %FEET% %USER%!",
+			"Обильно покрывает %FEET% %USER% своими соками!"
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"you squirt all over %USER%'s %FEET%.",
-			"you orgasm on %USER%'s %FEET%.",
-			"you coat %USER%'s %FEET% with your juices."
+			"Вы неумолимо сквиртуете на %FEET% %USER%!",
+			"Вы сквиртуете прямо на %FEET% %USER%!",
+			"Вы протяжно оргазмируете на %FEET% %USER%!",
+			"Вы сладко оргазмируете прямо на %FEET% %USER%!",
+			"Вы тихонько и сжато стреляете соками на %FEET% %USER%!",
+			"Вы обильно покрываете %FEET% %USER% вашими соками~!"
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%TARGET% squirts all over your %FEET%.",
-			"%TARGET% orgasms on your %FEET%.",
-			"%TARGET% coats your %FEET% with their juices."
+			"%TARGET% Обильно сквиртует на вашу %FEET%!",
+			"%TARGET% Сквиртует на вашу %FEET%!",
+			"%TARGET% Неумолимо сквиртует на вашу %FEET%!",
+			"%TARGET% Сочно оргазмирует на вашу %FEET%!",
+			"%TARGET% Слащаво и обильно оргазмирует на вашу %FEET%!",
+			"%TARGET% Покрывает вашу %FEET% обильным количеством соков!"
 		)
 	)
 	sound_possible = list(

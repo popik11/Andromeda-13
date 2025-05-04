@@ -1,12 +1,13 @@
 /datum/interaction/lewd/breastfeed
-	name = "Breastfeed"
-	description = "Breastfeed them."
+	name = "Кормежка Грудью" ///Translate + addon's with message + redacted by MissKira
+	description = "Накормить своего партнера своей грудью."
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH, INTERACTION_REQUIRE_SELF_HUMAN)
 	message = list(
-		"pushes their breasts against %TARGET%'s mouth, squirting their warm %MILK% into their mouth.",
-		"fills %TARGET%'s mouth with warm, sweet %MILK% as they squeeze their boobs, panting.",
-		"lets a large stream of their own abundant %MILK% coat the back of %TARGET%'s throat."
+		"Прижимает свои груди ко рту %TARGET%, выплескивая свои теплые %MILK% прямо в рот.",
+		"Наполняет рот %TARGET% теплым и сладким %MILK% пока грудь сжата.",
+		"Возится своей грудью с ртом %TARGET% наполняя тот теплым и сладким %MILK%.",
+		"Пускает большую струю своей %MILK% прямо на заднюю стенку горла %TARGET%."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/oral1.ogg',
@@ -48,18 +49,22 @@
 		qdel(R)
 
 /datum/interaction/lewd/titgrope
-	name = "Grope Breasts"
-	description = "Grope their breasts."
+	name = "Поласкать Груди"
+	description = "Поласкать чьи-бы то нибыло груди."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_ANY)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	message = list(
-		"gently gropes %TARGET%'s breast.",
-		"softly squeezes %TARGET%'s breasts.",
-		"grips %TARGET%'s breasts.",
-		"runs a few fingers over %TARGET%'s breast.",
-		"delicately teases %TARGET%'s nipple.",
-		"traces a touch across %TARGET%'s breast."
+		"Нежно хватается за груди %TARGET%.",
+		"Мягко жамкает груди %TARGET%.",
+		"Обхватывает груди %TARGET%.",
+		"Проводит несколькими пальцами по сосочкам груди %TARGET%.",
+		"Настойчиво дразнит соски %TARGET%.",
+		"Аккуратно сжимает груди %TARGET% в своих конечностях.",
+		"Обхватывает груди %TARGET% начиная водить их по часовой стрелке разминая.",
+		"Сдавливает груди %TARGET% вместе, затем плавно разминая.",
+		"Настойчиво жамкает груди %TARGET% нежно сдавливая их.",
+		"Проводит пальцем по груди %TARGET%."
 	)
 	sound_possible = list('modular_zzplurt/sound/interactions/squelch1.ogg')
 	sound_range = 1
@@ -83,7 +88,7 @@
 			liquid_container = cached_item
 
 	if(liquid_container)
-		message = list("milks %TARGET%'s breasts into \the [liquid_container].")
+		message = list("Сцеживает грудь %TARGET% в [liquid_container].")
 		interaction_modifier_flags |= INTERACTION_OVERRIDE_FLUID_TRANSFER
 		. = ..()
 		interaction_modifier_flags &= ~INTERACTION_OVERRIDE_FLUID_TRANSFER
@@ -94,27 +99,34 @@
 	switch(resolve_intent_name(user.combat_mode))
 		if("harm")
 			message = list(
-				"aggressively gropes %TARGET%'s breast.",
-				"grabs %TARGET%'s breasts.",
-				"tightly squeezes %TARGET%'s breasts.",
-				"slaps at %TARGET%'s breasts.",
-				"gropes %TARGET%'s breasts roughly."
+				"Агрессивно хватается за груди %TARGET% и крепко сжимает их.",
+				"Берется за груди %TARGET% и начинает крепко сдавливать их.",
+				"Крепко сдавливает груди %TARGET% в своих конечностях.",
+				"Неаккуратно сильно шлепает %TARGET% по груди.",
+				"Насильно и с силой сжимает груди %TARGET%.",
+				"Насильно лапает груди %TARGET% доставляя боль.",
+				"Крепко ухватившись, насильно облапывает груди %TARGET%.",
+				"Агрессивно берется за груди %TARGET% и тянет их в разные стороны, сдавливая.",
+				"Грубо лапает груди %TARGET% вдавливая их"
 			)
 		if("disarm")
 			message = list(
-				"playfully bats at %TARGET%'s breasts.",
-				"teasingly gropes %TARGET%'s breasts.",
-				"playfully squeezes %TARGET%'s breasts.",
-				"mischievously fondles %TARGET%'s breasts.",
-				"impishly teases %TARGET%'s nipples."
+				"Игриво ласкает груди %TARGET%.",
+				"Дразняще лапает груди %TARGET%.",
+				"Игриво сжимает груди %TARGET%.",
+				"Заигрывающе мягко водит грудями %TARGET% в разные стороны.",
+				"Озорнисто сдавливает груди %TARGET%.",
+				"Игриво подразнивает соски на груди %TARGET% своими пальцами."
 			)
 		if("grab")
 			message = list(
-				"firmly grips %TARGET%'s breasts.",
-				"possessively gropes %TARGET%'s breasts.",
-				"eagerly kneads %TARGET%'s breasts.",
-				"roughly fondles %TARGET%'s breasts.",
-				"greedily squeezes %TARGET%'s breasts."
+				"Крепко и настойчиво обхватывает груди %TARGET%.",
+				"Словно они собственность, лапает груди %TARGET%.",
+				"Жадко и беспощадно разминает груди %TARGET% потягивая те к себе.",
+				"Грубо и собственнически ласкает груди %TARGET%.",
+				"Жадно крутит сосочки на груди %TARGET% потягивая те.",
+				"Жадно потягивает сосочки %TARGET%.",
+				"Жадно потягивает груди %TARGET%."
 			)
 	. = ..()
 	message = original_messages
@@ -153,28 +165,53 @@
 		switch(intent)
 			if("help")
 				arousal_messages = list(
-					"%TARGET% shivers in arousal.",
-					"%TARGET% moans quietly.",
-					"%TARGET% breathes out a soft moan.",
-					"%TARGET% gasps.",
-					"%TARGET% shudders softly.",
-					"%TARGET% trembles as hands run across bare skin."
+					"%TARGET% Подрагивает от возбуждения.",
+					"%TARGET% Подрагивает от возбуждения, слегка отклоняясь.",
+					"%TARGET% Тихо постанывает.",
+					"%TARGET% Тихо постанывает, слегка отклоняясь.",
+					"%TARGET% Выдыхает тихий постон.",
+					"%TARGET% Выдыхает тихий постон, слегка откинув голову.",
+					"%TARGET% Задыхается в удовольствии.",
+					"%TARGET% Задыхается в удовольствии, интенсивно подрагивая.",
+					"%TARGET% Тихонько вздрагивает.",
+					"%TARGET% Тихонько вздрагивает, зажмурив глаза.",
+					"%TARGET% Дрожит, когда руки проходят по её груди."
 				)
 			if("disarm")
 				arousal_messages = list(
-					"%TARGET% playfully squirms.",
-					"%TARGET% lets out a teasing giggle.",
-					"%TARGET% bites their lip.",
-					"%TARGET% wiggles teasingly.",
-					"%TARGET% gives a flirtatious gasp."
+					"%TARGET% Игриво извивается.",
+					"%TARGET% Игриво извивается и ерзает.",
+					"%TARGET% Испускает подразнивающее хихиканье.",
+					"%TARGET% Испускает подразнивающее хихиканье, нежно извиваясь.",
+					"%TARGET% Прикусывает свою губу, нежно вздыхая.",
+					"%TARGET% Прикусывает свои губы, аккуратно выдыхая.",
+					"%TARGET% Дразняще покачивается из стороны в сторону.",
+					"%TARGET% Дразняще покачивается ерзая на месте.",
+					"%TARGET% Кокетливо хихикает с удовольствием в глазах.",
+					"%TARGET% Делает кокетливый вздох."
+				)
+			if("harm")
+				arousal_messages = list(
+					"%TARGET% Извивается от ласкающей боли.",
+					"%TARGET% Протяжно подрагивает от применяемого насилия.",
+					"%TARGET% Болезненно содрагается от грубости.",
+					"%TARGET% Болезненно постанывает зажмурив глаза и покосившись.",
+					"%TARGET% Дрожит от боли, выдыхая.",
+					"%TARGET% С болью постанывает, извиваясь и дрожа.",
+					"%TARGET% Извивается в попытке вырваться из грубого захвата, испуская протяжный постон."
 				)
 			if("grab")
 				arousal_messages = list(
-					"%TARGET% moans eagerly.",
-					"%TARGET% presses into the touch.",
-					"%TARGET% lets out a wanting groan.",
-					"%TARGET% quivers with excitement.",
-					"%TARGET% shivers with anticipation."
+					"%TARGET% Жадно стонет.",
+					"%TARGET% Жадно постанывает.",
+					"%TARGET% Подается навстречу прикосновениям.",
+					"%TARGET% Подается навстречу прикосновениям, протяжно подрагивая.",
+					"%TARGET% Издает жаждящий постон.",
+					"%TARGET% Издает жаждящий постон, извиваясь от удовольствия.",
+					"%TARGET% Подрагивает от возбуждения.",
+					"%TARGET% Извиваясь дрожит от возбуждения.",
+					"%TARGET% Извивается, дрожа от предвкушения и нежно вздыхая.",
+					"%TARGET% Дрожит от предвкушения застонав."
 				)
 
 		if(arousal_messages)
@@ -182,27 +219,28 @@
 			target.visible_message(span_lewd(replacetext(target_message, "%TARGET%", target)))
 
 /datum/interaction/lewd/breastsmother
-	name = "Breast Smother"
-	description = "Smother them with your breasts."
+	name = "Придушить Грудью"
+	description = "Задушите кого-нибудь своей грудью."
 	interaction_requires = list(
 		INTERACTION_REQUIRE_TARGET_MOUTH
 	)
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	message = list(
-		"presses their breasts against %TARGET%'s face",
-		"smothers %TARGET%'s face with their tits",
-		"forces %TARGET%'s face between their breasts",
-		"pins %TARGET%'s head between their boobs"
+		"Прижимает свои груди к лицу %TARGET%.",
+		"Вздохнув прижимает свои груди к лицу %TARGET% и елозит ими.",
+		"Душит лицо %TARGET% своими титьками.",
+		"Крепко прижимает лицо %TARGET% к своим грудям, зажимая его.",
+		"Зажимает голову %TARGET% между своих сисек, начиная елозить ими."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s face pressed between your breasts",
-		"You hold %TARGET%'s head against your chest",
-		"You keep %TARGET%'s face buried in your cleavage"
+		"Вы чувствуете как лицо %TARGET% крепко зажато между ваших сисек.",
+		"Вы крепко прижимаете голову %TARGET% к своей груди.",
+		"Вы держите лицо %TARGET% в своем декольте."
 	)
 	target_messages = list(
-		"Your face is pressed between %USER%'s breasts",
-		"%USER%'s tits smother your face",
-		"Your vision is filled with %USER%'s cleavage"
+		"Ваше лицо зажато между грудей %USER%.",
+		"Сиськи %USER% постепенно душат тебя.",
+		"Вы ничего не видите, кроме декальте %USER%."
 	)
 	sound_range = 1
 	sound_use = FALSE
@@ -221,41 +259,50 @@
 		user.adjust_arousal(8)
 
 /datum/interaction/lewd/do_boobjob
-	name = "Give Boobjob"
-	description = "Give them a boobjob."
+	name = "Сделать работу сиськами"
+	description = "Он же буб-джоб, поработай полусферами, покажи свою мощь."
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"cums all over %USER%'s breasts",
-		"shoots their load onto %USER%'s tits",
-		"covers %USER%'s chest in cum"
+		"Обильно пачкает грудь %USER% своими соками!",
+		"Обильно пачкает грудь и лицо %USER% своими соками!",
+		"Испускает свои соки прямо в титьки %USER%!",
+		"Обильно стреляет соками в сиськи %USER% брызгая в лицо!",
+		"Покрывает грудь %USER% в своих соках!"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"%TARGET% cums all over your breasts",
-		"%TARGET% shoots their load onto your tits",
-		"%TARGET% covers your chest in cum"
+		"%TARGET% Обильно кончает на вашу грудь!",
+		"%TARGET% Обильно кончает на вашу грудь и попадает в ваше лицо!",
+		"%TARGET% Стреляет семенем в ваши сиськи!",
+		"%TARGET% Неумолимо стреляет семенем в ваши сиськи, пачкая ваше лицо вдобавок!",
+		"%TARGET% Покрывает вашу грудь семенем, пульсируя между ваших сисек!"
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"You cum all over %USER%'s breasts",
-		"You shoot your load onto %USER%'s tits",
-		"You cover %USER%'s chest in cum"
+		"Вы обильно кончаете на грудь %USER%!",
+		"Вы неаккуратно кончаете на грудь %USER% попадая в лицо!",
+		"Вы кончаете прямо в сиськи %USER%!",
+		"Вы неаккуратно стреляете в грудь %USER% пачкая лицо!",
+		"Вы покрываете титьки %USER% своим семенем!"
 	))
 	message = list(
-		"wraps their breasts around %TARGET%'s cock",
-		"works %TARGET%'s shaft between their tits",
-		"pleasures %TARGET% with their breasts",
-		"squeezes their breasts around %TARGET%'s cock"
+		"Обхватывает грудью пенис %TARGET%.",
+		"Работает своей грудью с членом %TARGET%.",
+		"Ублажает член %TARGET% своей грудью.",
+		"Двигает своими грудями вверх-вниз ухватив между ними член %TARGET%.",
+		"Сжимает свои груди вокруг члена %TARGET%."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s cock throbbing between your breasts",
-		"The warmth of %TARGET%'s shaft feels nice between your tits",
-		"You squeeze your breasts around %TARGET%'s cock"
+		"Вы чувствуете как пенис %TARGET% содрагается в пульсации между ваших грудей!",
+		"Тепло ствола %TARGET% довольно приятно ощущается между ваших грудей",
+		"Вы ощущаете как груди трутся все легче, постепенно двигая своей грудью вверх-вниз, обхватив член %TARGET% ею же.",
+		"Вы сжимаете свою грудь вокруг члена %TARGET%"
 	)
 	target_messages = list(
-		"%USER%'s soft breasts squeeze your cock",
-		"Your shaft slides between %USER%'s tits",
-		"The softness of %USER%'s breasts feels amazing"
+		"Мягкая грудь %USER% нежно сжимает ваш член",
+		"Ваш ствол с легкостью скользит между титек %USER%",
+		"Вы ощущаете как груди %USER% двигаются вверх-вниз обхватывая ваш член и создавая еще большее тепло.",
+		"Мягкость груди %USER% сводит вас с ума"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',

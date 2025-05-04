@@ -1,35 +1,35 @@
-/datum/interaction/lewd/handjob
-	name = "Handjob"
-	description = "Jerk them off."
+/datum/interaction/lewd/handjob ///Translate by MissKira
+	name = "Ручная Работа(ХэндДжоб)"
+	description = "Поработай ручками с кем-нибудь."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	message = list(
-		"jerks %TARGET% off",
-		"works %TARGET%'s shaft",
-		"wanks %TARGET%'s cock hard"
+		"Вздрачивает член %TARGET%",
+		"Работае со стволом %TARGET% своими руками",
+		"Жестко вздрачивает %TARGET% за член"
 	)
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"cums all over %USER%'s hand.",
-			"shoots their load onto %USER%'s palm.",
-			"covers %USER%'s fingers in cum."
+			"Кончает на руки %USER%!",
+			"Выплескивает свои соки на руки %USER%!",
+			"Покрывает семенем пальцы %USER%!"
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"you cum all over %USER%'s hand.",
-			"you shoot your load onto %USER%'s palm.",
-			"you cover %USER%'s fingers in cum."
+			"Вы кончаете на руки %USER%!",
+			"Вы стреляете на ладошки %USER%!",
+			"Вы покрываете семенем пальчики %USER%!"
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%TARGET% cums all over your hand.",
-			"%TARGET% shoots their load onto your palm.",
-			"%TARGET% covers your fingers in cum."
+			"%TARGET% Кончает на ваши руки!",
+			"%TARGET% Стреляет на ваши ладошки!",
+			"%TARGET% Покрывает семенем ваши пальчики!"
 		)
 	)
 	sound_possible = list(
@@ -61,7 +61,7 @@
 	if(liquid_container)
 		var/list/original_messages = message.Copy()
 		var/chosen_message = pick(message)
-		message = list("[chosen_message] over \the [liquid_container]")
+		message = list("[chosen_message] над [liquid_container]")
 		interaction_modifier_flags |= INTERACTION_OVERRIDE_FLUID_TRANSFER
 		. = ..()
 		interaction_modifier_flags &= ~INTERACTION_OVERRIDE_FLUID_TRANSFER
@@ -93,9 +93,9 @@
 			original_partner_overrides = original_partner_overrides?.Copy()
 
 			// Set container-specific messages
-			cum_message_text_overrides[position] = list("cums into \the [liquid_container].")
-			cum_self_text_overrides[position] = list("you cum into \the [liquid_container].")
-			cum_partner_text_overrides[position] = list("%TARGET% cums into \the [liquid_container].")
+			cum_message_text_overrides[position] = list("Кончает в [liquid_container].")
+			cum_self_text_overrides[position] = list("Вы кончаете в [liquid_container].")
+			cum_partner_text_overrides[position] = list("%TARGET% кончает в [liquid_container].")
 
 			. = ..()
 

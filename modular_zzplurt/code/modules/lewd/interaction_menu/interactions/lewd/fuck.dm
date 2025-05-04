@@ -1,38 +1,155 @@
-/datum/interaction/lewd/fuck
-	name = "Fuck"
-	description = "Fuck their pussy."
+/datum/interaction/lewd/fuck ///Translate + very more addons with messages + very redacted by MissKira
+	name = "Вагинальный Секс"
+	description = "Займись Вагинальным Сексом, для нормальных робастеров."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_VAGINA, CLIMAX_POSITION_TARGET = ORGAN_SLOT_PENIS)
+	cum_message_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"Кончает глубоко внутрь киски %TARGET%!",
+			"Вжавшись в выпаде, наполняет киску %TARGET%!",
+			"Прижавшись и войдя как можно глубже, наполняет %TARGET%!",
+			"Шлепаясь яйцами, стреляет глубоко во внутрь %TARGET% переполняя вагину!",
+			"Выстреливает семенем прямо во внутрь %TARGET%!",
+			"Покрывает все пространство внутри %TARGET% своим семенем!"
+		),
+		CLIMAX_POSITION_TARGET = list(
+			"Оргазмирует прямо на член и таз %USER%!",
+			"Вздрагивая и выгинаясь, сквиртует на %USER%!",
+			"Выгинаясь от удовольствия, обильно сквиртует на таз и член %USER%!",
+			"Выстреливает сладкими соками прямо на %USER%!",
+			"Покрывает сладкими соками таз %USER%!"
+		)
+	)
+	cum_self_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"Вы кончаете глубоко во внутрь киски %TARGET% ощущая свой долг исполненным!",
+			"Вы вжимаетесь в выпаде, наполняя одним обильным выстрелом киску %TARGET%!",
+			"Вы прижимаетесь как можно сильнее и войдя как можно поглубже, наполняете пизденку %TARGET%!",
+			"Шлепнувшись яйцами, вы выстреливаете в киску %TARGET% нереполняя её теплом!",
+			"Вы стреляете семенем прямо во внутрь %TARGET% переполняя внутренности вагины!",
+			"Вы покрываете семенем внутренности киски %TARGET%!"
+		),
+		CLIMAX_POSITION_TARGET = list(
+			"Вы сквиртуете на член %USER%!",
+			"Вы стреляете своими соками на таз и член %USER%!",
+			"Вздрагивая и выгинаясь, вы сквиртуете на %USER%!",
+			"Выгинаясь от удовольствия, вы обильно сквиртуете на %USER%!",
+			"Вы покрываете своими соками пенис %USER% сквиртуя!"
+		)
+	)
+	cum_partner_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"%USER% Кончает глубоко внутрь вас, это очень тепло и приятно!",
+			"%USER% Вжимается в вас молниеносным ударом глубоко во внутрь, тут же наполняя вас обильным выстрелом во-внутрь!",
+			"%USER% Прижимается к вам как можно сильнее, и войдя поглубже начинает расстреливать вашу пизденку изнутри!",
+			"%USER% Шлепаясь об вас яйцами, молниеносно стреляет внутрь вас семенем, переполняя вас!",
+			"%USER% Стреляет семенем прямо в вашу пизденку, вы ощущаете наполненность!",
+			"%USER% Покрывает семенем ваши внутренности киски!"
+		),
+		CLIMAX_POSITION_TARGET = list(
+			"%TARGET% Сквиртует на ваш член и таз!",
+			"%TARGET% Вздрагивая и выгинаясь, сквиртует прямо на вас!",
+			"%TARGET% Выгинаясь от удовольствия, обильно стреляет сквиртом на вас!",
+			"%TARGET% Стреляет своими соками прямо на вас!",
+			"%TARGET% Пачкает вас своими сладкими соками!"
+		)
+	)
 	message = list(
-		"pounds %TARGET%'s pussy.",
-		"shoves their cock deep into %TARGET%'s pussy.",
-		"thrusts in and out of %TARGET%'s cunt.",
-		"goes balls deep into %TARGET%'s pussy over and over again."
+		"Вдалбливается в киску %TARGET% хлюпая",
+		"Нещадно долбится во-внутрь киски %TARGET% ударяясь в упор",
+		"Трахает %TARGET% в киску смачно хлюпая",
+		"Придерживая животик %TARGET% глубоко вонзается членом в киску",
+		"Крепко ударживая бедра %TARGET% грубовато двигается внутри киски",
+		"Нежно проталкивается членом в киску %TARGET%",
+		"Нежно скользит в киску %TARGET% хлюпнув",
+		"Плавно разрабатывает промежную целку %TARGET% шлепаясь яйцами",
+		"Плавно двигается внутри %TARGET% слегка придерживая себя",
+		"Быстро долбится внутрь %TARGET% создавая влажные звуки",
+		"Заметно ускоряется внутри %TARGET% стараясь давить на пездочку как можно сильнее",
+		"Скользит внутрь киски %TARGET% с шлепком.",
+		"Входит и выходит из пизденки %TARGET% шлепаясь.",
+		"Входит в пизду %TARGET% снова и снова, вдалбливаясь в неё."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ1.ogg',
 		'modular_zzplurt/sound/interactions/champ2.ogg'
 	)
-	sound_range = 1
+	sound_range = 2
 	sound_use = TRUE
-	user_pleasure = 8
-	target_pleasure = 8
-	user_arousal = 12
-	target_arousal = 12
+	user_pleasure = 7
+	target_pleasure = 6
+	user_arousal = 11
+	target_arousal = 10
 
 /datum/interaction/lewd/fuck/anal
-	name = "Anal Fuck"
-	description = "Fuck their ass."
+	name = "Анальный Секс"
+	description = "Займись прикрытием заднего прохода, в вашей поддержке нуждаются."
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
 	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_ANUS, CLIMAX_POSITION_TARGET = ORGAN_SLOT_PENIS)
+	cum_message_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"Кончает глубоко внутрь попки %TARGET%, семя обильно вытекает!",
+			"Вжавшись в выпаде, наполняет попку %TARGET%!",
+			"Прижавшись и втолкнувшись как можно глубже, наполняет %TARGET% в попку!",
+			"Шлепаясь яйцами, стреляет глубоко во внутрь %TARGET% переполняя попку!",
+			"Выстреливает семенем прямо во внутрь попки %TARGET%!",
+			"Покрывает все пространство внутри попки %TARGET% своим семенем!"
+		),
+		CLIMAX_POSITION_TARGET = list(
+			"Кончает под себя от удовольствия!",
+			"Судорожно испускает соки под себя от удовольствия!",
+			"Вздрагивая и выгинаясь, покрывает поверхность под собой любовными соками от удовольствия!"
+		)
+	)
+	cum_self_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"Вы кончаете глубоко во внутрь попки %TARGET% семя обильно вытекает!",
+			"Вы вжимаетесь в выпаде, наполняя одним обильным выстрелом попку %TARGET%!",
+			"Вы прижимаетесь как можно сильнее и войдя как можно поглубже, наполняете уздечко %TARGET%!",
+			"Шлепнувшись яйцами, вы выстреливаете в попку %TARGET% нереполняя её теплом!",
+			"Вы стреляете семенем прямо во внутрь %TARGET% переполняя внутренности ануса!",
+			"Вы покрываете семенем внутренности попки %TARGET%, семя обильно вытекает!"
+		),
+		CLIMAX_POSITION_TARGET = list(
+			"Вы кончаете под себя от удовольствия!",
+			"Вы судорожно испускаете соки под себя от удовольствия!",
+			"Вздрагивая и выгинаясь, вы покрываете поверхность под собой любовными соками от удовольствия!"
+		)
+	)
+	cum_partner_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"%USER% Кончает глубоко внутрь вашей попки, это очень тепло, больно и приятно!",
+			"%USER% Вжимается в вас молниеносным ударом глубоко во внутрь, тут же наполняя вашу попу обильным выстрелом во-внутрь!",
+			"%USER% Вонзается в вас молниеносным ударом глубоко в попку, тут же наполняя вас обильным выстрелом во-внутрь!",
+			"%USER% Прижимается к вам как можно сильнее, и войдя поглубже начинает расстреливать вашу попку изнутри!",
+			"%USER% Шлепаясь об вас яйцами, молниеносно стреляет внутрь вашей попки семенем, переполняя вас!",
+			"%USER% Стреляет семенем прямо в вашу задницу, вы ощущаете наполненность!",
+			"%USER% Покрывает семенем ваши внутренности ануса!"
+		),
+		CLIMAX_POSITION_TARGET = list(
+			"%TARGET% Кончает под себя от удовольствия!",
+			"%TARGET% Судорожно испускает соки под себя от удовольствия!",
+			"%TARGET% Выгинаясь и вздрагивая покрывает поверхность под собой любовными соками от удовольствия!"
+		)
+	)
 	message = list(
-		"thrusts in and out of %TARGET%'s ass.",
-		"pounds %TARGET%'s ass.",
-		"slams their hips up against %TARGET%'s ass hard.",
-		"goes balls deep into %TARGET%'s ass over and over again."
+		"Вдалбливается в попку %TARGET% шлепаясь и хлюпая",
+		"Нещадно долбится во-внутрь задницы %TARGET% ударяясь глубоко во-внутрь",
+		"Трахает %TARGET% в жопку смачно хлюпая и шлепаясь",
+		"Придерживая животик %TARGET% глубоко вонзается членом в попку",
+		"Крепко ударживая бедра %TARGET% грубовато двигается внутри попки",
+		"Нежно проталкивается членом в анальное колечко %TARGET%",
+		"Нежно скользит в попку %TARGET% хлюпнув",
+		"Плавно разрабатывает попку %TARGET% шлепаясь яйцами",
+		"Плавно двигается внутри задницы %TARGET% слегка придерживая себя",
+		"Быстро долбится внутрь жопки %TARGET% создавая вакуумные звуки",
+		"Заметно ускоряется внутри %TARGET% стараясь давить на внутренности попки как можно сильнее",
+		"Скользит внутрь попки %TARGET% с шлепком.",
+		"Входит и выходит из попки %TARGET% шлепаясь.",
+		"Входит в задницу %TARGET% снова и снова, вдалбливаясь в неё."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -40,24 +157,48 @@
 		'modular_zzplurt/sound/interactions/bang3.ogg'
 	)
 	sound_use = TRUE
-	user_pleasure = 8
-	target_pleasure = 4
+	user_pleasure = 7
+	target_pleasure = 5
 	user_arousal = 12
-	target_arousal = 8
-	target_pain = 3
+	target_arousal = 6
+	target_pain = 5
 
 /datum/interaction/lewd/breastfuck
-	name = "Breast Fuck"
-	description = "Fuck their breasts."
+	name = "Грудный Секс"
+	description = "Выеби чью-нибудь грудь?!"
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = ORGAN_SLOT_BREASTS)
+	cum_message_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"Кончает между грудей %TARGET%, семя обильно попадает на лицо!",
+			"Грубо толкаясь между грудей %TARGET% своим членом, стреляет в лицо %TARGET%!",
+			"Покрывает грудь %TARGET% своим семенем, попадая в ротик!"
+		),
+		CLIMAX_POSITION_TARGET = list()
+	)
+	cum_self_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"Вы кончаете между грудей %TARGET% отправляя соки в полет и на лицо %TARGET%!",
+			"Вы грубо толкаясь между грудей %TARGET% своим членом, наконец кончаете!",
+			"Вы покрываете грудь %TARGET% своим семенем, попадая и в ротик!"
+		),
+		CLIMAX_POSITION_TARGET = list()
+	)
+	cum_partner_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"%USER% Кончает между ваших грудей, попадая вам в лицо!",
+			"%USER% Грубо толкнувшись между ваших грудей своим членом, кончает вам на грудь и шею!",
+			"%USER% Покрывает вашу грудь горячим семенем, попутно стреляя вам в ротик парой капель!"
+		),
+		CLIMAX_POSITION_TARGET = list()
+	)
 	message = list(
-		"fucks %TARGET%'s breasts.",
-		"grinds their cock between %TARGET%'s boobs.",
-		"thrusts into %TARGET%'s tits.",
-		"grabs %TARGET%'s breasts together and presses their cock between them."
+		"Трахает %TARGET% между грудей.",
+		"Елозит членом между сисек %TARGET%.",
+		"Вставляет в титьки %TARGET% свой член, и начинает двигаться.",
+		"Сжимает груди %TARGET% вместе, и давит членом меж ними."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',

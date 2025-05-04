@@ -1,23 +1,26 @@
-/datum/interaction/lewd/kiss
-	name = "Kiss"
-	description = "Kiss them deeply."
+/datum/interaction/lewd/kiss /// Translate + addons for messages by MissKira
+	name = "Поцеловать"
+	description = "Целуй глубоко, крепко и страстно."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH, INTERACTION_REQUIRE_TARGET_MOUTH)
 	message = list(
-		"gives an intense, lingering kiss to %TARGET%.",
-		"kisses %TARGET% deeply.",
-		"slides their tongue into %TARGET%'s mouth.",
-		"presses their lips against %TARGET%'s.",
-		"gives %TARGET% a passionate kiss."
+		"Дарит интенсивный, глубокий и продолжительный поцелуй для %TARGET%.",
+		"Глубоко целует %TARGET%.",
+		"Проникает своим язычком в ротик %TARGET% делая это по-французски.",
+		"Прижимает свои губы к губам %TARGET%.",
+		"Легонько целует %TARGET% прикусывая губу.",
+		"Сладостно целуется с %TARGET%.",
+		"Протяженно, нежно и любвеобильно целуется с %TARGET%.",
+		"Дарит %TARGET% страстный любовный поцелуй."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s warm lips against yours.",
-		"Your tongue dances with %TARGET%'s.",
-		"The taste of %TARGET%'s mouth lingers on your lips."
+		"Вы чувствуете теплые губы %TARGET% на своих.",
+		"Твой язычок танцует с язычком %TARGET% меж вашими ртами.",
+		"Вкус рта %TARGET% любовно задерживается на ваших губах."
 	)
 	target_messages = list(
-		"%USER%'s tongue explores your mouth.",
-		"You feel %USER%'s lips press against yours.",
-		"The warmth of %USER%'s kiss sends shivers down your spine."
+		"Язык %USER% исследует ваш ротик.",
+		"Вы чувствуете, как губы %USER% страстно прижимаются к вашим.",
+		"Тепло поцелуя %USER% заставляет вас содрагаться в предвкушении."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/kiss1.ogg',
@@ -30,8 +33,8 @@
 	sound_use = TRUE
 	user_pleasure = 0
 	target_pleasure = 0
-	user_arousal = 2
-	target_arousal = 2
+	user_arousal = 4
+	target_arousal = 4
 
 /datum/interaction/lewd/kiss/post_interaction(mob/living/user, mob/living/target)
 	. = ..()

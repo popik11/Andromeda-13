@@ -1,39 +1,40 @@
 /datum/interaction/lewd/armpit_fuck
-	name = "Armpit Fuck"
-	description = "Fuck their armpit."
+	name = "Трахать в подмышку" ///Translate by MissKira
+	description = "Трахните подмышку партнера."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_TOPLESS)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"cums all over %TARGET%'s armpit",
-		"shoots their load into %TARGET%'s pit",
-		"covers %TARGET%'s underarm in cum"
+		"Кончает на всю подмышку %TARGET%!",
+		"Выпускает все свои соки в подмышку %TARGET%!",
+		"Покрывает подмышку %TARGET% своими соками!"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum all over %TARGET%'s armpit",
-		"You shoot your load into %TARGET%'s pit",
-		"You cover %TARGET%'s underarm in cum"
+		"Вы кончаете на всю подмышку %TARGET%!",
+		"Вы выпускаете свои соки в подмышку %TARGET%!",
+		"вы покрываете подмышку %TARGET% своими соками!"
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%USER% cums all over your armpit",
-		"%USER% shoots their load into your pit",
-		"%USER% covers your underarm in cum"
+		"%USER% Кончает на вашу подмышку своими соками!",
+		"%USER% Выпускает на вашу подмышку свои соки!",
+		"%USER% Покрывает вашу подмышку своими соками!"
 	))
 	message = list(
-		"fucks %TARGET%'s armpit",
-		"slides their cock into %TARGET%'s underarm",
-		"thrusts into %TARGET%'s pit",
-		"pounds %TARGET%'s armpit"
+		"Входит в подмышку %TARGET% с сочным шлепком!",
+		"Вгоняет свой член в подмышку %TARGET%!",
+		"Вставляет свой член в ямку %TARGET%!",
+		"Долбится своим членом в подмышку %TARGET%!"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s warm pit around your cock",
-		"The softness of %TARGET%'s armpit feels good against your shaft",
-		"%TARGET%'s underarm squeezes your cock nicely"
+		"Вы чувствуете теплую ямку %TARGET% вокруг своего члена.",
+		"Мягкость подмышки %TARGET% приятно ощущается на вашем члене.",
+		"Подмышка %TARGET% приятно обхватывает и сжимает ваш член."
 	)
 	target_messages = list(
-		"You feel %USER%'s cock rubbing in your armpit",
-		"%USER%'s shaft slides against your underarm",
-		"The warmth of %USER%'s cock presses into your pit"
+		"Вы чувствуете как член %USER% трется о вашу подмышку.",
+		"Вы чувствуете как %USER% грубовато трется членом о вашу подмышку.",
+		"Член %USER% легко скользит по вашей подмышке.",
+		"Горечь члена %USER% сдавливает вашу ямку в подмышке."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -48,27 +49,28 @@
 	target_arousal = 2
 
 /datum/interaction/lewd/armpit_lick
-	name = "Lick Armpit"
-	description = "Lick their armpit."
+	name = "Вылизать подмышку"
+	description = "Облизать подмышку партнера"
 	interaction_requires = list(
 		INTERACTION_REQUIRE_SELF_MOUTH,
 		INTERACTION_REQUIRE_TARGET_TOPLESS
 	)
 	message = list(
-		"licks %TARGET%'s armpit",
-		"runs their tongue along %TARGET%'s underarm",
-		"tastes %TARGET%'s pit",
-		"plants their face in %TARGET%'s armpit"
+		"Лижет подмышку %TARGET%.",
+		"Проходится своим языком по подмышке %TARGET%.",
+		"Пробует ямку подмышки %TARGET% на вкус.",
+		"Старательно пробует ямку подмышки %TARGET% на вкус.",
+		"Проходится своим лицом в подмышку %TARGET% облизывая ту."
 	)
 	user_messages = list(
-		"You taste %TARGET%'s armpit",
-		"The scent of %TARGET%'s pit fills your nose",
-		"You savor the taste of %TARGET%'s underarm"
+		"Вы чувствуете вкус подмышки %TARGET%.",
+		"Аромат подмышки %TARGET% плавно заполняет ваш нос.",
+		"Вы ощущаете вкус подмышки %TARGET%."
 	)
 	target_messages = list(
-		"You feel %USER%'s tongue in your armpit",
-		"%USER%'s wet tongue slides across your pit",
-		"The warmth of %USER%'s mouth tingles your underarm"
+		"Вы ощущаете язык %USER% в своей подмышке.",
+		"Влажный язык %USER% плавно скользит по вашей подмышке в ямку.",
+		"Тепло из рта %USER% в вашей подмышке, заставляет вас нежно содрагаться."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
@@ -81,27 +83,27 @@
 	target_arousal = 3
 
 /datum/interaction/lewd/armpit_smother
-	name = "Armpit Smother"
-	description = "Press your armpit against their face."
+	name = "Прижаться подмышкой к лицу"
+	description = "Прижми своей подмышкой лицо партнера."
 	interaction_requires = list(
 		INTERACTION_REQUIRE_TARGET_MOUTH,
 		INTERACTION_REQUIRE_SELF_TOPLESS
 	)
 	message = list(
-		"presses their armpit against %TARGET%'s face",
-		"smothers %TARGET%'s face with their pit",
-		"forces %TARGET%'s face into their underarm",
-		"pins %TARGET%'s head under their arm"
+		"Прижимает свою подмышку к лицу %TARGET%!",
+		"Властно прижимает лицо %TARGET% своей подмышкой!",
+		"Вдавливает лицо %TARGET% в свою подмышку!",
+		"Придавливает лицо %TARGET% к своей подмышке!"
 	)
 	user_messages = list(
-		"You feel %TARGET%'s face pressed into your pit",
-		"You hold %TARGET%'s head against your underarm",
-		"You keep %TARGET%'s face buried in your armpit"
+		"Вы чувствуете как лицо %TARGET% прижимается к вашей подмышке.",
+		"Вы прижимаете голову и лицо %TARGET% к своей подмышке.",
+		"Вы удерживаете лицо %TARGET% в своей подмышке."
 	)
 	target_messages = list(
-		"Your face is pressed into %USER%'s armpit",
-		"%USER%'s underarm smothers your face",
-		"Your nose fills with the scent of %USER%'s pit"
+		"Ваше лицо вдавлено в подмышку %USER%.",
+		"Подмышка %USER% слегка душит вас.",
+		"Ваш нос стремительно улавливает аромат подмышки %USER%."
 	)
 	sound_range = 1
 	sound_use = FALSE
@@ -111,43 +113,43 @@
 	target_arousal = 3
 
 /datum/interaction/lewd/armpit_pitjob
-	name = "Give Pitjob"
-	description = "Jerk them off with your armpit."
+	name = "Сделать приятно подмышкой"
+	description = "Развлеките член своего партнера своей подмышкой."
 	interaction_requires = list(
 		INTERACTION_REQUIRE_SELF_TOPLESS
 	)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"cums all over %USER%'s armpit",
-		"shoots their load into %USER%'s pit",
-		"covers %USER%'s underarm in cum"
+		"Кончает на всю подмышку %USER%!",
+		"Выпускает свои горячие соки в подмышку %USER%!",
+		"Покрывает подмышку %USER% своими соками!"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"%TARGET% cums all over your armpit",
-		"%TARGET% shoots their load into your pit",
-		"%TARGET% covers your underarm in cum"
+		"%TARGET% Кончает на всю вашу подмышку!",
+		"%TARGET% Выпускает свои горячие соки в вашу подмышку!",
+		"%TARGET% Покрывает вашу подмышку своими соками!"
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"You cum all over %USER%'s armpit",
-		"You shoot your load into %USER%'s pit",
-		"You cover %USER%'s underarm in cum"
+		"Вы кончаете на всю подмышку %USER%!",
+		"Вы выпускаете свои соки в подмышку %USER%!",
+		"Вы покрываете подмышку %USER% своими соками!"
 	))
 	message = list(
-		"works %TARGET%'s cock with their armpit",
-		"squeezes %TARGET%'s shaft between their arm and chest",
-		"jerks %TARGET% off with their pit",
-		"pleasures %TARGET%'s cock with their underarm"
+		"Работает своей подмышкой, развлекая член %TARGET%.",
+		"Зажимает член %TARGET% между своим телом и рукой!",
+		"Вздраичвает член %TARGET% при помощи своей подмышки.",
+		"Ласкает пенис %TARGET% своим подреберьем."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s cock throb in your armpit",
-		"The warmth of %TARGET%'s shaft fills your pit",
-		"You squeeze %TARGET%'s cock with your underarm"
+		"Вы ощущаете, как член %TARGET% пульсирует в вашей подмышке.",
+		"Тепло ствола %TARGET% заполняет ямку вашей подмышки, вызывая подрагивания.",
+		"Вы ощущаете давление от натирания членом %TARGET% о вашу подмышку."
 	)
 	target_messages = list(
-		"%USER%'s warm pit strokes your cock",
-		"Your shaft slides between %USER%'s arm and chest",
-		"The softness of %USER%'s armpit feels amazing"
+		"Горячая подмышка %USER% приятно гладит ваш член.",
+		"Ваш ствол скользит между рукой и телом %USER% пульсируя от удовольствия.",
+		"Мягкость подмышки %USER% ощущается безумно хорошо для вас."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',

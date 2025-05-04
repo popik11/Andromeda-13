@@ -1,17 +1,17 @@
 /datum/interaction/lewd/facefuck_vagina
-	name = "Facefuck (Vagina)"
-	description = "Grind your pussy against their face."
+	name = "Гладиться о лицо (Вагина)" ///Translate by MissKira
+	description = "Погладьтесь своей Киской о чье-нибудь лицо."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_USER = CLIMAX_TARGET_MOUTH)
 	message = list(
-		"grinds their pussy into %TARGET%'s face.",
-		"grips the back of %TARGET%'s head, forcing them onto their pussy.",
-		"rolls their pussy against %TARGET%'s tongue.",
-		"slides %TARGET%'s mouth between their legs.",
-		"looks %TARGET% in the eyes as their pussy presses into a waiting tongue.",
-		"sways their hips, pushing their sex into %TARGET%'s face."
+		"Втирается своей киской в лицо %TARGET%.",
+		"Захватывает затылок %TARGET% надавливая им на свою киску.",
+		"Катается своей киской по языку %TARGET%.",
+		"Просовывает рот %TARGET% между своих ног.",
+		"Смотрит %TARGET% в глаза, прежде чем вжать в свою киску.",
+		"Покачивает бедрами и извивается, вдавливая свою кису в лицо%TARGET%."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/oral1.ogg',
@@ -25,19 +25,19 @@
 	target_arousal = 3
 
 /datum/interaction/lewd/facefuck_penis
-	name = "Facefuck (Penis)"
-	description = "Fuck their mouth with your cock."
+	name = "Трахнуть в рот (Пенис)"
+	description = "Выеби кого-нибудь прямо в рот."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = CLIMAX_TARGET_MOUTH)
 	message = list(
-		"roughly fucks %TARGET%'s mouth.",
-		"forces their cock down %TARGET%'s throat.",
-		"pushes in against %TARGET%'s tongue until a tight gagging sound comes.",
-		"grips %TARGET%'s hair and draws them to the base of their cock.",
-		"looks %TARGET% in the eyes as their cock presses into a waiting tongue.",
-		"rolls their hips hard, sinking into %TARGET%'s mouth."
+		"Грубо трахает %TARGET% в ротик.",
+		"Заталкивает свой член в горло %TARGET%.",
+		"Надавливает на язык %TARGET% своим членом, пока не услышит легкий рвотный звук.",
+		"Захватывает голову %TARGET% и притягивает к своему члену, прежде чем грубо проникнуть в рот.",
+		"Смотрит в глаза %TARGET% пока вставляет свой член в жаждущий рот %TARGET%!",
+		"Сильно двигает бедрами, толкаясь в рот %TARGET%."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/oral1.ogg',
@@ -51,16 +51,16 @@
 	target_arousal = 3
 
 /datum/interaction/lewd/throatfuck
-	name = "Throatfuck"
-	description = "Fuck their throat. (Warning: Causes oxygen damage)"
+	name = "Глубокий Оральный Секс(Пенис)"
+	description = "Выеби чье-нибудь горло орально и грубо. (Опасно!: Вызывает удушение вплоть до смертельного)"
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_USER = CLIMAX_TARGET_MOUTH)
 	message = list(
-		"brutally shoves their cock into %TARGET%'s throat to make them gag.",
-		"chokes %TARGET% on their cock, going in balls deep.",
-		"slams in and out of %TARGET%'s mouth, their balls slapping off their face."
+		"Жестоко заталкивает свой член в горло %TARGET% заставляя задыхаться.",
+		"Душит %TARGET% своим членом, глубоко входя в рот по самые яйца.",
+		"Грубо входит и выходит изо рта %TARGET% пока яйца шлепаются о лицо."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/oral1.ogg',
@@ -79,4 +79,4 @@
 	var/stat_before = target.stat
 	target.adjustOxyLoss(3)
 	if(target.stat == UNCONSCIOUS && stat_before != UNCONSCIOUS)
-		message = list("%TARGET% passes out on %USER%'s cock.")
+		message = list("%TARGET% Вырубается от члена %USER% в своем горлышке")

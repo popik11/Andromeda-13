@@ -1,15 +1,15 @@
 /datum/interaction/lewd/rimjob
-	name = "Rim"
-	description = "Lick their ass."
+	name = "Полизать Зад(Римминг)"
+	description = "Полижи чей-нибудь зад, не будь пуськой."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
 	message = list(
-		"licks %TARGET%'s asshole.",
-		"rims %TARGET% deeply.",
-		"buries their tongue in %TARGET%'s ass.",
-		"presses their tongue against %TARGET%'s pucker.",
-		"gives %TARGET%'s ass a passionate licking."
+		"Лижет задницу %TARGET%.",
+		"Глубоко погружает язык в попку %TARGET%.",
+		"Зарывается языком в попку %TARGET%.",
+		"Прижимает язык к попке %TARGET%.",
+		"Страстно вылизывает попку %TARGET%."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
@@ -22,14 +22,14 @@
 	target_arousal = 6
 
 /datum/interaction/lewd/lickfeet
-	name = "Lick Feet"
-	description = "Lick their feet."
+	name = "Полизать Ножку"
+	description = "Полижи чью-нибудь ножку, ты же не пуська."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH, INTERACTION_REQUIRE_TARGET_FEET)
 	message = list(
-		"licks %TARGET%'s bare feet.",
-		"runs their tongue along %TARGET%'s soles.",
-		"laps at %TARGET%'s toes.",
-		"tastes %TARGET%'s bare feet."
+		"Лижет босые ноги %TARGET%.",
+		"Проводит языком по подошвам %TARGET%.",
+		"Лижет пальцы ног %TARGET%.",
+		"Пробует на вкус босые ноги %TARGET%."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
@@ -47,10 +47,10 @@
 
 	if(shoes)
 		message = list(
-			"licks %TARGET%'s [shoes.name].",
-			"runs their tongue over %TARGET%'s [shoes.name].",
-			"drags their tongue across %TARGET%'s [shoes.name].",
-			"tastes %TARGET%'s [shoes.name]."
+			"Лижет %TARGET% [shoes.name].",
+			"Проходит язычком по подошвам %TARGET% [shoes.name].",
+			"Проходится язычком по обуви %TARGET% [shoes.name].",
+			"Пробует на вкус обувь %TARGET% [shoes.name]."
 		)
 	. = ..()
 	message = original_messages
@@ -86,26 +86,26 @@
 	target_arousal = 3
 
 /datum/interaction/lewd/lick_nuts
-	name = "Lick Balls"
-	description = "Lick their balls."
+	name = "Лизать Яйца"
+	description = "Полижи чьи-нибудь Яйца, будь смелее."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_TESTICLES = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	message = list(
-		"licks %TARGET%'s balls",
-		"sucks on %TARGET%'s testicles",
-		"tongues %TARGET%'s ballsack",
-		"worships %TARGET%'s balls with their tongue"
+		"Лижет яйца %TARGET%.",
+		"Сосет яички %TARGET%.",
+		"Лижет язычком яйца %TARGET%.",
+		"Приклонно лижет яйца %TARGET% своим языком."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s balls against your tongue",
-		"The taste of %TARGET%'s sack fills your mouth",
-		"You lavish attention on %TARGET%'s balls"
+		"Вы чувствуете яйца %TARGET% на своем языке.",
+		"Вкус яйц %TARGET% заполняет ваш рот.",
+		"Вы заботливо уделяете внимание яйцам %TARGET%."
 	)
 	target_messages = list(
-		"%USER%'s tongue works over your balls",
-		"You feel %USER%'s hot mouth on your sack",
-		"The warmth of %USER%'s tongue makes your balls tingle"
+		"Язык %USER% работает над вашими яйцами.",
+		"Вы чувствуете горячий рот %USER% на своих яйцам.",
+		"Тепло языка %USER% заставляет ваши яйца покалывать."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bj1.ogg',

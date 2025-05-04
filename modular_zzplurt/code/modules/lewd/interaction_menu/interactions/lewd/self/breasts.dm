@@ -1,18 +1,22 @@
-/datum/interaction/lewd/titgrope_self
-	name = "Grope Breasts (self)"
-	description = "Grope your own breasts."
+/datum/interaction/lewd/titgrope_self ///Translate by MissKira
+	name = "Взяться за грудь (Себе)"
+	description = "Возьмись за грудь, защити свою честь."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_ANY)
 	usage = INTERACTION_SELF
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_BOTH)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	message = list(
-		"gently gropes their breast",
-		"softly squeezes their breasts",
-		"grips their breasts",
-		"runs a few fingers over their breast",
-		"delicately teases their nipple",
-		"traces a touch across their breast"
+		"Нежно хватается за свои груди.",
+		"Мягко жамкает свои груди.",
+		"Обхватывает свои груди.",
+		"Проводит несколькими пальцами по сосочкам своей груди .",
+		"Настойчиво дразнит свои соски .",
+		"Аккуратно сжимает груди в своих конечностях.",
+		"Обхватывает свои груди начиная водить их по часовой стрелке разминая.",
+		"Сдавливает свои груди вместе, затем плавно разминая.",
+		"Настойчиво жамкает свои груди нежно сдавливая их.",
+		"Проводит пальцем по своей груди."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/squelch1.ogg'
@@ -28,12 +32,12 @@
 		return
 	if(prob(5 + user.arousal))
 		user.visible_message(span_lewd("<b>\The [user]</b> [pick(
-			"shivers in arousal.",
-			"moans quietly.",
-			"breathes out a soft moan.",
-			"gasps.",
-			"shudders softly.",
-			"trembles as their hands run across bare skin.")]"))
+			"Дрожит от возбуждения.",
+			"Тихонько постанывает.",
+			"Выдыхает тихий сладких постон.",
+			"Задыхается.",
+			"Подрагивает от удовольствия.",
+			"Дрожит от прикосновений к груди.")]"))
 
 	var/obj/item/liquid_container
 	var/obj/item/cached_item = user.get_active_held_item()

@@ -1,13 +1,13 @@
-/datum/interaction/lewd/slap
-	name = "Slap Ass"
-	description = "Slap their ass."
+/datum/interaction/lewd/slap ///Translate by MissKira
+	name = "Шлепнуть по Попе"
+	description = "Шлепни кого-нибудь по заднице."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_BUTT = REQUIRE_GENITAL_EXPOSED)
 	message = list(
-		"slaps %TARGET% right on the ass!",
-		"spanks %TARGET%'s ass!",
-		"gives %TARGET%'s behind a good smack!",
-		"lands a stinging slap on %TARGET%'s butt!"
+		"Шлепает %TARGET% прямо по заднице!",
+		"Нещадно отвешивает шлепок по заднице %TARGET%!",
+		"Дает смачный шлепок по заднице %TARGET%!",
+		"Приземляет жгучий шлепок по заднице %TARGET%!"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/slap.ogg'
