@@ -126,7 +126,7 @@ window "mapwindow"
 		anchor1 = 0,0
 		anchor2 = 100,100
 		font-family = "Grand9K Pixel"
-		font-size = 6pt
+		font-size = 7pt
 		is-default = true
 		right-click = true
 		saved-params = "zoom;letterbox;zoom-mode"
