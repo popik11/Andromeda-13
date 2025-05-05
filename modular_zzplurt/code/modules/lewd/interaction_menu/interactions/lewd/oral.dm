@@ -1,27 +1,30 @@
-/datum/interaction/lewd/oral_vagina	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
-	name = "Perform Oral"
-	description = "Go down on them."
+// Работа ртом
+
+/// ADD ANDROMEDA-13 (@rewokin): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/oral_vagina
+	name = "Отлизать киску"
+	description = "Давай, маленький брейнротик, прояви свой язык в более полезном русле."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_TARGET = CLIMAX_TARGET_MOUTH)
 	message = list(
-		"buries their face in %TARGET%'s pussy.",
-		"nuzzles %TARGET%'s wet sex.",
-		"finds their face caught between %TARGET%'s thighs.",
-		"kneels down between %TARGET%'s legs.",
-		"grips %TARGET%'s legs, pushing them apart.",
-		"sinks their face in between %TARGET%'s thighs."
+		"зарывается лицом в киску %TARGET%.",
+		"ласкает мокрую киску %TARGET%.",
+		"работает язычком с киской %TARGET%.",
+		"kneels down between %TARGET%.",
+		"обхватывает ноги %TARGET% раздвигая их." ,
+		"погружает свое лицо между бедер %TARGET%."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s warm wetness against your face.",
-		"The scent of %TARGET%'s arousal fills your senses.",
-		"You press your tongue deeper into %TARGET%'s folds."
+		"Вы чувствуете теплую влагу %TARGET% на своем лице.",
+		"Возбуждающий влажный запах %TARGET% наполняет ваши чувства.",
+		"Вы проникаете языком глубже в киску %TARGET%."
 	)
 	target_messages = list(
-		"%USER%'s tongue explores your pussy.",
-		"You feel %USER%'s hot breath against your sex.",
-		"The warmth of %USER%'s mouth sends shivers up your spine."
+		"Язык %USER% ласкает вашу киску.",
+		"Вы чувствуете горячее дыхание %USER% между своих ножек.",
+		"От тепла рта %USER% по вашей спине пробегают мурашки."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bj1.ogg',
@@ -62,29 +65,29 @@
 	sound_possible = default_sounds
 
 /datum/interaction/lewd/oral_penis
-	name = "Suck Cock"
-	description = "Suck them off."
+	name = "Отсосать член"
+	description = "Давай, сделай соси-соси за 5$."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_TARGET = CLIMAX_TARGET_MOUTH)
 	message = list(
-		"takes %TARGET%'s cock into their mouth.",
-		"wraps their lips around %TARGET%'s cock.",
-		"finds their face between %TARGET%'s thighs.",
-		"kneels down between %TARGET%'s legs.",
-		"grips %TARGET%'s legs, kissing at the tip of their cock.",
-		"goes down on %TARGET%."
+		"берет член %TARGET% в рот.",
+		"обхватывает губами член %TARGET%.",
+		"опускается на колени между ног %TARGET%.",
+		"обхватывает ноги %TARGET%, целуя кончик его члена.",
+		"причмокивает член %TARGET% и ласкает язычком."
 	)
 	user_messages = list(
-		"You feel %TARGET%'s cock throb in your mouth.",
-		"The taste of %TARGET%'s precum lingers on your tongue.",
-		"You take %TARGET% deeper into your throat."
+		"Вы чувствуете, как член %TARGET% пульсирует у вас во рту.",
+		"Вы работаете язычком с членом %TARGET%.",
+		"Вы ласкаете губами член %TARGET%.",
+		"Вы берете член %TARGET% глубже в горло."
 	)
 	target_messages = list(
-		"%USER%'s tongue swirls around your cock.",
-		"You feel %USER%'s hot mouth envelope you.",
-		"The warmth of %USER%'s throat makes you twitch."
+		"Язык %USER%' извивается вокруг вашего члена.",
+		"Вы чувствуете, как горячий рот %USER% обхватывает член.",
+		"Тепло язычка и рта %USER% заставляет вас подёргиваться."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bj1.ogg',

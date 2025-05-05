@@ -1,4 +1,10 @@
-/datum/interaction/lewd/kiss	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+// Поцелуйчики
+
+//-// -Rewokin_fun_comment //-//
+// -Иди сюда и поцелуй меня в жаркие уста. Романтики хочется..
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/kiss
 	name = "Поцеловать"
 	description = "Целуй глубоко, крепко и страстно."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH, INTERACTION_REQUIRE_TARGET_MOUTH)
@@ -40,10 +46,12 @@
 	. = ..()
 
 	// Check if user has TRAIT_KISS_SLUT and increase their lust
+	// Проверьте, есть ли у пользователя TRAIT_KISS_SLUT, и увеличьте его вожделение
 	if(HAS_TRAIT(user, TRAIT_KISS_SLUT))
 		user.adjust_pleasure(10, target, interaction = src, position = CLIMAX_POSITION_USER)
 		user.adjust_arousal(10)
 	// Check if target has TRAIT_KISS_SLUT and increase their lust
+	// Проверьте, есть ли у цели TRAIT_KISS_SLUT, и увеличьте ее вожделение
 	if(HAS_TRAIT(target, TRAIT_KISS_SLUT))
 		target.adjust_pleasure(10, user, interaction = src, position = CLIMAX_POSITION_TARGET)
 		target.adjust_arousal(10)

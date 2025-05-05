@@ -1,26 +1,29 @@
+/// Пальчик в киску/анал
+
+/// ADD ANDROMEDA-13 (@rewokin): Перевод, дополнение ЕРП контента.
 /datum/interaction/lewd/finger_self_vagina
-	name = "Finger Pussy (self)"
-	description = "Finger your own pussy."
+	name = "Пальчики в киску (Себе)"
+	description = "Поиграйте со своей киской~."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	usage = INTERACTION_SELF
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"cums hard on their fingers",
-		"shudders as they cum on their hand",
-		"fingers themself to climax"
+		"сильно обильно на пальцы",
+		"содрогается, когда кончает на руку",
+		"пальцами доводит себя до кульминации"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum hard on your fingers",
-		"You shudder as you cum on your hand",
-		"You finger yourself to climax"
+		"Вы обильно кончаете на свои пальцы",
+		"Вы содрогаетесь, когда кончаете на руку",
+		"Вы доводите себя пальцами до кульминации"
 	))
 	message = list(
-		"fingers their pussy deep",
-		"fingers their pussy",
-		"plays with their pussy",
-		"fingers their own pussy hard"
+		"глубоко вводит пальцы в киску",
+		"проникает пальцами в киску",
+		"играет их киской",
+		"активно вводит пальцами в киску"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
@@ -44,7 +47,7 @@
 	if(liquid_container)
 		var/list/original_messages = message.Copy()
 		var/chosen_message = pick(message)
-		message = list("[chosen_message] over \the [liquid_container]")
+		message = list("[chosen_message] над [liquid_container]")
 		interaction_modifier_flags |= INTERACTION_OVERRIDE_FLUID_TRANSFER
 		. = ..()
 		interaction_modifier_flags &= ~INTERACTION_OVERRIDE_FLUID_TRANSFER
@@ -74,16 +77,16 @@
 	. = ..()
 
 /datum/interaction/lewd/finger_self_anus
-	name = "Finger Ass (self)"
-	description = "Finger your own ass."
+	name = "Пальчики в анал (Себе)"
+	description = "Поиграйте со своей задницей"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	user_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	usage = INTERACTION_SELF
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_BOTH)
 	message = list(
-		"fingers themself",
-		"fingers their asshole",
-		"fingers themself hard"
+		"глубоко вводит пальцы в анал",
+		"проникает пальцами в анал",
+		"активно вводит пальцами в анал"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/champ_fingering.ogg'

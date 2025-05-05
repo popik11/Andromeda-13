@@ -55,7 +55,7 @@ export const InfoSection = () => {
             <Stack>
               <Stack.Item grow>
                 <BlockQuote>
-                  You...
+                  Вы...
                   <br />
                   {selfAttributes.map((attribute) => (
                     <div key={attribute}>
@@ -68,7 +68,7 @@ export const InfoSection = () => {
               {!isTargetSelf ? (
                 <Stack.Item grow>
                   <BlockQuote>
-                    They...
+                    Партнёр...
                     <br />
                     {theirAttributes.map((attribute) => (
                       <div key={attribute}>
@@ -92,7 +92,7 @@ export const InfoSection = () => {
                     maxValue={maxPleasure}
                     color="purple"
                   >
-                    <Icon name="heart" /> Pleasure
+                    <Icon name="heart" /> Удовольствие
                   </ProgressBar>
                 </Stack.Item>
                 <Stack.Item>
@@ -101,12 +101,12 @@ export const InfoSection = () => {
                     maxValue={maxArousal}
                     color="pink"
                   >
-                    <Icon name="tint" /> Arousal
+                    <Icon name="tint" /> Возбуждение
                   </ProgressBar>
                 </Stack.Item>
                 <Stack.Item>
                   <ProgressBar value={pain} maxValue={maxPain} color="red">
-                    <Icon name="bolt" /> Pain
+                    <Icon name="bolt" /> Боль
                   </ProgressBar>
                 </Stack.Item>
               </Stack>
@@ -120,7 +120,7 @@ export const InfoSection = () => {
                       maxValue={theirMaxPleasure}
                       color="purple"
                     >
-                      <Icon name="heart" /> Pleasure
+                      <Icon name="heart" /> Удовольствие
                     </ProgressBar>
                   </Stack.Item>
                   <Stack.Item>
@@ -129,7 +129,7 @@ export const InfoSection = () => {
                       maxValue={theirMaxArousal}
                       color="pink"
                     >
-                      <Icon name="tint" /> Arousal
+                      <Icon name="tint" /> Возбуждение
                     </ProgressBar>
                   </Stack.Item>
                   <Stack.Item>
@@ -138,7 +138,7 @@ export const InfoSection = () => {
                       maxValue={theirMaxPain}
                       color="red"
                     >
-                      <Icon name="bolt" /> Pain
+                      <Icon name="bolt" /> Боль
                     </ProgressBar>
                   </Stack.Item>
                 </Stack>

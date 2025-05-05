@@ -1,4 +1,10 @@
-/datum/interaction/lewd/finger	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+/// Действия пальцем
+
+//-// -Rewokin_fun_comment //-//
+// Фингир, нот фистинг! Перепутать легко, избавиться от последствий тяжело. sticker: the_view_at_two_thousand_yards
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/finger
 	name = "Фингеринг Киски"
 	description = "Засунь свои пальцы в чью-нибудь Кису."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)

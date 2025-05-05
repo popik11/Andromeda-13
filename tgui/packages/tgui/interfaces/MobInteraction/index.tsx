@@ -6,7 +6,7 @@ import { MainContent } from './MainContent';
 
 export const MobInteraction = () => {
   return (
-    <Window width={500} height={700} title="Mob Interaction">
+    <Window width={500} height={700} title="Взаимодействие с персонажем">
       <Window.Content>
         <Stack vertical fill>
           <Stack.Item grow basis={15}>

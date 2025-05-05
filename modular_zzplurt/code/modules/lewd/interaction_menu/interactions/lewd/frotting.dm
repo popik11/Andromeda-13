@@ -1,6 +1,12 @@
-/datum/interaction/lewd/frotting	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
-	name = "Фроттинг(Гомосексуальный Секс)"
-	description = "Потри свой о чужой."
+/// Взаимодействие с своим полом
+
+//-// -Rewokin_fun_comment //-//
+// -Why Are You Gay? -Who Is Gay?
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/frotting
+	name = "Фроттинг (Гомосексуальный Секс)"
+	description = "Потри свой член о чужой член."
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS, CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
@@ -54,8 +60,15 @@
 	user_arousal = 8
 	target_arousal = 8
 
+//-// -Rewokin_fun_comment //-//
+// Кира *призрительно смотрит на Фроттинг*
+// *пишет перевод* "Трутся членами"
+// Кира *смотрит на Трибадизм*
+// *пишет перевод* "Нежно втирает свою киску в кисоньку подруги"
+// Соглашусь с Кирой, намного приятнее смотреть, когда две шоколадки труться друг о друга и тают, чем на два лединца, что стреляют глазурью
+
 /datum/interaction/lewd/tribadism
-	name = "Трибадизм(Лесбиянский Секс)"
+	name = "Трибадизм (Лесбиянский Секс)"
 	description = "Потрись своей киской о чужую киску."
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)

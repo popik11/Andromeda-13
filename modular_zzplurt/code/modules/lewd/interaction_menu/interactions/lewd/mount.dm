@@ -1,4 +1,11 @@
-/datum/interaction/lewd/mount_vagina	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+// Оседлание
+
+//-// -Rewokin_fun_comment //-//
+// Ответ на вопрос из fucefuck.dm
+// Да, кире нравится доминировать. Иначе такое описание я не могу объяснить.
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/mount_vagina
 	name = "Оседлать (Вагина)"
 	description = "Оседлай кого-нибудь своей сильной Вагиной."
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)

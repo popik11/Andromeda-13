@@ -1,5 +1,8 @@
-/datum/interaction/lewd/handjob	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
-	name = "Ручная Работа(ХэндДжоб)"
+// Действия руками
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/handjob
+	name = "Подрочить член (ХэндДжоб)"
 	description = "Поработай ручками с кем-нибудь."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
@@ -48,16 +51,19 @@
 	var/obj/item/liquid_container
 
 	// Check active hand first
+	// Проверка, активная рука
 	var/obj/item/cached_item = user.get_active_held_item()
 	if(istype(cached_item) && cached_item.is_refillable() && cached_item.is_drainable())
 		liquid_container = cached_item
 	else
 		// Check if pulling a container
+		// Проверка, есть ли контейнер
 		cached_item = user.pulling
 		if(istype(cached_item) && cached_item.is_refillable() && cached_item.is_drainable())
 			liquid_container = cached_item
 
 	// Add container text to message if needed
+	// Добавьте текст контейнера в сообщение, если это необходимо
 	if(liquid_container)
 		var/list/original_messages = message.Copy()
 		var/chosen_message = pick(message)
@@ -74,17 +80,20 @@
 		var/obj/item/liquid_container
 
 		// Check active hand first
+		// Проверка, активная рука
 		var/obj/item/cached_item = came_in.get_active_held_item()
 		if(istype(cached_item) && cached_item.is_refillable() && cached_item.is_drainable())
 			liquid_container = cached_item
 		else
 			// Check if pulling a container
+			// Проверка, есть ли контейнер
 			cached_item = came_in.pulling
 			if(istype(cached_item) && cached_item.is_refillable() && cached_item.is_drainable())
 				liquid_container = cached_item
 
 		if(liquid_container)
 			// Store original lists, with null checks
+			// Храните исходные списки с нулевыми проверками
 			var/list/original_message_overrides = cum_message_text_overrides[position]
 			var/list/original_self_overrides = cum_self_text_overrides[position]
 			var/list/original_partner_overrides = cum_partner_text_overrides[position]
@@ -93,6 +102,7 @@
 			original_partner_overrides = original_partner_overrides?.Copy()
 
 			// Set container-specific messages
+			// Установка сообщение-специфичное для контейнера
 			cum_message_text_overrides[position] = list("Кончает в [liquid_container].")
 			cum_self_text_overrides[position] = list("Вы кончаете в [liquid_container].")
 			cum_partner_text_overrides[position] = list("%TARGET% кончает в [liquid_container].")
@@ -100,6 +110,7 @@
 			. = ..()
 
 			// Restore original messages
+			// Восстановление исходных сообщений
 			cum_message_text_overrides[position] = original_message_overrides
 			cum_self_text_overrides[position] = original_self_overrides
 			cum_partner_text_overrides[position] = original_partner_overrides
@@ -112,11 +123,13 @@
 		var/obj/item/liquid_container
 
 		// Check active hand first
+		// Проверка, активная рука
 		var/obj/item/cached_item = came_in.get_active_held_item()
 		if(istype(cached_item) && cached_item.is_refillable() && cached_item.is_drainable())
 			liquid_container = cached_item
 		else
 			// Check if pulling a container
+			// Проверка, тащит ли контейнер
 			cached_item = came_in.pulling
 			if(istype(cached_item) && cached_item.is_refillable() && cached_item.is_drainable())
 				liquid_container = cached_item

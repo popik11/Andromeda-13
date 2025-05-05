@@ -6,8 +6,8 @@
 */
 //SPLURT EDIT REMOVAL END
 
-#define CLIMAX_ON_FLOOR "On the floor"
-#define CLIMAX_IN_OR_ON "Climax in or on someone"
+#define CLIMAX_ON_FLOOR "На пол"
+#define CLIMAX_IN_OR_ON "Кульминация на/в кого то"
 
 /mob/living/proc/climax(manual = TRUE, mob/living/partner = null, datum/interaction/climax_interaction = null, interaction_position = null) // SPLURT EDIT - INTERACTIONS - All mobs should be interactable
 	if (CONFIG_GET(flag/disable_erp_preferences))
@@ -25,8 +25,8 @@
 		return
 
 	if(HAS_TRAIT(src, TRAIT_NEVERBONER) || has_status_effect(/datum/status_effect/climax_cooldown) || (!has_vagina() && !has_penis()))
-		visible_message(span_purple("[src] twitches, trying to cum, but with no result."), \
-			span_purple("You can't have an orgasm!"))
+		visible_message(span_purple("[src] дергается, пытаясь кончить, но безрезультатно."), \
+			span_purple("Вы не можете кончить!"))
 		return TRUE
 
 	// Reduce pop-ups and make it slightly more frictionless (lewd).
@@ -41,7 +41,7 @@
 				genitals.Add(CLIMAX_BOTH)
 		else if(has_penis())
 			genitals.Add(CLIMAX_PENIS)
-		climax_choice = tgui_alert(src, "You are climaxing, choose which genitalia to climax with.", "Genitalia Preference!", genitals)
+		climax_choice = tgui_alert(src, "Вы достигаете кульминации, выберите, какими гениталиями вы будете кончать.", "Предпочтение гениталий!", genitals)
 	else if(istype(climax_interaction, /datum/interaction) && climax_interaction.cum_genital?.len && climax_interaction.cum_genital[interaction_position])
 		climax_choice = climax_interaction.cum_genital[interaction_position]
 	conditional_pref_sound(get_turf(src), 'modular_zzplurt/sound/interactions/end.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds)
@@ -62,18 +62,18 @@
 	if(climax_choice == CLIMAX_PENIS || climax_choice == CLIMAX_BOTH)
 		var/obj/item/organ/genital/penis/penis = get_organ_slot(ORGAN_SLOT_PENIS)
 		if(!get_organ_slot(ORGAN_SLOT_TESTICLES) && ishuman(src)) //If we have no god damn balls, we can't cum anywhere... GET BALLS! // SPLURT EDIT - Interactions
-			visible_message(span_userlove("[src] orgasms, but nothing comes out of [self_their] penis!"), \
-				span_userlove("You orgasm, it feels great, but nothing comes out of your penis!"))
+			visible_message(span_userlove("[src] оргазмирует, но из [self_their] пениса ничего не выходит!"), \
+				span_userlove("Вы испытываете оргазм, ощущения великолепные, но из вашего пениса ничего не выходит!"))
 
 		else if(is_wearing_condom())
 			var/obj/item/clothing/sextoy/condom/condom = src:penis // bruh 💀⚰️💀⚰️💀⚰️💀⚰️💀
 			condom.condom_use()
-			visible_message(span_userlove("[src] shoots [self_their] load into the [condom], filling it up!"), \
-				span_userlove("You shoot your thick load into the [condom] and it catches it all!"))
+			visible_message(span_userlove("[src] кончает [self_their] заполняя [condom] до отказа!"), \
+				span_userlove("Вы выплёскиваете липкую жидкость в [condom] и он заполняется!"))
 
 		else if(!is_bottomless() && penis.visibility_preference != GENITAL_ALWAYS_SHOW)
-			visible_message(span_userlove("[src] cums inside [self_their] clothes!"), \
-				span_userlove("You shoot your load, but you weren't naked, so you mess up your clothes!"))
+			visible_message(span_userlove("[src] кончает внутрь [self_their] одежды!"), \
+				span_userlove("Вы кончили, но вы не были голыми, поэтому запачкали свою одежду!"))
 			self_orgasm = TRUE
 
 		else
@@ -88,21 +88,21 @@
 			if(interactable_inrange_mobs.len)
 				buttons += CLIMAX_IN_OR_ON
 
-			var/penis_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "Choose where to shoot your load.", "Load preference!", buttons) //SPLURT EDIT CHANGE - Interactions
+			var/penis_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "Выбирайте, куда кончить.", "Куда кончить?", buttons) //SPLURT EDIT CHANGE - Interactions
 
 			var/create_cum_decal = FALSE
 
 			if(!penis_climax_choice || penis_climax_choice == CLIMAX_ON_FLOOR)
 				create_cum_decal = TRUE
-				visible_message(span_userlove("[src] shoots [self_their] sticky load onto the floor!"), \
-					span_userlove("You shoot string after string of hot cum, hitting the floor!"))
+				visible_message(span_userlove("[src] выстреливает [self_their] горячей спермой на пол!"), \
+					span_userlove("Вы выпускаете струю за струёй горячей спермы, попадая на пол!"))
 
 			else
-				target_choice = climax_interaction && !manual ? partner?.name : tgui_input_list(src, "Choose a person to cum in or on.", "Choose target!", interactable_inrange_mobs) //SPLURT EDIT CHANGE - Interactions
+				target_choice = climax_interaction && !manual ? partner?.name : tgui_input_list(src, "Выберите человека, в которого можно кончить или на которого можно кончить.", "Выберите цель!", interactable_inrange_mobs) //SPLURT EDIT CHANGE - Interactions
 				if(!target_choice)
 					create_cum_decal = TRUE
-					visible_message(span_userlove("[src] shoots [self_their] sticky load onto the floor!"), \
-						span_userlove("You shoot string after string of hot cum, hitting the floor!"))
+					visible_message(span_userlove("[src] выстреливает [self_their] горячей спермой на пол!"), \
+						span_userlove("Вы выпускаете струю за струёй горячей спермы, попадая на пол!"))
 				else
 					var/mob/living/target_mob = climax_interaction && !manual && partner ? partner : interactable_inrange_mobs[target_choice] //SPLURT EDIT CHANGE - Interactions
 					var/target_mob_them = target_mob.p_them()
@@ -112,9 +112,9 @@
 					if(istype(target_mob, /mob/living/carbon/human))
 						var/mob/living/carbon/human/target_human = target_mob
 						if(!target_human.wear_mask)
-							target_buttons += "mouth"
+							target_buttons += "рот"
 					else
-						target_buttons += "mouth"
+						target_buttons += "рот"
 					if(target_mob.has_vagina(REQUIRE_GENITAL_EXPOSED))
 						target_buttons += ORGAN_SLOT_VAGINA
 					if(target_mob.has_anus(REQUIRE_GENITAL_EXPOSED))
@@ -124,7 +124,7 @@
 						var/obj/item/organ/genital/penis/other_penis = target_mob.get_organ_slot(ORGAN_SLOT_PENIS)
 						if(other_penis.sheath != "None")
 							target_buttons += "sheath"
-					target_buttons += "On [target_mob_them]"
+					target_buttons += "На [target_mob_them]"
 
 					//SPLURT EDIT CHANGE BEGIN - Interactions
 					var/climax_into_choice
@@ -133,28 +133,28 @@
 					if(climax_interaction && !manual && interaction_inside)
 						climax_into_choice = climax_interaction.cum_target[interaction_position]
 					else if(manual)
-						climax_into_choice = tgui_input_list(src, "Where on or in [target_mob] do you wish to cum?", "Final frontier!", target_buttons)
+						climax_into_choice = tgui_input_list(src, "Куда в/на [target_mob] ты хочешь кончить?", "Куда кончить?", target_buttons)
 					else
-						climax_into_choice = "On [target_mob_them]"
+						climax_into_choice = "На [target_mob_them]"
 
 					if(climax_interaction && !manual && climax_interaction.show_climax(src, target_mob, interaction_position))
 						create_cum_decal = !interaction_inside
 					else if(!climax_into_choice)
 					//SPLURT EDIT CHANGE END
 						create_cum_decal = TRUE
-						visible_message(span_userlove("[src] shoots their sticky load onto the floor!"), \
-							span_userlove("You shoot string after string of hot cum, hitting the floor!"))
+						visible_message(span_userlove("[src] выстреливает горячей спермой на пол!"), \
+							span_userlove("Вы выпускаете струю за струёй горячей спермы, попадая на пол!"))
 						conditional_pref_sound(get_turf(src), 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
-					else if(climax_into_choice == "On [target_mob_them]")
+					else if(climax_into_choice == "На [target_mob_them]")
 						create_cum_decal = TRUE
-						visible_message(span_userlove("[src] shoots their sticky load onto [target_mob]!"), \
-							span_userlove("You shoot string after string of hot cum onto [target_mob]!"))
+						visible_message(span_userlove("[src] выстреливает своей горячей спермой в [target_mob]!"), \
+							span_userlove("Вы выпускаете струю за струёй горячей спермы на [target_mob]!"))
 						conditional_pref_sound(get_turf(src), 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
 					else
-						visible_message(span_userlove("[src] hilts [self_their] cock into [target_mob]'s [climax_into_choice], shooting cum into [target_mob_them]!"), \
-							span_userlove("You hilt your cock into [target_mob]'s [climax_into_choice], shooting cum into [target_mob_them]!"))
-						to_chat(target_mob, span_userlove("Your [climax_into_choice] fills with warm cum as [src] shoots [self_their] load into it."))
-						conditional_pref_sound(get_turf(target_mob), climax_into_choice == "mouth" ? pick('modular_zzplurt/sound/interactions/mouthend (1).ogg', 'modular_zzplurt/sound/interactions/mouthend (2).ogg') : 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
+						visible_message(span_userlove("[src] вонзает [self_their] член в [target_mob] [climax_into_choice], выстреливая горячей спермой в [target_mob_them]!"), \
+							span_userlove("Вы вонзаете свой член в [target_mob] [climax_into_choice], выстреливая горячей спермой в [target_mob_them]!"))
+						to_chat(target_mob, span_userlove("Ваша [climax_into_choice]наполняется теплой, когда [src] кончает в [self_their]."))
+						conditional_pref_sound(get_turf(target_mob), climax_into_choice == "рот" ? pick('modular_zzplurt/sound/interactions/mouthend (1).ogg', 'modular_zzplurt/sound/interactions/mouthend (2).ogg') : 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
 						//SPLURT EDIT ADDITION BEGIN - Genital Inflation
 						var/datum/component/interactable/interactable = target_mob.GetComponent(/datum/component/interactable)
 						if(interactable)
@@ -211,8 +211,8 @@
 		var/obj/item/organ/genital/vagina/vagina = get_organ_slot(ORGAN_SLOT_VAGINA)
 		//SPLURT EDIT CHANGE BEGIN - Interactions
 		if(!is_bottomless() && vagina.visibility_preference != GENITAL_ALWAYS_SHOW)
-			visible_message(span_userlove("[src] cums in [self_their] underwear from [self_their] vagina!"), \
-					span_userlove("You cum in your underwear from your vagina! Eww."))
+			visible_message(span_userlove("[src] кончает в [self_their] нижнее белье из [self_their] вагины!"), \
+					span_userlove("Вы кончаете в нижнее белье из своего влагалища!"))
 			self_orgasm = TRUE
 		else
 			var/list/interactable_inrange_mobs = list()
@@ -225,21 +225,21 @@
 			if(interactable_inrange_mobs.len)
 				buttons += CLIMAX_IN_OR_ON
 
-			var/vagina_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "Choose where to squirt.", "Squirt preference!", buttons)
+			var/vagina_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "Выбирайте, куда спускать.", "Куда сквиртить?", buttons)
 
 			var/create_cum_decal = FALSE
 
 			if(!vagina_climax_choice || vagina_climax_choice == CLIMAX_ON_FLOOR)
 				create_cum_decal = TRUE
-				visible_message(span_userlove("[src] twitches and moans as [p_they()] squirt on the floor!"), \
-					span_userlove("You twitch and moan as you squirt on the floor!"))
+				visible_message(span_userlove("[src] дергается и стонет, когда [p_they()] сквиртит на пол!"), \
+					span_userlove("Вы дергаетесь и стонете, когда сквиртите на пол!"))
 
 			else
-				target_choice = climax_interaction && !manual ? partner.name : tgui_input_list(src, "Choose who to squirt on.", "Choose target!", interactable_inrange_mobs)
+				target_choice = climax_interaction && !manual ? partner.name : tgui_input_list(src, "Выбирайте, на кого сквиртить.", "Выберите цель!", interactable_inrange_mobs)
 				if(!target_choice)
 					create_cum_decal = TRUE
-					visible_message(span_userlove("[src] twitches and moans as [p_they()] squirt on the floor!"), \
-						span_userlove("You twitch and moan as you squirt on the floor!"))
+					visible_message(span_userlove("[src] дергается и стонет, когда [p_they()] сквиртит на пол!"), \
+						span_userlove("Вы дергаетесь и стонете, когда сквиртите на пол!"))
 				else
 					var/mob/living/target_mob = climax_interaction && !manual ? partner : interactable_inrange_mobs[target_choice]
 					var/target_mob_them = target_mob.p_them()
@@ -249,9 +249,9 @@
 					if(istype(target_mob, /mob/living/carbon/human))
 						var/mob/living/carbon/human/target_human = target_mob
 						if(!target_human.wear_mask)
-							target_buttons += "mouth"
+							target_buttons += "рот"
 					else
-						target_buttons += "mouth"
+						target_buttons += "рот"
 					if(target_mob.has_vagina(REQUIRE_GENITAL_EXPOSED))
 						target_buttons += ORGAN_SLOT_VAGINA
 					if(target_mob.has_anus(REQUIRE_GENITAL_EXPOSED))
@@ -261,7 +261,7 @@
 						var/obj/item/organ/genital/penis/other_penis = target_mob.get_organ_slot(ORGAN_SLOT_PENIS)
 						if(other_penis.sheath != "None")
 							target_buttons += "sheath"
-					target_buttons += "On [target_mob_them]"
+					target_buttons += "На [target_mob_them]"
 
 					var/climax_into_choice
 					var/interaction_inside = partner?.get_organ_slot(climax_interaction?.cum_target[interaction_position]) || target_buttons.Find(climax_interaction?.cum_target[interaction_position])
@@ -269,31 +269,31 @@
 					if(climax_interaction && !manual && interaction_inside)
 						climax_into_choice = climax_interaction.cum_target[interaction_position]
 					else if(manual)
-						climax_into_choice = tgui_input_list(src, "Where on or in [target_mob] do you wish to squirt?", "Final frontier!", target_buttons)
+						climax_into_choice = tgui_input_list(src, "Куда в/на [target_mob] ты хочешь кончить?", "Куда кончить?", target_buttons)
 					else
-						climax_into_choice = "On [target_mob_them]"
+						climax_into_choice = "На [target_mob_them]"
 
 					if(climax_interaction && !manual && climax_interaction.show_climax(src, target_mob, interaction_position))
 						create_cum_decal = !interaction_inside
 					else if(!climax_into_choice)
 						create_cum_decal = TRUE
-						visible_message(span_userlove("[src] squirts on the floor!"), \
-							span_userlove("You squirt on the floor!"))
+						visible_message(span_userlove("[src] сквиртит на пол!"), \
+							span_userlove("Вы сквиртите на пол!"))
 						conditional_pref_sound(get_turf(src), 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
-					else if(climax_into_choice == "On [target_mob_them]")
+					else if(climax_into_choice == "На [target_mob_them]")
 						create_cum_decal = TRUE
-						visible_message(span_userlove("[src] squirts all over [target_mob]!"), \
-							span_userlove("You squirt all over [target_mob]!"))
+						visible_message(span_userlove("[src] сквиртит на всего [target_mob]!"), \
+							span_userlove("Вы сквиртите на всего [target_mob]!"))
 						conditional_pref_sound(get_turf(src), 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
 					else
-						visible_message(span_userlove("[src] squirts into [target_mob]'s [climax_into_choice]!"), \
-							span_userlove("You squirt into [target_mob]'s [climax_into_choice]!"))
-						to_chat(target_mob, span_userlove("Your [climax_into_choice] fills with [src]'s fluids."))
-						conditional_pref_sound(get_turf(target_mob), climax_into_choice == "mouth" ? pick('modular_zzplurt/sound/interactions/mouthend (1).ogg', 'modular_zzplurt/sound/interactions/mouthend (2).ogg') : 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
+						visible_message(span_userlove("[src] сквиртит на [target_mob] в [climax_into_choice]!"), \
+							span_userlove("Вы сквиртите на [target_mob] в [climax_into_choice]!"))
+						to_chat(target_mob, span_userlove("У вас наполняется [climax_into_choice] жидкостями [src]."))
+						conditional_pref_sound(get_turf(target_mob), climax_into_choice == "рот" ? pick('modular_zzplurt/sound/interactions/mouthend (1).ogg', 'modular_zzplurt/sound/interactions/mouthend (2).ogg') : 'modular_zzplurt/sound/interactions/endout.ogg', 50, TRUE, pref_to_check = /datum/preference/toggle/erp/sounds) //SPLURT EDIT CHANGE - Interactions
 						//SPLURT EDIT ADDITION BEGIN - Genital Inflation
 						var/datum/component/interactable/interactable = target_mob.GetComponent(/datum/component/interactable)
 						if(interactable)
-							interactable.climax_inflate_genital(src, "vagina", climax_into_choice)
+							interactable.climax_inflate_genital(src, "вагина", climax_into_choice)
 						//SPLURT EDIT ADDITION END
 			if(!(climax_interaction?.interaction_modifier_flags & INTERACTION_OVERRIDE_FLUID_TRANSFER))
 				if(create_cum_decal)

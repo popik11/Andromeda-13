@@ -1,4 +1,11 @@
-/datum/interaction/lewd/breastfeed	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+/// Действия сиськами
+
+//-// -Rewokin_fun_comment //-//
+// -Мы хотим больше сисек! Мы хотим больше.. эээ... -Что самое главное в женщине? *задумался*
+// -Душа.. Душа! -А как же сиськи? -Сиськи это хорошо, но.. главное это.. душа...
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/breastfeed
 	name = "Кормежка Грудью"
 	description = "Накормить своего партнера своей грудью."
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
@@ -38,6 +45,7 @@
 	var/obj/item/organ/genital/breasts/breasts = user.get_organ_slot(ORGAN_SLOT_BREASTS)
 	if(breasts?.internal_fluid_datum)
 		// Calculate milk amount based on how full the breasts are (0.5 to 2 multiplier)
+		// Рассчитайте количество молока в зависимости от наполненности груди (множитель от 0,5 до 2)
 		var/milk_multiplier = 0.5
 		if(breasts.internal_fluid_maximum > 0)
 			milk_multiplier = 0.5 + (1.5 * (breasts.internal_fluid_count / breasts.internal_fluid_maximum))
@@ -79,6 +87,7 @@
 	var/list/original_messages = message.Copy()
 
 	// Check for container
+	// Проверьте наличие контейнера
 	var/obj/item/cached_item = user.get_active_held_item()
 	if(istype(cached_item) && cached_item.is_refillable() && cached_item.is_drainable())
 		liquid_container = cached_item
@@ -95,7 +104,7 @@
 		message = original_messages
 		return
 
-	// Handle different intents
+	// Вариации действий от интента
 	switch(resolve_intent_name(user.combat_mode))
 		if("harm")
 			message = list(
@@ -148,6 +157,7 @@
 			var/obj/item/organ/genital/breasts/breasts = target.get_organ_slot(ORGAN_SLOT_BREASTS)
 			if(breasts?.internal_fluid_datum)
 				// Calculate milk amount based on how full the breasts are (0.5 to 2 multiplier)
+				// Рассчитайте количество молока в зависимости от наполненности груди (множитель от 0,5 до 2)
 				var/milk_multiplier = 0.5
 				if(breasts.internal_fluid_maximum > 0)
 					milk_multiplier = 0.5 + (1.5 * (breasts.internal_fluid_count / breasts.internal_fluid_maximum))
@@ -159,6 +169,7 @@
 				qdel(R)
 
 	// Handle arousal effects based on intent
+	// Обработка эффектов возбуждения в зависимости от интента
 	var/intent = resolve_intent_name(user.combat_mode)
 	if(intent != "harm" && prob(5 + target.arousal))
 		var/list/arousal_messages
@@ -260,7 +271,7 @@
 
 /datum/interaction/lewd/do_boobjob
 	name = "Сделать работу сиськами"
-	description = "Он же буб-джоб, поработай полусферами, покажи свою мощь."
+	description = "Он же буб-джоб, поработай полусферами, покажи свою мощь." //-// -Rewokin_fun_comment //-// буб-джоб, фак-сис, дрочь-шарс
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	user_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)

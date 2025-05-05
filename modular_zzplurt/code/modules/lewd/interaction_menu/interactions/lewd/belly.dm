@@ -1,5 +1,8 @@
-/datum/interaction/lewd/bellyfuck	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
-	name = "Трахаться о живот"
+/// Действия с животом
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/bellyfuck
+	name = "Тереться о живот"
 	description = "Трахнись о животик своего партнера."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_TOPLESS)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
@@ -74,48 +77,51 @@
 	user_arousal = 2
 	target_arousal = 3
 
-/datum/interaction/lewd/deflate_belly
-	name = "Deflate Belly"
-	description = "Deflate belly."
-	user_required_parts = list(ORGAN_SLOT_BELLY = REQUIRE_GENITAL_ANY)
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_HUMAN)
-	usage = INTERACTION_SELF
-	message = list(
-		"deflates their belly",
-		"lets out air from their belly",
-		"makes their belly smaller"
-	)
-	sound_range = 1
-	sound_use = FALSE
-	user_pleasure = 0
-	user_arousal = 0
+//-// -Rewokin_comment //-//
+// Бимбофикация, боже, удалим нахер
 
-/datum/interaction/lewd/deflate_belly/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	. = ..()
-	var/obj/item/organ/genital/belly/gut = user.get_organ_slot(ORGAN_SLOT_BELLY)
-	if(gut)
-		gut.set_size(gut.genital_size - 1)
-		user.update_body()
+// /datum/interaction/lewd/deflate_belly
+//	name = "Deflate Belly"
+//	description = "Deflate belly."
+//	user_required_parts = list(ORGAN_SLOT_BELLY = REQUIRE_GENITAL_ANY)
+//	interaction_requires = list(INTERACTION_REQUIRE_SELF_HUMAN)
+//	usage = INTERACTION_SELF
+//	message = list(
+//		"deflates their belly",
+//		"lets out air from their belly",
+//		"makes their belly smaller"
+//	)
+//	sound_range = 1
+//	sound_use = FALSE
+//	user_pleasure = 0
+//	user_arousal = 0
 
-/datum/interaction/lewd/inflate_belly
-	name = "Inflate Belly"
-	description = "Inflate belly."
-	user_required_parts = list(ORGAN_SLOT_BELLY = REQUIRE_GENITAL_ANY)
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_HUMAN)
-	usage = INTERACTION_SELF
-	message = list(
-		"inflates their belly",
-		"makes their belly bigger",
-		"expands their belly"
-	)
-	sound_range = 1
-	sound_use = FALSE
-	user_pleasure = 0
-	user_arousal = 0
+// /datum/interaction/lewd/deflate_belly/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
+//	. = ..()
+//	var/obj/item/organ/genital/belly/gut = user.get_organ_slot(ORGAN_SLOT_BELLY)
+//	if(gut)
+//		gut.set_size(gut.genital_size - 1)
+//		user.update_body()
 
-/datum/interaction/lewd/inflate_belly/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	. = ..()
-	var/obj/item/organ/genital/belly/gut = user.get_organ_slot(ORGAN_SLOT_BELLY)
-	if(gut)
-		gut.set_size(gut.genital_size + 1)
-		user.update_body()
+// /datum/interaction/lewd/inflate_belly
+//	name = "Inflate Belly"
+//	description = "Inflate belly."
+//	user_required_parts = list(ORGAN_SLOT_BELLY = REQUIRE_GENITAL_ANY)
+//	interaction_requires = list(INTERACTION_REQUIRE_SELF_HUMAN)
+//	usage = INTERACTION_SELF
+//	message = list(
+//		"inflates their belly",
+//		"makes their belly bigger",
+//		"expands their belly"
+//	)
+//	sound_range = 1
+//	sound_use = FALSE
+//	user_pleasure = 0
+//	user_arousal = 0
+
+// /datum/interaction/lewd/inflate_belly/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
+//	. = ..()
+//	var/obj/item/organ/genital/belly/gut = user.get_organ_slot(ORGAN_SLOT_BELLY)
+//	if(gut)
+//		gut.set_size(gut.genital_size + 1)
+//		user.update_body()

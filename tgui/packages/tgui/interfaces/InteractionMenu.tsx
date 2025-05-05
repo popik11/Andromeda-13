@@ -46,8 +46,8 @@ export const InteractionMenu = (props) => {
   return (
     <Window width={500} height={600} title={'Interact - ' + self}>
       <Window.Content scrollable>
-        {(block_interact && <NoticeBox>Unable to Interact</NoticeBox>) || (
-          <NoticeBox>Able to Interact</NoticeBox>
+        {(block_interact && <NoticeBox>Без действия</NoticeBox>) || (
+          <NoticeBox>Взаимодействие</NoticeBox>
         )}
         <Stack vertical>
           <Section key="interactions">

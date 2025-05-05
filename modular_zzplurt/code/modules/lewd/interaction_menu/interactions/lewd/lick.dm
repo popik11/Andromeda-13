@@ -1,5 +1,8 @@
-/datum/interaction/lewd/rimjob	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
-	name = "Полизать Зад(Римминг)"
+// Действия языком
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/rimjob
+	name = "Полизать Зад (Римминг)"
 	description = "Полижи чей-нибудь зад, не будь пуськой."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
@@ -55,36 +58,6 @@
 	. = ..()
 	message = original_messages
 
-/datum/interaction/lewd/lick_sweat
-	name = "Lick Sweat"
-	description = "Lick their sweat."
-	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
-	message = list(
-		"licks the sweat off %TARGET%'s skin",
-		"tastes %TARGET%'s salty sweat",
-		"runs their tongue along %TARGET%'s sweaty body",
-		"savors the taste of %TARGET%'s perspiration"
-	)
-	user_messages = list(
-		"You taste %TARGET%'s salty sweat",
-		"The tang of %TARGET%'s sweat fills your mouth",
-		"You savor the salty taste of %TARGET%'s skin"
-	)
-	target_messages = list(
-		"You feel %USER%'s tongue licking your sweat",
-		"%USER%'s wet tongue slides across your sweaty skin",
-		"The warmth of %USER%'s mouth tingles against your damp skin"
-	)
-	sound_possible = list(
-		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
-	)
-	sound_range = 1
-	sound_use = TRUE
-	user_pleasure = 0
-	target_pleasure = 0
-	user_arousal = 3
-	target_arousal = 3
-
 /datum/interaction/lewd/lick_nuts
 	name = "Лизать Яйца"
 	description = "Полижи чьи-нибудь Яйца, будь смелее."
@@ -126,3 +99,36 @@
 	target_pleasure = 3
 	user_arousal = 3
 	target_arousal = 5
+
+//-// -Rewokin_comment //-//
+// Слизывать пот..
+
+// /datum/interaction/lewd/lick_sweat
+//	name = "Lick Sweat"
+//	description = "Lick their sweat."
+//	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
+//	message = list(
+//		"licks the sweat off %TARGET%'s skin",
+//		"tastes %TARGET%'s salty sweat",
+//		"runs their tongue along %TARGET%'s sweaty body",
+//		"savors the taste of %TARGET%'s perspiration"
+//	)
+//	user_messages = list(
+//		"You taste %TARGET%'s salty sweat",
+//		"The tang of %TARGET%'s sweat fills your mouth",
+//		"You savor the salty taste of %TARGET%'s skin"
+//	)
+//	target_messages = list(
+//		"You feel %USER%'s tongue licking your sweat",
+//		"%USER%'s wet tongue slides across your sweaty skin",
+//		"The warmth of %USER%'s mouth tingles against your damp skin"
+//	)
+//	sound_possible = list(
+//		'modular_zzplurt/sound/interactions/champ_fingering.ogg'
+//	)
+//	sound_range = 1
+//	sound_use = TRUE
+//	user_pleasure = 0
+//	target_pleasure = 0
+//	user_arousal = 3
+//	target_arousal = 3

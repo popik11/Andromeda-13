@@ -65,8 +65,8 @@ export const GenitalTab = ({ searchText }: GenitalTabProps) => {
                         color={genital.always_accessible ? 'good' : 'default'}
                         tooltip={
                           genital.always_accessible
-                            ? 'Always accessible'
-                            : 'Normal accessibility'
+                            ? 'Всегда доступен'
+                            : 'Обычная доступность'
                         }
                         onClick={() =>
                           act('toggle_genital_accessibility', {
@@ -83,7 +83,7 @@ export const GenitalTab = ({ searchText }: GenitalTabProps) => {
                             selected={
                               genital.visibility === GENITAL_ALWAYS_SHOW
                             }
-                            tooltip="Always show"
+                            tooltip="Всегда видно"
                             onClick={() =>
                               act('toggle_genital_visibility', {
                                 genital: genital.slot,
@@ -98,7 +98,7 @@ export const GenitalTab = ({ searchText }: GenitalTabProps) => {
                             selected={
                               genital.visibility === GENITAL_HIDDEN_BY_CLOTHES
                             }
-                            tooltip="Show when naked"
+                            tooltip="Скрыть одеждой"
                             onClick={() =>
                               act('toggle_genital_visibility', {
                                 genital: genital.slot,
@@ -111,7 +111,7 @@ export const GenitalTab = ({ searchText }: GenitalTabProps) => {
                           <Button
                             icon="eye-slash"
                             selected={genital.visibility === GENITAL_NEVER_SHOW}
-                            tooltip="Never show"
+                            tooltip="Никогда не видно"
                             onClick={() =>
                               act('toggle_genital_visibility', {
                                 genital: genital.slot,
@@ -145,11 +145,11 @@ export const GenitalTab = ({ searchText }: GenitalTabProps) => {
                         tooltip={
                           genital.can_arouse
                             ? genital.aroused === AROUSAL_NONE
-                              ? 'Not aroused'
+                              ? 'Не возбужден'
                               : genital.aroused === AROUSAL_PARTIAL
-                                ? 'Partially aroused'
-                                : 'Fully aroused'
-                            : "Can't be aroused"
+                                ? 'Частично возбужден'
+                                : 'Полностью возбужден'
+                            : 'Невозможно возбудиться'
                         }
                         disabled={!genital.can_arouse}
                         onClick={() => {

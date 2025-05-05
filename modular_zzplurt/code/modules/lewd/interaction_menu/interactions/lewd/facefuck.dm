@@ -1,5 +1,11 @@
-/datum/interaction/lewd/facefuck_vagina	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
-	name = "Гладиться о лицо (Вагина)"
+/// Действия с ртом
+
+//-// -Rewokin_fun_comment //-//
+// Кире нравится доминировать?~
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/facefuck_vagina
+	name = "Тереться о лицо (Вагина)"
 	description = "Погладьтесь своей Киской о чье-нибудь лицо."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
@@ -25,7 +31,7 @@
 	target_arousal = 3
 
 /datum/interaction/lewd/facefuck_penis
-	name = "Трахнуть в рот (Пенис)"
+	name = "Трахнуть в рот (Член)"
 	description = "Выеби кого-нибудь прямо в рот."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
@@ -50,8 +56,11 @@
 	user_arousal = 8
 	target_arousal = 3
 
+//-// -Rewokin_fun_comment //-//
+// Гок-гок-гок
+
 /datum/interaction/lewd/throatfuck
-	name = "Глубокий Оральный Секс(Пенис)"
+	name = "Глубокий Оральный Секс (Член)"
 	description = "Выеби чье-нибудь горло орально и грубо. (Опасно!: Вызывает удушение вплоть до смертельного)"
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_MOUTH)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
@@ -79,4 +88,4 @@
 	var/stat_before = target.stat
 	target.adjustOxyLoss(3)
 	if(target.stat == UNCONSCIOUS && stat_before != UNCONSCIOUS)
-		message = list("%TARGET% Вырубается от члена %USER% в своем горлышке")
+		message = list("%TARGET% Вырубается от члена %USER% в своем горлышке") //-// -Rewokin_fun_comment //-//	>Reason for disconnection = xyi v gorle

@@ -1,4 +1,10 @@
-/datum/interaction/lewd/grindface	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
+/// Действия ногой
+
+//-// -Rewokin_fun_comment //-//
+// Чулки или колготки? Попробуй обе и реши, на чей стороне ты.
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/grindface
 	name = "Прижать ногой лицо"
 	description = "Прижмите чье-нибудь лицо своей ножкой."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET, INTERACTION_REQUIRE_TARGET_MOUTH)
@@ -26,6 +32,7 @@
 /datum/interaction/lewd/grindface/act(mob/living/user, mob/living/target)
 	var/list/original_messages = message.Copy()
 	// Get shoes or barefoot text
+	// В обуви или босой ногой
 	var/obj/item/clothing/shoes/worn_shoes = user.get_item_by_slot(ITEM_SLOT_FEET)
 	var/feet_text = worn_shoes?.name || pick("bare feet", "soles")
 
@@ -36,7 +43,7 @@
 	message = original_messages
 
 /datum/interaction/lewd/grindmouth
-	name = "Пройтись ножкой в рот"
+	name = "Засунуть ножку в рот"
 	description = "Пройдитесь своей ногой кому-нибудь в рот."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET, INTERACTION_REQUIRE_TARGET_MOUTH)
 	message = list(
@@ -71,7 +78,7 @@
 	message = original_messages
 
 /datum/interaction/lewd/footjob
-	name = "Работа ножкой(ФутДжоб)"
+	name = "Работа ножкой (ФутДжоб)"
 	description = "Вздрочните кому-нибудь своей ножкой."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
@@ -157,7 +164,7 @@
 	cum_partner_text_overrides[position] = original_partner_overrides
 
 /datum/interaction/lewd/footjob/double
-	name = "Двойная работа ножкой(ДаблФутДжоб)"
+	name = "Двойная работа ножкой (ДаблФутДжоб)"
 	description = "Вздрочните кому-нибудь своими ножками."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_FEET)
 	message = list(
@@ -182,7 +189,7 @@
 	message = original_messages
 
 /datum/interaction/lewd/footjob/vagina
-	name = "Вагинальная работа ножкой(ВагинальныйФутДжоб)"
+	name = "Вагинальная работа ножкой (ВагинальныйФутДжоб)"
 	description = "Поработайте своей ножкой с чьей-нибудь вагиной."
 	target_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_VAGINA)

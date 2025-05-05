@@ -35,23 +35,23 @@ export const MainContent = () => {
                   icon={inFavorites ? 'star' : 'star-o'}
                   color="transparent"
                   onClick={() => setInFavorites(!inFavorites)}
-                  tooltip={`Click here to ${inFavorites ? 'show all' : 'show favorites'}`}
+                  tooltip={`Нажмите здесь, чтобы ${inFavorites ? 'показать все' : 'показать избранное'}`}
                 />
               }
             >
-              Interactions
+              Взаимодействие
             </Tabs.Tab>
             <Tabs.Tab selected={tabIndex === 1} onClick={() => setTabIndex(1)}>
-              Genital Options
+              Настройка гениталий
             </Tabs.Tab>
             <Tabs.Tab selected={tabIndex === 2} onClick={() => setTabIndex(2)}>
-              Character Prefs
+              Предпочтения персонажа
             </Tabs.Tab>
             <Tabs.Tab selected={tabIndex === 3} onClick={() => setTabIndex(3)}>
-              Content Prefs
+              Расширенные предпочтения
             </Tabs.Tab>
             <Tabs.Tab selected={tabIndex === 4} onClick={() => setTabIndex(4)}>
-              Lewd Items
+              Развратные предметы
             </Tabs.Tab>
           </Tabs>
         </Stack.Item>
@@ -65,14 +65,14 @@ export const MainContent = () => {
                 fluid
                 placeholder={
                   tabIndex === 0
-                    ? 'Search for an interaction'
+                    ? 'Поиск взаимодействия'
                     : tabIndex === 1
-                      ? 'Search for a genital'
+                      ? 'Поиск гениталий'
                       : tabIndex === 3
-                        ? 'Search for a content preference'
+                        ? 'Поиск предпочтений по содержанию'
                         : tabIndex === 4
-                          ? 'Search for an item'
-                          : 'Searching is unavailable for this tab'
+                          ? 'Поиск предмета'
+                          : 'Поиск недоступен для этой вкладки'
                 }
                 onInput={(e, value) => setSearchText(value)}
               />
@@ -83,7 +83,7 @@ export const MainContent = () => {
                   icon={showCategories ? 'folder' : 'list'}
                   color="green"
                   tooltip={
-                    showCategories ? 'Hide Categories' : 'Show Categories'
+                    showCategories ? 'Скрыть категории' : 'Показать категории'
                   }
                   onClick={() => setShowCategories(!showCategories)}
                 />

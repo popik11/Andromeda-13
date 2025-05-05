@@ -1,5 +1,11 @@
-/datum/interaction/lewd/armpit_fuck	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
-	name = "Трахать в подмышку"
+///	Действия подмышкой/ с подмышкой
+
+	//-// -Rewokin_comment //-//
+	// Ну не знаю, это не щит ЕРП конечно...
+
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/armpit_fuck
+	name = "Трахнуть в подмышку"
 	description = "Трахните подмышку партнера."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_TOPLESS)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
@@ -126,14 +132,14 @@
 		"Покрывает подмышку %USER% своими соками!"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"%TARGET% Кончает на всю вашу подмышку!",
-		"%TARGET% Выпускает свои горячие соки в вашу подмышку!",
-		"%TARGET% Покрывает вашу подмышку своими соками!"
-	))
-	cum_partner_text_overrides = list(CLIMAX_POSITION_TARGET = list(
 		"Вы кончаете на всю подмышку %USER%!",
 		"Вы выпускаете свои соки в подмышку %USER%!",
 		"Вы покрываете подмышку %USER% своими соками!"
+	))
+	cum_partner_text_overrides = list(CLIMAX_POSITION_TARGET = list(
+		"%TARGET% Кончает на всю вашу подмышку!",
+		"%TARGET% Выпускает свои горячие соки в вашу подмышку!",
+		"%TARGET% Покрывает вашу подмышку своими соками!"
 	))
 	message = list(
 		"Работает своей подмышкой, развлекая член %TARGET%.",

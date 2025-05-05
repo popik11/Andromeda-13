@@ -1,14 +1,15 @@
+/// ADD ANDROMEDA-13 (@rewokin): Перевод, дополнение ЕРП контента.
 /datum/interaction/lewd/clothesplosion
-	name = "Clothesplosion"
-	description = "Explode out of your clothes."
+	name = "Снять ВСЮ одежду"
+	description = "Долой трусы, свободу письке!"
 	usage = INTERACTION_SELF
 	interaction_requires = list(
 		INTERACTION_REQUIRE_SELF_HUMAN
 	)
 	message = list(
-		"bursts out of their clothes!",
-		"explodes out of their outfit!",
-		"dramatically tears free of their garments!"
+		"срывает с себя одежду!",
+		"вырывается из одежды!",
+		"резко снимает с себя одежду!"
 	)
 	sound_range = 1
 	sound_use = FALSE

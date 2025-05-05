@@ -1,12 +1,15 @@
-/datum/interaction/lewd/nipsuck	/// ADD ANDROMEDA-13 (@Мисс Кира): Перевод, дополнение ЕРП контента.
-	name = "Suck Nipples"
-	description = "Suck their nipples."
+// Действия с сосочками
+
+/// ADD ANDROMEDA-13 (@rewokin): Перевод, дополнение ЕРП контента.
+/datum/interaction/lewd/nipsuck
+	name = "Пососать соски"
+	description = "Посасывайте сосочки."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_BREASTS = REQUIRE_GENITAL_EXPOSED)
 	message = list(
-		"gently sucks on %TARGET%'s nipple.",
-		"gently nibs %TARGET%'s nipple.",
-		"licks %TARGET%'s nipple."
+		"нежно посасывает сосок %TARGET%.",
+		"нежно покусывает сосок %TARGET%.",
+		"лижет сосок %TARGET%."
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/oral1.ogg',
@@ -23,27 +26,26 @@
 	var/list/original_messages = message.Copy()
 
 	// Handle different intents
+	// Вариации действий от интента
 	switch(resolve_intent_name(user.combat_mode))
 		if("harm")
 			message = list(
-				"bites %TARGET%'s nipple.",
-				"aggressively sucks %TARGET%'s nipple."
+				"кусает сосок %TARGET%.",
+				"агрессивно сосет сосок %TARGET%."
 			)
-			target_pleasure = 4 // Aggressive sucking has higher rewards
+			target_pleasure = 4 // Aggressive sucking has higher rewards	// Агрессивное сосание приносит больше пользы
 			target_arousal = 5
 		if("disarm")
 			message = list(
-				"playfully nibbles %TARGET%'s nipple.",
-				"teasingly sucks %TARGET%'s nipple.",
-				"gently bites %TARGET%'s nipple."
+				"игриво покусывает сосок %TARGET%.",
+				"дразняще посасывает сосок %TARGET%."
 			)
 		if("grab")
 			message = list(
-				"sucks %TARGET%'s nipple intently.",
-				"feasts on %TARGET%'s nipple.",
-				"glomps %TARGET%'s nipple."
+				"сосредоточенно сосет сосок %TARGET%.",
+				"покусывает сосок %TARGET%.",
 			)
-			target_pleasure = 4 // Intent sucking has higher rewards
+			target_pleasure = 4 // Intent sucking has higher rewards	// Интент сосания имеет более высокую награду
 			target_arousal = 5
 	. = ..()
 	message = original_messages
@@ -53,6 +55,7 @@
 	var/obj/item/organ/genital/breasts/breasts = target.get_organ_slot(ORGAN_SLOT_BREASTS)
 	if(breasts?.internal_fluid_datum)
 		// Calculate milk amount based on how full the breasts are (0.5 to 2 multiplier)
+		// Рассчитайте количество молока в зависимости от наполненности груди (множитель от 0,5 до 2)
 		var/milk_multiplier = 0.5
 		if(breasts.internal_fluid_maximum > 0)
 			milk_multiplier = 0.5 + (1.5 * (breasts.internal_fluid_count / breasts.internal_fluid_maximum))
@@ -60,7 +63,7 @@
 		var/transfer_amount = rand(1, 2 * milk_multiplier)
 		var/intent = resolve_intent_name(user.combat_mode)
 		if(intent == "harm" || intent == "grab")
-			transfer_amount = rand(1, 3 * milk_multiplier) // More aggressive sucking gets more milk
+			transfer_amount = rand(1, 3 * milk_multiplier) // More aggressive sucking gets more milk	// Более агрессивное сосание позволяет получить больше молока
 
 		var/datum/reagents/R = new(breasts.internal_fluid_maximum)
 		breasts.transfer_internal_fluid(R, transfer_amount)
@@ -72,28 +75,28 @@
 		switch(resolve_intent_name(user.combat_mode))
 			if("help")
 				arousal_messages = list(
-					"%TARGET% shivers in arousal.",
-					"%TARGET% moans quietly.",
-					"%TARGET% breathes out a soft moan.",
+					"%TARGET% дрожит от возбуждения.",
+					"%TARGET% тихо стонет.",
+					"%TARGET% выдыхает тихий стон.",
 					"%TARGET% gasps.",
-					"%TARGET% shudders softly.",
-					"%TARGET% trembles as their chest gets molested."
+					"%TARGET% тихонько вздрагивает.",
+					"%TARGET% вздрагивает от приставаний к груди."
 				)
 			if("disarm")
 				arousal_messages = list(
-					"%TARGET% playfully squirms.",
-					"%TARGET% wiggles teasingly.",
-					"%TARGET% lets out a playful moan.",
-					"%TARGET% bites their lip.",
-					"%TARGET% squirms from the teasing."
+					"%TARGET% игриво извивается.",
+					"%TARGET% дразняще покачивается.",
+					"%TARGET% испускает игривый стон.",
+					"%TARGET% прикусывает губу.",
+					"%TARGET% извивается от прилюдий."
 				)
 			if("grab")
 				arousal_messages = list(
-					"%TARGET% moans eagerly.",
-					"%TARGET% presses their chest forward.",
-					"%TARGET% lets out a wanting groan.",
-					"%TARGET% quivers with excitement.",
-					"%TARGET% shivers with anticipation."
+					"%TARGET% стонет от нетерпения.",
+					"%TARGET% выпячивает грудь вперед.",
+					"%TARGET% издает желанный стон.",
+					"%TARGET% дрожит от возбуждения.",
+					"%TARGET% дрожит от предвкушения."
 				)
 
 		if(arousal_messages)

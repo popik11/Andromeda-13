@@ -123,9 +123,9 @@ export const InteractionsTab = ({
           }
           tooltip={`${
             favorite_interactions.includes(interaction)
-              ? 'Remove from'
-              : 'Add to'
-          } favorites`}
+              ? 'Удалить из'
+              : 'Добавить в'
+          } избранные`}
           onClick={() =>
             act('favorite', {
               interaction: interaction,
@@ -140,7 +140,7 @@ export const InteractionsTab = ({
     <Stack vertical fill>
       <Stack.Item>
         <NoticeBox>
-          {block_interact ? 'Unable to Interact' : 'Able to Interact'}
+          {block_interact ? 'Без действия' : 'Взаимодействие'}
         </NoticeBox>
       </Stack.Item>
       <Stack.Item grow>

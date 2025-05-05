@@ -90,38 +90,38 @@ export const CharacterPrefsTab = () => {
     <Flex direction="column">
       <LabeledList>
         {renderPrefDropdown(
-          'ERP Preference',
+          'Предпочтение ЕРП',
           'erp_pref',
           erp_pref,
           erp_pref_values,
         )}
         {renderPrefDropdown(
-          'Noncon Preference',
+          'Изнасилование',
           'noncon_pref',
           noncon_pref,
           noncon_pref_values,
         )}
         {renderPrefDropdown(
-          'Vore Preference',
+          'Предпочтение Воре',
           'vore_pref',
           vore_pref,
           vore_pref_values,
         )}
         {renderPrefDropdown(
-          'Unholy Preference',
+          'Грязное ЕРП',
           'unholy_pref',
           unholy_pref,
           unholy_pref_values,
         )}
         {renderPrefDropdown(
-          'Extreme Preference',
+          'Экстримальное ЕРП',
           'extreme_pref',
           extreme_pref,
           extreme_pref_values,
         )}
         {extreme_pref !== 'No' &&
           renderPrefDropdown(
-            'Extreme Harm',
+            'Смертельное ЕРП',
             'extreme_harm',
             extreme_harm,
             extreme_harm_values,

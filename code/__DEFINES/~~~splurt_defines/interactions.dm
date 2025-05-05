@@ -43,7 +43,7 @@
 
 // Additional details sent to the interaction menu
 #define INTERACTION_FILLS_CONTAINERS list( \
-	"info" = "You can fill a container if you have it in your active hand or are pulling it", \
+	"info" = "Вы можете наполнить контейнер, если держите его в активной руке или тянете за собой.", \
 	"icon" = "flask", \
 	"color" = "transparent" \
 	)

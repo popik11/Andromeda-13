@@ -169,62 +169,62 @@ GLOBAL_LIST_INIT(interaction_menu_preferences, typecacheof(list(
 
 	var/list/attributes = list()
 
-	// Basic attributes
+	// Основные атрибуты
 	if(target.get_bodypart(BODY_ZONE_L_ARM) || target.get_bodypart(BODY_ZONE_R_ARM))
-		attributes += "have hands"
+		attributes += "имеет руки"
 	if(target.get_bodypart(BODY_ZONE_HEAD) || (!iscarbon(target) && target.simulated_interaction_requirements[INTERACTION_REQUIRE_SELF_MOUTH]))
-		attributes += "have a mouth, which is [!target.is_mouth_covered() ? "covered" : "uncovered"]"
+		attributes += "имеет рот, который [!target.is_mouth_covered() ? "прикрыт" : "не прикрыт"]"
 
-	// Sexual exhaustion
+	// Сексуальное истощение
 	if(!COOLDOWN_FINISHED(target, refractory_period))
-		attributes += "are sexually exhausted for the time being"
+		attributes += "сексуально истощены на данный момент"
 
-	// Intent
+	// Интент
 	switch(resolve_intent_name(target.combat_mode))
 		if(INTENT_HELP)
-			attributes += "are acting gentle"
+			attributes += "ведёт себя мягко"
 		if(INTENT_DISARM)
-			attributes += "are acting playful"
+			attributes += "ведёт себя игриво"
 		if(INTENT_GRAB)
-			attributes += "are acting rough"
+			attributes += "ведёт себя грубо"
 		if(INTENT_HARM)
-			attributes += "are fighting anyone who comes near"
+			attributes += "сражаются со всеми, кто приближается к ним"
 
-	// Clothing state
+	// Проверка одежды
 	var/is_topless = target.is_topless()
 	var/is_bottomless = target.is_bottomless()
 	if(is_topless && is_bottomless)
-		attributes += "are naked"
+		attributes += "без одежды"
 	else if((is_topless && !is_bottomless) || (!is_topless && is_bottomless))
-		attributes += "are partially clothed"
+		attributes += "частично одет"
 	else
-		attributes += "are clothed"
+		attributes += "в одежде"
 
-	// Genital checks
+	// Проверка гениталий
 	if(target.has_penis(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have a penis"
+		attributes += "имеет пенис"
 	/* Not implemented yet
 	if(target.has_strapon(REQUIRE_GENITAL_EXPOSED))
 		attributes += "have a strapon"
 	*/
 	if(target.has_balls(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have a ballsack"
+		attributes += "имеет яйца"
 	if(target.has_vagina(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have a vagina"
+		attributes += "имеет вагину"
 	if(target.has_breasts(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have breasts"
+		attributes += "имеет грудь"
 	if(target.has_anus(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have an anus"
+		attributes += "имеет анус"
 	if(target.has_belly(REQUIRE_GENITAL_EXPOSED))
-		attributes += "have a belly"
+		attributes += "имеет живот"
 
 	// Feet
 	if(target.has_feet(REQUIRE_GENITAL_EXPOSED))
 		switch(target.get_num_feet())
 			if(2)
-				attributes += "have a pair of feet"
+				attributes += "имеет пару ног"
 			if(1)
-				attributes += "have a single foot"
+				attributes += "имеет одну ногу"
 
 	return attributes
 
@@ -272,7 +272,7 @@ GLOBAL_LIST_INIT(interaction_menu_preferences, typecacheof(list(
 
 	// Character info - Reoriented to show from user's perspective
 	data["isTargetSelf"] = (user == self)
-	data["interactingWith"] = user == self ? "Interacting with yourself..." : "Interacting with \the [self]..."
+	data["interactingWith"] = user == self ? "Взаимодействие с самим собой..." : "Взаимодействие с [self]..."
 
 	// SPLURT EDIT START - INTERACTIONS - Any living mob should be interactable
 	// Primary attributes (user's stats)

@@ -1,26 +1,27 @@
+/// ADD ANDROMEDA-13 (@rewokin): Перевод, дополнение ЕРП контента.
 /datum/interaction/lewd/jack_self
-	name = "Jack Off (self)"
-	description = "Jerk yourself off."
+	name = "Подрочи член (Себе)"
+	description = "Ты знаешь, что делать с этим питоном."
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	usage = INTERACTION_SELF
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"cums hard on their hand",
-		"shoots their load onto their fingers",
-		"ejaculates onto their palm"
+		"обильно кончает на руку",
+		"кончает в кулачёк",
+		"эякулирует на ладонь"
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"You cum hard on your hand",
-		"You shoot your load onto your fingers",
-		"You ejaculate onto your palm"
+		"Вы обильно кончаете на свою руку",
+		"Вы кончаете в кулачёк",
+		"Вы эякулируете на свою ладонь"
 	))
 	message = list(
-		"jerks themself off",
-		"works their shaft",
-		"strokes their cock",
-		"wanks their cock hard"
+		"дрочит свой член",
+		"активно дрочит рукой",
+		"дрочит",
+		"мастурбирует"
 	)
 	sound_possible = list(
 		'modular_zzplurt/sound/interactions/bang1.ogg',
@@ -48,7 +49,7 @@
 	if(liquid_container)
 		var/list/original_messages = message.Copy()
 		var/chosen_message = pick(message)
-		message = list("[chosen_message] over \the [liquid_container]")
+		message = list("[chosen_message] над [liquid_container]")
 		interaction_modifier_flags |= INTERACTION_OVERRIDE_FLUID_TRANSFER
 		. = ..()
 		interaction_modifier_flags &= ~INTERACTION_OVERRIDE_FLUID_TRANSFER
