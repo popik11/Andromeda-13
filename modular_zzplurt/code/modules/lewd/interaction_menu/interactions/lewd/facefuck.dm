@@ -2,6 +2,7 @@
 
 //-// -Rewokin_fun_comment //-//
 // Кире нравится доминировать?~
+// Тише будь, Революция красной патриархии - MsKira
 
 /// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
 /datum/interaction/lewd/facefuck_vagina
