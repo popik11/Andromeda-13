@@ -2,7 +2,7 @@
 
 /// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
 /datum/interaction/lewd/bellyfuck
-	name = "Тереться о живот"
+	name = "Тереться о живот (Пенисом)"
 	description = "Трахнись о животик своего партнера."
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_TOPLESS)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
