@@ -3,8 +3,8 @@
 ////////////////////////////////////////////MUFFINS////////////////////////////////////////////
 
 /obj/item/food/muffin
-	name = "muffin"
-	desc = "A delicious and spongy little cake."
+	name = "маффин"
+	desc = "Вкусный и пышный маленький кекс."
 	icon_state = "muffin"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -17,9 +17,9 @@
 	crafting_complexity = FOOD_COMPLEXITY_2
 
 /obj/item/food/muffin/berry
-	name = "berry muffin"
+	name = "ягодный маффин"
 	icon_state = "berrymuffin"
-	desc = "A delicious and spongy little cake, with berries."
+	desc = "Очень вкусный и пышный маленький ягодный кекс."
 	tastes = list("muffin" = 3, "berry" = 1)
 	foodtypes = GRAIN|DAIRY|SUGAR|BREAKFAST|FRUIT
 	venue_value = FOOD_PRICE_NORMAL
@@ -39,10 +39,10 @@
 	AddComponent(/datum/component/ghost_edible, bite_consumption = bite_consumption)
 
 /obj/item/food/muffin/moffin
-	name = "moffin"
+	name = "моффин"
 	icon_state = "moffin_1"
 	base_icon_state = "moffin"
-	desc = "A delicious and spongy little cake."
+	desc = "Вкусный и пышный маленький кекс."
 	tastes = list("muffin" = 3, "dust" = 1, "lint" = 1)
 	foodtypes = CLOTH|DAIRY|GRAIN|SUGAR|BREAKFAST
 	crafting_complexity = FOOD_COMPLEXITY_2
@@ -57,21 +57,21 @@
 		return
 	var/mob/living/moffin_observer = user
 	if(moffin_observer.get_liked_foodtypes() & CLOTH)
-		. += span_nicegreen("Ooh! It's even got bits of clothes on it! Yummy!")
+		. += span_nicegreen("О-о-о! На нем даже есть обрывки одежды! Вкусно!")
 	else
-		. += span_warning("You're not too sure what's on top though...")
+		. += span_warning("Однако вы не совсем уверены, что находится сверху...")
 
 ////////////////////////////////////////////WAFFLES////////////////////////////////////////////
 
 /obj/item/food/waffles
-	name = "waffles"
-	desc = "Mmm, waffles."
+	name = "вафли"
+	desc = "Ммм, вафли."
 	icon_state = "waffles"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 8,
 		/datum/reagent/consumable/nutriment/vitamin = 2,
 	)
-	tastes = list("waffles" = 1)
+	tastes = list("вафли" = 1)
 	foodtypes = GRAIN|DAIRY|BREAKFAST
 	w_class = WEIGHT_CLASS_SMALL
 	crafting_complexity = FOOD_COMPLEXITY_2
@@ -109,8 +109,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/rofflewaffles
-	name = "roffle waffles"
-	desc = "Waffles from Roffle. Co."
+	name = "рофельные вафли"
+	desc = "Вафли от Рофл. Корп."
 	icon_state = "rofflewaffles"
 	bite_consumption = 4
 	food_reagents = list(
@@ -130,8 +130,8 @@
 ////////////////////////////////////////////OTHER////////////////////////////////////////////
 
 /obj/item/food/cookie
-	name = "cookie"
-	desc = "COOKIE!!!"
+	name = "печенье"
+	desc = "ПЕЧЕНЬКА!!!"
 	icon_state = "COOKIE!!!"
 	bite_consumption = 1
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -149,8 +149,8 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/toxin/chloralhydrate = 10)
 
 /obj/item/food/fortunecookie
-	name = "fortune cookie"
-	desc = "A true prophecy in each cookie!"
+	name = "печенье с предсказанием судьбы"
+	desc = "Истинное пророчество в каждом печенье!"
 	icon_state = "fortune_cookie"
 	trash_type = /obj/item/paper/paperslip/fortune
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5)
@@ -179,8 +179,8 @@
 		AddElement(/datum/element/food_trash, trash_type, food_flags, TYPE_PROC_REF(/obj/item/food/fortunecookie, get_fortune))
 
 /obj/item/food/cookie/sugar
-	name = "sugar cookie"
-	desc = "Just like your little sister used to make."
+	name = "сахарное печенье"
+	desc = "Точно так же, как когда-то готовила твоя ..."
 	icon_state = "sugarcookie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -198,8 +198,8 @@
 		icon_state = "sugarcookie_[shape]"
 
 /obj/item/food/chococornet
-	name = "chocolate cornet"
-	desc = "Which side's the head, the fat end or the thin end?"
+	name = "шоколадный рожок"
+	desc = "С какой стороны головка, с толстого конца или с тонкого?"
 	icon_state = "chococornet"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -211,8 +211,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cookie/oatmeal
-	name = "oatmeal cookie"
-	desc = "The best of both cookie and oat."
+	name = "овсяное печенье"
+	desc = "Самая лучшая стандартная печенька."
 	icon_state = "oatmealcookie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -223,8 +223,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cookie/raisin
-	name = "raisin cookie"
-	desc = "Why would you put raisins on a cookie?"
+	name = "печенье с изюмом"
+	desc = "Зачем тебе класть изюм в печенье?"
 	icon_state = "raisincookie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -235,8 +235,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/poppypretzel
-	name = "poppy pretzel"
-	desc = "It's all twisted up!"
+	name = "крендель с маком"
+	desc = "Все это так запутано!"
 	icon_state = "poppypretzel"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -277,8 +277,8 @@
 		reagents.add_reagent(/datum/reagent/medicine/omnizine, 5)
 
 /obj/item/food/cracker
-	name = "cracker"
-	desc = "It's a salted cracker."
+	name = "крекер"
+	desc = "Это солёный крекер."
 	icon_state = "cracker"
 	bite_consumption = 1
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -303,8 +303,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cherrycupcake
-	name = "cherry cupcake"
-	desc = "A sweet cupcake with cherry bits."
+	name = "вишневый кекс"
+	desc = "Сладкий кекс с кусочками вишни."
 	icon_state = "cherrycupcake"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -317,8 +317,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cherrycupcake/blue
-	name = "blue cherry cupcake"
-	desc = "Blue cherries inside a delicious cupcake."
+	name = "кекс с черникой"
+	desc = "Черника внутри вкуснейшего кекса."
 	icon_state = "bluecherrycupcake"
 	tastes = list("cake" = 3, "blue cherry" = 1)
 	crafting_complexity = FOOD_COMPLEXITY_3
@@ -341,8 +341,8 @@
 	crafted_food_buff = /datum/status_effect/food/trait/shockimmune
 
 /obj/item/food/honeybun
-	name = "honey bun"
-	desc = "A sticky pastry bun glazed with honey."
+	name = "медовая булочка"
+	desc = "Булочка из липкого теста, глазированная медом."
 	icon_state = "honeybun"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -354,8 +354,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cannoli
-	name = "cannoli"
-	desc = "A Sicilian treat that makes you into a wise guy."
+	name = "канноли"
+	desc = "Сицилийское угощение, которое сделает из вас умного парня."
 	icon_state = "cannoli"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 6,
@@ -368,8 +368,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/icecream
-	name = "waffle cone"
-	desc = "Delicious waffle cone, but no ice cream."
+	name = "вафельный рожок"
+	desc = "Вкусный вафельный рожок, но без мороженого."
 	icon = 'icons/obj/service/kitchen.dmi'
 	icon_state = "icecream_cone_waffle"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5)
@@ -404,8 +404,8 @@
 	AddComponent(/datum/component/ice_cream_holder, max_scoops, filled_name = "ice cream", change_desc = TRUE, prefill_flavours = prefill_flavours)
 
 /obj/item/food/icecream/chocolate
-	name = "chocolate cone"
-	desc = "Delicious chocolate cone, but no ice cream."
+	name = "шоколадный рожок"
+	desc = "Вкусный шоколадный рожок, но без мороженого."
 	icon_state = "icecream_cone_chocolate"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -427,8 +427,8 @@
 	)
 
 /obj/item/food/cookie/peanut_butter
-	name = "peanut butter cookie"
-	desc = "A tasty, chewy peanut butter cookie."
+	name = "печенье с арахисовым маслом"
+	desc = "Вкусное жевательное печенье с арахисовым маслом."
 	icon_state = "peanut_butter_cookie"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 2,
@@ -439,8 +439,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/raw_brownie_batter
-	name = "raw brownie batter"
-	desc = "A sticky mixture of raw brownie batter, cook it in the oven!"
+	name = "сырое тесто для брауни"
+	desc = "Приготовьте липкую смесь из сырого теста для брауни и запекайте её в духовке!"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "raw_brownie_batter"
 	food_reagents = list(
@@ -455,8 +455,8 @@
 	AddComponent(/datum/component/bakeable, /obj/item/food/brownie_sheet, rand(20 SECONDS, 30 SECONDS), TRUE, TRUE)
 
 /obj/item/food/brownie_sheet
-	name = "brownie sheet"
-	desc = "An uncut sheet of cooked brownie, use a knife to cut it!."
+	name = "Неразрезанный брауни"
+	desc = "Неразрезанный брауни, разрежьте ножом!"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "brownie_sheet"
 	food_reagents = list(
@@ -472,8 +472,8 @@
 	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/brownie, 4, 3 SECONDS, table_required = TRUE,  screentip_verb = "Slice")
 
 /obj/item/food/brownie
-	name = "brownie"
-	desc = "A square slice of delicious, chewy brownie. Often the target of potheads."
+	name = "брауни"
+	desc = "Квадратный ломтик вкусного жевательного брауни. Часто становится мишенью любителей марихуаны."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "brownie"
 	food_reagents = list(
@@ -486,8 +486,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_2
 
 /obj/item/food/peanut_butter_brownie_batter
-	name = "raw peanut butter brownie batter"
-	desc = "A sticky mixture of raw peanut butter brownie batter, cook it in the oven!"
+	name = "тесто для брауни с сырым арахисовым маслом"
+	desc = "Приготовьте клейкую смесь для брауни из сырого арахисового масла в духовке!"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "peanut_butter_brownie_batter"
 	food_reagents = list(
@@ -503,8 +503,8 @@
 	AddComponent(/datum/component/bakeable, /obj/item/food/peanut_butter_brownie_sheet, rand(20 SECONDS, 30 SECONDS), TRUE, TRUE)
 
 /obj/item/food/peanut_butter_brownie_sheet
-	name = "peanut butter brownie sheet"
-	desc = "An uncut sheet of cooked peanut butter brownie, use a knife to cut it!"
+	name = "Неразрезанный брауни с арахисовым маслом"
+	desc = "Неразрезанный приготовленный брауни с арахисовым маслом, разрежьте его ножом!"
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "peanut_butter_brownie_sheet"
 	food_reagents = list(
@@ -521,8 +521,8 @@
 	AddElement(/datum/element/processable, TOOL_KNIFE, /obj/item/food/peanut_butter_brownie, 4, 3 SECONDS, table_required = TRUE,  screentip_verb = "Slice")
 
 /obj/item/food/peanut_butter_brownie
-	name = "peanut butter brownie"
-	desc = "A square slice of delicious, chewy peanut butter brownie. Often the target of potheads."
+	name = "брауни с арахисовым маслом"
+	desc = "Квадратный ломтик вкусного брауни с арахисовым маслом для жевания. Часто становится мишенью любителей марихуаны."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "peanut_butter_brownie"
 	food_reagents = list(
@@ -536,8 +536,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/crunchy_peanut_butter_tart
-	name = "crunchy peanut butter tart"
-	desc = "A miniature pie with a peanut butter filling, creamy icing, and topping of chopped nuts."
+	name = "хрустящий тарт с арахисовым маслом"
+	desc = "Миниатюрный пирог с начинкой из арахисового масла, сливочной глазурью и посыпкой из измельченных орехов."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "crunchy_peanut_butter_tart"
 	food_reagents = list(
@@ -551,8 +551,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cookie/chocolate_chip_cookie
-	name = "chocolate chip cookie"
-	desc = "A delightful-smelling chocolate chip cookie. Where's the milk?"
+	name = "печенье с шоколадной крошкой"
+	desc = "Восхитительно пахнущее печенье с шоколадной крошкой. Где молоко?"
 	icon_state = "COOKIE!!!"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	tastes = list("soft cookie" = 2, "chocolate" = 3)
@@ -562,8 +562,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cookie/snickerdoodle
-	name = "snickerdoodle"
-	desc = "A soft cookie made from vanilla and cinnamon."
+	name = "сникердудл"
+	desc = "Мягкое печенье, приготовленное из ванили и корицы."
 	icon_state = "snickerdoodle"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	tastes = list("soft cookie" = 2, "vanilla" = 3)
@@ -573,8 +573,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/cookie/macaron
-	name = "macaron"
-	desc = "A sandwich-like confectionary with a soft cookie shell and a creamy meringue center."
+	name = "макарон"
+	desc = "Кондитерское изделие в форме сэндвича с мягкой оболочкой из печенья и кремовой серединкой из безе."
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	icon_state = "macaron_1"
 	base_icon_state = "macaron"
@@ -589,8 +589,8 @@
 	icon_state = "[base_icon_state]_[rand(1, 4)]"
 
 /obj/item/food/cookie/thumbprint_cookie
-	name = "thumbprint cookie"
-	desc = "A cookie with a thumb-sized indent in the middle made for fillings. This one is filled with cherry jelly"
+	name = "печенье с отпечатком большого пальца"
+	desc = "Печенье с углублением в середине размером с большой палец для начинки. Это печенье с начинкой из вишневого желе"
 	icon_state = "thumbprint_cookie"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 6)
 	tastes = list("cookie" = 2, "cherry jelly" = 3)
