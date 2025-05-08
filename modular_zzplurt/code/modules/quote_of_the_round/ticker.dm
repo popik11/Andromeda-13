@@ -12,6 +12,8 @@
 		if (entry["content"])
 			contents += entry["content"]
 
+	return contents
+
 /datum/controller/subsystem/ticker/declare_completion(was_forced)
 	if(!CONFIG_GET(flag/roundend_embeds)) // SPLURT EDIT - Discord rounded embeds.
 		return ..()
@@ -48,7 +50,6 @@
 /datum/controller/subsystem/ticker/proc/generate_roundend_embed()
 	var/list/quote_of_the_round_data = generate_quote_of_the_round(TRUE)
 	var/news_report = send_news_report()
-	var/channel_tag = CONFIG_GET(str_list/chat_new_game_notifications)
 
 	var/first_death = ""
 	if(findtext(news_report, "Санкционированные Nanotrasen псайкеры с гордостью подтверждают сообщения о том, что в эту смену никто не умер!"))
@@ -106,20 +107,19 @@
 	embed.footer = new("Раунд #[GLOB.round_id] ([SSgamemode.storyteller.name])")
 	embed.timestamp = time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")
 
-	var/datum/tgs_message_content/message = new("# Раунд под номером #[GLOB.round_id] ([SSgamemode.storyteller.name]) только что закончился. [CONFIG_GET(string/roundend_ping_role) ? "<@[CONFIG_GET(string/roundend_ping_role)]>" : ""]")
+	var/datum/tgs_message_content/message = new("# Раунд под номером #[GLOB.round_id] ([SSgamemode.storyteller.name]) только что закончился. [CONFIG_GET(string/roundend_ping_role) ? "<@&[CONFIG_GET(string/roundend_ping_role)]>" : ""]")
 	message.embed = embed
-	spawn(5)
-		send2chat(message, channel_tag)
 
 	var/list/random_links = init_discord_videos()
-	if (!random_links || !length(random_links))
-		send2chat("Ошибка: не удалось загрузить ссылки из FUNNY_VIDEOS_FILE_NAME", channel_tag)
-		return
 	var/random_link = pick(random_links)
+	if(!random_links)
+		random_link = "Видосики не найдены."
 	var/message_for_video = pick(CONFIG_GET(str_list/randomizing_message_for_video))
 	var/last_roundend_message = "**[message_for_video]**\n [random_link]"
 	var/datum/tgs_message_content/random_message = new(last_roundend_message)
-	spawn(5)
-		send2chat(random_message, channel_tag)
+	for(var/channel_tag in CONFIG_GET(str_list/channel_announce_new_game))
+		send2chat(message, channel_tag)
+		spawn(5)
+			send2chat(random_message, channel_tag)
 
 #undef FUNNY_VIDEOS_FILE_NAME
