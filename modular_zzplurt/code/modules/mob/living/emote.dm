@@ -663,7 +663,7 @@
 
 /datum/emote/living/snore/snore2/run_emote(mob/user, params)
 	var/obj/item/organ/tongue/tongue = user.get_organ_slot(ORGAN_SLOT_TONGUE)
-	var/say_mod = (tongue ? tongue.say_mod : "says")
+	var/say_mod = (tongue ? tongue.say_mod : "говорит")
 	var/list/aaauughh = list(
 		"lets out an <b>earthshaking</b> snore.",
 		"lets out what sounds like a <b>painful</b> snore.",
@@ -783,7 +783,7 @@
 
 /datum/emote/living/poyo/run_emote(mob/user, params, type_override, intentional)
 	var/obj/item/organ/tongue/tongue = user.get_organ_slot(ORGAN_SLOT_TONGUE)
-	var/say_mod = (tongue ? tongue.say_mod : "says")
+	var/say_mod = (tongue ? tongue.say_mod : "говорит")
 	message = replacetextEx(message, "%SAYS", say_mod)
 	. = ..()
 

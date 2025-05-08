@@ -554,7 +554,7 @@
 					continue
 				for (var/trigger in enthrall_chem.custom_triggers)
 					speaktrigger += "[trigger], "
-				to_chat(user, "<b>[carbon_mob]</b> whispers, \"<i>[speaktrigger] are my triggers.</i>\"")//So they don't trigger themselves!
+				to_chat(user, "<b>[carbon_mob]</b> шепчет, \"<i>[speaktrigger] are my triggers.</i>\"")//So they don't trigger themselves!
 				addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, carbon_mob, "<span class='notice'>You whisper your triggers to [(enthrall_chem.lewd?"Your [enthrall_chem.enthrall_gender]":"[enthrall_chem.enthrall_mob]")].</span>"), 5)
 
 

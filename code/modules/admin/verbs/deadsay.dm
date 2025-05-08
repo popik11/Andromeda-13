@@ -19,7 +19,7 @@ ADMIN_VERB(dsay, R_NONE, "DSay", "Speak to the dead.", ADMIN_CATEGORY_GAME, mess
 		admin_name = pick(strings("admin_nicknames.json", "names", "config"))
 	var/name_and_rank = "[span_tooltip(rank_name, "STAFF")] ([admin_name])"
 
-	deadchat_broadcast("[span_prefix("DEAD:")] [name_and_rank] says, <span class='message'>\"[emoji_parse(message)]\"</span>")
+	deadchat_broadcast("[span_prefix("DEAD:")] [name_and_rank] говорит, <span class='message'>\"[emoji_parse(message)]\"</span>")
 
 	BLACKBOX_LOG_ADMIN_VERB("Dsay")
 

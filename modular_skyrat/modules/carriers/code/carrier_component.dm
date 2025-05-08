@@ -368,8 +368,8 @@ GLOBAL_LIST_EMPTY(soulcatchers)
 	var/message = ""
 	var/owner_message = ""
 	if(!emote)
-		message = "<font color=[room_color]>\ [soulcatcher_icon] <b>[sender_name]</b> says, \"[message_to_send]\"</font>"
-		owner_message = "<font color=[room_color]>\ <b>([first_room_name_word[1]])</b> [soulcatcher_icon] <b>[sender_name]</b> says, \"[message_to_send]\"</font>"
+		message = "<font color=[room_color]>\ [soulcatcher_icon] <b>[sender_name]</b> говорит, \"[message_to_send]\"</font>"
+		owner_message = "<font color=[room_color]>\ <b>([first_room_name_word[1]])</b> [soulcatcher_icon] <b>[sender_name]</b> говорит, \"[message_to_send]\"</font>"
 		log_say("[sender_mob] in [name] carrier room said: [message_to_send]")
 	else
 		message = "<font color=[room_color]>\ [soulcatcher_icon] <b>[sender_name]</b> [message_to_send]</font>"

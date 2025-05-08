@@ -40,7 +40,6 @@ SUBSYSTEM_DEF(statpanels)
 		var/current_date = "[time2text(world.realtime, "DDD Month DD")], [CURRENT_STATION_YEAR]"
 
 		global_data = list(
-			"Замедление времени: [round(SStime_track.time_dilation_current,1)]% В среднем:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
 			"Карта: [SSmapping.current_map?.map_name || "Загрузка..."]",
 			cached ? "Следующая карта: [cached.map_name]" : null,
 			"Рассказчик: [SSgamemode.storyteller ? SSgamemode.storyteller.name : "N/A"]", // BUBBER EDIT ADDITION
@@ -50,9 +49,10 @@ SUBSYSTEM_DEF(statpanels)
 			"OOC: [GLOB.ooc_allowed ? "Включенный" : "Выключенный"]",
 			" ",
 			"Серверное время UTC+3 (GMT+3, МСК): [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
-			"Станционное время: [time_to_twelve_hour(station_time(), format = "hh:mm")], [timeinworld]", //BUBBER EDIT: READABLE STATION TIME
-			"Время раунда: [round_time > MIDNIGHT_ROLLOVER ? "[round(round_time/MIDNIGHT_ROLLOVER)]:[worldtime2text()]" : worldtime2text()]",
-			"Время с начала смены: [time2text(real_round_time, "hh:mm:ss", 0)]"
+			"Станционное время: [station_time_timestamp(format = "hh:mm")], [current_date]", //BUBBER EDIT: READABLE STATION TIME
+			"Время раунда: [time2text(real_round_time, "hh:mm:ss", 0)]",
+			"Время с начала смены: [time2text(real_round_time, "hh:mm:ss", 0)]",
+			"Замедление времени: [round(SStime_track.time_dilation_current,1)]% В среднем:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
 		)
 		// BUBBER EDIT CHANGE END
 

@@ -66,7 +66,7 @@
 /// This "human" tongue is only used in Character Preferences / Augmentation menu.
 /// The base tongue class lacked a say_mod. With say_mod included it makes a non-Human user sound like a Human.
 /obj/item/organ/tongue/human
-	say_mod = "says"
+	say_mod = "говорит"
 
 /obj/item/organ/tongue/lizard/robot
 	name = "robotic lizard voicebox"
@@ -103,7 +103,7 @@
 	icon_state = "cybertongue"
 	desc =  "A fully-functional synthetic tongue, encased in soft silicone. Features include high-resolution vocals and taste receptors."
 	organ_flags = ORGAN_ROBOTIC
-	say_mod = "says"
+	say_mod = "говорит"
 	// Not as good as organic tongues, not as bad as the robotic voicebox.
 	taste_sensitivity = 20
 
