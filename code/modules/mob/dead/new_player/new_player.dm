@@ -112,37 +112,37 @@
 /proc/get_job_unavailable_error_message(retval, jobtitle)
 	switch(retval)
 		if(JOB_AVAILABLE)
-			return "[jobtitle] is available."
+			return "[jobtitle] доступен."
 		if(JOB_UNAVAILABLE_GENERIC)
-			return "[jobtitle] is unavailable."
+			return "[jobtitle] недоступен."
 		if(JOB_UNAVAILABLE_BANNED)
-			return "You are currently banned from [jobtitle]."
+			return "В настоящее время вам запрещено играть за [jobtitle]."
 		if(JOB_UNAVAILABLE_PLAYTIME)
-			return "You do not have enough relevant playtime for [jobtitle]."
+			return "У вас недостаточно игрового времени для [jobtitle]."
 		if(JOB_UNAVAILABLE_ACCOUNTAGE)
-			return "Your account is not old enough for [jobtitle]."
+			return "Ваша учетная запись недостаточно старая для [jobtitle]."
 		if(JOB_UNAVAILABLE_SLOTFULL)
-			return "[jobtitle] is already filled to capacity."
+			return "[jobtitle] уже заполнен до отказа."
 		//SKYRAT EDIT ADDITION
 		if(JOB_UNAVAILABLE_QUIRK)
-			return "[jobtitle] is restricted due to your selected quirks."
+			return "[jobtitle] ограничено из-за ваших навыков."
 		if(JOB_UNAVAILABLE_LANGUAGE)
-			return "[jobtitle] is restricted due to your selected languages."
+			return "[jobtitle] ограничено из-за выбранных вами языков."
 		if(JOB_UNAVAILABLE_SPECIES)
-			return "[jobtitle] is restricted due to your selected species."
+			return "[jobtitle] ограничено из-за выбранного вами вида."
 		//BUBBER EDIT BEGIN: Silicon flavor text
 		if(JOB_UNAVAILABLE_FLAVOUR)
-			return "[jobtitle] requires you to have [CONFIG_GET(number/flavor_text_character_requirement)] characters of Flavor Text. Go to the character setup and write more."
+			return "[jobtitle] требует от вас наличия [CONFIG_GET(number/flavor_text_character_requirement)] текста с описанием аромата. Перейдите к настройке символов и напишите больше."
 		if(JOB_UNAVAILABLE_FLAVOUR_SILICON)
-			return "[jobtitle] requires you to have [CONFIG_GET(number/silicon_flavor_text_character_requirement)] characters of Silicon Flavor Text. Go to the character setup and write more."
+			return "[jobtitle] требует от вас наличия [CONFIG_GET(number/silicon_flavor_text_character_requirement)] текста с описанием аромата синта. Перейдите к настройке символов и напишите больше."
 		//BUBBER EDIT END: Silicon flavor text
 		if(JOB_UNAVAILABLE_AUGMENT)
-			return "[jobtitle] is restricted due to your selected body augments."
+			return "[jobtitle] ограничено из-за выбранных вами аугментаций тела."
 		//SKYRAT EDIT END
 		if(JOB_UNAVAILABLE_ANTAG_INCOMPAT)
-			return "[jobtitle] is not compatible with some antagonist role assigned to you."
+			return "[jobtitle] не совместима с какой-то назначенной вам ролью антагониста."
 		if(JOB_UNAVAILABLE_AGE)
-			return "Your character is not old enough for [jobtitle]."
+			return "Ваш персонаж недостаточно взрослый для [jobtitle]."
 
 	return GENERIC_JOB_UNAVAILABLE_ERROR
 
@@ -181,7 +181,7 @@
 	// Check that they're picking someone new for new character respawning
 	if(CONFIG_GET(flag/allow_respawn) == RESPAWN_FLAG_NEW_CHARACTER)
 		if("[client.prefs.default_slot]" in persistent_client.joined_as_slots)
-			tgui_alert(usr, "You already have played this character in this round!")
+			tgui_alert(usr, "Вы уже играли этим персонажем в этом раунде!")
 			return FALSE
 
 	var/error = IsJobUnavailable(rank)
@@ -191,7 +191,7 @@
 
 	if(SSshuttle.arrivals)
 		if(SSshuttle.arrivals.damaged && CONFIG_GET(flag/arrivals_shuttle_require_safe_latejoin))
-			tgui_alert(usr,"The arrivals shuttle is currently malfunctioning! You cannot join.")
+			tgui_alert(usr,"Шаттл прибытия сейчас неисправен! Вы не можете присоединиться.")
 			return FALSE
 
 		if(CONFIG_GET(flag/arrivals_shuttle_require_undocked))
@@ -204,17 +204,17 @@
 	var/datum/job/job = SSjob.get_job(rank)
 
 	if(!SSjob.assign_role(src, job, TRUE))
-		tgui_alert(usr, "There was an unexpected error putting you into your requested job. If you cannot join with any job, you should contact an admin.")
+		tgui_alert(usr, "Произошла непредвиденная ошибка, в результате которой вы не оказались на требуемой работе. Если вы не можете присоединиться к какому-либо должности, вам следует обратиться к администратору.")
 		return FALSE
 
 	hide_title_screen()// SKYRAT EDIT ADDITION
 	mind.late_joiner = TRUE
 	var/atom/destination = mind.assigned_role.get_latejoin_spawn_point()
 	if(!destination)
-		CRASH("Failed to find a latejoin spawn point.")
+		CRASH("Не удалось найти точку появления позднего соединения.")
 	var/mob/living/character = create_character(destination)
 	if(!character)
-		CRASH("Failed to create a character for latejoin.")
+		CRASH("Не удалось создать персонажа для позднего присоединения.")
 	transfer_character()
 
 	SSjob.equip_rank(character, job, character.client)
@@ -358,13 +358,11 @@
 		has_antags = TRUE
 	if(client.prefs.job_preferences.len == 0)
 		if(!ineligible_for_roles)
-			to_chat(src, span_danger("You have no jobs enabled, along with return to lobby if job is unavailable. This makes you ineligible for any round start role, please update your job preferences."))
-		ineligible_for_roles = TRUE
+			to_chat(src, span_danger("У вас не включены должности, а также возможность вернуться в лобби, если должность недоступна. Это лишает вас права претендовать на какую-либо роль в начале раунда, пожалуйста, обновите свои настройки работы."))		ineligible_for_roles = TRUE
 		ready = PLAYER_NOT_READY
 		if(has_antags)
-			log_admin("[src.ckey] has no jobs enabled, return to lobby if job is unavailable enabled and [client.prefs.be_special.len] antag preferences enabled. The player has been forcefully returned to the lobby.")
-			message_admins("[src.ckey] has no jobs enabled, return to lobby if job is unavailable enabled and [client.prefs.be_special.len] antag preferences enabled. This is an old antag rolling technique. The player has been asked to update their job preferences and has been forcefully returned to the lobby.")
-		return FALSE //This is the only case someone should actually be completely blocked from antag rolling as well
+			log_admin("У [src.ckey] не включена ни одна должность, возвращиение в лобби, если должность недоступна и [client.prefs.be_special.len] включены настройки антага. Игрок был принудительно возвращен в лобби.")
+			message_admins("У [src.ckey] не включена ни одна должность, возвращиение в лобби, если должность недоступна и [client.prefs.be_special.len] включены настройки антага. Это старый метод выбора антагонистов. Игрока попросили обновить свои рабочие настройки, и он был принудительно возвращен в лобби.")		return FALSE //This is the only case someone should actually be completely blocked from antag rolling as well
 	return TRUE
 
 /**
@@ -415,5 +413,7 @@
 		return TRUE
 	if(CONFIG_GET(flag/auto_deadmin_on_ready_or_latejoin) || (client.prefs.read_preference(/datum/preference/toggle/auto_deadmin_on_ready_or_latejoin)) || (client.prefs?.toggles & DEADMIN_ALWAYS))
 		return client.holder.auto_deadmin()
+
+#undef RESET_HUD_INTERVALto_deadmin()
 
 #undef RESET_HUD_INTERVAL
