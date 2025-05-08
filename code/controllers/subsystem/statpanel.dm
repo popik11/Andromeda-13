@@ -53,8 +53,8 @@ SUBSYSTEM_DEF(statpanels)
 			" ",
 			"Серверное время UTC+3 (GMT+3, МСК): [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Станционное время: [time_to_twelve_hour(station_time(), format = "hh:mm")], [timeinworld]", //BUBBER EDIT: READABLE STATION TIME
-			"Время с начала смены: [round_time > MIDNIGHT_ROLLOVER ? "[round(round_time/MIDNIGHT_ROLLOVER)]:[worldtime2text()]" : worldtime2text()]",
-			"Время с перезапуска: [time2text(real_round_time, "hh:mm:ss", 0)]"
+//			"Время с начала смены: [round_time > MIDNIGHT_ROLLOVER ? "[round(round_time/MIDNIGHT_ROLLOVER)]:[worldtime2text()]" : worldtime2text()]",
+			"Время с начала смены: [time2text(real_round_time, "hh:mm:ss", 0)]"
 		)
 		// SKYRAT EDIT END
 
