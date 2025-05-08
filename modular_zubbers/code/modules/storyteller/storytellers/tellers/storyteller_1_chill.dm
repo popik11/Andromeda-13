@@ -1,8 +1,8 @@
 /datum/storyteller/chill
 	name = "Chill (Low Chaos)"
-	desc = "The Chill will be light on events compared to other storytellers, especially so on ones involving combat, destruction, or chaos. \
-	The least hectic storyteller of all, while still having some spice. Best for RP-focused rounds with a few events sprinkled in."
-	welcome_text = "If you vote for this storyteller on Ice Box, you have no originality."
+	desc = "По сравнению с другими сказочниками, «Озноб» будет мало освещать события, особенно те, которые связаны с боем, разрушением или хаосом. \
+	Наименее суетливый из всех рассказчиков, но при этом не лишенный некоторой остроты. Лучше всего подходит для раундов, ориентированных на RP, с небольшим количеством событий."
+	welcome_text = "Если вы проголосуете за этого сказочника на Ice Box, у вас нет оригинальности."
 
 	track_data = /datum/storyteller_data/tracks/chill
 

@@ -129,7 +129,7 @@
 		if(gen_turf.turf_flags & NO_RUINS)
 			new_turf.turf_flags |= NO_RUINS
 
-	var/message = "[name] terrain generation finished in [(REALTIMEOFDAY - start_time)/10]s!"
+	var/message = "Генерация местности [name] завершилась за [(REALTIMEOFDAY - start_time)/10]с!"
 	to_chat(world, span_boldannounce("[message]"), MESSAGE_TYPE_DEBUG)
 	log_world(message)
 
@@ -206,7 +206,7 @@
 
 		generated_turfs_per_biome[biome] = generated_turfs
 
-	var/message = "[name] terrain generation finished in [(REALTIMEOFDAY - start_time)/10]s!"
+	var/message = "Генерация местности [name] завершилась за [(REALTIMEOFDAY - start_time)/10]с!"
 	to_chat(world, span_boldannounce("[message]"), MESSAGE_TYPE_DEBUG)
 	log_world(message)
 

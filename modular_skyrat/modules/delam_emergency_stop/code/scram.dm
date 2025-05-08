@@ -31,7 +31,7 @@
 /obj/machinery/atmospherics/components/unary/delam_scram
 	icon = 'modular_skyrat/modules/delam_emergency_stop/icons/scram.dmi'
 	icon_state = "dispenser-idle"
-	name = "\improper delamination suppression system"
+	name = "\improper система подавления расслоения"
 	desc = "The latest model in Nakamura Engineering's line of delamination suppression systems.<br>You don't want to be in the chamber when it's activated!<br>\
 		Come to think of it, CentCom would rather you didn't activate it at all.<br>These things are expensive!"
 	use_power = IDLE_POWER_USE
@@ -150,7 +150,7 @@
 	if(trigger_reason == DIVINE_INTERVENTION)
 		investigate_log("Delam SCRAM was activated by admin intervention", INVESTIGATE_ATMOS)
 		notify_ghosts(
-			"[src] has been activated!",
+			"[src] был активирован!",
 			source = src,
 			header = "Divine Intervention",
 			ghost_sound = 'sound/machines/warning-buzzer.ogg',
@@ -167,14 +167,14 @@
 		investigate_log("Delam SCRAM was activated by [reason]", INVESTIGATE_ATMOS)
 		// They're probably already deadchat engineering discussing what you did wrong
 		notify_ghosts(
-			"[src] has been activated!",
+			"[src] был активирован!",
 			source = src,
 			header = "Mistakes Were Made",
 			ghost_sound = 'sound/machines/warning-buzzer.ogg',
 			notify_volume = 75,
 		)
 
-	radio.talk_into(src, "DELAMINATION SUPPRESSION SYSTEM FIRING. EVACUATE THE SUPERMATTER ENGINE ROOM!", emergency_channel)
+	radio.talk_into(src, "СИСТЕМА ПОДАВЛЕНИЯ РАССЛОЕНИЯ РАБОТАЕТ. У ВАС КРАЙНЕ МАЛО ДЛЯ ЭВАКУАЦИИ!", emergency_channel)
 
 	// fight power with power
 	addtimer(CALLBACK(src, PROC_REF(put_on_a_show)), EVAC_WARNING_TIMER)
@@ -238,7 +238,7 @@
 	if(!damaged_sm)
 		return
 
-	damaged_sm.name = "partially delaminated supermatter crystal"
+	damaged_sm.name = "расслаивающийся кристалл суперматерии"
 	damaged_sm.desc = "This crystal has seen better days, the glow seems off and the shards look brittle. Central says it's still \"relatively safe.\" They'd never lie to us, right?"
 	damaged_sm.explosion_power = SM_DAMAGED_EXPLOSION_POWER // if you fuck up again, yeesh
 

@@ -105,7 +105,7 @@ GLOBAL_LIST_INIT(meteors_candy_halloween, list(
 			text = "[announce_desc] approaching, brace for impact. Long range scanners indicate a high density of meteors incoming, the kind of impact that makes you rethink your life choices. So, hold on tight and try not to fly into anything too important.",
 			title = announce_prefix,
 			sound = 'sound/items/radio/radio_important.ogg', // basically silent, since the securitylevel proc will make a sound
-			sender_override = "[command_name()] Engineering Division",
+			sender_override = "[command_name()] Инженерный Отдел",
 			color_override = "orange",
 		)
 

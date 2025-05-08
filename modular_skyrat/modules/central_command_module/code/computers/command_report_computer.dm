@@ -55,10 +55,10 @@
 		if("submit_report")
 			error = ""
 			if(!command_report_content)
-				error = "ERROR, NO CONTENTS"
+				error = "ОШИБКА, НЕТ СОДЕРЖИМОГО"
 				return
 			if (!COOLDOWN_FINISHED(src, announcement_cooldown))
-				error = "ERROR, SYSTEM IS RECHARGING, ETA: [announcement_cooldown - world.time]"
+				error = "ОШИБКА, СИСТЕМА ПЕРЕЗАРЯЖАЕТСЯ, ETA: [announcement_cooldown - world.time]"
 				return
 			send_announcement()
 	return TRUE
@@ -75,10 +75,10 @@
 
 	if(announce_contents)
 		priority_announce(command_report_content, command_report_title, report_sound, sender_override = command_name, has_important_message = TRUE)
-	print_command_report(command_report_content, "[announce_contents ? "" : "Classified "][command_name] Update", !announce_contents)
+	print_command_report(command_report_content, "[announce_contents ? "" : "*Засекречено* "][command_name]", !announce_contents)
 
-	log_admin("[key_name(usr)] has created a command report: \"[command_report_content]\", sent from \"[command_name]\".")
-	message_admins("[key_name_admin(usr)] has created a command report, sent from \"[command_name]\".")
+	log_admin("[key_name(usr)] создал командный отчет: \"[command_report_content]\", отправленный с \"[command_name]\".")
+	message_admins("[key_name_admin(usr)] создал командный отчет, отправленный с \"[command_name]\".")
 
 	COOLDOWN_START(src, announcement_cooldown, ANNOUNCEMENT_COOLDOWN)
 

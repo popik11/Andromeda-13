@@ -1,8 +1,8 @@
 /datum/storyteller/house
 	name = "The House (Unpredictable Intensity)"
-	desc = "The House gives permission for admins to drive the adminbus straight into the station. \
-			All weights set to one at Medium - Low intensity."
-	welcome_text = "The House always wins."
+	desc = "Дом - разрешает админам ездить на админбусе прямо в участок. \
+			Все веса установлены на один Medium - Low интенсивности.."
+	welcome_text = "Дом всегда побеждает."
 	track_data = /datum/storyteller_data/tracks/fragile
 	votable = TRUE
 

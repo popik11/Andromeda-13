@@ -1,8 +1,8 @@
 /datum/storyteller/default
 	name = "Default Andy (Medium Chaos)"
-	desc = "Default Andy is the default Storyteller, and the comparison point for every other Storyteller. \
-	More frequent events than the Chill or the Fragile, but less frequent events than The Gamer or the Clown. Best for an average, varied experience."
-	welcome_text = "If I chopped you up in a meat grinder..."
+	desc = "Default Andy это - рассказчик по умолчанию и точка сравнения для всех остальных рассказчиков. \
+	Чаще, чем Озноб или Хрупкий, но реже, чем Геймер или Клоун. Лучше всего подходит для среднего, разнообразного опыта."
+	welcome_text = "Если бы я измельчил тебя в мясорубке..."
 	antag_divisor = 8
 	storyteller_type = STORYTELLER_TYPE_ALWAYS_AVAILABLE
 

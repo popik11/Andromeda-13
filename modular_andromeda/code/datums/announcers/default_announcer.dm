@@ -18,10 +18,5 @@
 		ANNOUNCER_SHUTTLEDOCK = 'modular_andromeda/sound/announcer/default/shuttledock.ogg',
 		ANNOUNCER_SHUTTLERECALLED = 'modular_andromeda/sound/announcer/default/shuttlerecalled.ogg',
 		ANNOUNCER_SPANOMALIES = 'modular_andromeda/sound/announcer/default/spanomalies.ogg',
-		ANNOUNCER_SM_EXPLOSION = 'modular_andromeda/sound/announcer/default/sm_explosion.ogg',
-//		ANNOUNCER_BSA_ARTILLERY = 'sound/announcer/default/artillery_bsa.ogg',
-//		ANNOUNCER_OBR_REQUEST = 'sound/announcer/default/obr_request.ogg',
-//		ANNOUNCER_OBR_YES = 'sound/announcer/default/obr_yes.ogg',
-//		ANNOUNCER_OBR_NO = 'sound/announcer/default/obr_no.ogg',
-//		ANNOUNCER_DEATHSQUAD = 'sound/announcer/default/deathsquad.ogg'
+		ANNOUNCER_SM_EXPLOSION = 'modular_andromeda/sound/announcer/default/sm_explosion.ogg'
 		)

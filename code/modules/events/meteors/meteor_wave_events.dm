@@ -50,7 +50,7 @@
 			kill()
 
 /datum/round_event/meteor_wave/announce(fake)
-	priority_announce("Meteors have been detected on collision course with the station.", "Meteor Alert", ANNOUNCER_METEORS)
+	priority_announce("Meteors have been detected on collision course with the station.", "Предупреждение о метеоритах", ANNOUNCER_METEORS)
 
 /datum/round_event/meteor_wave/tick()
 	if(ISMULTIPLE(activeFor, 3))
@@ -131,4 +131,4 @@
 	reasons += "[station_name()] has hit a particularly rough patch of space. \
 		Please mind any turbulence or damage from debris."
 
-	priority_announce(pick(reasons), "Collision Alert")
+	priority_announce(pick(reasons), "Предупреждение о столкновении")

@@ -1,7 +1,7 @@
 /datum/storyteller/enemy
 	name = "Enemy Within (High Chaos)"
-	desc = "The Enemy Within aims to ensure that there are only crew antagonists while also prioritizing spawns for those antagonist types."
-	welcome_text = "Chat, I think there is an imposter among us on this Space Station 13. I have grown suspicious."
+	desc = "Enemy Within стремится к тому, чтобы в игре были только антагонисты-команды, а также устанавливает приоритет спавнов для этих типов антагонистов."
+	welcome_text = "Чат, мне кажется, что на этой космической станции 13 среди нас есть самозванец. У меня появились подозрения."
 
 	tag_multipliers = list(
 		TAG_DESTRUCTIVE = 0.25,

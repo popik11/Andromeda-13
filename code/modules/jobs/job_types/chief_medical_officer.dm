@@ -49,7 +49,7 @@
 
 
 /datum/job/chief_medical_officer/get_captaincy_announcement(mob/living/captain)
-	return "Due to staffing shortages, newly promoted Acting Captain [captain.real_name] on deck!"
+	return "В связи с нехваткой персонала на станции появился исполняющий обязанности капитана [captain.real_name]!"
 
 
 /datum/outfit/job/cmo

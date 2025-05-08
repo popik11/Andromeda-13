@@ -181,7 +181,7 @@
 	// Check that they're picking someone new for new character respawning
 	if(CONFIG_GET(flag/allow_respawn) == RESPAWN_FLAG_NEW_CHARACTER)
 		if("[client.prefs.default_slot]" in persistent_client.joined_as_slots)
-			tgui_alert(usr, "Вы уже играли этим персонажем в этом раунде!")
+			tgui_alert(usr, "Вы уже играли этим персонажем в этом раунде! Зайдите за другого персонажа!")
 			return FALSE
 
 	var/error = IsJobUnavailable(rank)

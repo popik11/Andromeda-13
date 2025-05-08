@@ -49,7 +49,7 @@
  * No threats
  */
 /datum/security_level/green
-	name = "green"
+	name = "зеленый"
 	name_shortform = "GRN"
 	announcement_color = "green"
 	sound = 'sound/announcer/notice/notice2.ogg' // Friendly beep
@@ -65,7 +65,7 @@
  * Caution advised
  */
 /datum/security_level/blue
-	name = "blue"
+	name = "синий"
 	name_shortform = "BLU"
 	announcement_color = "blue"
 	sound = 'sound/announcer/notice/notice1.ogg' // Angry alarm
@@ -82,7 +82,7 @@
  * Hostile threats
  */
 /datum/security_level/red
-	name = "red"
+	name = "красный"
 	name_shortform = "RED"
 	announcement_color = "red"
 	sound = 'sound/announcer/notice/notice3.ogg' // More angry alarm
@@ -99,7 +99,7 @@
  * Station destruction is imminent
  */
 /datum/security_level/delta
-	name = "delta"
+	name = "дельта"
 	name_shortform = "Δ"
 	announcement_color = "purple"
 	sound = 'sound/announcer/alarm/airraid.ogg' // Air alarm to signify importance
