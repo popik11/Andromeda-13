@@ -130,15 +130,15 @@ GLOBAL_LIST(end_titles)
 		if(!mind)
 			continue
 		if(!cast.len && !chunksize)
-			chunk += "CAST:"
+			chunk += "В РОЛЯХ:"
 		var/datum/job/job = mind?.assigned_role
-		var/jobtitle = job?.title || "No title"
+		var/jobtitle = job?.title || "Без названия"
 		var/used_name = mind?.current?.name
 		var/antag_string
 		for(var/datum/antagonist/antagonist as anything in mind?.antag_datums)
 			antag_string ? (antag_string += ", ") : (antag_string += "...")
 			antag_string += "[antagonist?.name]"
-		chunk += "[used_name] as the [mind?.antag_datums ? "[antag_string] and [jobtitle]" : jobtitle]"
+		chunk += "[used_name] как [mind?.antag_datums ? "[antag_string] и [jobtitle]" : jobtitle]"
 		chunksize++
 
 		if(chunksize > 2)
@@ -160,9 +160,9 @@ GLOBAL_LIST(end_titles)
 		else if(H?.real_name)
 			corpses += H?.real_name
 	if(corpses.len)
-		titles += "<center>BASED ON REAL EVENTS<br>In memory of [english_list(corpses)].</center>"
+		titles += "<center>ОСНОВАНО НА РЕАЛЬНЫХ СОБЫТИЯХ<br>В память о [english_list(corpses)].</center>"
 
-	var/list/staff = list("В ГЛАВНЫХ РОЛЯХ:")
+	var/list/staff = list("ОСОБЫЕ АКТЁРЫ:")
 	var/static/list/staffjobs = list("Камерамен", "Конченый идиот", "Самый сексуальный мужик в мире", "Горячая чикса", "Злодей британец", "Так себе шутник", "Пубертатная язва", "Какой-то мужик", "Говнюки", "Недопонятый гений")
 	var/list/goodboys = list()
 	for(var/client/C)
