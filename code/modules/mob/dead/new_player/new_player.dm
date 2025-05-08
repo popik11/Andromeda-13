@@ -358,11 +358,13 @@
 		has_antags = TRUE
 	if(client.prefs.job_preferences.len == 0)
 		if(!ineligible_for_roles)
-			to_chat(src, span_danger("У вас не включены должности, а также возможность вернуться в лобби, если должность недоступна. Это лишает вас права претендовать на какую-либо роль в начале раунда, пожалуйста, обновите свои настройки работы."))		ineligible_for_roles = TRUE
+			to_chat(src, span_danger("У вас не включены должности, а также возможность вернуться в лобби, если должность недоступна. Это лишает вас права претендовать на какую-либо роль в начале раунда, пожалуйста, обновите свои настройки работы."))
+		ineligible_for_roles = TRUE
 		ready = PLAYER_NOT_READY
 		if(has_antags)
 			log_admin("У [src.ckey] не включена ни одна должность, возвращиение в лобби, если должность недоступна и [client.prefs.be_special.len] включены настройки антага. Игрок был принудительно возвращен в лобби.")
-			message_admins("У [src.ckey] не включена ни одна должность, возвращиение в лобби, если должность недоступна и [client.prefs.be_special.len] включены настройки антага. Это старый метод выбора антагонистов. Игрока попросили обновить свои рабочие настройки, и он был принудительно возвращен в лобби.")		return FALSE //This is the only case someone should actually be completely blocked from antag rolling as well
+			message_admins("У [src.ckey] не включена ни одна должность, возвращиение в лобби, если должность недоступна и [client.prefs.be_special.len] включены настройки антага. Это старый метод выбора антагонистов. Игрока попросили обновить свои рабочие настройки, и он был принудительно возвращен в лобби.")
+		return FALSE //This is the only case someone should actually be completely blocked from antag rolling as well
 	return TRUE
 
 /**
@@ -413,7 +415,5 @@
 		return TRUE
 	if(CONFIG_GET(flag/auto_deadmin_on_ready_or_latejoin) || (client.prefs.read_preference(/datum/preference/toggle/auto_deadmin_on_ready_or_latejoin)) || (client.prefs?.toggles & DEADMIN_ALWAYS))
 		return client.holder.auto_deadmin()
-
-#undef RESET_HUD_INTERVALto_deadmin()
 
 #undef RESET_HUD_INTERVAL
