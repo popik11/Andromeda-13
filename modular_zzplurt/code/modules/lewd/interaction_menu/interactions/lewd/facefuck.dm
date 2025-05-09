@@ -2,7 +2,7 @@
 
 //-// -Rewokin_fun_comment //-//
 // Кире нравится доминировать?~
-// Тише будь, Революция красной патриархии - MsKira
+// Тише будь, Революция красной патриархии
 
 /// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
 /datum/interaction/lewd/facefuck_vagina
@@ -12,6 +12,28 @@
 	user_required_parts = list(ORGAN_SLOT_VAGINA = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_VAGINA)
 	cum_target = list(CLIMAX_POSITION_USER = CLIMAX_TARGET_MOUTH)
+	cum_message_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"Оргазмирует на лицо %TARGET%",
+			"Вжавшись в влажном движении, сквиртует на лицо %TARGET%",
+			"Нежно протеревшись, содрагается, пачкая лицо %TARGET% своими соками",
+			"Покрывает лицо %TARGET% своими любовными выделениями"
+		),
+	)
+	cum_self_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"Вы прижимаетесь киской к лицу %TARGET% обильно оргазмируя на него",
+			"Вы вжимаетесь в выпаде, сквиртуя на лицо %TARGET%",
+			"Вы покрываете лицо %TARGET% сладкими соками"
+		),
+	)
+	cum_partner_text_overrides = list(
+		CLIMAX_POSITION_USER = list(
+			"%USER% Кончает на ваше лицо сладкими соками",
+			"%USER% Вжимается в вас молниеносным движением, и оргазмирует",
+			"%USER% Прижимается к вам как можно сильнее, и покрывает ваше лицо соками"
+		)
+	)
 	message = list(
 		"Втирается своей киской в лицо %TARGET%.",
 		"Захватывает затылок %TARGET% надавливая им на свою киску.",
