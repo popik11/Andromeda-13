@@ -289,7 +289,7 @@
 		"%TARGET% Неумолимо стреляет семенем в ваши сиськи, пачкая ваше лицо вдобавок!",
 		"%TARGET% Покрывает вашу грудь семенем, пульсируя между ваших сисек!"
 	))
-	cum_partner_text_overrides = list(CLIMAX_POSITION_TARGET = list(
+	cum_partner_text_overrides = list(CLIMAX_POSITION_USER = list(
 		"Вы обильно кончаете на грудь %USER%!",
 		"Вы неаккуратно кончаете на грудь %USER% попадая в лицо!",
 		"Вы кончаете прямо в сиськи %USER%!",
