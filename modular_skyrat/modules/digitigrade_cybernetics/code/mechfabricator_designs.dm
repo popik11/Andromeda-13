@@ -1,5 +1,5 @@
-#define RND_SUBCATEGORY_MECHFAB_CYBORG_DIGI "/Digitigrade"
-#define RND_SUBCATEGORY_CYBERNETICS_ADVANCED_DIGI "/Advanced Digitigrade"
+#define RND_SUBCATEGORY_MECHFAB_CYBORG_DIGI "/Оцифровка"
+#define RND_SUBCATEGORY_CYBERNETICS_ADVANCED_DIGI "/Продвинутая Оцифровка"
 
 /datum/design/digitigrade_cyber_r_leg
 	name = "Digitigrade Cybernetic Right Leg"

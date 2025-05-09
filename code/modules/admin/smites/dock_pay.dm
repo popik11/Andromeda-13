@@ -1,31 +1,31 @@
 /// Docks the target's pay
 /datum/smite/dock_pay
-	name = "Dock Pay"
+	name = "Плати налоги"
 
 /datum/smite/dock_pay/effect(client/user, mob/living/target)
 	. = ..()
 	if (!iscarbon(target))
-		to_chat(user, span_warning("This must be used on a carbon mob."), confidential = TRUE)
+		to_chat(user, span_warning("Его необходимо использовать на карбоновом мобе."), confidential = TRUE)
 		return
 	var/mob/living/carbon/dude = target
 	var/obj/item/card/id/card = dude.get_idcard(TRUE)
 	if (!card)
-		to_chat(user, span_warning("[dude] does not have an ID card on!"), confidential = TRUE)
+		to_chat(user, span_warning("У [dude] нет ID карты!"), confidential = TRUE)
 		return
 	if (!card.registered_account)
-		to_chat(user, span_warning("[dude] does not have an ID card with an account!"), confidential = TRUE)
+		to_chat(user, span_warning("[dude] нет ID карты со счетом!"), confidential = TRUE)
 		return
 	if (card.registered_account.account_balance == 0)
-		to_chat(user,  span_warning("ID Card lacks any funds. No pay to dock."))
+		to_chat(user,  span_warning("На ID карте отсутствуют какие-либо средства. Заплатить нечем."))
 		return
-	var/new_cost = input("How much pay are we docking? Current balance: [card.registered_account.account_balance] credits.", "BUDGET CUTS") as num|null
+	var/new_cost = input("Сколько списать со счёта? Текущий баланс: [card.registered_account.account_balance] кредитов.", "СОКРАЩЕНИЕ БЮДЖЕТА") as num|null
 	if (!new_cost)
 		return
 	if (!(card.registered_account.has_money(new_cost)))
-		to_chat(user,  span_warning("ID Card lacked funds. Emptying account."))
-		card.registered_account.bank_card_talk("[new_cost] credits deducted from your account based on performance review.")
+		to_chat(user,  span_warning("На ID-карте не хватает средств. Опустошение счета."))
+		card.registered_account.bank_card_talk("[new_cost] кредиты, списанные с вашего счета по результатам оценки работы.")
 		card.registered_account.account_balance = 0
 	else
 		card.registered_account.account_balance = card.registered_account.account_balance - new_cost
-		card.registered_account.bank_card_talk("[new_cost] credits deducted from your account based on performance review.")
+		card.registered_account.bank_card_talk("[new_cost] кредиты, списанные с вашего счета по результатам оценки работы.")
 	SEND_SOUND(target, 'sound/machines/buzz/buzz-sigh.ogg')

@@ -321,10 +321,10 @@
 /datum/config_entry/string/banappeals
 
 /datum/config_entry/string/wikiurl
-	default = "https://discord.gg/7An9evC6Ys"
+	default = "https://bs.ss220.club/index.php/Заглавная_страница"
 
 /datum/config_entry/string/forumurl
-	default = "https://bs.ss220.club/index.php/Заглавная_страница"
+	default = "https://discord.gg/7An9evC6Ys"
 
 /datum/config_entry/string/rulesurl
 	default = "https://discord.gg/7An9evC6Ys"

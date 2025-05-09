@@ -1,12 +1,13 @@
 /// Throw an immovable rod at the target
+/// Бросьте в цель неподвижный стержень.
 /datum/smite/rod
-	name = "Immovable Rod"
+	name = "Неподвижный стержень"
 	var/force_looping = FALSE
 
 /datum/smite/rod/configure(client/user)
-	var/loop_input = tgui_alert(usr,"Would you like this rod to force-loop across space z-levels?", "Loopy McLoopface", list("Yes", "No"))
+	var/loop_input = tgui_alert(usr,"Долететь до цели не ломая всё на пути?", "Луппи МакЛупфейс", list("Да", "Нет"))
 
-	force_looping = (loop_input == "Yes")
+	force_looping = (loop_input == "Да")
 
 /datum/smite/rod/effect(client/user, mob/living/target)
 	. = ..()

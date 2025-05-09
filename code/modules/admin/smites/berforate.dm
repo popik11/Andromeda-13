@@ -1,34 +1,34 @@
 /// Fires an absurd amount of bullets at the target
 /datum/smite/berforate
-	name = ":B:erforate"
+	name = "Расстрелять (С)"
 
 	/// Determines how fucked the target is
 	var/hatred
 
 /datum/smite/berforate/configure(client/user)
-	var/static/list/how_fucked_is_this_dude = list("A little", "A lot", "So fucking much", "FUCK THIS DUDE")
-	hatred = input(user, "How much do you hate this guy?") in how_fucked_is_this_dude
+	var/static/list/how_fucked_is_this_dude = list("Немного", "Много", "Сильно", "Пиздец этому чуваку")
+	hatred = input(user, "Как сильно вы ненавидите этого парня?") in how_fucked_is_this_dude
 
 /datum/smite/berforate/effect(client/user, mob/living/target)
 	. = ..()
 	if (!iscarbon(target))
-		to_chat(user, span_warning("This must be used on a carbon mob."), confidential = TRUE)
+		to_chat(user, span_warning("Его необходимо использовать на карбоновом мобе."), confidential = TRUE)
 		return
 
 	var/repetitions
 	var/shots_per_limb_per_rep = 2
 	var/damage
 	switch (hatred)
-		if ("A little")
+		if ("Немного")
 			repetitions = 1
 			damage = 5
-		if ("A lot")
+		if ("Много")
 			repetitions = 2
 			damage = 8
-		if ("So fucking much")
+		if ("Сильно")
 			repetitions = 3
 			damage = 10
-		if ("FUCK THIS DUDE")
+		if ("Пиздец этому чуваку")
 			repetitions = 4
 			damage = 10
 
@@ -53,5 +53,5 @@
 					break
 
 /datum/smite/berforate/divine
-	name = ":B:erforate (Divine)"
+	name = "Расстрелять (С) (Б)"
 	smite_flags = SMITE_DIVINE

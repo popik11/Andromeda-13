@@ -5,7 +5,7 @@
 
 /// Fires the BSA at the target
 /datum/smite/bsa
-	name = "Bluespace Artillery Device"
+	name = "БСА"
 
 /datum/smite/bsa/effect(client/user, mob/living/target)
 	. = ..()

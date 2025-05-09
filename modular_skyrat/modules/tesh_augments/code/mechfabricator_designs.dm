@@ -1,7 +1,7 @@
 //adding teshari silicon stuff to the mechfabricator
 
-#define RND_SUBCATEGORY_MECHFAB_CYBORG_RAPTORAL "/Raptoral"
-#define RND_SUBCATEGORY_CYBERNETICS_ADVANCED_RAPTORAL "/Advanced Raptoral Limbs"
+#define RND_SUBCATEGORY_MECHFAB_CYBORG_RAPTORAL "/Рапторал"
+#define RND_SUBCATEGORY_CYBERNETICS_ADVANCED_RAPTORAL "/Продвинтые Конечности Рапторал"
 
 /datum/design/teshari_cyber_chest
 	name = "Raptoral Cybernetic Torso"

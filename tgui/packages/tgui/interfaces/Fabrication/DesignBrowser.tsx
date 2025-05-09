@@ -69,12 +69,12 @@ export type DesignBrowserProps<T extends Design = Design> = {
 /**
  * A meta-category that, when selected, renders all designs to the output.
  */
-const ALL_CATEGORY = 'All Designs';
+const ALL_CATEGORY = 'Все Категории';
 
 /**
  * A meta-category that collects all designs without a single category.
  */
-const UNCATEGORIZED = '/Uncategorized';
+const UNCATEGORIZED = '/Без категории';
 
 /**
  * A single category in the category tree.
@@ -212,7 +212,7 @@ export const DesignBrowser = <T extends Design = Design>(
         <Section fill>
           <Stack vertical fill>
             <Stack.Item>
-              <Section title="Categories" fitted />
+              <Section title="Категории" fitted />
             </Stack.Item>
             <Stack.Item grow style={{ overflowY: 'auto', overflowX: 'hidden' }}>
               <Section fill>
@@ -227,7 +227,7 @@ export const DesignBrowser = <T extends Design = Design>(
                   >
                     <div className="FabricatorTabs__Label">
                       <div className="FabricatorTabs__CategoryName">
-                        All Designs
+                        Без Категории
                       </div>
                       <div className="FabricatorTabs__CategoryCount">
                         ({Object.entries(root.descendants).length})
@@ -258,9 +258,9 @@ export const DesignBrowser = <T extends Design = Design>(
         <Section
           title={
             searchText.length > 0
-              ? `Results for "${searchText}"`
+              ? `Результаты для "${searchText}"`
               : selectedCategory === ALL_CATEGORY
-                ? 'All Designs'
+                ? 'Все Категории'
                 : selectedCategory
           }
           fill
@@ -271,7 +271,7 @@ export const DesignBrowser = <T extends Design = Design>(
                 <SearchBar
                   query={searchText}
                   onSearch={setSearchText}
-                  placeholder={'Search all designs...'}
+                  placeholder={'Поиск по всем дизайнам...'}
                 />
               </Section>
             </Stack.Item>

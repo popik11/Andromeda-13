@@ -1,12 +1,12 @@
 /// Rips off all the limbs of the target
 /datum/smite/nugget
-	name = "Nugget"
+	name = "Разобрать как лего"
 
 /datum/smite/nugget/effect(client/user, mob/living/target)
 	. = ..()
 
 	if (!iscarbon(target))
-		to_chat(user, span_warning("This must be used on a carbon mob."), confidential = TRUE)
+		to_chat(user, span_warning("Его необходимо использовать на карбоновом мобе."), confidential = TRUE)
 		return
 
 	var/mob/living/carbon/carbon_target = target

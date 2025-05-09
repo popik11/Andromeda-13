@@ -33,10 +33,10 @@ export function AirAlarmControlHome(props: Props) {
           color={atmosAlarm && 'caution'}
           onClick={() => act(atmosAlarm ? 'reset' : 'alarm')}
         >
-          Area Atmosphere Alarm
+          Сигнализация атмосферы в зоне
         </Button>
       </Stack.Item>
-      <Stack.Item mb={2}>
+      <Stack.Item mb={1}>
         <Button
           icon={isPanicSiphoning ? 'exclamation-triangle' : 'exclamation'}
           color={isPanicSiphoning && 'danger'}
@@ -46,27 +46,27 @@ export function AirAlarmControlHome(props: Props) {
             })
           }
         >
-          Panic Siphon
+          Аварийная откачка воздуха
         </Button>
       </Stack.Item>
       <Stack.Item>
         <Button icon="sign-out-alt" onClick={() => setScreen('vents')}>
-          Vent Controls
+          Управление вентиляцией
         </Button>
       </Stack.Item>
       <Stack.Item>
         <Button icon="filter" onClick={() => setScreen('scrubbers')}>
-          Scrubber Controls
+          Управление скрубберами
         </Button>
       </Stack.Item>
       <Stack.Item>
         <Button icon="cog" onClick={() => setScreen('modes')}>
-          Operating Mode
+          Режим работы
         </Button>
       </Stack.Item>
       <Stack.Item>
         <Button icon="chart-bar" onClick={() => setScreen('thresholds')}>
-          Alarm Thresholds
+          Пороги сигнала тревоги
         </Button>
       </Stack.Item>
       {!!sensor && !!allowLinkChange && (
@@ -76,7 +76,7 @@ export function AirAlarmControlHome(props: Props) {
             color="danger"
             onClick={() => act('disconnect_sensor')}
           >
-            Disconnect Sensor
+            Отсоедините сенсер
           </Button.Confirm>
         </Stack.Item>
       )}

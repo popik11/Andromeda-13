@@ -17,7 +17,7 @@ GLOBAL_VAR_INIT(blooper_allowed, TRUE) // For administrators
 	var/blooper_speed
 
 /datum/smite/normalblooper
-	name = "Normal blooper"
+	name = "Обычная кровь"
 
 /datum/smite/normalblooper/effect(client/user, mob/living/carbon/human/target)
 	. = ..()

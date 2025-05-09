@@ -1,9 +1,9 @@
 /datum/smite/tabletide
-	name = "Table Tideslam"
+	name = "Божественный стол (С)"
 
 /datum/smite/tabletide/effect(client/user, mob/living/target)
 	. = ..()
-	priority_announce(html_decode("[target] has brought the wrath of the gods upon themselves and is now being tableslammed across the station. Please stand by."), "Table Tideslam")
+	priority_announce(html_decode("[target] навлек на себя гнев богов и сейчас размазывается по всей станции. Пожалуйста, будьте наготове."), "Божественный стол")
 	var/list/areas = list()
 	for(var/area/A in GLOB.areas)
 		if(A.z == SSmapping.station_start)

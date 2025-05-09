@@ -1,18 +1,18 @@
 /datum/smite/skibidi
-	name = "Toiletification"
+	name = "Туалетизация"
 
 /datum/smite/skibidi/effect(client/user, mob/living/target)
 	. = ..()
 	if(!iscarbon(target))
-		to_chat(user, span_warning("This must be used on a carbon mob."), confidential = TRUE)
+		to_chat(user, span_warning("Его необходимо использовать на карбоновом мобе."), confidential = TRUE)
 		return
 	playsound(target, 'sound/machines/toilet_flush.ogg', 80, TRUE)
-	target.visible_message("[target] is suddenly transformed into a toilet!")
+	target.visible_message("[target] внезапно скибидизируется в унитаз!")
 	new /obj/structure/toilet/skibidi(target.loc, target)
 
 /obj/structure/toilet/skibidi
-	name = "skibidi toilet"
-	desc = "Everybody wants to rule the world."
+	name = "скибиди туалет"
+	desc = "Все хотят править миром."
 	max_integrity = 300
 	integrity_failure = 0.5
 
@@ -115,7 +115,7 @@
 		return
 
 	playsound(src, 'sound/machines/toilet_flush.ogg', 80, TRUE)
-	audible_message("[src] flushes [entered] down [p_themselves()]!")
+	audible_message("[src] смывает [entered] вниз [p_themselves()]!")
 	register_skibidi(entered)
 
 /obj/structure/toilet/skibidi/proc/register_skibidi(mob/living/carbon/human/trapped)
@@ -124,7 +124,7 @@
 	RemoveElement(/datum/element/connect_loc, loc_connections)
 	RegisterSignal(trapped, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	RegisterSignal(trapped, COMSIG_MOVABLE_MOVED, PROC_REF(on_trapped_moved))
-	name = "[trapped] toilet"
+	name = "[trapped] туалет"
 	update_appearance(UPDATE_ICON)
 
 /obj/structure/toilet/skibidi/proc/unregister_skibidi(mob/living/carbon/human/trapped)
@@ -160,7 +160,6 @@
 			"Skibidi dob dob yes yes!",\
 			"Yip yip!",\
 			"Skibidi dob, yip yip!",\
-			"My style is ridiculo[repeat_string(rand(0,5), "culo")]us!"\
 		)
 	else
 		if(prob(50))

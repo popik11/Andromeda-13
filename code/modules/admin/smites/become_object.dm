@@ -2,15 +2,15 @@
 
 /// Turns the target into an object (for instance bread)
 /datum/smite/objectify
-	name = "Become Object"
+	name = "Превратить в объект"
 	/// What are we going to turn them into?
 	var/atom/transform_path = /obj/item/food/bread/plain
 
 /datum/smite/objectify/configure(client/user)
 	var/attempted_target_path = input(
 		user,
-		"Enter typepath of an atom you'd like to turn your victim into.",
-		"Typepath",
+		"Введите путь к предмету, в который вы хотите превратить свою жертву.",
+		"Типография",
 		"[/obj/item/food/bread/plain]",
 	) as null|text
 
@@ -42,5 +42,5 @@
 #undef OBJECTIFY_TIME
 
 /datum/smite/objectify/divine
-	name = "Become Object (Divine)"
+	name = "Превратить в объект (Б)"
 	smite_flags = SMITE_DIVINE|SMITE_STUN
