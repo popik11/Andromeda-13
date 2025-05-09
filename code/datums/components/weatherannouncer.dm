@@ -106,15 +106,15 @@
 /// Returns a string we should display to communicate what you should be doing
 /datum/component/weather_announcer/proc/get_warning_message()
 	if (!is_weather_dangerous)
-		return "No risk expected from incoming weather front."
+		return "Приближающийся шторм не представляет никакой опасности."
 	switch(warning_level)
 		if(WEATHER_ALERT_CLEAR)
-			return "All clear, no weather alerts to report."
+			return "Все чисто, никаких предупреждений о погоде."
 		if(WEATHER_ALERT_INCOMING)
-			return "Weather front incoming, begin to seek shelter."
+			return "Приближается шторм, начинайте искать укрытие."
 		if(WEATHER_ALERT_IMMINENT_OR_ACTIVE)
-			return "Weather front imminent, find shelter immediately."
-	return "Error in meteorological calculation. Please report this deviation to a trained programmer."
+			return "Надвигается шторм, немедленно найдите укрытие."
+	return "Ошибка в метеорологических расчетах. Пожалуйста, сообщите об этом отклонении квалифицированному программисту."
 
 /datum/component/weather_announcer/proc/time_till_storm()
 	var/list/mining_z_levels = SSmapping.levels_by_trait(ZTRAIT_MINING)
@@ -167,9 +167,9 @@
 	if(isnull(time_until_next))
 		return
 	if (time_until_next == 0)
-		examine_texts += span_warning ("A storm is currently active, please seek shelter.")
+		examine_texts += span_warning ("В настоящее время идет шторм, пожалуйста, найдите укрытие.")
 	else
-		examine_texts += span_notice("The next storm is inbound in [DisplayTimeText(time_until_next)].")
+		examine_texts += span_notice("Следующий шторм придет через [DisplayTimeText(time_until_next)].")
 
 /datum/component/weather_announcer/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_ATOM_EXAMINE, PROC_REF(on_examine))
@@ -179,13 +179,13 @@
 	UnregisterSignal(parent, COMSIG_ATOM_EXAMINE)
 
 /datum/aas_config_entry/weather
-	name = "Cargo Alert: Weather Forecast"
-	general_tooltip = "Allows the radio to announce incoming weather."
+	name = "Карго предупреждение: Прогноз Погоды"
+	general_tooltip = "Позволяет радиоприемнику сообщать о приближающейся погоде."
 	announcement_lines_map = list(
-		"Clear" = "All clear, no weather alerts to report.",
-		"Incoming" = "Weather front incoming, begin to seek shelter.",
-		"Imminent or Active" = "Weather front imminent, find shelter immediately.",
-		"Safe" = "No risk expected from incoming weather front.",
+		"Clear" = "Все чисто, никаких предупреждений о погоде.",
+		"Incoming" = "Надвигается шторм, немедленно найдите укрытие.",
+		"Imminent or Active" = "Надвигается шторм, немедленно найдите укрытие.",
+		"Safe" = "Приближающийся шторм не представляет никакой опасности.",
 	)
 
 

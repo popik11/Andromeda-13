@@ -1,8 +1,8 @@
 /datum/storyteller/fragile
 	name = "Fragile (Medium-Low Chaos)"
-	desc = "The Fragile will limit destructive, combat-focused, and chaotic events. \
-	Spawns more events and allows for more combat than the Chill, but remains lower in frequency than Default Andy. It will also repeat events less than the Chill."
-	welcome_text = "Handle with care!"
+	desc = "Хрупкий» ограничит разрушительные, боевые и хаотичные события. \
+	Порождает больше событий и позволяет вести больше боев, чем «Озноб», но по частоте остается ниже, чем «Дефолт Энди». Он также будет повторять события реже, чем Chill."
+	welcome_text = "Обращайтесь осторожно!"
 
 	event_repetition_multiplier = 0.5
 

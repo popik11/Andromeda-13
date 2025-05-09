@@ -19,11 +19,11 @@
 		system.broadcast("In the event of uncontrolled delamination, please consult the documentation packet regarding usage of the supermatter emergency stop button.", list(RADIO_CHANNEL_COMMAND))
 		system.broadcast("Failure to stabilise the engine may result in an automatic deployment of the suppression system.", list(RADIO_CHANNEL_COMMAND))
 
-	log_admin("DELAM: Round timer under 30 minutes! Supermatter will perform an automatic delam suppression at strength 0%.")
+	log_admin("ДЕЛАМ: таймер раунда менее 30 минут! Суперматерия будет автоматически подавлять делам при прочности 0%.")
 	for(var/client/staff as anything in GLOB.admins)
 		if(staff?.prefs.read_preference(/datum/preference/toggle/comms_notification))
 			SEND_SOUND(staff, sound('sound/misc/server-ready.ogg'))
-	message_admins("<font color='[COLOR_ADMIN_PINK]'>DELAM: Round timer under 30 minutes! [ADMIN_VERBOSEJMP(sm)] will perform an automatic delam suppression once integrity reaches 0%. (<a href='byond://?src=[REF(src)];togglesuppression=yes'>TOGGLE AUTOMATIC INTERVENTION)</a>)</font>")
+	message_admins("<font color='[COLOR_ADMIN_PINK]'>ДЕЛАМ: таймер раунда менее 30 минут! [ADMIN_VERBOSEJMP(sm)] выполнит автоматическое подавление пробоя, когда целостность достигнет 0%. (<a href='byond://?src=[REF(src)];togglesuppression=yes'>ПЕРЕКЛЮЧИТЬ АВТОМАТИЧЕСКОЕ ВМЕШАТЕЛЬСТВО)</a>)</font>")
 	sm.station_notified = TRUE
 
 /datum/sm_delam/Topic(href, href_list)

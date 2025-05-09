@@ -2,22 +2,22 @@
 #define DEFAULT_ANNOUNCEMENT_SOUND "default_announcement"
 
 /// Preset central command names to chose from for centcom reports.
-#define CENTCOM_PRESET "Central Command"
-#define SYNDICATE_PRESET "The Syndicate"
-#define WIZARD_PRESET "The Wizard Federation"
-#define CUSTOM_PRESET "Custom Command Name"
+#define CENTCOM_PRESET "Центральное Командование"
+#define SYNDICATE_PRESET "Синдикат"
+#define WIZARD_PRESET "Федерация Волшебников"
+#define CUSTOM_PRESET "Пользовательское Название Команды"
 
-ADMIN_VERB(change_command_name, R_ADMIN, "Change Command Name", "Change the name of Central Command.", ADMIN_CATEGORY_EVENTS)
-	var/input = input(user, "Please input a new name for Central Command.", "What?", "") as text|null
+ADMIN_VERB(change_command_name, R_ADMIN, "Изменить имя команды", "Измените название Центрального Командования.", ADMIN_CATEGORY_EVENTS)
+	var/input = input(user, "Пожалуйста, введите новое название для Центрального Командования.", "Что?", "") as text|null
 	if(!input)
 		return
 	change_command_name(input)
-	message_admins("[key_name_admin(user)] has changed Central Command's name to [input]")
-	log_admin("[key_name(user)] has changed the Central Command name to: [input]")
+	message_admins("[key_name_admin(user)] изменил название Центрального Командования на [input]")
+	log_admin("[key_name(user)] изменил название Центрального Командования на: [input]")
 
 /// Verb to open the create command report window and send command reports.
-ADMIN_VERB(create_command_report, R_ADMIN, "Create Command Report", "Create a command report to be sent to the station.", ADMIN_CATEGORY_EVENTS)
-	BLACKBOX_LOG_ADMIN_VERB("Create Command Report")
+ADMIN_VERB(create_command_report, R_ADMIN, "Создание Командного Отчета", "Создайте командный отчет для отправки на станцию.", ADMIN_CATEGORY_EVENTS)
+	BLACKBOX_LOG_ADMIN_VERB("Создание Командного Отчета")
 	var/datum/command_report_menu/tgui = new /datum/command_report_menu(user.mob)
 	tgui.ui_interact(user.mob)
 
@@ -111,10 +111,10 @@ ADMIN_VERB(create_command_report, R_ADMIN, "Create Command Report", "Create a co
 			subheader = params["new_subheader"]
 		if("submit_report")
 			if(!command_name)
-				to_chat(ui_user, span_danger("You can't send a report with no command name."))
+				to_chat(ui_user, span_danger("Вы не можете отправить отчет без имени команды."))
 				return
 			if(!params["report"])
-				to_chat(ui_user, span_danger("You can't send a report with no contents."))
+				to_chat(ui_user, span_danger("Вы не можете отправить отчет без содержимого."))
 				return
 			command_report_content = params["report"]
 			send_announcement()
@@ -146,15 +146,15 @@ ADMIN_VERB(create_command_report, R_ADMIN, "Create Command Report", "Create a co
 		priority_announce(command_report_content, subheader == ""? null : subheader, report_sound, has_important_message = TRUE, color_override = chosen_color)
 
 	if(!announce_contents || print_report)
-		print_command_report(command_report_content, "[announce_contents ? "" : "Classified "][command_name] Update", !announce_contents)
+		print_command_report(command_report_content, "[announce_contents ? "" : "*Засекречено* "] [command_name]", !announce_contents)
 
 	change_command_name(original_command_name)
 
-	log_admin("[key_name(ui_user)] has created a command report: \"[command_report_content]\", sent from \"[command_name]\" with the sound \"[played_sound]\".")
+	log_admin("[key_name(ui_user)] создал командный отчет: \"[command_report_content]\", отправленный с \"[command_name]\" со звуком \"[played_sound]\".")
 
-	message_admins("[key_name_admin(ui_user)] has created a command report, sent from \"[command_name]\" with the sound \"[played_sound]\"")
+	message_admins("[key_name_admin(ui_user)] создал командный отчет, отправленный с \"[command_name]\" со звуком \"[played_sound]\"")
 	if(!announce_contents)
-		message_admins("The message was: [command_report_content]")
+		message_admins("Сообщение было: [command_report_content]")
 
 
 #undef DEFAULT_ANNOUNCEMENT_SOUND

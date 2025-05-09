@@ -15,8 +15,8 @@
 GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 
 /obj/machinery/power/supermatter_crystal
-	name = "supermatter crystal"
-	desc = "A strangely translucent and iridescent crystal."
+	name = "кристалл суперматерии"
+	desc = "Странный полупрозрачный и переливающийся кристалл."
 	icon = 'icons/obj/machines/engine/supermatter.dmi'
 	density = TRUE
 	anchored = TRUE
@@ -584,7 +584,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		SEND_GLOBAL_SIGNAL(COMSIG_MAIN_SM_DELAMINATING, final_countdown) // BUBBER EDIT ADDITION - DELAM_SCRAM
 
 	notify_ghosts(
-		"[src] has begun the delamination process!",
+		"[src] начал процесс расслоения!",
 		source = src,
 		header = "Meltdown Incoming",
 	)

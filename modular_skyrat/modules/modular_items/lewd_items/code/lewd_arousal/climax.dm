@@ -8,6 +8,7 @@
 
 #define CLIMAX_ON_FLOOR "На пол"
 #define CLIMAX_IN_OR_ON "Кульминация на/в кого то"
+#define CLIMAX_OPEN_CONTAINER "Заполнить контейнер для реагентов"
 
 /mob/living/proc/climax(manual = TRUE, mob/living/partner = null, datum/interaction/climax_interaction = null, interaction_position = null) // SPLURT EDIT - INTERACTIONS - All mobs should be interactable
 	if (CONFIG_GET(flag/disable_erp_preferences))
@@ -79,23 +80,29 @@
 		else
 			var/list/interactable_inrange_mobs = list()
 			var/target_choice //SPLURT EDIT CHANGE - Interactions
+			// monkey see, monkey do
+			var/list/interactable_inrange_open_containers = list()
 
 			// Unfortunately prefs can't be checked here, because byond/tgstation moment.
 			for(var/mob/living/iterating_mob in (view(1, src) - src))
 				interactable_inrange_mobs[iterating_mob.name] = iterating_mob
 
+			// this should be making a list of cups(?)
+			for(var/obj/item/reagent_containers/cup/iterating_open_container in (view(1, src) - src))
+				interactable_inrange_open_containers[iterating_open_container.name] = iterating_open_container
+
 			var/list/buttons = list(CLIMAX_ON_FLOOR)
 			if(interactable_inrange_mobs.len)
 				buttons += CLIMAX_IN_OR_ON
 
-			var/penis_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "Выбирайте, куда кончить.", "Куда кончить?", buttons) //SPLURT EDIT CHANGE - Interactions
+			var/penis_climax_choice = climax_interaction && !manual ? CLIMAX_IN_OR_ON : tgui_alert(src, "Choose where to shoot your load.", "Load preference!", buttons) //SPLURT EDIT CHANGE - Interactions
 
 			var/create_cum_decal = FALSE
 
 			if(!penis_climax_choice || penis_climax_choice == CLIMAX_ON_FLOOR)
 				create_cum_decal = TRUE
-				visible_message(span_userlove("[src] выстреливает [self_their] горячей спермой на пол!"), \
-					span_userlove("Вы выпускаете струю за струёй горячей спермы, попадая на пол!"))
+				visible_message(span_userlove("[src] shoots [self_their] sticky load onto the floor!"), \
+					span_userlove("You shoot string after string of hot cum, hitting the floor!"))
 
 			else
 				target_choice = climax_interaction && !manual ? partner?.name : tgui_input_list(src, "Выберите человека, в которого можно кончить или на которого можно кончить.", "Выберите цель!", interactable_inrange_mobs) //SPLURT EDIT CHANGE - Interactions
@@ -349,3 +356,4 @@
 
 #undef CLIMAX_ON_FLOOR
 #undef CLIMAX_IN_OR_ON
+#undef CLIMAX_OPEN_CONTAINER

@@ -198,7 +198,7 @@ SUBSYSTEM_DEF(gamemode)
 		else if(!sch_event.alerted_admins && world.time >= sch_event.start_time - 1 MINUTES)
 			///Alert admins 1 minute before running and allow them to cancel or refund the event, once again.
 			sch_event.alerted_admins = TRUE
-			message_admins("Scheduled Event: [sch_event.event] will run in [(sch_event.start_time - world.time) / 10] seconds. (<a href='byond://?src=[REF(sch_event)];action=cancel'>CANCEL</a>) (<a href='byond://?src=[REF(sch_event)];action=refund'>REFUND</a>)")
+			message_admins("Запланированное событие: [sch_event.event] будет запущено через [(sch_event.start_time - world.time) / 10] секунд. (<a href='byond://?src=[REF(sch_event)];action=cancel'>ОТМЕНИТЬ</a>) (<a href='byond://?src=[REF(sch_event)];action=refund'>ВОЗВРАТ</a>)")
 
 	if(!storyteller_halted && next_storyteller_process <= world.time && storyteller)
 		// We update crew information here to adjust population scalling and event thresholds for the storyteller.
@@ -374,9 +374,9 @@ SUBSYSTEM_DEF(gamemode)
 	if(storyteller.disable_distribution)
 		return
 	if(storyteller_halted)
-		message_admins("WARNING: Didn't roll roundstart events (including antagonists) due to the storyteller being halted.")
+		message_admins("ПРЕДУПРЕЖДЕНИЕ: Не были запущены события раундстарта (включая антагонистов) из-за того, что рассказчик был остановлен.")
 		return
-	log_dynamic("Initializing storyteller [storyteller.name] with the following multipliers! [english_list_assoc(storyteller.tag_multipliers)]")
+	log_dynamic("Инициализация рассказчика [storyteller.name] со следующими множителями! [english_list_assoc(storyteller.tag_multipliers)]")
 	while(TRUE)
 		if(!storyteller.handle_tracks())
 			break
@@ -396,9 +396,9 @@ SUBSYSTEM_DEF(gamemode)
 	var/datum/scheduled_event/scheduled = new (passed_event, world.time + passed_time, passed_cost, passed_ignore, passed_announce)
 	var/round_started = SSticker.HasRoundStarted()
 	if(round_started)
-		message_admins("Event: [passed_event] has been scheduled to run in [passed_time / 10] seconds. (<a href='byond://?src=[REF(scheduled)];action=cancel'>CANCEL</a>) (<a href='byond://?src=[REF(scheduled)];action=refund'>REFUND</a>)")
+		message_admins("Событие: [passed_event] запланировано к запуску через [passed_time / 10] секунд. (<a href='byond://?src=[REF(scheduled)];action=cancel'>ОТМЕНИТЬ</a>) (<a href='byond://?src=[REF(scheduled)];action=refund'>ВОЗВРАТ</a>)")
 	else //Only roundstart events can be scheduled before round start
-		message_admins("Event: [passed_event] has been scheduled to run on roundstart. (<a href='byond://?src=[REF(scheduled)];action=cancel'>CANCEL</a>)")
+		message_admins("Событие: [passed_event] запланировано к запуску в режиме раундстарт. (<a href='byond://?src=[REF(scheduled)];action=cancel'>ОТМЕНИТЬ</a>)")
 	scheduled_events += scheduled
 
 /datum/controller/subsystem/gamemode/proc/update_crew_infos()
@@ -505,8 +505,8 @@ SUBSYSTEM_DEF(gamemode)
 
 /datum/controller/subsystem/gamemode/proc/toggleWizardmode()
 	wizardmode = !wizardmode //TODO: decide what to do with wiz events
-	message_admins("Summon Events has been [wizardmode ? "enabled, events will occur [SSgamemode.event_frequency_multiplier] times as fast" : "disabled"]!")
-	log_game("Summon Events was [wizardmode ? "enabled" : "disabled"]!")
+	message_admins("Вызов событий был [wizardmode ? "включен, события будут происходить [SSgamemode.event_frequency_multiplier] в несколько раз быстрее" : "отключён"]!")
+	log_game("Вызов событий был [wizardmode ? "включен" : "отключён"]!")
 
 ///Attempts to select players for special roles the mode might have.
 /datum/controller/subsystem/gamemode/proc/pre_setup()
@@ -574,13 +574,13 @@ SUBSYSTEM_DEF(gamemode)
 			continue  // never had a client
 
 		if(L.ckey && !GLOB.directory[L.ckey])
-			msg += "<b>[L.name]</b> ([L.key]), the [L.job] (<font color='#ffcc00'><b>Disconnected</b></font>)\n"
+			msg += "<b>[L.name]</b> ([L.key]), the [L.job] (<font color='#ffcc00'><b>Отключён</b></font>)\n"
 
 
 		if(L.ckey && L.client)
 			var/failed = FALSE
 			if(L.client.inactivity >= (ROUNDSTART_LOGOUT_REPORT_TIME / 2)) //Connected, but inactive (alt+tabbed or something)
-				msg += "<b>[L.name]</b> ([L.key]), the [L.job] (<font color='#ffcc00'><b>Connected, Inactive</b></font>)\n"
+				msg += "<b>[L.name]</b> ([L.key]), the [L.job] (<font color='#ffcc00'><b>Подключен, Неактивен</b></font>)\n"
 				failed = TRUE //AFK client
 			if(!failed && L.stat)
 				if(H.get_dnr()) //Suicider
@@ -718,12 +718,12 @@ SUBSYSTEM_DEF(gamemode)
 
 /datum/controller/subsystem/gamemode/proc/init_storyteller()
 	if(storyteller) // If this is true, then an admin bussed one, don't overwrite it
-		log_dynamic("Roundstart storyteller has been set by admins to [storyteller.name], the vote was not considered.")
+		log_dynamic("Раундстарт рассказчика был назначен администратором на [storyteller.name], голосование не учитывалось.")
 		return
 	var/datum/storyteller/storyteller_pick
 	if(!voted_storyteller)
 		storyteller_pick = pick(storytellers)
-		log_dynamic("Roundstart picked storyteller [storyteller.name] randomly due to no vote result.")
+		log_dynamic("Раундстарт выбрал рассказчика [storyteller.name] случайным образом из-за отсутствия результатов голосования.")
 		voted_storyteller = storyteller_pick
 	set_storyteller(voted_storyteller)
 
@@ -736,8 +736,8 @@ SUBSYSTEM_DEF(gamemode)
 */
 /datum/controller/subsystem/gamemode/proc/set_storyteller(passed_type, forced, force_ckey)
 	if(!storytellers[passed_type])
-		message_admins("Attempted to set an invalid storyteller type: [passed_type].")
-		CRASH("Attempted to set an invalid storyteller type: [passed_type].")
+		message_admins("Попытка установить недопустимый тип рассказчика: [passed_type].")
+		CRASH("Попытка установить недопустимый тип рассказчика: [passed_type].")
 	storyteller = storytellers[passed_type]
 
 	var/datum/storyteller_data/tracks/track_data = storyteller.track_data
@@ -761,8 +761,8 @@ SUBSYSTEM_DEF(gamemode)
 	storyteller_halted = !storyteller_halted
 	if(isnull(user))
 		return
-	message_admins("[key_name_admin(user)] has [storyteller_halted ? "HALTED" : "un-halted"] the Storyteller.")
-	log_dynamic("Storyteller [storyteller_halted ? "halted" : "un-halted"] by admin [user.ckey].")
+	message_admins("[key_name_admin(user)] установил [storyteller_halted ? "ОСТАНОВЛЕН" : "не остановлен"] рассказчик.")
+	log_dynamic("Рассказчик [storyteller_halted ? "остановлен" : "не остановлен"] администратором [user.ckey].")
 
 /**
  * force_next_event
@@ -777,8 +777,8 @@ SUBSYSTEM_DEF(gamemode)
 		return
 	event_track_points[track] = point_thresholds[track]
 	storyteller.handle_tracks()
-	message_admins("[key_name_admin(user)] has forced an event for the [track] track.")
-	log_admin_private("Storyteller track [track] forced to run an event by [user.ckey]")
+	message_admins("[key_name_admin(user)] принудительно запустил событие рассказчика [track].")
+	log_admin_private("Путь рассказчика [track] принудительно запустил событие от [user.ckey]")
 
 /**
  * get_scheduled_by_event_type

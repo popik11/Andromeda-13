@@ -48,7 +48,7 @@
 	for(var/team in teams)
 		var/obj/machinery/ctf/spawner/spawner = teams[team].spawner
 		notify_ghosts(
-			"[spawner.name] has been activated!",
+			"[spawner.name] был активирован!",
 			source = spawner,
 			header = "CTF has been activated",
 		)

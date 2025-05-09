@@ -1,6 +1,6 @@
 /datum/controller/subsystem/map_vote/finalize_map_vote(datum/vote/map_vote/map_vote)
 	if(already_voted)
-		message_admins("Attempted to finalize a map vote after a map vote has already been finalized.")
+		message_admins("Попытка завершить голосование по карте после того, как голосование по карте уже было завершено.")
 		return
 	already_voted = TRUE
 
@@ -14,7 +14,7 @@
 	update_tally_printout()
 
 	if(admin_override)
-		send_map_vote_notice("Admin Override is in effect. Map will not be changed.", "Tallies are recorded and saved.")
+		send_map_vote_notice("Действует запрет администратора. Карта не будет изменена.", "Подсчеты записываются и сохраняются.")
 		return
 
 	var/list/message_data = list()
@@ -31,15 +31,15 @@
 		winner = map
 		winner_amount = map_vote_cache[map]
 
-	var/filtered_vote_results = "[span_bold("Vote Results (Including Carryover)")]\n\n[message_data.Join("\n")]"
+	var/filtered_vote_results = "[span_bold("Результаты голосования (включая перенос)")]\n\n[message_data.Join("\n")]"
 
-	ASSERT(winner, "No winner found in map vote.")
+	ASSERT(winner, "В голосовании по картам победитель не выявлен.")
 	set_next_map(config.maplist[winner])
 	var/list/vote_result_message = list(filtered_vote_results)
-	vote_result_message += list("<hr>Next Map: [span_cyan(span_bold(next_map_config.map_name))]")
+	vote_result_message += list("<hr>Следующая карта: [span_cyan(span_bold(next_map_config.map_name))]")
 	var/carryover_percentage = CONFIG_GET(number/map_vote_tally_carryover_percentage)
 	if(carryover_percentage)
-		vote_result_message += list("\n[CONFIG_GET(number/map_vote_tally_carryover_percentage)]% of votes from the losing maps will be carried over and applied to the next map vote.")
+		vote_result_message += list("\n[CONFIG_GET(number/map_vote_tally_carryover_percentage)]% голоса с проигравших карт будут перенесены и применены к голосованию за следующую карту.")
 
 	// do not reset tallies if only one map is even possible
 	if(length(map_vote.choices) > 1)
@@ -47,22 +47,22 @@
 		write_cache()
 		update_tally_printout()
 	else
-		vote_result_message += "Only one map was possible, tallies were not reset."
+		vote_result_message += "Можно было использовать только одну карту, подсчеты не сбрасывались."
 
 	send_map_vote_notice(arglist(vote_result_message))
 
 /datum/controller/subsystem/map_vote/send_map_vote_notice(...)
 	var/static/last_message_at
 	if(last_message_at == world.time)
-		message_admins("Call to send_map_vote_notice twice in one game tick. Yell at someone to condense messages.")
+		message_admins("Вызов send_map_vote_notice дважды за один игровой тик. Накричать на кого-нибудь, чтобы сгустить сообщения.")
 	last_message_at = world.time
 
 	var/list/messages = args.Copy()
-	to_chat(world, custom_boxed_message("purple_box", vote_font("[span_bold("Map Vote")]\n<hr>[messages.Join("\n")]")))
+	to_chat(world, custom_boxed_message("purple_box", vote_font("[span_bold("Голосование за Карту")]\n<hr>[messages.Join("\n")]")))
 
 /datum/controller/subsystem/map_vote/update_tally_printout()
 	var/list/data = list()
 	for(var/map_id in map_vote_cache)
 		var/datum/map_config/map = config.maplist[map_id]
 		data += "[map.map_name] - [map_vote_cache[map_id]]"
-	tally_printout = "[span_bold("Current Map Tallies (Including Carryover)")]\n\n[data.Join("\n")]"
+	tally_printout = "[span_bold("Текущие показатели карт (включая перенос)")]\n\n[data.Join("\n")]"

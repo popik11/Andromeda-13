@@ -372,7 +372,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 					text = announcement_text,
 					title = "Shuttle Trajectory Override",
 					sound =  'sound/announcer/announcement/announce_dig.ogg',
-					sender_override = "Emergency Shuttle Uplink Alert",
+					sender_override = "Диспетчерская флота",
 					color_override = "grey",
 				)
 			SSshuttle.emergency.timer = INFINITY
@@ -736,7 +736,7 @@ ADMIN_VERB(secrets, R_NONE, "Secrets", "Abuse harder than you ever have before w
 			text = "[SSshuttle.emergency] has returned to the station.",
 			title = "Emergency Shuttle Override",
 			sound = ANNOUNCER_SHUTTLEDOCK,
-			sender_override = "Emergency Shuttle Uplink Alert",
+			sender_override = "Диспетчерская флота",
 			color_override = "grey",
 		)
 	SSshuttle.emergency.mode = SHUTTLE_IDLE

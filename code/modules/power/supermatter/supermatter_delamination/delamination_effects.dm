@@ -40,12 +40,12 @@
 			var/message = ""
 			var/location = victim.loc
 			if(istype(location, /obj/structure/disposalholder)) // sometimes your loc can be a disposalsholder when you're inside a disposals type, so let's just pass a message that makes sense.
-				message = "You hear a lot of rattling in the disposal pipes around you as reality itself distorts. Yet, you feel safe."
+				message = "Вы часто слышите грохот в трубах канализации вокруг себя, поскольку сама реальность искажается. И все же вы чувствуете себя в безопасности."
 			else
-				message = "You hold onto \the [victim.loc] as hard as you can, as reality distorts around you. You feel safe."
+				message = "Ты держишься за [victim.loc] так крепко, как только можешь, в то время как реальность вокруг тебя искажается. Ты чувствуешь себя в безопасности."
 			to_chat(victim, span_bolddanger(message))
 			continue
-		to_chat(victim, span_bolddanger("You feel reality distort for a moment..."))
+		to_chat(victim, span_bolddanger("Вы чувствуете, как реальность на мгновение искажается..."))
 		if (isliving(victim))
 			var/mob/living/living_victim = victim
 			living_victim.add_mood_event("delam", /datum/mood_event/delam)
@@ -80,10 +80,10 @@
 /datum/sm_delam/proc/effect_explosion(obj/machinery/power/supermatter_crystal/sm)
 	var/turf/sm_turf = get_turf(sm)
 	explosion(origin = sm_turf,
-		devastation_range = calculate_explosion(sm) * 0.5, // max 17.5
-		heavy_impact_range = calculate_explosion(sm) + 2, // max 37
-		light_impact_range = calculate_explosion(sm) + 4, // max 39
-		flash_range = calculate_explosion(sm) + 6, //max 41
+		devastation_range = calculate_explosion(sm) * 5.0, ///диапазон разрушений	//max 17.5
+		heavy_impact_range = calculate_explosion(sm) + 12, ///диапазон сильных воздействий	//max 37
+		light_impact_range = calculate_explosion(sm) + 32, ///диапазон легких воздействий	//max 39
+		flash_range = calculate_explosion(sm) + 12, ///диапазон шариков аномалии	//max 41
 		adminlog = TRUE,
 		ignorecap = TRUE
 	)
@@ -96,7 +96,7 @@
 /datum/sm_delam/proc/effect_singulo(obj/machinery/power/supermatter_crystal/sm)
 	var/turf/sm_turf = get_turf(sm)
 	if(!sm_turf)
-		stack_trace("Supermatter [sm] failed to spawn singularity, cant get current turf.")
+		stack_trace("Суперматериям [sm] не смогла породить сингулярность, не может получить текущую территорию.")
 		return FALSE
 	var/obj/singularity/created_singularity = new(sm_turf)
 	created_singularity.energy = 800
@@ -107,7 +107,7 @@
 /datum/sm_delam/proc/effect_tesla(obj/machinery/power/supermatter_crystal/sm)
 	var/turf/sm_turf = get_turf(sm)
 	if(!sm_turf)
-		stack_trace("Supermatter [sm] failed to spawn tesla, cant get current turf.")
+		stack_trace("Суперматерия [sm] не смогла породить теслу, не может получить текущую территорию.")
 		return FALSE
 	var/obj/energy_ball/created_tesla = new(sm_turf)
 	created_tesla.energy = 200 //Gets us about 9 balls
@@ -141,17 +141,17 @@
 	// say goodbye to that shuttle of yours
 	if(SSshuttle.emergency.mode != SHUTTLE_ESCAPE)
 		priority_announce(
-			text = "Fatal error occurred in emergency shuttle uplink during transit. Unable to reestablish connection.",
-			title = "Shuttle Failure",
+			text = "Во время транзита произошла фатальная ошибка в системе аварийной передачи данных шаттла. Не удалось восстановить соединение.",
+			title = "Отказ шаттла",
 			sound = ANNOUNCER_SHUTTLE, // SKYRAT EDIT CHANGE - Announcer Sounds - ORIGINAL: sound = 'sound/announcer/announcement/announce_dig.ogg',
-			sender_override = "Emergency Shuttle Uplink Alert",
+			sender_override = "Аварийное оповещение о состоянии шаттла шаттла",
 			color_override = "grey",
 		)
 	else
 	// except if you are on it already, then you are safe c:
-		minor_announce("ERROR: Corruption detected in navigation protocols. Connection with Transponder #XCC-P5831-ES13 lost. \
-				Backup exit route protocol decrypted. Calibrating route...",
-			"Emergency Shuttle", TRUE) // wait out until the rift on the station gets destroyed and the final message plays
+		minor_announce("ОШИБКА: Обнаружено повреждение в навигационных протоколах. Соединение с транспондером #XCC-P5831-ES13 потеряно. \
+				Расшифрован протокол резервного маршрута выхода. Калибровка маршрута...",
+			"Аварийный шаттл", TRUE) // wait out until the rift on the station gets destroyed and the final message plays
 		var/list/mobs = mobs_in_area_type(list(/area/shuttle/escape))
 		for(var/mob/living/mob as anything in mobs) // emulate mob/living/lateShuttleMove() behaviour
 			if(mob.buckled)
@@ -164,7 +164,7 @@
 	for(var/mob/player as anything in GLOB.player_list)
 		if(!isdead(player))
 			var/mob/living/living_player = player
-			to_chat(player, span_bolddanger("Everything around you is resonating with a powerful energy. This can't be good."))
+			to_chat(player, span_bolddanger("Все вокруг вас излучает мощную энергию. Это не может не радовать."))
 			living_player.add_mood_event("cascade", /datum/mood_event/cascade)
 		SEND_SOUND(player, 'sound/effects/magic/charge.ogg')
 
@@ -181,38 +181,38 @@
 /// Spawn an evacuation rift for people to go through.
 /datum/sm_delam/proc/effect_evac_rift_start()
 	var/obj/cascade_portal/rift = new /obj/cascade_portal(get_turf(pick(GLOB.generic_event_spawns)))
-	priority_announce("We have been hit by a sector-wide electromagnetic pulse. All of our systems are heavily damaged, including those \
-		required for shuttle navigation. We can only reasonably conclude that a supermatter cascade is occurring on or near your station.\n\n\
-		Evacuation is no longer possible by conventional means; however, we managed to open a rift near the [get_area_name(rift)]. \
-		All personnel are hereby required to enter the rift by any means available.\n\n\
-		[Gibberish("Retrieval of survivors will be conducted upon recovery of necessary facilities.", FALSE, 5)] \
-		[Gibberish("Good luck--", FALSE, 25)]")
+	priority_announce("Мы подверглись воздействию электромагнитного импульса по всему сектору. Все наши системы сильно повреждены, включая те, которые \
+		требуется для челночной навигации. Мы можем только обоснованно заключить, что на вашей станции или вблизи нее происходит каскад сверхматерии.\n\n\
+		Эвакуация обычными средствами больше невозможна, однако нам удалось открыть проход рядом с [get_area_name(rift)]. \
+		Всем сотрудникам предлагается проникнуть в зону любыми доступными способами.\n\n\
+		[Gibberish("Поиск выживших будет проведен после восстановления необходимых объектов.", FALSE, 5)] \
+		[Gibberish("Удачи--", FALSE, 25)]")
 	return rift
 
 /// Announce the destruction of the rift and end the round.
 /datum/sm_delam/proc/effect_evac_rift_end()
-	priority_announce("[Gibberish("The rift has been destroyed, we can no longer help you.", FALSE, 5)]")
+	priority_announce("[Gibberish("Разлом уничтожен, мы больше не можем вам помочь.", FALSE, 5)]")
 
 	sleep(25 SECONDS)
 
-	priority_announce("Reports indicate formation of crystalline seeds following resonance shift event. \
-		Rapid expansion of crystal mass proportional to rising gravitational force. \
-		Matter collapse due to gravitational pull foreseeable.",
-		"Nanotrasen Star Observation Association")
+	priority_announce("Отчеты указывают на образование кристаллических аномалиях после резонансного сдвига. \
+		Быстрое увеличение массы кристалла пропорционально возрастающей силе притяжения. \
+		Возможен коллапс вещества из-за гравитационного притяжения.",
+		"Ассоциация наблюдения за звездами Нанотразен")
 
 	sleep(25 SECONDS)
 
-	priority_announce("[Gibberish("All attempts at evacuation have now ceased, and all assets have been retrieved from your sector.\n \
-		To the remaining survivors of [station_name()], farewell.", FALSE, 5)]")
+	priority_announce("[Gibberish("Все попытки эвакуации прекращены, и все имущество вывезено из вашего сектора.\n \
+		Оставшимся в живых на [station_name()], прощайте.", FALSE, 5)]")
 
 	if(SSshuttle.emergency.mode == SHUTTLE_ESCAPE)
 		// special message for hijacks
-		var/shuttle_msg = "Navigation protocol set to [SSshuttle.emergency.is_hijacked() ? "\[ERROR\]" : "backup route"]. \
-			Reorienting bluespace vessel to exit vector. ETA 15 seconds."
+		var/shuttle_msg = "Навигационный протокол установлен на [SSshuttle.emergency.is_hijacked() ? "\[ОШИБКА\]" : "резервный маршрут"]. \
+			Переориентация корабля блюспейса на вектор выхода. Расчетное время прибытия 15 секунд."
 		// garble the special message
 		if(SSshuttle.emergency.is_hijacked())
 			shuttle_msg = Gibberish(shuttle_msg, TRUE, 15)
-		minor_announce(shuttle_msg, "Emergency Shuttle", TRUE)
+		minor_announce(shuttle_msg, "Аварийный шаттл", TRUE)
 		SSshuttle.emergency.setTimer(15 SECONDS)
 		return
 

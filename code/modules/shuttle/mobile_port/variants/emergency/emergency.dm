@@ -50,9 +50,9 @@
 
 	priority_announce(
 		text = "The emergency shuttle has been called. [red_alert ? "Red Alert state confirmed: Dispatching priority shuttle. " : "" ]It will arrive in [(timeLeft(60 SECONDS))] minutes.[reason][SSshuttle.emergency_last_call_loc ? "\n\nCall signal traced. Results can be viewed on any communications console." : "" ][SSshuttle.admin_emergency_no_recall ? "\n\nWarning: Shuttle recall subroutines disabled; Recall not possible." : ""]",
-		title = "Emergency Shuttle Dispatched",
+		title = "Вызов шаттла",
 		sound = ANNOUNCER_SHUTTLECALLED,
-		sender_override = "Emergency Shuttle Uplink Alert",
+		sender_override = "Диспетчерская флота",
 		color_override = "orange",
 		)
 
@@ -71,9 +71,9 @@
 		SSshuttle.emergency_last_call_loc = null
 	priority_announce(
 		text = "The emergency shuttle has been recalled.[SSshuttle.emergency_last_call_loc ? " Recall signal traced. Results can be viewed on any communications console." : "" ]",
-		title = "Emergency Shuttle Recalled",
+		title = "Вызов шаттла",
 		sound = ANNOUNCER_SHUTTLERECALLED,
-		sender_override = "Emergency Shuttle Uplink Alert",
+		sender_override = "Диспетчерская флота",
 		color_override = "orange",
 		)
 
@@ -168,7 +168,7 @@
 					text = "[SSshuttle.emergency] has docked with the station. You have [DisplayTimeText(SSshuttle.emergency_dock_time)] to board the emergency shuttle.",
 					title = "Emergency Shuttle Arrival",
 					sound = ANNOUNCER_SHUTTLEDOCK,
-					sender_override = "Emergency Shuttle Uplink Alert",
+					sender_override = "Диспетчерская флота",
 					color_override = "orange",
 				)
 				ShuttleDBStuff()
@@ -230,7 +230,7 @@
 				priority_announce(
 					text = "The emergency shuttle has left the station. Estimate [timeLeft(60 SECONDS)] minutes until the shuttle docks at [command_name()].",
 					title = "Emergency Shuttle Departure",
-					sender_override = "Emergency Shuttle Uplink Alert",
+					sender_override = "Диспетчерская флота",
 					color_override = "orange",
 				)
 				INVOKE_ASYNC(SSticker, TYPE_PROC_REF(/datum/controller/subsystem/ticker, poll_hearts))
@@ -299,7 +299,7 @@
 	priority_announce(
 		text = "The emergency shuttle is preparing for direct jump. Estimate [timeLeft(60 SECONDS)] minutes until the shuttle docks at [command_name()].",
 		title = "Emergency Shuttle Transit Failure",
-		sender_override = "Emergency Shuttle Uplink Alert",
+		sender_override = "Диспетчерская флота",
 		color_override = "orange",
 	)
 
