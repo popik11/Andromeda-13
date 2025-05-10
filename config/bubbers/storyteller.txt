@@ -1,5 +1,5 @@
 ## Default Storyteller. Comment out to enable voting.
-## Рассказчик по умолчанию. Отметьте, чтобы включить голосование.
+## Рассказчик по умолчанию. # - Откючено
 # DEFAULT_STORYTELLER /datum/storyteller/extended
 
 ## Gamemode configurations

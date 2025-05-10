@@ -1,9 +1,9 @@
 /datum/round_event_control/communications_blackout
-	name = "Communications Blackout"
+	name = "Отключение связи"
 	typepath = /datum/round_event/communications_blackout
 	weight = 30
 	category = EVENT_CATEGORY_ENGINEERING
-	description = "Heavily EMPs all telecommunication machines, blocking all communication for a while."
+	description = "Сильно поражает ЭМИ все телекоммуникационные машины, на некоторое время блокируя связь."
 	min_wizard_trigger_potency = 0
 	max_wizard_trigger_potency = 3
 
@@ -11,11 +11,11 @@
 	announce_when = 1
 
 /datum/round_event/communications_blackout/announce(fake)
-	var/alert = pick( "Ionospheric anomalies detected. Temporary telecommunication failure imminent. Please contact you*%fj00)`5vc-BZZT",
-		"Ionospheric anomalies detected. Temporary telecommunication failu*3mga;b4;'1v¬-BZZZT",
-		"Ionospheric anomalies detected. Temporary telec#MCi46:5.;@63-BZZZZT",
-		"Ionospheric anomalies dete'fZ\\kg5_0-BZZZZZT",
-		"Ionospheri:%£ MCayj^j<.3-BZZZZZZT",
+	var/alert = pick( "Обнаружены ионосферные аномалии. Временный сбой телекоммуникаций неизбежен. Пожалуйста, свяжитесь с *%fj00)`5vc-BZZT",
+		"Обнаружены ионосферные аномалии. Временный сбой телекоммуникаций чере*3mga;b4;'1v¬-BZZZT",
+		"Обнаружены ионосферные аномалии. Временный сбой телеком#МУi46:5.;@63-BZZZZT",
+		"Обнаружены ионосферные ан'fZ\\kg5_0-BZZZZZT",
+		"Ионосферные:%£ MCayj^j<.3-BZZZZZZT",
 		"#4nd%;f4y6,>£%-BZZZZZZZT",
 	)
 
