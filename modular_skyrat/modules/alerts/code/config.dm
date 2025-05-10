@@ -1,47 +1,47 @@
 /datum/config_entry/string/alert_green
-	default = "All threats to the station have passed. Security may not have high powered weapons and may not search or arrest without Probable Cause."
+	default = "Все угрозы для станции миновали. Охрана не имеет права иметь при себе оружие, не может обыскивать или арестовывать без достаточных оснований."
 
 /datum/config_entry/string/alert_blue_upto
-	default = "The station has received reliable information about possible hostile activity on the station. Security staff may have longarms with nonlethals, and may search crew members with authorization from the Head of Security, Warden, or Captain."
+	default = "Станция получила достоверную информацию о возможной враждебной активности на станции. Сотрудники службы безопасности могут иметь длинноствольное оружие с нелетальными патронами и обыскивать членов экипажа с разрешения начальника службы безопасности, надзирателя или капитана."
 
 /datum/config_entry/string/alert_blue_downto
-	default = "The immediate threat has passed. Security may no longer have lethal weapons, but may continue to have longarms with nonlethals. Searches are allowed with authorization from the Head of Security, Warden, or Captain."
+	default = "Непосредственная угроза миновала. Охрана больше не может иметь смертоносного оружия, но может продолжать иметь длинноствольное оружие с нелетальными патронами. Обыск разрешен с разрешения начальника охраны, надзирателя или капитана."
 
 /datum/config_entry/string/alert_amber_upto
-	config_entry_value = "A major security emergency has developed. Security staff may have lethal weapons. Random searches are allowed and advised. All security personnel are required to disengage personal activities and come to active duty. Non-security personnel are required to obey all relevant instructions from security staff."
+	config_entry_value = "Возникла серьезная чрезвычайная ситуация в сфере безопасности. Сотрудники службы безопасности могут иметь при себе смертоносное оружие. Разрешены и рекомендованы выборочные обыски. Всем сотрудникам службы безопасности необходимо прекратить личную деятельность и перейти к активным действиям. Сотрудники, не относящиеся к службе безопасности, обязаны подчиняться всем соответствующим указаниям сотрудников службы безопасности."
 
 /datum/config_entry/string/alert_amber_downto
-	config_entry_value = "A major security emergency is still underway. Non-security personnel are required to obey all relevant instructions from security staff and submit to requested searches."
+	config_entry_value = "В настоящее время сохраняется чрезвычайная ситуация в области безопасности. Персонал, не относящийся к службе безопасности, обязан подчиняться всем соответствующим указаниям сотрудников службы безопасности и проходить досмотр по требованию."
 
 /datum/config_entry/string/alert_red_upto
-	default = "There is an immediate serious threat to the station. Security may use all weapons available. Random searches are allowed and advised. Non-security personnel are required to obey all relevant instructions from security staff."
+	default = "Существует непосредственная серьезная угроза для станции. Охрана может использовать все имеющееся оружие. Случайные обыски разрешены и рекомендованы. Персонал, не относящийся к службе безопасности, обязан подчиняться всем соответствующим указаниям сотрудников службы безопасности."
 
 /datum/config_entry/string/alert_red_downto
-	default = "The station's destruction has been averted. There is still however an immediate serious threat to the station. Security may use all weapons available, random searches are allowed and advised. Non-security personnel are required to obey all relevant instructions from security staff and submit to requested searches."
+	default = "Уничтожение станции предотвращено. Однако существует непосредственная серьезная угроза для станции. Охрана может использовать все имеющееся оружие, разрешены и рекомендованы выборочные обыски. Персонал, не относящийся к службе безопасности, обязан подчиняться всем соответствующим указаниям сотрудников службы безопасности и проходить досмотр по требованию."
 
 /datum/config_entry/string/alert_orange_upto
-	config_entry_value = "A major engineering emergency has developed. Non-engineering personnel are required to obey relevant instructions from engineering staff and are recommended to evacuate affected areas."
+	config_entry_value = "Возникла серьезная чрезвычайная ситуация инженерного характера. Неинженерный персонал должен подчиняться соответствующим указаниям инженерно-технического персонала, и ему рекомендуется эвакуироваться из пострадавших районов."
 
 /datum/config_entry/string/alert_orange_downto
-	config_entry_value = "A major engineering emergency has developed. Non-engineering personnel are required to obey relevant instructions from engineering staff and are recommended to evacuate affected areas."
+	config_entry_value = "Возникла серьезная чрезвычайная ситуация инженерного характера. Неинженерный персонал должен подчиняться соответствующим указаниям инженерно-технического персонала, и ему рекомендуется эвакуироваться из пострадавших районов."
 
 /datum/config_entry/string/alert_violet_upto
-	config_entry_value = "A major medical emergency has developed. Non-medical personnel are required to obey all relevant instructions from medical staff. All crew are advised to wear internals and minimize unecessary contact."
+	config_entry_value = "Возникла серьезная чрезвычайная медицинская ситуация. Немедицинский персонал обязан подчиняться всем указаниям медицинского персонала. Всем членам экипажа рекомендуется носить защитные средства и свести к минимуму ненужные контакты."
 
 /datum/config_entry/string/alert_violet_downto
-	config_entry_value = "A major medical emergency has developed. Non-medical personnel are required to obey all relevant instructions from medical staff. All crew are advised to wear internals and minimize unecessary contact."
+	config_entry_value = "Возникла серьезная чрезвычайная медицинская ситуация. Немедицинский персонал обязан подчиняться всем указаниям медицинского персонала. Всем членам экипажа рекомендуется носить защитные средства и свести к минимуму ненужные контакты."
 
 /datum/config_entry/string/alert_delta_upto
-	config_entry_value = "Destruction of the station is imminent. All crew are instructed to obey all instructions given by heads of staff or security. Any violations of these orders can be punished by death. This is not a drill."
+	config_entry_value = "Уничтожение станции неизбежно. Всем членам экипажа приказано подчиняться всем указаниям, отдаваемым начальниками штаба или службы безопасности. Любое нарушение этих приказов карается смертью. Это не учения."
 
 /datum/config_entry/string/alert_delta_downto
-	config_entry_value = "Destruction of the station is still imminent. All crew are instructed to obey all instructions given by heads of staff or security. Any violations of these orders can be punished by death. This is not a drill."
+	config_entry_value = "Уничтожение станции по-прежнему неизбежно. Всем членам экипажа приказано подчиняться всем указаниям, отдаваемым начальством или службой безопасности. Любое нарушение этих приказов карается смертью. Это не учения."
 
 /datum/config_entry/string/alert_epsilon_upto
-	config_entry_value = "Central Command has ordered the Epsilon security level on the station. Consider all contracts terminated."
+	config_entry_value = "Центральное Командование приказало ввести на станции уровень безопасности «Эпсилон». Считайте, что все контракты расторгнуты."
 
 /datum/config_entry/string/alert_epsilon_downto
-	config_entry_value = "Central Command has ordered the Epsilon security level on the station. Consider all contracts terminated."
+	config_entry_value = "Центральное Командование приказало ввести на станции уровень безопасности «Эпсилон». Считайте, что все контракты расторгнуты."
 
 /datum/config_entry/string/alert_gamma
-	config_entry_value = "The Terran Government has placed this system under Gamma Alert status. This galactic system is facing a ZK-Class Reality Failure Scenario. Security Personnel is authorized full access to lethal equipment to enforce Martial Law. Failure to follow emergency procedures is punishable by death. This is not a drill."
+	config_entry_value = "Центральным Командованием был установлен Код Гамма. Служба безопасности должна быть полностью вооружена. Гражданский персонал обязан немедленно обратиться к Главам отделов для получения дальнейших указаний."

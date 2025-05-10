@@ -26,7 +26,7 @@
  * Medical emergency
  */
 /datum/security_level/violet
-	name = "violet"
+	name = "Фиолетовый"
 	name_shortform = "VIO"
 	announcement_color = "purple"
 	number_level = SEC_LEVEL_VIOLET
@@ -43,7 +43,7 @@
  * Engineering emergency
  */
 /datum/security_level/orange
-	name = "orange"
+	name = "Оранжевый"
 	name_shortform = "ORN"
 	announcement_color = "orange"
 	number_level = SEC_LEVEL_ORANGE
@@ -61,7 +61,7 @@
  */
 
 /datum/security_level/amber
-	name = "amber"
+	name = "Янтарь"
 	name_shortform = "AMB"
 	announcement_color = "yellow"
 	number_level = SEC_LEVEL_AMBER
@@ -78,7 +78,7 @@
  * Deathsquad comes to KILL ALL
  */
 /datum/security_level/epsilon
-	name = "epsilon"
+	name = "Эпсилон"
 	name_shortform = "Ε"
 	announcement_color = "grey"
 	number_level = SEC_LEVEL_EPSILON
@@ -96,7 +96,7 @@
  * XK-Class EOR Event
  */
 /datum/security_level/gamma
-	name = "gamma"
+	name = "Гамма"
 	name_shortform = "Γ"
 	announcement_color = "pink"
 	number_level = SEC_LEVEL_GAMMA
