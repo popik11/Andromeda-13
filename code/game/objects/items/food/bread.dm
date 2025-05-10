@@ -1,8 +1,8 @@
 
 /// Abstract parent object for bread items. Should not be made obtainable in game.
 /obj/item/food/bread
-	name = "bread?"
-	desc = "You shouldn't see this, call the coders."
+	name = "хлеб?"
+	desc = "Вы не должны этого видеть, позовите программистов."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	max_volume = 80
 	tastes = list("bread" = 10)
@@ -26,8 +26,8 @@
 
 // Abstract parent object for sliced bread items. Should not be made obtainable in game.
 /obj/item/food/breadslice
-	name = "breadslice?"
-	desc = "You shouldn't see this, call the coders."
+	name = "хлебный ломтик?"
+	desc = "Вы не должны этого видеть, позовите программистов."
 	icon = 'icons/obj/food/burgerbread.dmi'
 	foodtypes = GRAIN
 	food_flags = FOOD_FINGER_FOOD
@@ -40,8 +40,8 @@
 	AddElement(/datum/element/dunkable, 10)
 
 /obj/item/food/bread/plain
-	name = "bread"
-	desc = "Some plain old earthen bread."
+	name = "хлеб"
+	desc = "Немного простого хлеба с Земли."
 	icon_state = "bread"
 	food_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	tastes = list("bread" = 10)
@@ -56,8 +56,8 @@
 	AddComponent(/datum/component/customizable_reagent_holder, /obj/item/food/bread/empty, CUSTOM_INGREDIENT_ICON_FILL, max_ingredients = 8)
 
 /obj/item/food/breadslice/plain
-	name = "bread slice"
-	desc = "A slice of home."
+	name = "ломтик хлеба"
+	desc = "Кусочек хлеба, прям как дома..."
 	icon_state = "breadslice"
 	foodtypes = GRAIN
 	food_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -73,8 +73,8 @@
 	AddComponent(/datum/component/grillable, /obj/item/food/griddle_toast, rand(15 SECONDS, 25 SECONDS), TRUE, TRUE)
 
 /obj/item/food/breadslice/moldy
-	name = "moldy 'bread' slice"
-	desc = "Entire stations have been ripped apart arguing whether this is still good to eat."
+	name = "ломтик заплесневелого хлеба"
+	desc = "Целые станции были разгромлены в спорах о том, годится ли это в пищу."
 	icon_state = "moldybreadslice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 2,
@@ -86,17 +86,17 @@
 	crafting_complexity = FOOD_COMPLEXITY_2
 
 /obj/item/food/breadslice/moldy/bacteria
-	name = "bacteria-rich moldy 'bread' slice"
-	desc = "Something (possibly necroyeast) has caused this bread to rise in a macabre state of unlife. \
-		It lurchs about when unattended. You might want to locate a priest if you see this. Or maybe a flamethrower."
+	name = "богатый бактериями заплесневелый ломтик хлеба"
+	desc = "Что-то (возможно, некротическое) заставило этот хлеб вырасти в жутком состоянии смерти. \
+		Без присмотра он двигается. Ганс, тащи огнемёт!"
 
 /obj/item/food/breadslice/moldy/bacteria/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/swabable, CELL_LINE_TABLE_MOLD, CELL_VIRUS_TABLE_GENERIC, rand(2, 4), 25)
 
 /obj/item/food/bread/meat
-	name = "meatbread loaf"
-	desc = "The culinary base of every self-respecting eloquen/tg/entleman."
+	name = "мясной хлеб"
+	desc = "Кулинарная основа каждого уважающего себя кулинара."
 	icon_state = "meatbread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -110,8 +110,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/breadslice/meat
-	name = "meatbread slice"
-	desc = "A slice of delicious meatbread."
+	name = "ломтик мясного хлеба"
+	desc = "Кусочек вкуснейшего мясного хлеба."
 	icon_state = "meatbreadslice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -123,8 +123,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/bread/sausage
-	name = "sausagebread loaf"
-	desc = "Don't think too much about it."
+	name = "сосисочный хлеб"
+	desc = "Не думай об этом слишком много."
 	icon_state = "sausagebread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -137,8 +137,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/breadslice/sausage
-	name = "sausagebread slice"
-	desc = "A slice of delicious sausagebread."
+	name = "ломтик сосисочного хлеба"
+	desc = "Ломтик вкуснейшего сосисочного хлеба."
 	icon_state = "sausagebreadslice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -150,8 +150,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/bread/xenomeat
-	name = "xenomeatbread loaf"
-	desc = "The culinary base of every self-respecting eloquen/tg/entleman. Extra Heretical."
+	name = "ксено-хлеб"
+	desc = "ЕРЕСЬ!"
 	icon_state = "xenomeatbread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -164,8 +164,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/breadslice/xenomeat
-	name = "xenomeatbread slice"
-	desc = "A slice of delicious meatbread. Extra Heretical."
+	name = "ломтик ксено-хлеба"
+	desc = "кусочек ЕРЕСИ!"
 	icon_state = "xenobreadslice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -177,8 +177,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/bread/spidermeat
-	name = "spider meat loaf"
-	desc = "Reassuringly green meatloaf made from spider meat."
+	name = "Хлеб из мяса паука"
+	desc = "Аппетитно-зелёный мясной хлеб из мяса паука."
 	icon_state = "spidermeatbread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -192,8 +192,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/breadslice/spidermeat
-	name = "spider meat bread slice"
-	desc = "A slice of meatloaf made from an animal that most likely still wants you dead."
+	name = "Ломтик хлеба из мяса паука"
+	desc = "Кусочек мясного хлеба, приготовленного из мяса паука, которое, скорее всего, всё ещё хочет вашей смерти."
 	icon_state = "spidermeatslice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 3,
@@ -206,8 +206,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/bread/banana
-	name = "banana-nut bread"
-	desc = "A heavenly and filling treat."
+	name = "бананово-ореховый хлеб"
+	desc = "Божественное и сытное угощение."
 	icon_state = "bananabread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -219,8 +219,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/breadslice/banana
-	name = "banana-nut bread slice"
-	desc = "A slice of delicious banana bread."
+	name = "ломтик бананово-орехового хлеба"
+	desc = "Божественное и сытное угощение в уменьшенном виде."
 	icon_state = "bananabreadslice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
@@ -231,8 +231,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/bread/tofu
-	name = "Tofubread"
-	desc = "Like meatbread but for vegetarians. Not guaranteed to give superpowers."
+	name = "Хлеб из тофу"
+	desc = "Как мясной хлеб, но для вегетарианцев. Только для соевых."
 	icon_state = "tofubread"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 20,
@@ -246,8 +246,8 @@
 	crafting_complexity = FOOD_COMPLEXITY_3
 
 /obj/item/food/breadslice/tofu
-	name = "tofubread slice"
-	desc = "A slice of delicious tofubread."
+	name = "Ломтик хлеба из тофу"
+	desc = "Ломтик 'соевого' хлеба."
 	icon_state = "tofubreadslice"
 	food_reagents = list(
 		/datum/reagent/consumable/nutriment = 4,
