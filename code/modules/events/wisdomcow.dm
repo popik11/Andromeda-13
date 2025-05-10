@@ -1,10 +1,10 @@
 /datum/round_event_control/wisdomcow
-	name = "Wisdom Cow"
+	name = "Мудрая корова"
 	typepath = /datum/round_event/wisdomcow
 	max_occurrences = 1
 	weight = 20
 	category = EVENT_CATEGORY_FRIENDLY
-	description = "A cow appears to tell you wise words."
+	description = "Появляется корова, чтобы сказать вам мудрые слова."
 	admin_setup = list(
 		/datum/event_admin_setup/set_location/wisdom_cow,
 		/datum/event_admin_setup/listed_options/wisdom_cow_wisdom,

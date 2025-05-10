@@ -1,11 +1,11 @@
 /datum/round_event_control/aurora_caelus
-	name = "Aurora Caelus"
+	name = "Аврора Кейлус - сияние космоса"
 	typepath = /datum/round_event/aurora_caelus
 	max_occurrences = 1
 	weight = 1
 	earliest_start = 5 MINUTES
 	category = EVENT_CATEGORY_FRIENDLY
-	description = "A colourful display can be seen through select windows. And the kitchen."
+	description = "Через отдельные окна можно увидеть красочную экспозицию."
 
 /datum/round_event_control/aurora_caelus/can_spawn_event(players, allow_magic = FALSE)
 	if(!SSmapping.empty_space)
