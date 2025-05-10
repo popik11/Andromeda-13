@@ -1,7 +1,7 @@
 /datum/round_event_control/radiation_leak
 	name = "Radiation Leak"
-	description = "A radiation leak happens somewhere on the station, emanating radiation around a machine in the area. \
-		Engineering can stop the leak by using certain tools on it."
+	description = "Где-то на станции происходит утечка радиации, излучаемая машиной, находящейся поблизости. \
+		Инженеры могут остановить утечку, используя определенные инструменты."
 	typepath = /datum/round_event/radiation_leak
 	weight = 15
 	max_occurrences = 3

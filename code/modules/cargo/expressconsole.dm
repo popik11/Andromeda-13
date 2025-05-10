@@ -8,7 +8,7 @@
 		All sales are near instantaneous - please choose carefully"
 	icon_screen = "supply_express"
 	circuit = /obj/item/circuitboard/computer/cargo/express
-	blockade_warning = "Bluespace instability detected. Delivery impossible."
+	blockade_warning = "Обнаружена нестабильность блюспейса. Доставка невозможна."
 	req_access = list(ACCESS_CARGO)
 	is_express = TRUE
 	interface_type = "CargoExpress"

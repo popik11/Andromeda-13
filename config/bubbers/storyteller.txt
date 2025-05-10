@@ -1,7 +1,9 @@
 ## Default Storyteller. Comment out to enable voting.
-DEFAULT_STORYTELLER /datum/storyteller/extended
+## Рассказчик по умолчанию. Отметьте, чтобы включить голосование.
+# DEFAULT_STORYTELLER /datum/storyteller/extended
 
 ## Gamemode configurations
+## Конфигурации игрового режима
 
 ## Multipliers for points gained over time for event tracks.
 MUNDANE_POINT_GAIN_MULTIPLIER 1
