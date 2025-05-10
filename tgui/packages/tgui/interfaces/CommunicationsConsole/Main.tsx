@@ -45,7 +45,7 @@ export function PageMain(props) {
   return (
     <Box>
       {!syndicate && (
-        <Section title="Emergency Shuttle">
+        <Section title="Аварийный шаттл">
           {shuttleCalled ? (
             <Button.Confirm
               icon="space-shuttle"
@@ -54,13 +54,13 @@ export function PageMain(props) {
               tooltip={
                 (canRecallShuttles &&
                   !shuttleRecallable &&
-                  "It's too late for the emergency shuttle to be recalled.") ||
-                'You do not have permission to recall the emergency shuttle.'
+                  'Уже слишком поздно отзывать аварийный шаттл.') ||
+                'У вас нет разрешения на вызов аварийного шаттла.'
               }
               tooltipPosition="top"
               onClick={() => act('recallShuttle')}
             >
-              Recall Emergency Shuttle
+              Отзыв аварийного шаттла
             </Button.Confirm>
           ) : (
             <Button
@@ -74,55 +74,54 @@ export function PageMain(props) {
               tooltipPosition="top"
               onClick={() => setCallingShuttle(true)}
             >
-              Call Emergency Shuttle
+              Вызовать аварийный шаттл
             </Button>
           )}
           {!!shuttleCalledPreviously &&
             (shuttleLastCalled ? (
               <Box>
-                Most recent shuttle call/recall traced to:{' '}
-                <b>{shuttleLastCalled}</b>
+                Последний сигнал шаттла/вызова: <b>{shuttleLastCalled}</b>
               </Box>
             ) : (
-              <Box>Unable to trace most recent shuttle/recall signal.</Box>
+              <Box>Невозможно отследить последний сигнал шаттла/вызова.</Box>
             ))}
         </Section>
       )}
 
       {!!canSetAlertLevel && (
-        <Section title="Alert Level">
+        <Section title="Уровень тревоги">
           <Flex justify="space-between">
             <Flex.Item>
               <Box>
-                Currently on <b>{capitalize(alertLevel)}</b> Alert
+                В настоящее время уровень кода <b>{capitalize(alertLevel)}</b>
               </Box>
             </Flex.Item>
 
             <Flex.Item>
               <AlertButton
-                alertLevel="green"
-                onClick={() => setNewAlertLevel('green')}
+                alertLevel="Зелёный"
+                onClick={() => setNewAlertLevel('Зелёный')}
               />
 
               <AlertButton
-                alertLevel="blue"
-                onClick={() => setNewAlertLevel('blue')}
+                alertLevel="Синий"
+                onClick={() => setNewAlertLevel('Синий')}
               />
 
               {/* BUBBER EDIT ADDITION BEGIN - ALERTS */}
               <AlertButton
-                alertLevel="violet"
-                onClick={() => setNewAlertLevel('violet')}
+                alertLevel="Фиолетовый"
+                onClick={() => setNewAlertLevel('Фиолетовый')}
               />
 
               <AlertButton
-                alertLevel="orange"
-                onClick={() => setNewAlertLevel('orange')}
+                alertLevel="Оранжевый"
+                onClick={() => setNewAlertLevel('Оранжевый')}
               />
 
               <AlertButton
-                alertLevel="amber"
-                onClick={() => setNewAlertLevel('amber')}
+                alertLevel="Янтарь"
+                onClick={() => setNewAlertLevel('Янтарь')}
               />
               {/* BUBBER EDIT ADDITION END - ALERTS */}
             </Flex.Item>
@@ -130,14 +129,14 @@ export function PageMain(props) {
         </Section>
       )}
 
-      <Section title="Functions">
+      <Section title="Функции">
         <Flex direction="column">
           {!!canMakeAnnouncement && (
             <Button
               icon="bullhorn"
               onClick={() => act('makePriorityAnnouncement')}
             >
-              Make Priority Announcement
+              Сделать приоритетное объявление
             </Button>
           )}
 
@@ -148,8 +147,8 @@ export function PageMain(props) {
               color={emergencyAccess ? 'bad' : undefined}
               onClick={() => act('toggleEmergencyAccess')}
             >
-              {emergencyAccess ? 'Disable' : 'Enable'} Emergency Maintenance
-              Access
+              {emergencyAccess ? 'Включен' : 'Отключен'} доступ к аварийному
+              обслуживанию
             </Button.Confirm>
           )}
 
@@ -160,8 +159,7 @@ export function PageMain(props) {
               color={engineeringOverride ? 'bad' : undefined}
               onClick={() => act('toggleEngOverride')}
             >
-              {engineeringOverride ? 'Disable' : 'Enable'} Engineering Override
-              Access
+              {engineeringOverride ? 'Включен' : 'Отключен'} инженерный доступ
             </Button.Confirm>
           )}
           {/* BUBBER EDIT ADDITION END - Engineering Override */}
@@ -173,7 +171,7 @@ export function PageMain(props) {
                 act('setState', { state: ShuttleState.CHANGING_STATUS })
               }
             >
-              Set Status Display
+              Настройка отображения дисплея
             </Button>
           )}
 
@@ -181,7 +179,7 @@ export function PageMain(props) {
             icon="envelope-o"
             onClick={() => act('setState', { state: ShuttleState.MESSAGES })}
           >
-            Message List
+            Список сообщений
           </Button>
 
           {canBuyShuttles !== 0 && (
@@ -196,7 +194,7 @@ export function PageMain(props) {
                 act('setState', { state: ShuttleState.BUYING_SHUTTLE })
               }
             >
-              Purchase Shuttle
+              Приобрести шаттл
             </Button>
           )}
 
@@ -206,7 +204,7 @@ export function PageMain(props) {
               disabled={!importantActionReady}
               onClick={() => setMessagingAssociates(true)}
             >
-              Send message to {emagged ? '[UNKNOWN]' : 'CentCom'}
+              Отправить сообщение на {emagged ? '[НЕИЗВЕСТНО]' : 'ЦентКом'}
             </Button>
           )}
 
@@ -216,35 +214,37 @@ export function PageMain(props) {
               disabled={!importantActionReady}
               onClick={() => setRequestingNukeCodes(true)}
             >
-              Request Nuclear Authentication Codes
+              Запрос кодов ядерной аутентификации
             </Button>
           )}
 
           {!!emagged && !syndicate && (
             <Button icon="undo" onClick={() => act('restoreBackupRoutingData')}>
-              Restore Backup Routing Data
+              Восстановление резервных данных маршрутизации
             </Button>
           )}
 
           {/* BUBBER EDIT ADDITION BEGIN - Additional Calls */}
           {!!canMakeAnnouncement && (
             <Button icon="bullhorn" onClick={() => act('callThePolice')}>
-              Call Terran Government 911: Marshals Response
+              Позвоните в службу 911 правительства Террана: Антитеррор
             </Button>
           )}
           {!!canMakeAnnouncement && (
             <Button icon="bullhorn" onClick={() => act('callTheCatmos')}>
-              Call Terran Government 811: Atmospherics Response
+              Позвоните в службу 811 правительства Террана: Инженерное
+              подразделение
             </Button>
           )}
           {!!canMakeAnnouncement && (
             <Button icon="bullhorn" onClick={() => act('callTheParameds')}>
-              Call Terran Government 911: Medical Response
+              Позвоните в службу 711 правительства Террана: Медицинское
+              подразделение
             </Button>
           )}
           {!!emagged && (
             <Button icon="bullhorn" onClick={() => act('callThePizza')}>
-              Place an Order with Dogginos Pizza
+              Разместить заказ в Dogginos Pizza
             </Button>
           )}
           {/* BUBBER EDIT ADDITION END - Additional Calls */}

@@ -49,7 +49,7 @@
  * No threats
  */
 /datum/security_level/green
-	name = "Зеленый"
+	name = "Зелёный"
 	name_shortform = "GRN"
 	announcement_color = "green"
 	sound = 'sound/announcer/notice/notice2.ogg' // Friendly beep

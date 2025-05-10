@@ -16,7 +16,7 @@
 	var/safety_warning = "For safety and ethical reasons, the automated supply shuttle cannot transport live organisms, \
 		human remains, classified nuclear weaponry, mail, undelivered departmental order crates, syndicate bombs, \
 		homing beacons, unstable eigenstates, fax machines, or machinery housing any form of artificial intelligence."
-	var/blockade_warning = "Bluespace instability detected. Shuttle movement impossible."
+	var/blockade_warning = "Обнаружена нестабильность блюспейса. Движение шаттла невозможно."
 	/// var that tracks message cooldown
 	var/message_cooldown
 	var/list/loaded_coupons

@@ -38,7 +38,7 @@ export function CommunicationsConsole(props) {
       currentPage = <PageMessages />;
       break;
     default:
-      currentPage = <Box>Page not implemented: {page}</Box>;
+      currentPage = <Box>Страница не выполнена: {page}</Box>;
       break;
   }
 
@@ -48,34 +48,37 @@ export function CommunicationsConsole(props) {
         {!hasConnection && <NoConnectionModal />}
 
         {(canLogOut || !authenticated) && (
-          <Section title="Authentication">
+          <Section title="Аутентификация">
             <Button
               icon={authenticated ? 'sign-out-alt' : 'sign-in-alt'}
               color={authenticated ? 'bad' : 'good'}
               onClick={() => act('toggleAuthentication')}
             >
               {authenticated
-                ? `Log Out${authorizeName ? ` (${authorizeName})` : ''}`
-                : 'Log In'}
+                ? `Выйти из системы${authorizeName ? ` (${authorizeName})` : ''}`
+                : 'Войдите в систему'}
             </Button>
           </Section>
         )}
 
         {canRequestSafeCode ? (
-          <Section title="Emergency Safe Code">
+          <Section title="Код Аварийного Сейфа">
             <Button
               icon="key"
               color="good"
               onClick={() => act('requestSafeCodes')}
             >
-              Request Safe Code
+              Запрос Безопасного Кода
             </Button>
           </Section>
         ) : (
           !!safeCodeDeliveryWait && (
-            <Section title="Emergency Safe Code Delivery" color="label">
-              {`Drop pod to ${safeCodeDeliveryArea} in \
-            ${Math.round(safeCodeDeliveryWait / 10)}s`}
+            <Section
+              title="Доставка Аварийных Кодов Безопасности"
+              color="label"
+            >
+              {`Капсула прилетит в ${safeCodeDeliveryArea} через \
+            ${Math.round(safeCodeDeliveryWait / 10)}с`}
             </Section>
           )
         )}
