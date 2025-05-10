@@ -146,7 +146,7 @@ GLOBAL_VAR_INIT(cops_arrived, FALSE)
 		caller_card.use_charge(user)
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(summon_battlecruiser), caller_card.team), rand(20 SECONDS, 1 MINUTES))
 		playsound(src, 'sound/machines/terminal/terminal_alert.ogg', 50, FALSE)
-		priority_announce("Attention crew: deep-space sensors detect a Syndicate battlecruiser-class signature subspace rift forming near your station. Estimated time until arrival: three to five minutes.", "[command_name()] High-Priority Update") //SKYRAT EDIT ADDITION: announcement on battlecruiser call
+		priority_announce("Внимание экипажу: сенсоры глубокого космоса засекли сигнатурный подпространственный разлом класса «Синдикатский боевой крейсер», формирующийся рядом с вашей станцией. Расчетное время до прибытия: от трех до пяти минут.", "[command_name()] Высокоприоритетное Обновление") //SKYRAT EDIT ADDITION: announcement on battlecruiser call
 		return TRUE
 
 	if(obj_flags & EMAGGED)
@@ -321,7 +321,7 @@ GLOBAL_VAR_INIT(cops_arrived, FALSE)
 			nuke_request(reason, user)
 			to_chat(user, span_notice("Request sent."))
 			user.log_message("has requested the nuclear codes from CentCom with reason \"[reason]\"", LOG_SAY)
-			priority_announce("The codes for the on-station nuclear self-destruct have been requested by [user]. Confirmation or denial of this request will be sent shortly.", "Nuclear Self-Destruct Codes Requested", SSstation.announcer.get_rand_report_sound())
+			priority_announce("Коды для ядерного самоуничтожения на станции были запрошены [user]. Подтверждение или отказ на этот запрос будет отправлен в ближайшее время.", "Запрошены коды ядерного авторизации", SSstation.announcer.get_rand_report_sound())
 			playsound(src, 'sound/machines/terminal/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
 		if ("restoreBackupRoutingData")
@@ -930,23 +930,23 @@ GLOBAL_VAR_INIT(cops_arrived, FALSE)
 				/datum/dynamic_ruleset/midround/dangerous_pirates,
 			)
 			priority_announce(
-				"Attention crew: sector monitoring reports a massive jump-trace from an enemy vessel destined for your system. Prepare for imminent hostile contact.",
-				"[command_name()] High-Priority Update",
+				"Внимание экипажу: мониторинг сектора сообщает о массивном прыжке от вражеского корабля, направляющегося в вашу систему. Приготовьтесь к контакту с врагом.",
+				"[command_name()] Высокоприоритетное Обновление",
 			)
 			SSdynamic.picking_specific_rule(pick(pirate_rulesets), forced = TRUE, ignore_cost = TRUE)
 
 		if(HACK_FUGITIVES) // Triggers fugitives, which can cause confusion / chaos as the crew decides which side help
 			priority_announce(
-				"Attention crew: sector monitoring reports a jump-trace from an unidentified vessel destined for your system. Prepare for probable contact.",
-				"[command_name()] High-Priority Update",
+				"Внимание экипажу: секторный мониторинг сообщает о прыжке неопознанного корабля, направляющегося в вашу систему. Приготовьтесь к вероятному контакту.",
+				"[command_name()] Высокоприоритетное Обновление",
 			)
 
 			force_event_after(/datum/round_event_control/fugitives, "[hacker] hacking a communications console", rand(20 SECONDS, 1 MINUTES))
 
 		if(HACK_THREAT) // Force an unfavorable situation on the crew
 			priority_announce(
-				"Attention crew, the Nanotrasen Department of Intelligence has received intel suggesting increased enemy activity in your sector beyond that initially reported in today's threat advisory.",
-				"[command_name()] High-Priority Update",
+				"Внимание экипажу, Департамент разведки Нанотрассена получил сведения, указывающие на повышенную активность противника в вашем секторе, превышающую ту, о которой сообщалось в сегодняшнем сводке об угрозе.",
+				"[command_name()] Высокоприоритетное Обновление",
 			)
 
 			for(var/mob/crew_member as anything in GLOB.player_list)
@@ -972,8 +972,8 @@ GLOBAL_VAR_INIT(cops_arrived, FALSE)
 			else
 				// We spawned some sleeper agents, nice - give them a report to kickstart the paranoia
 				priority_announce(
-					"Attention crew, it appears that someone on your station has hijacked your telecommunications and broadcasted an unknown signal.",
-					"[command_name()] High-Priority Update",
+					"Внимание экипажу, похоже, что кто-то на вашей станции захватил телекоммуникации и передает неизвестный сигнал.",
+					"[command_name()] Высокоприоритетное Обновление",
 				)
 
 #undef HACK_PIRATE

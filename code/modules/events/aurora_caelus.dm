@@ -66,7 +66,7 @@
 /datum/round_event/aurora_caelus/end()
 	fade_space()
 	fade_kitchen()
-	priority_announce("The aurora caelus event is now ending. Starlight conditions will slowly return to normal. When this has concluded, please return to your workplace and continue work as normal. Have a pleasant shift, [station_name()], and thank you for watching with us.",
+	priority_announce("Аврора Кейлус завершает свое существование. Звездная обстановка постепенно возвращается к нормальной. По окончании этого процесса, пожалуйста, вернитесь на свое рабочее место и продолжайте работу в обычном режиме. Приятной смены, [station_name()] и спасибо, что смотрите вместе с нами.",
 	sound = 'sound/announcer/notice/notice2.ogg',
 	sender_override = "Отдел метеорологии Нанотразен")
 

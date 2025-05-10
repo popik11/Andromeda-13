@@ -28,7 +28,7 @@
 /datum/round_event/anomaly/announce(fake)
 	if(isnull(impact_area))
 		impact_area = placer.findValidArea()
-	priority_announce("Energetic flux wave detected on [ANOMALY_ANNOUNCE_DANGEROUS_TEXT] [impact_area.name].", "Предупреждение об аномалии", ANNOUNCER_ANOMALIES) //SKYRAT EDIT CHANGE - ORIGINAL: priority_announce("Energetic flux wave detected on [ANOMALY_ANNOUNCE_DANGEROUS_TEXT] [impact_area.name].", "Предупреждение об аномалии")
+	priority_announce("Обнаружена волна энергетического потока в [ANOMALY_ANNOUNCE_DANGEROUS_TEXT] [impact_area.name].", "Предупреждение об аномалии", ANNOUNCER_ANOMALIES) //SKYRAT EDIT CHANGE - ORIGINAL: priority_announce("Energetic flux wave detected on [ANOMALY_ANNOUNCE_DANGEROUS_TEXT] [impact_area.name].", "Предупреждение об аномалии")
 
 /datum/round_event/anomaly/start()
 	var/turf/anomaly_turf

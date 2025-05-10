@@ -122,32 +122,27 @@
 
 /datum/round_event/cme/announce(fake)
 	if(fake)
-		priority_announce("Critical Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [rand(200, 300)] seconds. \
-		All synthetic and non-organic lifeforms should seek shelter immediately! \
-		Ensure all sensitive equipment is shielded.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+		priority_announce("Обнаружен критический выброс корональной массы! Ожидаемая интенсивность: [uppertext(cme_intensity)]. Воздействие через: [rand(200, 300)] секунды. \
+		Убедитесь, что все чувствительное оборудование экранировано.", "Солнечное событие", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 	else
 		switch(cme_intensity)
 			if(CME_UNKNOWN)
-				priority_announce("Coronal mass ejection detected! Expected intensity: UNKNOWN. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("Обнаружен выброс корональной массы! Ожидаемая интенсивность: НЕИЗВЕСТНО. Воздействие через: [round((start_when * SSevents.wait) * 0.1, 0.1)] секунды. \
+				Всем синтетическим и неорганическим формам жизни следует немедленно искать укрытие!", "Солнечное событие", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_MINIMAL)
-				priority_announce("Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("Обнаружен выброс корональной массы! Ожидаемая интенсивность: [uppertext(cme_intensity)]. Воздействие через: [round((start_when * SSevents.wait) * 0.1, 0.1)] секунды. \
+				Всем синтетическим и неорганическим формам жизни следует немедленно искать укрытие!", "Солнечное событие", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_MODERATE)
-				priority_announce("Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("Обнаружен выброс корональной массы! Ожидаемая интенсивность: [uppertext(cme_intensity)]. Воздействие через: [round((start_when * SSevents.wait) * 0.1, 0.1)] секунды. \
+				Всем синтетическим и неорганическим формам жизни следует немедленно искать укрытие!", "Солнечное событие", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_EXTREME)
 				addtimer(CALLBACK(src, PROC_REF(cme_level_callback), SEC_LEVEL_ORANGE, TRUE, FALSE), (round((start_when * SSevents.wait) * 0.1, 0.1)) SECONDS)
-				priority_announce("Critical Coronal mass ejection detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All synthetic and non-organic lifeforms should seek shelter immediately! \
-				Neutralize magnetic field bubbles at all costs.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("Обнаружен критический выброс корональной массы! Ожидаемая интенсивность: [uppertext(cme_intensity)]. Воздействие через: [round((start_when * SSevents.wait) * 0.1, 0.1)] секунды. \
+				Всем синтетическим и неорганическим формам жизни следует немедленно искать укрытие!", "Солнечное событие", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 			if(CME_ARMAGEDDON)
 				addtimer(CALLBACK(src, PROC_REF(cme_level_callback), SEC_LEVEL_GAMMA, TRUE, TRUE), (round((start_when * SSevents.wait) * 0.1, 0.1)) SECONDS)
-				priority_announce("Neutron Mass Ejection Detected! Expected intensity: [uppertext(cme_intensity)]. Impact in: [round((start_when * SSevents.wait) * 0.1, 0.1)] seconds. \
-				All personnel should proceed to their nearest warpgate for evacuation, the Terran Government has issued this mandatory alert.", "Solar Event", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
+				priority_announce("Обнаружен выброс нейтронной массы! Ожидаемая интенсивность: [uppertext(cme_intensity)]. Воздействие через: [round((start_when * SSevents.wait) * 0.1, 0.1)] секунды. \
+				Весь персонал должен отправиться на ближайшие варгейты для эвакуации, правительство Террана объявило обязательную тревогу.", "Солнечное событие", sound('modular_skyrat/modules/cme/sound/cme_warning.ogg'))
 
 /datum/round_event/cme/tick(seconds_between_ticks)
 	if(ISMULTIPLE(activeFor, rand(cme_frequency_lower, cme_frequency_upper)))

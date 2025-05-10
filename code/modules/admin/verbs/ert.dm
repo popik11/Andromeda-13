@@ -263,7 +263,7 @@
 			message_admins("[ertemplate.polldesc] has spawned with the mission: [ertemplate.mission]")
 			//SKYRAT EDIT ADDITION BEGIN
 			if(ertemplate.notify_players)
-				priority_announce("Central command has responded to your request for a CODE [uppertext(ertemplate.code)] Emergency Response Team and have confirmed one to be enroute.", "ERT Request", ANNOUNCER_ERTYES)
+				priority_announce("Центральное Командование ответило на ваш запрос о предоставлении группы экстренного реагирования CODE [uppertext(ertemplate.code)] и подтвердило, что такая группа находится в пути.", "Запрос ОБР", ANNOUNCER_ERTYES)
 				// shitcode begin!
 				if(istype(ertemplate, /datum/ert/deathsquad))
 					SSsecurity_level.set_level(SEC_LEVEL_EPSILON)

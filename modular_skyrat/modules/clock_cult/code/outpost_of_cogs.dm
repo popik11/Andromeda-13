@@ -67,7 +67,7 @@
 	if(!atom_area)
 		atom_area = get_area(portal)
 
-	priority_announce("An anomalous reading has been picked up at [atom_area], please ensure the safety of the crew in the vicinity.")
+	priority_announce("В [atom_area] было зафиксировано аномальное считывание, пожалуйста, обеспечьте безопасность экипажа, находящегося поблизости.")
 
 	for(var/obj/effect/landmark/late_cog_portals/late_portal in GLOB.landmarks_list)
 		var/obj/effect/landmark/portal_exit/new_exit = new(get_turf(late_portal))

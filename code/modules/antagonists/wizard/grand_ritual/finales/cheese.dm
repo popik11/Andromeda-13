@@ -9,8 +9,8 @@
 	minimum_time = 45 MINUTES //i'd imagine speedrunning this would be crummy, but the wizard's average lifespan is barely reaching this point
 
 /datum/grand_finale/cheese/trigger(mob/living/invoker)
-	message_admins("[key_name(invoker)] has summoned forth The Wabbajack and cursed the crew with madness!")
-	priority_announce("Danger: Extremely potent reality altering object has been summoned on station. Immediate evacuation advised. Brace for impact.", "[command_name()] Higher Dimensional Affairs", 'sound/effects/glass/glassbr1.ogg')
+	message_admins("[key_name(invoker)] вызвал Ваббаджека и проклял команду безумием!")
+	priority_announce("Опасность: На станции был вызван чрезвычайно мощный объект, изменяющий реальность. Рекомендуется немедленная эвакуация. Приготовиться к удару.", "[command_name()] Высшие Измерение", 'sound/effects/glass/glassbr1.ogg')
 
 	for (var/mob/living/carbon/human/crewmate as anything in GLOB.human_list)
 		if (isnull(crewmate.mind))
@@ -18,10 +18,10 @@
 		if (crewmate == invoker) //everyone but the wizard is royally fucked, no matter who they are
 			continue
 		if (crewmate.has_trauma_type(/datum/brain_trauma/mild/hallucinations)) //for an already insane person, this is retribution
-			to_chat(crewmate, span_boldwarning("Your surroundings suddenly fill with a cacophony of manic laughter and psychobabble..."))
-			to_chat(crewmate, span_nicegreen("...but as the moment passes, you realise that whatever eldritch power behind the event happened to affect you \
-				has resonated within the ruins of your already shattered mind, creating a singularity of mental instability! \
-				As it collapses unto itself, you feel... at peace, finally."))
+			to_chat(crewmate, span_boldwarning("Окружающее вас пространство внезапно наполняется какофонией маниакального смеха и психологической болтовни..."))
+			to_chat(crewmate, span_nicegreen("...но проходит мгновение, и вы понимаете, что эльдрическая сила, стоящая за этим событием, затронула вас \
+				срезонировала в руинах вашего и без того разрушенного разума, создав сингулярность психической нестабильности! \
+				По мере того, как она разрушается, вы чувствуете... покой, наконец."))
 			if(crewmate.has_quirk(/datum/quirk/insanity))
 				crewmate.remove_quirk(/datum/quirk/insanity)
 			else
@@ -30,11 +30,11 @@
 			//everyone else gets to relish in madness
 			//yes killing their mood will also trigger mood hallucinations
 			create_vendetta(crewmate.mind, invoker.mind)
-			to_chat(crewmate, span_boldwarning("Your surroundings suddenly fill with a cacophony of manic laughter and psychobabble. \n\
-				You feel your inner psyche shatter into a myriad pieces of jagged glass of colors unknown to the universe, \
-				infinitely reflecting a blinding, maddening light coming from the innermost sanctums of your destroyed mind. \n\
-				After a brief pause which felt like a millenia, one phrase rebounds ceaselessly in your head, imbued with the false hope of absolution... \n\
-				<b>[invoker] must die.</b>"))
+			to_chat(crewmate, span_boldwarning("Окружающее вас пространство внезапно наполняется какофонией маниакального смеха и психологической болтовни. \n\
+				Вы чувствуете, как ваша внутренняя психика разбивается на мириады осколков зазубренного стекла неизвестных Вселенной цветов, \
+				бесконечно отражая ослепительный, сводящий с ума свет, исходящий из самых потаенных святилищ вашего разрушенного разума. \n\
+				После короткой паузы, которая показалась вам тысячелетием, одна фраза беспрестанно повторяется в вашей голове, пропитанная ложной надеждой на освобождение... \n\
+				<b>[invoker] должен умереть.</b>"))
 			var/datum/brain_trauma/mild/hallucinations/added_trauma = new()
 			added_trauma.resilience = TRAUMA_RESILIENCE_ABSOLUTE
 			crewmate.adjustOrganLoss(ORGAN_SLOT_BRAIN, BRAIN_DAMAGE_DEATH - 25, BRAIN_DAMAGE_DEATH - 25) //you'd better hope chap didn't pick a hypertool
@@ -46,4 +46,4 @@
 	invoker.add_mood_event("wizard_ritual_finale", /datum/mood_event/madness_elation)
 	var/obj/item/gun/magic/staff/chaos/true_wabbajack/the_wabbajack = new
 	invoker.put_in_active_hand(the_wabbajack)
-	to_chat(invoker, span_mind_control("Your every single instinct and rational thought is screaming at you as [the_wabbajack] appears in your firm grip..."))
+	to_chat(invoker, span_mind_control("Все ваши инстинкты и рациональные мысли кричат вам, когда [the_wabbajack] появляется в вашем крепком захвате..."))

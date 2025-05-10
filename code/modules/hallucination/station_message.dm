@@ -10,18 +10,18 @@
 /datum/hallucination/station_message/blob_alert
 
 /datum/hallucination/station_message/blob_alert/start()
-	priority_announce("Confirmed outbreak of level 5 biohazard aboard [station_name()]. All personnel must contain the outbreak.", \
-		"Biohazard Alert", ANNOUNCER_OUTBREAK5, players = list(hallucinator))
+	priority_announce("Подтверждена вспышка биологической опасности пятого уровня на борту [station_name()]. Весь персонал должен сдержать вспышку.", \
+		"Оповещение о биологической угрозе", ANNOUNCER_OUTBREAK5, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/shuttle_dock
 
 /datum/hallucination/station_message/shuttle_dock/start()
 	priority_announce(
-					text = "[SSshuttle.emergency] has docked with the station. You have [DisplayTimeText(SSshuttle.emergency_dock_time)] to board the emergency shuttle.",
-					title = "Emergency Shuttle Arrival",
+					text = "[SSshuttle.emergency] пристыковался к станции. У вас есть [DisplayTimeText(SSshuttle.emergency_dock_time)], чтобы подняться на борт аварийного шаттла.",
+					title = "Прибытие шаттла",
 					sound = ANNOUNCER_SHUTTLEDOCK,
-					sender_override = "Диспетчерская флота",
+					sender_override = "Диспетчерская Флота",
 					players = list(hallucinator),
 					color_override = "orange",
 				)
@@ -33,7 +33,7 @@
 	if(!(locate(/mob/living/silicon/ai) in GLOB.silicon_mobs))
 		return FALSE
 
-	priority_announce("Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.", \
+	priority_announce("Во всех системах станции обнаружены враждебные объекты, пожалуйста, деактивируйте свой ИИ, чтобы предотвратить возможное повреждение его ядра.", \
 		"Предупреждение об аномалии", ANNOUNCER_AIMALF, players = list(hallucinator))
 	return ..()
 
@@ -42,23 +42,23 @@
 	/// Maybe if someone datumizes heretic paths or something this can be improved
 	var/static/list/ascension_bodies = list(
 		list(
-			"text" = "Fear the blaze, for the Ashlord, %FAKENAME% has ascended! The flames shall consume all!",
+			"text" = "Бойтесь пламени, ибо Ашлорд, %FAKENAME%, вознесся! Пламя поглотит всех!",
 			"sound" = 'sound/music/antag/heretic/ascend_blade.ogg',
 		),
 		list(
-			"text" = "Master of blades, the Torn Champion's disciple, %FAKENAME% has ascended! Their steel is that which will cut reality in a maelstom of silver!",
+			"text" = "Мастер клинков, ученик чемпиона Торна, %FAKENAME% вознесся! Их сталь - это та сталь, которая разрежет реальность в серебряном мареве!",
 			"sound" = 'sound/music/antag/heretic/ascend_blade.ogg',
 		),
 		list(
-			"text" = "Ever coiling vortex. Reality unfolded. ARMS OUTREACHED, THE LORD OF THE NIGHT, %FAKENAME% has ascended! Fear the ever twisting hand!",
+			"text" = "Вечно закручивающийся вихрь. Реальность развернулась. Вскинув руки, Владыка ночи, %FAKENAME%, вознесся! Бойтесь вечно крутящейся руки!",
 			"sound" = 'sound/music/antag/heretic/ascend_flesh.ogg',
 		),
 		list(
-			"text" = "Fear the decay, for the Rustbringer, %FAKENAME% has ascended! None shall escape the corrosion!",
+			"text" = "Бойтесь разложения, ибо взошел Ударник Ржавчины, %FAKENAME%! Никто не спасется от коррозии!",
 			"sound" = 'sound/music/antag/heretic/ascend_rust.ogg',
 		),
 		list(
-			"text" = "The nobleman of void %FAKENAME% has arrived, stepping along the Waltz that ends worlds!",
+			"text" = "Дворянин пустоты %FAKENAME% прибыл, шагая в вальсе, который завершает миры!",
 			"sound" = 'sound/music/antag/heretic/ascend_void.ogg',
 		)
 	)
@@ -94,8 +94,8 @@
 	var/area/fake_summon_area = GLOB.areas_by_type[fake_summon_area_type]
 
 	priority_announce(
-		text = "Figments from an eldritch god are being summoned by [totally_real_cult_leader.real_name] into [fake_summon_area] from an unknown dimension. Disrupt the ritual at all costs!",
-		title = "[command_name()] Higher Dimensional Affairs",
+		text = "Фигуры эльдрического бога вызываются [totally_real_cult_leader.real_name] в [fake_summon_area] из неизвестного измерения. Сорвите ритуал любой ценой!",
+		title = "[command_name()] Высшие Измерение",
 		sound = 'sound/music/antag/bloodcult/bloodcult_scribe.ogg',
 		has_important_message = TRUE,
 		players = list(hallucinator),
@@ -106,7 +106,7 @@
 	random_hallucination_weight = 2
 
 /datum/hallucination/station_message/meteors/start()
-	priority_announce("Meteors have been detected on collision course with the station.", "Предупреждение о метеоритах", ANNOUNCER_METEORS, players = list(hallucinator))
+	priority_announce("Обнаружены метеоры, идущие на столкновение со станцией.", "Предупреждение о метеоритах", ANNOUNCER_METEORS, players = list(hallucinator))
 	return ..()
 
 /datum/hallucination/station_message/supermatter_delam

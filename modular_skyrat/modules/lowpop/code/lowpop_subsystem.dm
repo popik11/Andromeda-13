@@ -1,5 +1,5 @@
-#define LOWPOP_ON_MESSAGE "Due to staffing issues, we have enacted the 'critically low staff' protocol. We will periodically use our high-intensity electron beam to recharge your SMES arrays."
-#define LOWPOP_OFF_MESSAGE "As the staffing issues have been resolved, we have resumed normal staffing protocol. Automatic SMES recharging will no longer occur."
+#define LOWPOP_ON_MESSAGE "В связи с кадровыми проблемами мы ввели в действие протокол «критически низкая численность персонала». Мы будем периодически использовать наш высокоинтенсивный электронный луч для подзарядки ваших SMES-массивов."
+#define LOWPOP_OFF_MESSAGE "Поскольку кадровые проблемы были решены, мы возобновили нормальный протокол комплектования. Автоматическая подзарядка SMES больше не будет производиться."
 
 // A subsystem for handling lowpop affairs.
 SUBSYSTEM_DEF(lowpop)
@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(lowpop)
 		return
 
 /datum/controller/subsystem/lowpop/proc/send_announcement(message)
-	priority_announce(message, "Staffing Bureau")
+	priority_announce(message, "Кадровое Агентство")
 
 /datum/controller/subsystem/lowpop/fire(resumed)
 	lowpop_check()

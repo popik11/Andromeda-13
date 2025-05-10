@@ -15,7 +15,7 @@
 	announce_when = 1
 
 /datum/round_event/electrical_storm/announce(fake)
-	priority_announce("An electrical storm has been detected in your area, please repair potential electronic overloads.", "Предупреждение об электрическом шторме", ANNOUNCER_ELECTRICALSTORM) //SKYRAT EDIT CHANGE
+	priority_announce("В вашем районе была зафиксирована электрическая буря, пожалуйста, устраните возможные электронные перегрузки.", "Предупреждение об электрической буре", ANNOUNCER_ELECTRICALSTORM) //SKYRAT EDIT CHANGE
 
 
 /datum/round_event/electrical_storm/start()

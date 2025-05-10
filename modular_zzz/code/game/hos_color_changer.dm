@@ -56,6 +56,6 @@ GLOBAL_LIST_EMPTY(security_closets)
 		for(var/obj/structure/closet/secure_closet/security/sec/security_closet in GLOB.security_closets)
 			security_closet.icon = 'icons/obj/storage/closet.dmi'
 			security_closet.update_icon()
-		priority_announce("Кто-то перекрасил Бриг в Красный!", "Red Brig", 'sound/announcer/announcement/announce.ogg', "Central Command")
+		priority_announce("Кто-то перекрасил Бриг в Красный!", "Красный бриг", 'sound/announcer/announcement/announce.ogg', "Центральное Командование")
 
 	qdel(src)

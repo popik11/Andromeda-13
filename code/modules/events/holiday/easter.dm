@@ -9,7 +9,7 @@
 	description = "Hides surprise filled easter eggs in maintenance."
 
 /datum/round_event/easter/announce(fake)
-	priority_announce(pick("Hip-hop into Easter!","Find some Bunny's stash!","Today is National 'Hunt a Wabbit' Day.","Be kind, give Chocolate Eggs!"))
+	priority_announce(pick("Хип-хоп на Пасху!","Найдите тайник Кролика!","Сегодня Национальный день охоты на кроликов.","Будьте добры, дарите шоколадные яйца!"))
 
 
 /datum/round_event_control/rabbitrelease
@@ -22,7 +22,7 @@
 	description = "Summons a wave of cute rabbits."
 
 /datum/round_event/rabbitrelease/announce(fake)
-	priority_announce("Unidentified furry objects detected coming aboard [station_name()]. Beware of Adorable-ness.", "Fluffy Alert", ANNOUNCER_ALIENS)
+	priority_announce("На борту [station_name()] обнаружены неопознанные пушистые объекты. Остерегайтесь очаровательности.", "Пушистая тревога", ANNOUNCER_ALIENS)
 
 
 /datum/round_event/rabbitrelease/start()

@@ -52,7 +52,7 @@
 			var/datum/dynamic_ruleset/roundstart/meteor/meteors = new()
 			meteors.meteordelay = 0
 			SSdynamic.execute_roundstart_rule(meteors) // Meteors will continue until morale is crushed.
-			priority_announce("Meteors have been detected on collision course with the station.", "Предупреждение о метеоритах", ANNOUNCER_METEORS)
+			priority_announce("Обнаружены метеоры, идущие на столкновение со станцией.", "Предупреждение о метеоритах", ANNOUNCER_METEORS)
 
 #undef DOOM_SINGULARITY
 #undef DOOM_TESLA

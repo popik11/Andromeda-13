@@ -368,7 +368,7 @@
 
 	research_sigil.finish_research()
 
-	priority_announce("An outburst of anomalous energy has been detected at [get_area(src)]. Please ensure the safety of any nearby crew.")
+	priority_announce("В [get_area(src)] обнаружен всплеск аномальной энергии. Пожалуйста, обеспечьте безопасность всех находящихся поблизости членов экипажа.")
 
 	addtimer(CALLBACK(src, PROC_REF(side_effect)), 10 SECONDS)
 
@@ -423,7 +423,7 @@
 				smoke_cloud.start()
 
 		if(21 to 30) // Fuck up the power
-			priority_announce("A fatal power outage has occurred. Please ensure that all on-board devices are connected to an appropriate power generator.")
+			priority_announce("Произошло фатальное отключение электроэнергии. Пожалуйста, убедитесь, что все бортовые устройства подключены к соответствующему генератору энергии.")
 
 			apc_loop:
 				for(var/obj/machinery/power/apc/controller as anything in SSmachines.get_machines_by_type_and_subtypes(/obj/machinery/power/apc))
@@ -453,7 +453,7 @@
 
 
 		if(31 to 40) // Fuck up the power, but in the other way instead
-			priority_announce("An extreme power surge has been detected in on-board APCs. Surge will subside in [rand(3, 8)] minutes.") // Not always accurate, are we?
+			priority_announce("Обнаружен экстремальный скачок напряжения в бортовых APC. Скачок снизится через [rand(3, 8)] минуты.") // Not always accurate, are we?
 
 			force_apc_arcing(TRUE)
 			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(force_apc_arcing), FALSE), 4 MINUTES)

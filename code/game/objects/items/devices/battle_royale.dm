@@ -232,15 +232,15 @@ GLOBAL_DATUM_INIT(battle_royale_master, /datum/battle_royale_master, new)
 		return FALSE // Well there's not much point is there
 
 	priority_announce(
-		text = "Congratulations [station_name()], you have been chosen as the next site of the Rumble Royale! \n\
-			Viewers across the sector will watch our [convert_integer_to_words(length(contestant_implants))] lucky contestants battle their way into your [chosen_area] and fight until only one is left standing! \n\
-			If they don't make it in five minutes, they'll be disqualified. If you see one of our players struggling to get in, do lend them a hand... or don't, if you can live with the consequences!  \n\
-			As a gesture of gratitude, we will be providing our premium broadcast to your entertainment monitors at no cost so that you can watch the excitement. \n\
-			Bystanders are advised not to intervene... but if you do, make it look good for the camera!",
-		title = "Rumble Royale Beginning",
+		text = "Поздравляем [station_name()], вы были выбраны в качестве следующего места проведения Rumble Royale! \n\
+			Зрители по всему сектору будут наблюдать за тем, как наши [convert_integer_to_words(length(contestant_implants))] счастливчики прокладывают себе путь в [chosen_area] и сражаются до тех пор, пока не останется только один! \n\
+			Если они не уложатся в пять минут, они будут дисквалифицированы. Если вы видите, что кто-то из наших игроков борется за вход, помогите ему... или не помогайте, если вы можете смириться с последствиями!  \n\
+			В знак благодарности мы будем бесплатно транслировать нашу премиум-трансляцию на ваши развлекательные мониторы, чтобы вы могли наблюдать за происходящим. \n\
+			Прохожим рекомендуется не вмешиваться... но если вы это сделаете, пусть это будет хорошо видно на камеру!",
+		title = "Начало Royale Beginning",
 		sound = 'sound/announcer/alarm/nuke_alarm.ogg',
 		has_important_message = TRUE,
-		sender_override = "Rumble Royale Pirate Broadcast Station",
+		sender_override = "Пиратская Вещательная Станция Rumble Royale",
 		color_override = "red",
 	)
 
@@ -262,15 +262,15 @@ GLOBAL_DATUM_INIT(battle_royale_master, /datum/battle_royale_master, new)
 	else if (announce_deaths)
 		var/message = ""
 		if (isnull(implant.imp_in))
-			message = "Looks like someone removed and destroyed their implant, that's cheating!"
+			message = "Похоже, кто-то удалил и уничтожил свой имплантат, это жульничество!"
 		else
 			message = "[implant.imp_in.real_name] [pick(euphemisms)] [pick(condolences)]"
 		priority_announce(
 			text = message,
-			title = "Rumble Royale Casualty Report",
+			title = "Отчет о потерях в Rumble Royale",
 			sound = 'sound/announcer/notice/notice1.ogg',
 			has_important_message = TRUE,
-			sender_override = "Rumble Royale Pirate Broadcast Station",
+			sender_override = "Пиратская Вещательная Станция Rumble Royale",
 			color_override = "red",
 		)
 
@@ -301,10 +301,10 @@ GLOBAL_DATUM_INIT(battle_royale_master, /datum/battle_royale_master, new)
 
 	priority_announce(
 		text = message,
-		title = "Rumble Royale Winner",
+		title = "Победитель Rumble Royale",
 		sound = 'sound/announcer/notice/notice1.ogg',
 		has_important_message = TRUE,
-		sender_override = "Rumble Royale Pirate Broadcast Station",
+		sender_override = "Пиратская Вещательная Станция Rumble Royale",
 		color_override = "red",
 	)
 
@@ -315,11 +315,11 @@ GLOBAL_DATUM_INIT(battle_royale_master, /datum/battle_royale_master, new)
 /// Called halfway through the battle, if you've not made it to the designated battle zone we kill you
 /datum/battle_royale_controller/proc/limit_area()
 	priority_announce(
-		text = "We're halfway done folks! And bad news to anyone who hasn't made it to the [chosen_area]... you're out!",
+		text = "Мы уже на полпути, друзья! И плохие новости для тех, кто не добрался до [chosen_area]... вы выбыли!",
 		title = "Rumble Royale Update",
 		sound = 'sound/announcer/notice/notice1.ogg',
 		has_important_message = TRUE,
-		sender_override = "Rumble Royale Pirate Broadcast Station",
+		sender_override = "Пиратская Вещательная Станция Rumble Royale",
 		color_override = "red",
 	)
 
@@ -331,13 +331,13 @@ GLOBAL_DATUM_INIT(battle_royale_master, /datum/battle_royale_master, new)
 	battle_running = FALSE
 
 	priority_announce(
-		text = "Sorry remaining contestants, your time is up. \
-			We're sorry to announce that this edition of Royal Rumble has no winner. \n\
-			Better luck next time!",
-		title = "Rumble Royale Concluded",
+		text = "Извините, оставшиеся участники, ваше время истекло. \
+			Мы с сожалением сообщаем, что в этом выпуске Royal Rumble нет победителя. \n\
+			Удачи в следующий раз!",
+		title = "Rumble Royale завершён",
 		sound = 'sound/announcer/notice/notice1.ogg',
 		has_important_message = TRUE,
-		sender_override = "Rumble Royale Pirate Broadcast Station",
+		sender_override = "Пиратская Вещательная Станция Rumble Royale",
 		color_override = "red",
 	)
 

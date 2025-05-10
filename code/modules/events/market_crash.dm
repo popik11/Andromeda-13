@@ -21,19 +21,19 @@
 
 /datum/round_event/market_crash/announce(fake)
 	var/list/poss_reasons = list("the alignment of the moon and the sun",\
-		"some risky housing market outcomes",\
-		"the B.E.P.I.S. team's untimely downfall",\
+		"некоторые рискованные результаты на рынке жилья",\
+		"безвременное падение команды B.E.P.I.S.",\
 		"speculative TerraGov grants backfiring",\
-		"greatly exaggerated reports of Nanotrasen accountancy personnel being \"laid off\"",\
-		"a \"great investment\" into \"non-fungible tokens\" by a \"moron\"",\
-		"a number of raids from Tiger Cooperative agents",\
-		"supply chain shortages",\
-		"the \"Nanotrasen+\" social media network's untimely downfall",\
-		"the \"Nanotrasen+\" social media network's unfortunate success",\
-		"uhh, bad luck, we guess"
+		"сильно преувеличенные сообщения о том, что бухгалтерский персонал Нанотразена был \"уволен\"",\
+		"\"большие инвестиции\" в \"несгораемые токены\" сделанные \"идиотом\"",\
+		"несколько рейдов от агентов кооператива Тигр",\
+		"нехватка поставок",\
+		"безвременное падение социальной сети \"Нанотразен+\"",\
+		"неудачный успех социальной сети \"Нанотразен+\"",\
+		"эээ, не повезло, наверное"
 	)
 	var/reason = pick(poss_reasons)
-	priority_announce("Due to [reason], prices for on-station vendors will be increased for a short period.", "Отдел бухгалтерского учета", ANNOUNCER_MARKET_CRASH) // SPLURT EDIT - ORIGINAL: priority_announce("Due to [reason], prices for on-station vendors will be increased for a short period.", "Nanotrasen Accounting Division")
+	priority_announce("В связи с [reason], цены на станции будут повышены на короткий период.", "Отдел бухгалтерского учета", ANNOUNCER_MARKET_CRASH) // SPLURT EDIT - ORIGINAL: priority_announce("Due to [reason], prices for on-station vendors will be increased for a short period.", "Nanotrasen Accounting Division")
 
 /datum/round_event/market_crash/start()
 	. = ..()
@@ -46,7 +46,7 @@
 	REMOVE_TRAIT(SSeconomy, TRAIT_MARKET_CRASHING, MARKET_CRASH_EVENT_TRAIT)
 	SSeconomy.price_update()
 	SSeconomy.update_vending_prices()
-	priority_announce("Prices for on-station vendors have now stabilized.", "Отдел бухгалтерского учета")
+	priority_announce("Цены на станции стабилизировались.", "Отдел бухгалтерского учета")
 
 /datum/round_event/market_crash/tick()
 	. = ..()

@@ -41,7 +41,7 @@
 /datum/round_event/anomaly/anomaly_ectoplasm/announce(fake)
 	if(isnull(impact_area))
 		impact_area = placer.findValidArea()
-	priority_announce("Paranormal ectoplasmic outburst detected on [ANOMALY_ANNOUNCE_HARMFUL_TEXT] [impact_area.name].", "Предупреждение об аномалии", ANNOUNCER_ANOMALIES) //SKYRAT EDIT CHANGE - ORIGINAL: priority_announce("Paranormal ectoplasmic outburst detected on [ANOMALY_ANNOUNCE_HARMFUL_TEXT] [impact_area.name].", "Предупреждение об аномалии")
+	priority_announce("Паранормальная эктоплазменная вспышка зафиксирована в [ANOMALY_ANNOUNCE_HARMFUL_TEXT] [impact_area.name].", "Предупреждение об аномалии", ANNOUNCER_ANOMALIES) //SKYRAT EDIT CHANGE - ORIGINAL: priority_announce("Paranormal ectoplasmic outburst detected on [ANOMALY_ANNOUNCE_HARMFUL_TEXT] [impact_area.name].", "Предупреждение об аномалии")
 
 /datum/event_admin_setup/anomaly_ectoplasm
 	///The admin-selected intensity

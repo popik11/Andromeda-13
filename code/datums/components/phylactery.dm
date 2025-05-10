@@ -215,7 +215,7 @@
 			body_turf.Beam(parent_turf, icon_state = "lichbeam", time = 1 SECONDS * (num_resurrections + 1))
 		//BUBBERSTATION CHANGE START: MORE PRECISE LOCATION AFTER 3 REVIVES.
 		if(body_turf && num_resurrections >= 3)
-			priority_announce("Unusual anomalous energy fluctuations detected in: [body_turf.loc].", "Предупреждение об аномалии")
+			priority_announce("Необычные аномальные энергетические флуктуации, обнаружены в: [body_turf.loc].", "Предупреждение об аномалии")
 		//BUBBERSTATION CHANGE END: MORE PRECISE LOCATION AFTER 3 REVIVES.
 
 		corpse.dust(drop_items = TRUE)

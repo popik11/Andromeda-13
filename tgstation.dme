@@ -9824,7 +9824,6 @@
 #include "modular_zzplurt\code\datums\ruins\space.dm"
 #include "modular_zzplurt\code\datums\shuttles\ruin.dm"
 #include "modular_zzplurt\code\datums\silicon_laws\laws_lewd.dm"
-#include "modular_zzplurt\code\datums\station_traits\neutral_traits.dm"
 #include "modular_zzplurt\code\datums\status_effects\quirk_examine.dm"
 #include "modular_zzplurt\code\datums\traits\neutral\oversized.dm"
 #include "modular_zzplurt\code\datums\votes\_vote_datum.dm"

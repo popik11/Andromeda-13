@@ -88,7 +88,7 @@ GLOBAL_LIST_INIT(meteors_candy_halloween, list(
 
 /datum/round_event/meteor_wave/announce(fake)
 	priority_announce(
-			text = "[announce_desc] have been detected on collision course with the station. The energy field generator is disabled or missing. First collision in approximately [DisplayTimeText(start_when * 20, 10)]. [announce_fluff]",
+			text = "[announce_desc] были обнаружены на курсе столкновения со станцией. Генератор энергетического поля отключен или отсутствует. Первое столкновение примерно через [DisplayTimeText(start_when * 20, 10)]. [announce_fluff]",
 			title = announce_prefix,
 			sound = ANNOUNCER_METEORWARNING,
 		)
@@ -102,7 +102,7 @@ GLOBAL_LIST_INIT(meteors_candy_halloween, list(
 /datum/round_event/meteor_wave/proc/meteor_reminder()
 	SSsecurity_level.minimum_security_level(min_level = SEC_LEVEL_ORANGE, eng_access = TRUE, maint_access = FALSE)
 	priority_announce(
-			text = "[announce_desc] approaching, brace for impact. Long range scanners indicate a high density of meteors incoming, the kind of impact that makes you rethink your life choices. So, hold on tight and try not to fly into anything too important.",
+			text = "[announce_desc] приближается, приготовьтесь к удару. Сканеры дальнего радиуса действия показывают высокую плотность метеоров, приближающихся к нам, и такие удары заставят вас пересмотреть свой жизненный выбор. Так что держитесь крепче и постарайтесь не врезаться во что-нибудь слишком важное.",
 			title = announce_prefix,
 			sound = 'sound/items/radio/radio_important.ogg', // basically silent, since the securitylevel proc will make a sound
 			sender_override = "[command_name()] Инженерный Отдел",

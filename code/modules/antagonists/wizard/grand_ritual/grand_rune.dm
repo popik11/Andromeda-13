@@ -85,10 +85,10 @@
 /obj/effect/grand_rune/proc/announce_rune()
 	var/area/created_area = get_area(src)
 	if (potency >= GRAND_RITUAL_IMMINENT_FINALE_POTENCY)
-		priority_announce("Major anomalous fluctuations to local spacetime detected in: [created_area.name].", "Предупреждение об аномалии")
+		priority_announce("Крупные аномальные флуктуации локального пространства-времени, обнаруженные в: [created_area.name].", "Предупреждение об аномалии")
 		return
 	if (potency >= GRAND_RITUAL_RUNES_WARNING_POTENCY)
-		priority_announce("Unusual anomalous energy fluctuations detected in: [created_area.name].", "Предупреждение об аномалии")
+		priority_announce("Необычные аномальные флуктуации энергии, обнаруженные в: [created_area.name].", "Предупреждение об аномалии")
 		return
 
 /obj/effect/grand_rune/examine(mob/user)
@@ -295,11 +295,11 @@
 	var/announce = null
 	switch (dire_warnings_given)
 		if (0)
-			announce = "Large anomalous energy spike detected in: [created_area.name]."
+			announce = "Обнаружен большой аномальный всплеск энергии: [created_area.name]."
 		if (1)
-			announce = "Automatic causality stabilisation failed, recommend urgent intervention in: [created_area.name]."
+			announce = "Автоматическая стабилизация причинности не удалась, рекомендуем срочное вмешательство: [created_area.name]."
 		if (2)
-			announce = "Imminent local reality failure in: [created_area.name]. All crew please prepare to evacuate."
+			announce = "Неминуемый локальный сбой реальности в: [created_area.name]. Всем экипажам приготовиться к эвакуации."
 	if (announce)
 		priority_announce(announce, "Предупреждение об аномалии")
 	dire_warnings_given++
@@ -311,7 +311,7 @@
 		return
 	var/round_time_passed = world.time - SSticker.round_start_time
 	if (chosen_effect && finale_effect.minimum_time >= round_time_passed)
-		to_chat(user, span_warning("The chosen grand finale will only be available in <b>[DisplayTimeText(finale_effect.minimum_time - round_time_passed)]</b>!"))
+		to_chat(user, span_warning("Выбранный гранд-финал будет доступен только в <b>[DisplayTimeText(finale_effect.minimum_time - round_time_passed)]</b>!"))
 		return
 	return ..()
 

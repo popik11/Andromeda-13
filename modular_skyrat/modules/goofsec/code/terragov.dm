@@ -593,7 +593,7 @@ GLOBAL_LIST_INIT(call911_do_and_do_not, list(
 	/// What jobban should we be checking for the ghost polling?
 	var/jobban_to_check = ROLE_DEATHSQUAD
 	/// What announcement message should be displayed if the vote succeeds?
-	var/announcement_message = "Example announcement message"
+	var/announcement_message = "Пример сообщения об объявлении"
 
 /obj/item/terragov_reporter/proc/pre_checks(mob/user)
 	if(GLOB.terragov_responder_info[type_of_callers][TERRAGOV_AMT] == 0)

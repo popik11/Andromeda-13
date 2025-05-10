@@ -269,13 +269,13 @@ SUBSYSTEM_DEF(shuttle)
 	if(alive / total <= threshold)
 		var/msg = "Automatically dispatching emergency shuttle due to crew death."
 		message_admins(msg)
-		log_shuttle("[msg] Alive: [alive], Roundstart: [total], Threshold: [threshold]")
+		log_shuttle("[msg] Живые: [alive], Раундстарт: [total], Порог: [threshold]")
 		emergency_no_recall = TRUE
 		priority_announce(
-			text = "Catastrophic casualties detected: crisis shuttle protocols activated - jamming recall signals across all frequencies.",
+			text = "Обнаружены катастрофические потери: активированы протоколы аварийного шаттла - глушение сигналов отзыва на всех частотах.",
 			title = "Вызов шаттла",
 			sound = ANNOUNCER_SHUTTLECALLED,
-			sender_override = "Диспетчерская флота",
+			sender_override = "Диспетчерская Флота",
 			color_override = "orange",
 		)
 		if(emergency.timeLeft(1) > emergency_call_time * ALERT_COEFF_AUTOEVAC_CRITICAL)
@@ -286,10 +286,10 @@ SUBSYSTEM_DEF(shuttle)
 		CRASH("Emergency shuttle block was called, but missing a value for the lockout duration")
 	if(admin_emergency_no_recall)
 		priority_announce(
-			text = "Emergency shuttle uplink interference detected, shuttle call disabled while the system reinitializes. Estimated restore in [DisplayTimeText(lockout_timer, round_seconds_to = 60)].",
-			title = "Uplink Interference",
+			text = "Обнаружены помехи для восходящей линии связи аварийного шаттла, вызов шаттла отключен на время реинициализации системы. Предполагаемое восстановление через [DisplayTimeText(lockout_timer, round_seconds_to = 60)].",
+			title = "Помехи при передаче данных",
 			sound = ANNOUNCER_SHUTTLE, // SKYRAT EDIT CHANGE - Announcer Sounds - ORIGINAL: sound = 'sound/announcer/announcement/announce_dig.ogg',
-			sender_override = "Диспетчерская флота",
+			sender_override = "Диспетчерская Флота",
 			color_override = "grey",
 		)
 		addtimer(CALLBACK(src, PROC_REF(unblock_recall)), lockout_timer)
@@ -300,10 +300,10 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/unblock_recall()
 	if(admin_emergency_no_recall)
 		priority_announce(
-			text= "Emergency shuttle uplink services are now back online.",
-			title = "Uplink Restored",
+			text= "Аварийная связь с шаттлом восстановлена.",
+			title = "Восстановление соединения",
 			sound = ANNOUNCER_SHUTTLE, // SKYRAT EDIT CHANGE - Announcer Sounds - ORIGINAL: sound = 'sound/announcer/announcement/announce_dig.ogg',
-			sender_override = "Диспетчерская флота",
+			sender_override = "Диспетчерская Флота",
 			color_override = "green",
 		)
 		return
@@ -553,20 +553,20 @@ SUBSYSTEM_DEF(shuttle)
 		emergency.timer = null
 		emergency.sound_played = FALSE
 		priority_announce(
-			text = "Departure has been postponed indefinitely pending conflict resolution.",
-			title = "Hostile Environment Detected",
+			text = "Шаттл был отложен на неопределенный срок до разрешения конфликта.",
+			title = "Обнаружена враждебная среда",
 			sound = 'sound/announcer/notice/notice1.ogg',
-			sender_override = "Диспетчерская флота",
+			sender_override = "Диспетчерская Флота",
 			color_override = "grey",
 		)
 	if(!emergency_no_escape && (emergency.mode == SHUTTLE_STRANDED || emergency.mode == SHUTTLE_DOCKED))
 		emergency.mode = SHUTTLE_DOCKED
 		emergency.setTimer(emergency_dock_time)
 		priority_announce(
-			text = "You have [DisplayTimeText(emergency_dock_time)] to board the emergency shuttle.",
-			title = "Hostile Environment Resolved",
+			text = "У вас есть [DisplayTimeText(emergency_dock_time)], чтобы подняться на борт шаттла.",
+			title = "Враждебная среда устранена",
 			sound = 'sound/announcer/announcement/announce_dig.ogg',
-			sender_override = "Диспетчерская флота",
+			sender_override = "Диспетчерская Флота",
 			color_override = "green",
 		)
 
