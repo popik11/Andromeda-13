@@ -23,11 +23,11 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 )))
 
 /datum/round_event_control/sentience
-	name = "Random Human-level Intelligence"
+	name = "Случайный интеллект человеческого уровня"
 	typepath = /datum/round_event/ghost_role/sentience
 	weight = 10
 	category = EVENT_CATEGORY_FRIENDLY
-	description = "An animal or robot becomes sentient!"
+	description = "Животное или робот становятся разумными!"
 	min_wizard_trigger_potency = 0
 	max_wizard_trigger_potency = 7
 
@@ -36,15 +36,15 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 	minimum_required = 1
 	role_name = "random animal"
 	var/animals = 1
-	var/one = "one"
+	var/one = "одиного"
 	fakeable = TRUE
 
 /datum/round_event/ghost_role/sentience/announce(fake)
 	var/sentience_report = ""
 
-	var/data = pick("scans from our long-range sensors", "our sophisticated probabilistic models", "our omnipotence", "the communications traffic on your station", "energy emissions we detected", "\[REDACTED\]")
-	var/pets = pick("animals/bots", "bots/animals", "pets", "simple animals", "lesser lifeforms", "\[REDACTED\]")
-	var/strength = pick("human", "moderate", "lizard", "security", "command", "clown", "low", "very low", "\[REDACTED\]")
+	var/data = pick("сканирование с наших сенсоров дальнего действия", "наше всемогущество", "трафик связи на вашей станции", "обнаруженные нами энергетические выбросы", "\[ОТРЕДАКТИРОВАНО\]")
+	var/pets = pick("ботов", "животных", "домашних животных", "простых животных", "низшие формы жизни", "\[ОТРЕДАКТИРОВАНО\]")
+	var/strength = pick("человеческий", "умеренный", "высокий", "низкий", "очень низкий", "\[ОТРЕДАКТИРОВАНО\]")
 
 	sentience_report += "Основываясь на [data], мы считаем, что у [one] из [pets] станции, развит [strength] уровень интеллекта и способность к общению."
 
@@ -123,11 +123,11 @@ GLOBAL_LIST_INIT(high_priority_sentience, typecacheof(list(
 		low += checked_mob
 
 /datum/round_event_control/sentience/all
-	name = "Station-wide Human-level Intelligence"
+	name = "Случайный интеллект человеческого уровня (Все мобы)"
 	typepath = /datum/round_event/ghost_role/sentience/all
 	weight = 0
 	category = EVENT_CATEGORY_FRIENDLY
-	description = "ALL animals and robots become sentient, provided there is enough ghosts."
+	description = "Все животные и роботы становятся разумными, при условии наличия достаточного количества призраков."
 
 /datum/round_event/ghost_role/sentience/all
 	one = "all"
