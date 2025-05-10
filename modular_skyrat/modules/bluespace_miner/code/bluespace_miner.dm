@@ -254,8 +254,8 @@
 
 /datum/techweb_node/bluespace_miner
 	id = "bluespace_miner"
-	display_name = "Bluespace Miner"
-	description = "The future is here, where we can mine ores from the great bluespace sea."
+	display_name = "Блюспейс Добытчик"
+	description = "Будущее уже наступило, и мы сможем добывать руды из великого пространства Блюспейса."
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_5_POINTS)
 	hidden = TRUE
 	experimental = TRUE

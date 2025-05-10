@@ -90,8 +90,8 @@ GLOBAL_LIST_EMPTY(cargo_marks)
 
 /datum/techweb_node/cargo_teleporter
 	id = TECHWEB_NODE_CARGO_TELEPORTER
-	display_name = "Cargo Teleporter"
-	description = "We can teleport items across long distances, as long as they are not blocked."
+	display_name = "Грузовой Телепортатор"
+	description = "Мы можем телепортировать предметы на большие расстояния, если они не заблокированы."
 	prereq_ids = list(TECHWEB_NODE_BLUESPACE_THEORY)
 	design_ids = list(
 		"cargotele",

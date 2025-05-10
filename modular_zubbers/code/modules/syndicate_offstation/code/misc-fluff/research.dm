@@ -14,8 +14,8 @@
 //techweb nodes
 /datum/techweb_node/interdyne
 	id = TECHWEB_NODE_INTERDYNE
-	display_name = "Syndicate Technology"
-	description = "Tools used by the Syndicate."
+	display_name = "Технология Синдиката"
+	description = "Инструменты, используемые Синдикатом."
 	required_items_to_unlock = list(
 		/obj/item/circuitboard/machine/syndiepad,
 		/obj/item/circuitboard/computer/cargo/express/interdyne,
@@ -39,8 +39,8 @@
 
 /datum/techweb_node/encryption
 	id = TECHWEB_NODE_INTERDYNE_ENCRYPTION
-	display_name = "Advanced Syndicate Encryption"
-	description = "Provides emergency use Interdyne encryption keys in case operational comms are compromised."
+	display_name = "Продвинутое Шифрование Синдиката"
+	description = "Обеспечивает аварийное использование ключей шифрования Interdyne в случае компрометации оперативной связи."
 	required_items_to_unlock = list(
 		/obj/item/encryptionkey/headset_syndicate/interdyne
 	)

@@ -20,8 +20,8 @@
 
 /datum/techweb_node/adv_power_skyrat
 	id = "adv_power_skyrat"
-	display_name = "Additional Advanced Power Manipulation"
-	description = "How to get different types of zap."
+	display_name = "Дополнительные Передовые Манипуляции Энергией"
+	description = "Как получить различные виды зарядок."
 	prereq_ids = list("parts_adv")
 	design_ids = list("teg", "circulator")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_4_POINTS)

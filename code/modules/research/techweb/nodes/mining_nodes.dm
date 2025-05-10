@@ -1,8 +1,8 @@
 /datum/techweb_node/material_processing
 	id = TECHWEB_NODE_MATERIAL_PROC
 	starting_node = TRUE
-	display_name = "Material Processing"
-	description = "Refinement and processing of alloys and ores to enhance their utility and value."
+	display_name = "Обработка Материалов"
+	description = "Рафинирование и обработка сплавов и руд для повышения их полезности и ценности."
 	design_ids = list(
 		"pickaxe",
 		"shovel",
@@ -24,8 +24,8 @@
 
 /datum/techweb_node/mining
 	id = TECHWEB_NODE_MINING
-	display_name = "Mining Technology"
-	description = "Development of tools meant to optimize mining operations and resource extraction."
+	display_name = "Горнодобывающая Технология"
+	description = "Разработка инструментов для оптимизации горных работ и добычи ресурсов."
 	prereq_ids = list(TECHWEB_NODE_MATERIAL_PROC)
 	design_ids = list(
 		"cargoexpress",
@@ -52,8 +52,8 @@
 
 /datum/techweb_node/low_pressure_excavation
 	id = TECHWEB_NODE_LOW_PRESSURE_EXCAVATION
-	display_name = "Low-Pressure Excavation"
-	description = "Research of Proto-Kinetic Accelerators (PKAs), pneumatic guns renowned for their exceptional performance in low-pressure environments."
+	display_name = "Раскопки Низкого Давления"
+	description = "Исследование протокинетических ускорителей (PKA), пневматических пушек, известных своей исключительной производительностью в условиях низкого давления."
 	prereq_ids = list(TECHWEB_NODE_MINING, TECHWEB_NODE_GAS_COMPRESSION)
 	design_ids = list(
 		"damagemod",
@@ -71,8 +71,8 @@
 
 /datum/techweb_node/plasma_mining
 	id = TECHWEB_NODE_PLASMA_MINING
-	display_name = "Plasma Beam Mining"
-	description = "Engineers' plasma welders have proven highly effective in mining operations. This led to the development of a mech-mounted variant and an enhanced handheld cutter for miners."
+	display_name = "Плазменная Добыча"
+	description = "Плазменные сварочные аппараты Engineers доказали свою высокую эффективность в горных работах. Это привело к разработке варианта, устанавливаемого на механическую установку, и усовершенствованного ручного резака для шахтеров."
 	prereq_ids = list(TECHWEB_NODE_LOW_PRESSURE_EXCAVATION, TECHWEB_NODE_PLASMA_CONTROL)
 	design_ids = list(
 		"mech_plasma_cutter",
@@ -83,8 +83,8 @@
 
 /datum/techweb_node/bitrunning
 	id = TECHWEB_NODE_BITRUNNING
-	display_name = "Bitrunning Technology"
-	description = "Bluespace technology has led to the development of quantum-scale computing, which unlocks the means to materialize atomic structures while executing advanced programs."
+	display_name = "Технология Битранера"
+	description = "Технологията блюспейс доведе до разработването на квантови изчисления, които позволяват материализирането на атомни структури при изпълнението на усъвършенствани програми."
 	prereq_ids = list(TECHWEB_NODE_GAMING, TECHWEB_NODE_APPLIED_BLUESPACE)
 	design_ids = list(
 		"byteforge",
@@ -96,8 +96,8 @@
 
 /datum/techweb_node/mining_adv
 	id = TECHWEB_NODE_MINING_ADV
-	display_name = "Advanced Mining Technology"
-	description = "High-level mining equipment, pushing the boundaries of efficiency and effectiveness in resource extraction."
+	display_name = "Продвинутые горные технологии"
+	description = "Горное оборудование высокого уровня, расширяющее границы эффективности и результативности добычи ресурсов."
 	prereq_ids = list(TECHWEB_NODE_PLASMA_MINING)
 	design_ids = list(
 		"jackhammer",

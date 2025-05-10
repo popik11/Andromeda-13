@@ -37,8 +37,8 @@
 
 /datum/techweb_node/powerator
 	id = TECHWEB_NODE_POWERATOR
-	display_name = "Powerator"
-	description = "We've been saved by it in the past, we should send some power ourselves!"
+	display_name = "Атор Мощности"
+	description = "В прошлом мы спасались с его помощью, так что нам следует самим послать немного энергии!"
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_3_POINTS)
 	hidden = TRUE
 	experimental = TRUE

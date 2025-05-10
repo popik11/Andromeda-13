@@ -175,8 +175,8 @@
 /datum/techweb_node/basic_xenoarch
 	id = "basic_xenoarch"
 	starting_node = TRUE
-	display_name = "Basic Xenoarchaeology"
-	description = "The basic designs of xenoarchaeology."
+	display_name = "Основы Ксеноархеологии"
+	description = "Основные концепции ксеноархеологии."
 	design_ids = list(
 		"hammer_cm1",
 		"hammer_cm2",
@@ -192,8 +192,8 @@
 
 /datum/techweb_node/xenoarch_storage
 	id = TECHWEB_NODE_XENOARCH_STORAGE
-	display_name = "Xenoarchaeology Storage"
-	description = "When dealing with xenoarchaeology, one may need storage."
+	display_name = "Хранение Ксеноархеологии"
+	description = "При работе с ксеноархеологией может понадобиться хранилище."
 	prereq_ids = list(TECHWEB_NODE_XENOARCH_BASIC)
 	design_ids = list(
 		"xenoarch_belt",
@@ -203,8 +203,8 @@
 
 /datum/techweb_node/xenoarch_machines
 	id = TECHWEB_NODE_XENOARCH_MACHINES
-	display_name = "Xenoarchaeology Machines"
-	description = "Sometimes, xenoarchaeology can be time consuming, perhaps machines can help?"
+	display_name = "Ксеноархеологические Машины"
+	description = "Иногда ксеноархеология отнимает много времени, возможно, машины могут помочь?"
 	prereq_ids = list(TECHWEB_NODE_XENOARCH_BASIC)
 	design_ids = list(
 		"xeno_researcher",
@@ -215,8 +215,8 @@
 
 /datum/techweb_node/adv_xenoarch
 	id = TECHWEB_NODE_XENOARCH_ADVANCED
-	display_name = "Advanced Xenoarchaeology"
-	description = "After some time, those tools we used have become antiquated-- we need an upgrade."
+	display_name = "Продвинутая Кеноархеология"
+	description = "Через некоторое время инструменты, которыми мы пользовались, устарели - нам нужно обновление."
 	prereq_ids = list(TECHWEB_NODE_XENOARCH_BASIC, TECHWEB_NODE_XENOARCH_MACHINES, TECHWEB_NODE_XENOARCH_STORAGE)
 	design_ids = list(
 		"xenoarch_adv_hammer",
@@ -230,8 +230,8 @@
 	required_experiments = list(/datum/experiment/scanning/points/xenoarch)
 
 /datum/experiment/scanning/points/xenoarch
-	name = "Advanced Xenoarchaeology Tools"
-	description = "It is possible to create even more advanced tools for xenoarchaeoloy."
+	name = "Продвинутые Инструменты Ксеноархеологии"
+	description = "Можно создать еще более совершенные инструменты для ксеноархеологов."
 	required_points = 10
 	required_atoms = list(
 		/obj/item/xenoarch/useless_relic = 1,

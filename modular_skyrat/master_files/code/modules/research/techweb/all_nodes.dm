@@ -3,8 +3,8 @@
 
 /datum/techweb_node/adv_vision
 	id = TECHWEB_NODE_ADVANCED_VISION
-	display_name = "Combat Cybernetic Eyes"
-	description = "Military grade combat implants to improve vision."
+	display_name = "Боевые Кибернетические Глаза"
+	description = "Боевые имплантаты военного класса для улучшения зрения."
 	prereq_ids = list(TECHWEB_NODE_COMBAT_IMPLANTS, TECHWEB_NODE_ALIEN_SURGERY)
 	design_ids = list(
 		"ci-thermals",
@@ -16,16 +16,16 @@
 
 /datum/techweb_node/borg_shapeshifter
 	id = TECHWEB_NODE_BORG_SHAPESHIFTER
-	display_name = "Illegal Cyborg Addition"
-	description = "Some sort of experimental tool that was once used by an rival company."
+	display_name = "Нелегальное Дополнение к Киборгам"
+	description = "Что-то вроде экспериментального инструмента, который когда-то использовался конкурирующей компанией."
 	prereq_ids = list(TECHWEB_NODE_SYNDICATE_BASIC)
 	design_ids = list("borg_shapeshifter_module")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_3_POINTS)
 
 /datum/techweb_node/ayy_cyber_implants
 	id = TECHWEB_NODE_AYY_CYBER_IMPLANTS
-	display_name = "Alien Cybernetic Implants"
-	description = "The best in cybernetic implants."
+	display_name = "Инопланетные Кибернетические Имплантаты"
+	description = "Лучшие кибернетические имплантаты. Лучшие кибернетические имплантаты."
 	prereq_ids = list(TECHWEB_NODE_ALIEN_SURGERY, TECHWEB_NODE_ALIEN_ENGI)
 	design_ids = list(
 		"ci-surgery-alien",
@@ -35,8 +35,8 @@
 /datum/techweb_node/android_chassis
 	id = TECHWEB_NODE_ANDROID_CHASSIS
 	starting_node = TRUE
-	display_name = "Android Technology"
-	description = "Shiny parts for your shiny friends!"
+	display_name = "Технологии Андроида"
+	description = "Блестящие детали для ваших блестящих друзей!"
 	prereq_ids = list(TECHWEB_NODE_ROBOTICS)
 	design_ids = list(
 		"synth_head",
@@ -52,8 +52,8 @@
 /datum/techweb_node/android_organs
 	id = TECHWEB_NODE_ANDROID_ORGANS
 	starting_node = TRUE
-	display_name = "Android Organs"
-	description = "Internal Mechanisms for Synthetics and IPC's."
+	display_name = "Органы Андроида"
+	description = "Внутренние механизмы для синтетики и IPC."
 	prereq_ids = list(TECHWEB_NODE_ROBOTICS)
 	design_ids = list(
 		"synth_eyes",

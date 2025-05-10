@@ -1,8 +1,8 @@
 /datum/techweb_node/mech_assembly
 	id = TECHWEB_NODE_MECH_ASSEMBLY
 	starting_node = TRUE
-	display_name = "Exosuit Assembly"
-	description = "Development of mechanical exosuits designed to contend with artificial gravity while transporting cargo."
+	display_name = "Сборка Экзокостюма"
+	description = "Разработка механических экзокостюмов, предназначенных для борьбы с искусственной гравитацией при транспортировке грузов."
 	prereq_ids = list(TECHWEB_NODE_ROBOTICS)
 	design_ids = list(
 		"mechapower",
@@ -20,8 +20,8 @@
 
 /datum/techweb_node/mech_equipment
 	id = TECHWEB_NODE_MECH_EQUIPMENT
-	display_name = "Expedition Equipment"
-	description = "Specialized exosuit gear tailored for navigating space and celestial bodies, ensuring durability and functionality in the harshest conditions."
+	display_name = "Экспедиционное Оборудование"
+	description = "Специализированное снаряжение для экзокостюмов, предназначенное для навигации в космосе и на небесных телах, обеспечивает долговечность и функциональность в самых суровых условиях."
 	prereq_ids = list(TECHWEB_NODE_MECH_ASSEMBLY)
 	design_ids = list(
 		"mechacontrol",
@@ -40,8 +40,8 @@
 
 /datum/techweb_node/mech_clown
 	id = TECHWEB_NODE_MECH_CLOWN
-	display_name = "Funny Robots"
-	description = "Fueled by laughter."
+	display_name = "Веселые Роботы"
+	description = "Запитаны смехом."
 	prereq_ids = list(TECHWEB_NODE_MECH_ASSEMBLY)
 	design_ids = list(
 		"honk_chassis",
@@ -65,8 +65,8 @@
 
 /datum/techweb_node/mech_medical
 	id = TECHWEB_NODE_MECH_MEDICAL
-	display_name = "Medical Exosuit"
-	description = "Advanced robotic unit equipped with syringe guns and healing beams, revolutionizing medical assistance in hazardous environments."
+	display_name = "Медицинский Экзокостюм"
+	description = "Передовой роботизированный аппарат, оснащенный шприц-пистолетами и лечебными лучами, революционизирующий медицинскую помощь в опасных условиях."
 	prereq_ids = list(TECHWEB_NODE_MECH_ASSEMBLY, TECHWEB_NODE_CHEM_SYNTHESIS)
 	design_ids = list(
 		"odysseus_chassis",
@@ -85,8 +85,8 @@
 
 /datum/techweb_node/mech_mining
 	id = TECHWEB_NODE_MECH_MINING
-	display_name = "Mining Exosuit"
-	description = "Robust exosuit engineered to withstand lava and storms for continuous off-station mining operations."
+	display_name = "Шахтёрский Экзокостюм"
+	description = "Прочный экзокостюм, созданный для противостояния лаве и штормам, для непрерывной добычи полезных ископаемых вне станции."
 	prereq_ids = list(TECHWEB_NODE_MECH_EQUIPMENT, TECHWEB_NODE_MINING)
 	design_ids = list(
 		"clarke_chassis",
@@ -103,8 +103,8 @@
 
 /datum/techweb_node/mech_combat
 	id = TECHWEB_NODE_MECH_COMBAT
-	display_name = "Combat Exosuits"
-	description = "Modular armor upgrades and specialized equipment for security exosuits."
+	display_name = "Боевой Экзокостюм"
+	description = "Модульные обновления брони и специализированное оборудование для защитных экзокостюмов."
 	prereq_ids = list(TECHWEB_NODE_MECH_EQUIPMENT)
 	design_ids = list(
 		"mech_ccw_armor",
@@ -120,8 +120,8 @@
 
 /datum/techweb_node/mech_assault
 	id = TECHWEB_NODE_MECH_ASSAULT
-	display_name = "Assault Exosuits"
-	description = "Heavy battle exosuits boasting robust armor but sacrificing speed for enhanced durability."
+	display_name = "Штурмовой Экзокостюм"
+	description = "Тяжелые боевые экзокостюмы, обладающие прочной броней, но жертвующие скоростью ради повышенной прочности."
 	prereq_ids = list(TECHWEB_NODE_MECH_COMBAT)
 	design_ids = list(
 		"durand_armor",
@@ -141,8 +141,8 @@
 
 /datum/techweb_node/mech_light
 	id = TECHWEB_NODE_MECH_LIGHT
-	display_name = "Light Combat Exosuits"
-	description = "Agile combat exosuits equipped with overclocking capabilities for temporary speed boosts, prioritizing speed over durability on the battlefield."
+	display_name = "Лёгкий Боевой Экзокостюм"
+	description = "Маневренные боевые экзокостюмы, оснащенные функцией разгона для временного увеличения скорости, в которых приоритет отдается скорости, а не прочности на поле боя."
 	prereq_ids = list(TECHWEB_NODE_MECH_COMBAT)
 	design_ids = list(
 		"gygax_armor",
@@ -162,8 +162,8 @@
 
 /datum/techweb_node/mech_heavy
 	id = TECHWEB_NODE_MECH_HEAVY
-	display_name = "Heavy Exosuits"
-	description = "Advanced heavy mechanized unit with dual pilot capability, designed for robust battlefield performance and increased tactical versatility."
+	display_name = "Тяжёлый Экзокостюм"
+	description = "Передовое тяжелое механизированное подразделение с возможностью двойного пилотирования, разработанное для обеспечения надежной работы на поле боя и повышения тактической универсальности."
 	prereq_ids = list(TECHWEB_NODE_MECH_ASSAULT)
 	design_ids = list(
 		"savannah_ivanov_armor",
@@ -183,8 +183,8 @@
 
 /datum/techweb_node/mech_infiltrator
 	id = TECHWEB_NODE_MECH_INFILTRATOR
-	display_name = "Infiltration Exosuits"
-	description = "Advanced exosuit with phasing capabilities, allowing it to move through walls and obstacles, ideal for covert and special operations."
+	display_name = "Проникаэщий Экзокостюм"
+	description = "Продвинутый экзокостюм с фазовыми возможностями, позволяющими ему перемещаться сквозь стены и препятствия, идеально подходит для тайных и специальных операций."
 	prereq_ids = list(TECHWEB_NODE_MECH_LIGHT, TECHWEB_NODE_ANOMALY_RESEARCH)
 	design_ids = list(
 		"phazon_armor",
@@ -204,8 +204,8 @@
 
 /datum/techweb_node/justice
 	id = "mecha_justice"
-	display_name = "EXOSUIT: Justice"
-	description = "Justice exosuit designs"
+	display_name = "Экзокостюм: Правосудие"
+	description = "Дизайн экзокостюма правосудия"
 	design_ids = list(
 		"justice_armor",
 		"justice_chassis",
@@ -220,8 +220,8 @@
 
 /datum/techweb_node/mech_energy_guns
 	id = TECHWEB_NODE_MECH_ENERGY_GUNS
-	display_name = "Exosuit Energy Guns"
-	description = "Scaled-up versions of electric weapons optimized for exosuit deployment."
+	display_name = "Энергетическое Оружие Экзокостюма"
+	description = "Масштабные версии электрического оружия, оптимизированные для использования в экзокостюме."
 	prereq_ids = list(TECHWEB_NODE_MECH_COMBAT, TECHWEB_NODE_ELECTRIC_WEAPONS)
 	design_ids = list(
 		"mech_laser",
@@ -235,8 +235,8 @@
 
 /datum/techweb_node/mech_firearms
 	id = TECHWEB_NODE_MECH_FIREARMS
-	display_name = "Exosuit Firearms"
-	description = "Mounted ballistic weaponry, enhancing combat capabilities for mechanized units."
+	display_name = "Вооружённый Экзокостюм"
+	description = "Навесное баллистическое оружие, повышающее боевые возможности механизированных подразделений."
 	prereq_ids = list(TECHWEB_NODE_MECH_ENERGY_GUNS, TECHWEB_NODE_EXOTIC_AMMO)
 	design_ids = list(
 		"mech_lmg",
@@ -251,8 +251,8 @@
 
 /datum/techweb_node/mech_heavy_arms
 	id = TECHWEB_NODE_MECH_HEAVY_ARMS
-	display_name = "Heavy Exosuit Firearms"
-	description = "High-impact weaponry integrated into mechs, optimized for maximum firepower."
+	display_name = "Тяжёлый Вооружённый Экзокостюм"
+	description = "Ударное оружие, встроенное в мехи, оптимизировано для максимальной огневой мощи."
 	prereq_ids = list(TECHWEB_NODE_MECH_HEAVY, TECHWEB_NODE_EXOTIC_AMMO)
 	design_ids = list(
 		"clusterbang_launcher",
@@ -267,8 +267,8 @@
 
 /datum/techweb_node/mech_equip_bluespace
 	id = TECHWEB_NODE_MECH_EQUIP_BLUESPACE
-	display_name = "Bluespace Exosuit Equipment"
-	description = "An array of equipment empowered by bluespace, providing unmatched mobility and utility."
+	display_name = "Блюспейс Оборудование Экзокостюма"
+	description = "Массив оборудования, созданный с помощью блюспейс, обеспечивает непревзойденную мобильность и практичность."
 	prereq_ids = list(TECHWEB_NODE_MECH_INFILTRATOR, TECHWEB_NODE_BLUESPACE_TRAVEL)
 	design_ids = list(
 		"mech_gravcatapult",

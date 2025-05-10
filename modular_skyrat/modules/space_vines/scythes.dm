@@ -84,8 +84,8 @@
 
 /datum/techweb_node/scythe_t1
 	id = TECHWEB_NODE_SCYTHE_1
-	display_name = "Scythe (Tier 1)"
-	description = "Culling tools"
+	display_name = "Коса (уровень 1)"
+	description = "Инструменты для выбраковки"
 	prereq_ids = list(TECHWEB_NODE_EXP_TOOLS, TECHWEB_NODE_CHEM_SYNTHESIS, TECHWEB_NODE_BOTANY_EQUIP)
 	design_ids = list(
 		"scythet1",
@@ -95,8 +95,8 @@
 
 /datum/techweb_node/scythe_t2
 	id = TECHWEB_NODE_SCYTHE_2
-	display_name = "Scythe (Tier 2)"
-	description = "Culling tools"
+	display_name = "Коса (уровень 2)"
+	description = "Инструменты для выбраковки"
 	prereq_ids = list(TECHWEB_NODE_SCYTHE_1)
 	design_ids = list(
 		"scythet2",

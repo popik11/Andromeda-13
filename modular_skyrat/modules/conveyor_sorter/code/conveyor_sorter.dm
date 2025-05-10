@@ -154,8 +154,8 @@
 
 /datum/techweb_node/conveyor_sorter
 	id = TECHWEB_NODE_CONVEYOR_SORTER
-	display_name = "Conveyor Sorter"
-	description = "Finally, the ability to automatically sort stuff."
+	display_name = "Конвейерный Сортировщик"
+	description = "Наконец, возможность автоматической сортировки."
 	prereq_ids = list(TECHWEB_NODE_BLUESPACE_THEORY)
 	design_ids = list(
 		"conveysorter",
@@ -194,8 +194,8 @@
 
 /datum/techweb_node/conveyor_sorter/improved
 	id = TECHWEB_NODE_CONVEYOR_SORTER_IMPROVED
-	display_name = "Improved Conveyor Sorter"
-	description = "An improved version of the conveyor sorter, this one allows for more control over sorting."
+	display_name = "Улучшенный Конвейерный Сортировщик"
+	description = "Улучшенная версия конвейерного сортировщика позволяет лучше контролировать процесс сортировки."
 	prereq_ids = list(TECHWEB_NODE_APPLIED_BLUESPACE)
 	design_ids = list(
 		"conveyor_sorter_improved",

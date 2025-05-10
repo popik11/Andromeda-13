@@ -64,7 +64,7 @@ export function TechNode(props: Props) {
       }}
       value={expcompl / required_experiments.length}
     >
-      Experiments ({expcompl}/{required_experiments.length})
+      Эксперименты ({expcompl}/{required_experiments.length})
     </ProgressBar>
   );
 
@@ -80,7 +80,7 @@ export function TechNode(props: Props) {
       }}
       value={techcompl / prereq_ids.length}
     >
-      Tech ({techcompl}/{prereq_ids.length})
+      Тех ({techcompl}/{prereq_ids.length})
     </ProgressBar>
   );
 
@@ -106,7 +106,7 @@ export function TechNode(props: Props) {
                   disabled={!can_unlock || tier > 1 || queue_nodes.length > 0}
                   onClick={() => act('researchNode', { node_id: id })}
                 >
-                  Research
+                  Иследовать
                 </Button>
               ) : enqueued_by_user ? (
                 <Button
@@ -114,11 +114,11 @@ export function TechNode(props: Props) {
                   color="bad"
                   onClick={() => act('dequeueNode', { node_id: id })}
                 >
-                  Dequeue
+                  Отклонить
                 </Button>
               ) : id in queue_nodes && !enqueued_by_user ? (
                 <Button icon="check" color="good">
-                  Queued
+                  Очередь
                 </Button>
               ) : (
                 <Button
@@ -130,7 +130,7 @@ export function TechNode(props: Props) {
                   }
                   onClick={() => act('enqueueNode', { node_id: id })}
                 >
-                  Enqueue
+                  Записать
                 </Button>
               ))}
             {!nodetails && (
@@ -140,7 +140,7 @@ export function TechNode(props: Props) {
                   setTechwebRoute({ route: 'details', selectedNode: id });
                 }}
               >
-                Details
+                Подробнее
               </Button>
             )}
           </>
@@ -199,7 +199,7 @@ export function TechNode(props: Props) {
       {required_experiments.length > 0 && (
         <Collapsible
           className="Techweb__NodeExperimentsRequired"
-          title="Required Experiments"
+          title="Необходимые эксперименты"
         >
           {required_experiments.map((k, index) => {
             const thisExp = experiments[k];
@@ -213,7 +213,7 @@ export function TechNode(props: Props) {
       {Object.keys(discount_experiments).length > 0 && (
         <Collapsible
           className="TechwebNodeExperimentsRequired"
-          title="Discount-Eligible Experiments"
+          title="Эксперименты с правом на скидку"
         >
           {Object.keys(discount_experiments).map((k, index) => {
             const thisExp = experiments[k];
@@ -223,8 +223,8 @@ export function TechNode(props: Props) {
             return (
               <Experiment key={thisExp} exp={thisExp}>
                 <Box className="Techweb__ExperimentDiscount">
-                  Provides a discount of {discount_experiments[k]} points to all
-                  required point pools.
+                  Предоставляет скидку в {discount_experiments[k]} очков на все
+                  требуемым пулам очков.
                 </Box>
               </Experiment>
             );

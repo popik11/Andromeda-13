@@ -23,42 +23,42 @@ export function TechwebContent(props) {
         <Flex className="Techweb__HeaderContent">
           <Flex.Item>
             <LabeledList>
-              <LabeledList.Item label="Security">
+              <LabeledList.Item label="Безопасность">
                 <span
                   className={`Techweb__SecProtocol ${
                     !!sec_protocols && 'engaged'
                   }`}
                 >
-                  {sec_protocols ? 'Engaged' : 'Disengaged'}
+                  {sec_protocols ? 'Включено' : 'Отключено'}
                 </span>
               </LabeledList.Item>
               {/* BUBBER CHANGE START: ADD POINT IDENTIFICATION */}
               {Object.keys(points).map((k) => (
-                <LabeledList.Item key={k} label={`${k} Points`}>
+                <LabeledList.Item key={k} label={`${k}- Очки`}>
                   {' '}
                   <b>{points[k]}</b>
-                  {!!points_last_tick[k] && ` (+${points_last_tick[k]}/sec)`}
+                  {!!points_last_tick[k] && ` (+${points_last_tick[k]}/сек)`}
                 </LabeledList.Item>
               ))}
               {/* BUBBER CHANGE END: ADD POINT IDENTIFICATION */}
-              <LabeledList.Item label="Queue">
+              <LabeledList.Item label="Очередь">
                 {queue_nodes.length !== 0
                   ? Object.keys(queue_nodes).map((node_id) => (
                       <Button
                         key={node_id}
-                        tooltip={`Added by: ${queue_nodes[node_id]}`}
+                        tooltip={`Добавлено: ${queue_nodes[node_id]}`}
                       >
                         {node_cache[node_id].name}
                       </Button>
                     ))
-                  : 'Empty'}
+                  : 'Пусто'}
               </LabeledList.Item>
             </LabeledList>
           </Flex.Item>
           <Flex.Item grow />
           <Flex.Item>
             <Button fluid onClick={() => act('toggleLock')} icon="lock">
-              Lock Console
+              Забл. Консоль
             </Button>
             {d_disk && (
               <Flex.Item>
@@ -68,7 +68,7 @@ export function TechwebContent(props) {
                     setTechwebRoute({ route: 'disk', diskType: 'design' })
                   }
                 >
-                  Design Disk Inserted
+                  Вставлен Диск с Проектом
                 </Button>
               </Flex.Item>
             )}
@@ -80,7 +80,7 @@ export function TechwebContent(props) {
                     setTechwebRoute({ route: 'disk', diskType: 'tech' })
                   }
                 >
-                  Tech Disk Inserted
+                  Вставлен Технический Диск
                 </Button>
               </Flex.Item>
             )}

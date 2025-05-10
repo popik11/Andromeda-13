@@ -31,9 +31,9 @@
 //Improved microfusion
 /datum/techweb_node/improved_microfusion
 	id = TECHWEB_NODE_IMPROVED_MICROFUSION
-	display_name = "Improved Microfusion Technology"
-	description = "Improvements to part manufacturing methods allow us to manufacture \
-	additional attachments for the MCR"
+	display_name = "Улучшенная Технология Микросварки"
+	description = "Усовершенствование методов изготовления деталей позволяет нам производить \
+	дополнительное навесное оборудование для MCR"
 	prereq_ids = list(
 		TECHWEB_NODE_PARTS_ADV,
 	)
@@ -54,8 +54,8 @@
 // Bluespace microfusion
 /datum/techweb_node/bluespace_microfusion
 	id = TECHWEB_NODE_BLUESPACE_MICROFUSION
-	display_name = "Bluespace Microfusion Technology"
-	description = "Bluespace tinkering plus microfusion technology!"
+	display_name = "Технология Блюспейс Микросварки"
+	description = "Блюспейс тинкеринг плюс технология микросварки!"
 	prereq_ids = list(
 		TECHWEB_NODE_IMPROVED_MICROFUSION,
 		TECHWEB_NODE_PARTS_BLUESPACE,
@@ -74,8 +74,8 @@
 // Quantum microfusion
 /datum/techweb_node/quantum_microfusion
 	id = TECHWEB_NODE_QUANTUM_MICROFUSION
-	display_name = "Quantum Microfusion Technology"
-	description = "Bleeding edge microfusion tech, making use of the latest in materials and components, bluespace or otherwise."
+	display_name = "Технология Квантовой Микросварки"
+	description = "Кровоточащая технология микросварки, использующая новейшие материалы и компоненты, блюспейс или другие."
 	prereq_ids = list(
 		TECHWEB_NODE_BLUESPACE_MICROFUSION,
 		TECHWEB_NODE_ALIENTECH,
@@ -88,8 +88,8 @@
 // Warcrime microfusion
 /datum/techweb_node/illegal_microfusion
 	id = TECHWEB_NODE_ILLEGAL_MICROFUSION
-	display_name = "Illegal Microfusion Technology"
-	description = "Microfusion tech that has previously been banned by TerraGov. I love the smell of plasma in the mornings."
+	display_name = "Нелегальная Технология Микросварки"
+	description = "Технология микросварки, которая ранее была запрещена TerraGov. Обожаю запах плазмы по утрам."
 	prereq_ids = list(
 		TECHWEB_NODE_IMPROVED_MICROFUSION,
 		TECHWEB_NODE_SYNDICATE_BASIC,
@@ -106,8 +106,8 @@
 // Clown microfusion.
 /datum/techweb_node/clown_microfusion
 	id = TECHWEB_NODE_CLOWN_MICROFUSION
-	display_name = "Honkicron Clownery Systems Technology"
-	description = "Microfusion tech that is proprietary tech of Honkicron Clownery Systems. HONK!!"
+	display_name = "Технология Honkicron Clownery Systems"
+	description = "Технология микросварки, запатентованная компанией Honkicron Clownery Systems. ХОНК!!!"
 	prereq_ids = list(
 		TECHWEB_NODE_IMPROVED_MICROFUSION,
 	)

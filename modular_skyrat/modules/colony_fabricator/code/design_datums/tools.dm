@@ -1,7 +1,7 @@
 /datum/techweb_node/colony_fabricator_special_tools
 	id = TECHWEB_NODE_COLONY_TOOLS
-	display_name = "Colony Fabricator Tool Designs"
-	description = "Contains all of the colony fabricator's tool designs."
+	display_name = "Фабрикатор Инструментов"
+	description = "Содержит все конструкции инструментов для изготовления колоний."
 	design_ids = list(
 		"colony_power_drive",
 		"colony_prybar",

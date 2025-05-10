@@ -1,7 +1,7 @@
 /datum/techweb_node/improved_robotic_tend_wounds
 	id = TECHWEB_NODE_ROBOTIC_SURGERY
-	display_name = "Improved Robotic Repair Surgeries"
-	description = "As it turns out, you don't actually need to cut out entire support rods if it's just scratched!"
+	display_name = "Улучшенная Хирургия Синтов"
+	description = "Оказывается, не нужно вырезать все опорные стержни, если они просто поцарапаны!"
 	prereq_ids = list(TECHWEB_NODE_CONSTRUCTION)
 	design_ids = list(
 		"robotic_heal_surgery_upgrade"
@@ -10,8 +10,8 @@
 
 /datum/techweb_node/advanced_robotic_tend_wounds
 	id = TECHWEB_NODE_ROBOTIC_SURGERY_ADVANCED
-	display_name = "Advanced Robotic Surgeries"
-	description = "Did you know Hephaestus actually has a free online tutorial for synthetic trauma repairs? It's true!"
+	display_name = "Передовая Хирургия Синтов"
+	description = "Знаете ли вы, что в «Гефесте» есть бесплатное онлайн-учебное пособие по ремонту синтетических травм? Это правда!"
 	prereq_ids = list(TECHWEB_NODE_ROBOTIC_SURGERY)
 	design_ids = list(
 		"robotic_heal_surgery_upgrade_2",

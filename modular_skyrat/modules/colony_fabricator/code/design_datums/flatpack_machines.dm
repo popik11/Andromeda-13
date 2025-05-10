@@ -10,8 +10,8 @@
 
 /datum/techweb_node/colony_fabricator_flatpacks
 	id = TECHWEB_NODE_COLONY_FLATPACKS
-	display_name = "Colony Fabricator Flatpack Designs"
-	description = "Contains all of the colony fabricator's flatpack machine designs."
+	display_name = "Фабрикатор Оборудования"
+	description = "Содержит все нужное для создания колоний."
 	design_ids = list(
 		"flatpack_solar_panel",
 		"flatpack_solar_tracker",

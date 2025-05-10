@@ -12,8 +12,8 @@
 
 /datum/techweb_node/comp_advanced_interacts
 	id = TECHWEB_NODE_COMP_INTERACTION_COMPONENT
-	display_name = "Advanced Action Components"
-	description = "Grants access to more advanced action components for the drone shell."
+	display_name = "Компоненты Продвинутого Действия"
+	description = "Предоставляет доступ к более продвинутым компонентам действий для оболочки дрона."
 	prereq_ids = list(TECHWEB_NODE_PROGRAMMED_ROBOT)
 	design_ids = list(
 		"comp_mine",

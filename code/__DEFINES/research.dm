@@ -2,8 +2,8 @@
 #define DESIGN_ID_IGNORE "IGNORE_THIS_DESIGN"
 
 //! Techweb names for new point types. Can be used to define specific point values for specific types of research (science, security, engineering, etc.)
-#define TECHWEB_POINT_TYPE_GENERIC "General Research"
-#define TECHWEB_POINT_TYPE_NANITE "Nanite Research" // BUBBER EDIT ADDITION - NANITES
+#define TECHWEB_POINT_TYPE_GENERIC "Общие Исследования"
+#define TECHWEB_POINT_TYPE_NANITE "Исследование Нанитов" // BUBBER EDIT ADDITION - NANITES
 
 //!  Amount of points required to unlock nodes of corresponding tiers
 #define TECHWEB_TIER_1_POINTS 40

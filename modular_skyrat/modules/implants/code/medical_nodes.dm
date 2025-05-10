@@ -28,8 +28,8 @@
 
 /datum/techweb_node/cyber/night_vision_implants
 	id = TECHWEB_NODE_NIGHT_VISION_IMPLANTS
-	display_name = "Night vision implants"
-	description = "Now you can work all night, even if you lost your glasses!"
+	display_name = "Имплантаты Ночного Видения"
+	description = "Теперь вы можете работать всю ночь, даже если потеряли очки!"
 	prereq_ids = list(TECHWEB_NODE_NIGHT_VISION, TECHWEB_NODE_CYBER_IMPLANTS)
 	design_ids = list(
 		"ci-nv",

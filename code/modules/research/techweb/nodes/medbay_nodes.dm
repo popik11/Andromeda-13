@@ -1,8 +1,8 @@
 /datum/techweb_node/medbay_equip
 	id = TECHWEB_NODE_MEDBAY_EQUIP
 	starting_node = TRUE
-	display_name = "Medbay Equipment"
-	description = "Essential medical tools to patch you up while medbay is still intact."
+	display_name = "Оборудование для Медблока"
+	description = "Необходимые медицинские инструменты, чтобы подлатать вас, пока медблок еще цел."
 	design_ids = list(
 		"operating",
 		"medicalbed",
@@ -40,8 +40,8 @@
 
 /datum/techweb_node/chem_synthesis
 	id = TECHWEB_NODE_CHEM_SYNTHESIS
-	display_name = "Chemical Synthesis"
-	description = "Synthesizing complex chemicals from electricity and thin air... Don't ask how..."
+	display_name = "Химический Синтез"
+	description = "Синтез сложных химических веществ из электричества и воздуха... Не спрашивайте, как..."
 	prereq_ids = list(TECHWEB_NODE_MEDBAY_EQUIP)
 	design_ids = list(
 		"med_spray_bottle",
@@ -64,8 +64,8 @@
 
 /datum/techweb_node/medbay_equip_adv
 	id = TECHWEB_NODE_MEDBAY_EQUIP_ADV
-	display_name = "Advanced Medbay Equipment"
-	description = "State-of-the-art medical gear for keeping the crew in one piece — mostly."
+	display_name = "Продвинутое Оборудование медблока"
+	description = "Самое современное медицинское оборудование для поддержания экипажа в целости и сохранности - в основном."
 	prereq_ids = list(TECHWEB_NODE_CHEM_SYNTHESIS)
 	design_ids = list(
 		"smoke_machine",
@@ -84,8 +84,8 @@
 
 /datum/techweb_node/cryostasis
 	id = TECHWEB_NODE_CRYOSTASIS
-	display_name = "Cryostasis"
-	description = "The result of clown accidentally drinking a chemical, now repurposed for safely preserving crew members in suspended animation."
+	display_name = "Криостазис"
+	description = "Результат того, что клоун случайно выпил химикат, который теперь используется для безопасного сохранения членов экипажа в подвешенном состоянии."
 	prereq_ids = list(TECHWEB_NODE_MEDBAY_EQUIP_ADV, TECHWEB_NODE_FUSION)
 	design_ids = list(
 		"cryotube",

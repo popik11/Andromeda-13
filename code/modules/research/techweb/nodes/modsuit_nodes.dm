@@ -1,8 +1,8 @@
 /datum/techweb_node/mod_suit
 	id = TECHWEB_NODE_MOD_SUIT
 	starting_node = TRUE
-	display_name = "Modular Suit"
-	description = "Specialized back mounted power suits with various different modules."
+	display_name = "МОДульные Костюмы"
+	description = "Специализированные силовые костюмы с различными модулями на задней панели."
 	prereq_ids = list(TECHWEB_NODE_ROBOTICS)
 	design_ids = list(
 		"suit_storage_unit",
@@ -21,8 +21,8 @@
 
 /datum/techweb_node/mod_equip
 	id = TECHWEB_NODE_MOD_EQUIP
-	display_name = "Modular Suit Equipment"
-	description = "More advanced modules, to improve modular suits."
+	display_name = "МОДульное Оборудование Костюмов"
+	description = "Более продвинутые модули для улучшения модульных костюмов."
 	prereq_ids = list(TECHWEB_NODE_MOD_SUIT)
 	design_ids = list(
 		"modlink_scryer",
@@ -41,8 +41,8 @@
 
 /datum/techweb_node/mod_entertainment
 	id = TECHWEB_NODE_MOD_ENTERTAINMENT
-	display_name = "Entertainment Modular Suit"
-	description = "Powered suits for protection against low-humor environments."
+	display_name = "Развлекательные МОДульные Костюмы"
+	description = "Костюмы для защиты от низкотемпературных сред."
 	prereq_ids = list(TECHWEB_NODE_MOD_SUIT)
 	design_ids = list(
 		"mod_plating_cosmohonk",
@@ -55,8 +55,8 @@
 
 /datum/techweb_node/mod_medical
 	id = TECHWEB_NODE_MOD_MEDICAL
-	display_name = "Medical Modular Suit"
-	description = "Medical MODsuits for quick rescue purposes."
+	display_name = "Медицинскые МОДульные Костюмы"
+	description = "Медицинские костюмы для быстрого спасения."
 	prereq_ids = list(TECHWEB_NODE_MOD_SUIT, TECHWEB_NODE_CHEM_SYNTHESIS)
 	design_ids = list(
 		"mod_plating_medical",
@@ -70,8 +70,8 @@
 
 /datum/techweb_node/mod_engi
 	id = TECHWEB_NODE_MOD_ENGI
-	display_name = "Engineering Modular Suits"
-	description = "Engineering suits, for powered engineers."
+	display_name = "Инженерные МОДульные Костюмы"
+	description = "Инженерные костюмы для инженеров."
 	prereq_ids = list(TECHWEB_NODE_MOD_EQUIP)
 	design_ids = list(
 		"mod_plating_engineering",
@@ -85,8 +85,8 @@
 
 /datum/techweb_node/mod_security
 	id = TECHWEB_NODE_MOD_SECURITY
-	display_name = "Security Modular Suits"
-	description = "Security suits for space crime handling."
+	display_name = "Охранные МОДульные Костюмы"
+	description = "Защитные костюмы для борьбы с космическими преступлениями."
 	prereq_ids = list(TECHWEB_NODE_MOD_EQUIP)
 	design_ids = list(
 		"mod_mirage_grenade",
@@ -104,8 +104,8 @@
 
 /datum/techweb_node/mod_medical_adv
 	id = TECHWEB_NODE_MOD_MEDICAL_ADV
-	display_name = "Field Surgery Modules"
-	description = "Medical MODsuit equipment designed for conducting surgical operations in field conditions."
+	display_name = "МОДули Полевой Хирургии"
+	description = "Медицинское оборудование, предназначенное для проведения хирургических операций в полевых условиях."
 	prereq_ids = list(TECHWEB_NODE_MOD_MEDICAL, TECHWEB_NODE_SURGERY_ADV)
 	design_ids = list(
 		"mod_defib",
@@ -118,8 +118,8 @@
 
 /datum/techweb_node/mod_engi_adv
 	id = TECHWEB_NODE_MOD_ENGI_ADV
-	display_name = "Advanced Engineering Modular Suit"
-	description = "Advanced Engineering suits, for advanced powered engineers."
+	display_name = "Продвинутые Инженерные МОДульные Костюмы"
+	description = "Продвинутые инженерные костюмы, для продвинутых инженеров."
 	prereq_ids = list(TECHWEB_NODE_MOD_ENGI)
 	design_ids = list(
 		"mod_plating_atmospheric",
@@ -138,8 +138,8 @@
 
 /datum/techweb_node/mod_anomaly
 	id = TECHWEB_NODE_MOD_ANOMALY
-	display_name = "Anomalock Modular Suit"
-	description = "Modules for MODsuits that require anomaly cores to function."
+	display_name = "Модульные Костюмы Аномалок"
+	description = "Костюмы, которым для работы требуются ядра аномалий."
 	prereq_ids = list(TECHWEB_NODE_MOD_ENGI_ADV, TECHWEB_NODE_ANOMALY_RESEARCH)
 	design_ids = list(
 		"mod_antigrav",

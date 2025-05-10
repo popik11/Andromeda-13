@@ -1,7 +1,7 @@
 /datum/techweb_node/nanite_base
 	id = "nanite_base"
-	display_name = "Basic Nanite Programming"
-	description = "The basics of nanite construction and programming. Nanites will passively generate science points based on how many are hosting them."
+	display_name = "Базовое Программирование Нанитов"
+	description = "Основы создания и программирования нанитов. Наниты будут пассивно генерировать очки науки в зависимости от их количества."
 	prereq_ids = list(TECHWEB_NODE_BCI)
 	design_ids = list(
 		// "access_nanites",
@@ -27,8 +27,8 @@
 
 /datum/techweb_node/nanite_smart
 	id = "nanite_smart"
-	display_name = "Smart Nanite Programming"
-	description = "Nanite programs that require nanites to perform complex actions, act independently, roam or seek targets."
+	display_name = "Программирование Умных Нанитов"
+	description = "Программы, требующие от нанитов выполнения сложных действий, самостоятельной работы, перемещения или поиска целей."
 	prereq_ids = list("nanite_base", TECHWEB_NODE_PROGRAMMING)
 	design_ids = list(
 		"memleak_nanites",
@@ -42,8 +42,8 @@
 
 /datum/techweb_node/nanite_mesh
 	id = "nanite_mesh"
-	display_name = "Mesh Nanite Programming"
-	description = "Nanite programs that require static structures and membranes."
+	display_name = "Программирование Сетчатых Нанитов"
+	description = "Нанитовые программы, требующие статических структур и мембран."
 	prereq_ids = list("nanite_base", TECHWEB_NODE_MOD_ENGI_ADV)
 	design_ids = list(
 		"conductive_nanites",
@@ -59,8 +59,8 @@
 
 /datum/techweb_node/nanite_bio
 	id = "nanite_bio"
-	display_name = "Biological Nanite Programming"
-	description = "Nanite programs that require complex biological interaction."
+	display_name = "Программирование Биологических Ннанитов"
+	description = "Программы нанитов, требующие сложного биологического взаимодействия."
 	prereq_ids = list("nanite_base", TECHWEB_NODE_MOD_MEDICAL_ADV)
 	design_ids = list(
 		"bloodheal_nanites",
@@ -77,8 +77,8 @@
 
 /datum/techweb_node/nanite_neural
 	id = "nanite_neural"
-	display_name = "Neural Nanite Programming"
-	description = "Nanite programs affecting nerves and brain matter."
+	display_name = "Программирование Нейронных Нанитов"
+	description = "Нанитовые программы, воздействующие на нервы и мозговое вещество."
 	prereq_ids = list("nanite_bio")
 	design_ids = list(
 		"bad_mood_nanites",
@@ -93,8 +93,8 @@
 
 /datum/techweb_node/nanite_synaptic
 	id = "nanite_synaptic"
-	display_name = "Synaptic Nanite Programming"
-	description = "Nanite programs affecting mind and thoughts."
+	display_name = "Программирование Синаптических Нанитов"
+	description = "Нанитовые программы, влияющие на разум и мысли."
 	prereq_ids = list("nanite_neural", TECHWEB_NODE_SURGERY_EXP)
 	design_ids = list(
 		"blinding_nanites",
@@ -109,8 +109,8 @@
 
 /datum/techweb_node/nanite_harmonic
 	id = "nanite_harmonic"
-	display_name = "Harmonic Nanite Programming"
-	description = "Nanite programs that require seamless integration between nanites and biology. Passively increases nanite regeneration rate for all clouds upon researching."
+	display_name = "Программирование Гармоничных Нанитов"
+	description = "Программы для нанитов, требующие бесшовной интеграции нанитов и биологии. Пассивно увеличивает скорость регенерации нанитов для всех облаков при исследовании."
 	prereq_ids = list("nanite_bio","nanite_smart","nanite_mesh")
 	design_ids = list(
 		"regenerative_nanites",
@@ -125,8 +125,8 @@
 
 /datum/techweb_node/nanite_combat
 	id = "nanite_military"
-	display_name = "Military Nanite Programming"
-	description = "Nanite programs that perform military-grade functions."
+	display_name = "Программирование Военных Нанитов"
+	description = "Нанитовые программы, выполняющие функции военного класса."
 	prereq_ids = list("nanite_harmonic", TECHWEB_NODE_SYNDICATE_BASIC)
 	design_ids = list(
 		// "explosive_nanites",
@@ -139,8 +139,8 @@
 
 /datum/techweb_node/nanite_hazard
 	id = "nanite_hazard"
-	display_name = "Hazard Nanite Programs"
-	description = "Extremely advanced Nanite programs with the potential of being extremely dangerous."
+	display_name = "Программирование Опасных Нанитов"
+	description = "Чрезвычайно продвинутые программы нанитов, способные стать чрезвычайно опасными."
 	prereq_ids = list("nanite_harmonic", TECHWEB_NODE_ALIENTECH)
 	design_ids = list(
 		"mindcontrol_nanites",
@@ -151,8 +151,8 @@
 
 /datum/techweb_node/nanite_replication_protocols
 	id = "nanite_replication_protocols"
-	display_name = "Nanite Replication Protocols"
-	description = "Protocols that overwrite the default nanite replication routine to achieve more efficiency in certain circumstances."
+	display_name = "Протоколы Репликации Нанитов"
+	description = "Протоколы, которые переписывают стандартную процедуру репликации нанитов для достижения большей эффективности в определенных обстоятельствах."
 	prereq_ids = list("nanite_smart")
 	design_ids = list(
 		"factory_nanites",
@@ -166,8 +166,8 @@
 
 /datum/techweb_node/nanite_storage_protocols
 	id = "nanite_storage_protocols"
-	display_name = "Nanite Storage Protocols"
-	description = "Protocols that overwrite the default nanite storage routine to achieve more efficiency or greater capacity."
+	display_name = "Протоколы Хранения Нанитов"
+	description = "Протоколы, которые переписывают стандартную процедуру хранения нанитов для достижения большей эффективности или большей емкости."
 	prereq_ids = list("nanite_smart")
 	design_ids = list(
 		"free_range_nanites",

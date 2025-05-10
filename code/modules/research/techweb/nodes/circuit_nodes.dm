@@ -1,8 +1,8 @@
 /datum/techweb_node/programming
 	id = TECHWEB_NODE_PROGRAMMING
 	starting_node = TRUE
-	display_name = "Programming"
-	description = "Dedicate an entire shift to program a fridge to greet you when opened."
+	display_name = "Программирование"
+	description = "Выделите целую смену, чтобы запрограммировать холодильник так, чтобы он приветствовал вас при открытии."
 	prereq_ids = list(TECHWEB_NODE_ROBOTICS)
 	design_ids = list(
 		"component_printer",
@@ -94,8 +94,8 @@
 
 /datum/techweb_node/circuit_shells
 	id = TECHWEB_NODE_CIRCUIT_SHELLS
-	display_name = "Advanced Circuit Shells"
-	description = "Adding brains to more things."
+	display_name = "Продвинутые Оболочки Цепей"
+	description = "Добавьте мозги к большему количеству вещей."
 	prereq_ids = list(TECHWEB_NODE_PROGRAMMING)
 	design_ids = list(
 		"assembly_shell",
@@ -117,8 +117,8 @@
 
 /datum/techweb_node/bci
 	id = TECHWEB_NODE_BCI
-	display_name = "Brain-Computer Interface"
-	description = "Embedded brain circuits. May occasionally stream Nanotrasen ads in dreams."
+	display_name = "Интерфейс Мозг-Компьютер"
+	description = "Встроенные схемы мозга. Может периодически транслировать рекламу Нанотрасена в сновидениях."
 	prereq_ids = list(TECHWEB_NODE_CIRCUIT_SHELLS, TECHWEB_NODE_PASSIVE_IMPLANTS)
 	design_ids = list(
 		"bci_implanter",
@@ -138,8 +138,8 @@
 
 /datum/techweb_node/programmed_robot
 	id = TECHWEB_NODE_PROGRAMMED_ROBOT
-	display_name = "Programmed Robot"
-	description = "Grants access to movable shells, allowing for remote operations and pranks."
+	display_name = "Программируемый Робот"
+	description = "Предоставляет доступ к подвижным оболочкам, что позволяет проводить удаленные операции и устраивать розыгрыши."
 	prereq_ids = list(TECHWEB_NODE_CIRCUIT_SHELLS)
 	design_ids = list(
 		"drone_shell",
@@ -150,8 +150,8 @@
 
 /datum/techweb_node/programmed_server
 	id = TECHWEB_NODE_PROGRAMMED_SERVER
-	display_name = "Programmed Server"
-	description = "Grants access to a server shell that has a very high capacity for components."
+	display_name = "Программируемый Сервер"
+	description = "Предоставляет доступ к оболочке сервера, которая имеет очень высокую емкость для компонентов."
 	prereq_ids = list(TECHWEB_NODE_BCI)
 	design_ids = list(
 		"server_shell",

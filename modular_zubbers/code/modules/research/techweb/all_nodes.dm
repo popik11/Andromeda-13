@@ -2,8 +2,8 @@
 
 /datum/techweb_node/cyber/empathy_implant
 	id = TECHWEB_NODE_EMPATHY_IMPLANT
-	display_name = "Empathic Sensor Implant"
-	description = "The result of assuredly-ethical experiments conducted on those with special minds."
+	display_name = "Эмпатический Сенсорный Имплантат"
+	description = "Результат безусловно этичных экспериментов, проводимых на людях с особым умом."
 	prereq_ids = list(TECHWEB_NODE_CYBER_IMPLANTS)
 	design_ids = list(
 		"ci_empathic_sensor",
@@ -14,8 +14,8 @@
 
 /datum/techweb_node/botanygene
 	id = TECHWEB_NODE_BOTANY_ADV
-	display_name = "Experimental Botanical Engineering"
-	description = "Further advancement in plant cultivation techniques and machinery, enabling careful manipulation of plant DNA."
+	display_name = "Экспериментальная Ботаническая Инженерия"
+	description = "Дальнейшее совершенствование технологий и оборудования для культивирования растений, позволяющее проводить тщательные манипуляции с ДНК растений."
 	prereq_ids = list(TECHWEB_NODE_PARTS_ADV, TECHWEB_NODE_SELECTION)
 	design_ids = list(
 		"diskplantgene",
@@ -148,8 +148,8 @@
 
 /datum/techweb_node/nerd
 	id = TECHWEB_NODE_NERD
-	display_name = "Theoretical Physics"
-	description = "They asked me how well I understood theoretical physics. I said I had a theoretical degree in physics."
+	display_name = "Теоретическая Физика"
+	description = "Они спросили меня, насколько хорошо я разбираюсь в теоретической физике. Я ответил, что у меня теоретическая степень по физике."
 	prereq_ids = list(
 		TECHWEB_NODE_ROBOTICS, //Suit AI
 		TECHWEB_NODE_CHEM_SYNTHESIS, //Wound analyzer (and morphine production).
@@ -165,8 +165,8 @@
 
 /datum/techweb_node/advanced_nerd
 	id = TECHWEB_NODE_NERD_ADV
-	display_name = "Advanced Theoretical Physics"
-	description = "Scientists aren't supposed to have guns."
+	display_name = "Продвинутая Пеоретическая Физика"
+	description = "Ученым не положено иметь оружие."
 	prereq_ids = list(
 		TECHWEB_NODE_ALIENTECH, //Memes.
 		TECHWEB_NODE_ANOMALY_SHELLS, //Physgun

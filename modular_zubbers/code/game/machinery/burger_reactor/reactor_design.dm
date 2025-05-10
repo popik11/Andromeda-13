@@ -33,8 +33,8 @@
 
 /datum/techweb_node/rbmk2
 	id = TECHWEB_NODE_RMBK
-	display_name = "RB-MK2"
-	description = "The latest in non-dangerous Nanotrasen power generation!"
+	display_name = "РБ-МК2"
+	description = "Новейшая неопасная технология получения энергии от Нанотрейзен!"
 	prereq_ids = list(TECHWEB_NODE_ENERGY_MANIPULATION)
 	design_ids = list(
 		"rbmk2_reactor",

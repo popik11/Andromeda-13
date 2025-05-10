@@ -12,8 +12,8 @@
 
 /datum/techweb_node/tarkon
 	id = "tarkontech"
-	display_name = "Tarkon Industries Technology"
-	description = "Tools used by Tarkon Industries."
+	display_name = "Технология Таркон Индастриз"
+	description = "Инструменты, используемые компанией Tarkon Industries."
 	required_items_to_unlock = list(
 		/obj/item/mod/construction/plating/tarkon,
 		/obj/item/construction/rcd/arcd/tarkon,
@@ -34,8 +34,8 @@
 
 /datum/techweb_node/tarkonturret //Yes. Tarkon does not start with this unlocked.
 	id = "tarkondefence"
-	display_name = "Tarkon Industries Technology"
-	description = "Tarkon Industries Blackrust Salvage division's defense designs."
+	display_name = "Технология Таркон Индастриз"
+	description = "Оборонительные конструкции подразделения Tarkon Industries Blackrust Salvage."
 	prereq_ids = list(TECHWEB_NODE_TARKON, TECHWEB_NODE_BASIC_ARMS, TECHWEB_NODE_AI)
 	design_ids = list(
 		"hoplite_assembly",

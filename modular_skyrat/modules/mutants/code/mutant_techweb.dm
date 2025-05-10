@@ -10,8 +10,8 @@
 
 /datum/techweb_node/mutanttech
 	id = TECHWEB_NODE_MUTANT_TECH
-	display_name = "Advanced Nanotrasen Viral Bioweapons Technology"
-	description = "Research devices from the Nanotrasen viral bioweapons division! Got a virus problem? This'll save your day."
+	display_name = "Передовая технология вирусного биооружия Нанотрейзен"
+	description = "Исследуйте устройства из подразделения вирусного биооружия Нанотрейзен! У вас проблемы с вирусами? Это спасет ваш день."
 	prereq_ids = list("exp_tools", "cytology")
 	design_ids = list("rna_vial", "rna_extractor", "rna_recombinator")
 	research_costs = list(TECHWEB_NODE_SURGERY_TOOLS, TECHWEB_NODE_CYTOLOGY)

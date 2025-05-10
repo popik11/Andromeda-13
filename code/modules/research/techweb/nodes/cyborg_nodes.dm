@@ -1,8 +1,8 @@
 /datum/techweb_node/augmentation
 	id = TECHWEB_NODE_AUGMENTATION
 	starting_node = TRUE
-	display_name = "Augmentation"
-	description = "For those who prefer shiny metal over squishy flesh."
+	display_name = "Аугментация"
+	description = "Для тех, кто предпочитает блестящий металл хлюпающей плоти."
 	prereq_ids = list(TECHWEB_NODE_ROBOTICS)
 	design_ids = list(
 		"borg_chest",
@@ -26,8 +26,8 @@
 
 /datum/techweb_node/cybernetics
 	id = TECHWEB_NODE_CYBERNETICS
-	display_name = "Cybernetics"
-	description = "Sapient robots with preloaded tool modules and programmable laws."
+	display_name = "Кибернетика"
+	description = "Роботы Sapient с предустановленными инструментальными модулями и программируемыми законами."
 	prereq_ids = list(TECHWEB_NODE_AUGMENTATION)
 	design_ids = list(
 		"robocontrol",
@@ -48,8 +48,8 @@
 
 /datum/techweb_node/borg_service
 	id = TECHWEB_NODE_BORG_SERVICES
-	display_name = "Service Cyborg Upgrades"
-	description = "Let them do the cookin' by the book."
+	display_name = "Обновление Сервесных Киборгов"
+	description = "Пусть они готовят по правилам."
 	prereq_ids = list(TECHWEB_NODE_CYBERNETICS)
 	design_ids = list(
 		"borg_upgrade_rolling_table",
@@ -65,8 +65,8 @@
 
 /datum/techweb_node/borg_mining
 	id = TECHWEB_NODE_BORG_MINING
-	display_name = "Mining Cyborg Upgrades"
-	description = "To mine places too dangerous for humans."
+	display_name = "Обновление Шахтерских Киборгов"
+	description = "Для добычи полезных ископаемых в местах, слишком опасных для человека."
 	prereq_ids = list(TECHWEB_NODE_CYBERNETICS)
 	design_ids = list(
 		"borg_upgrade_lavaproof",
@@ -78,8 +78,8 @@
 
 /datum/techweb_node/borg_medical
 	id = TECHWEB_NODE_BORG_MEDICAL
-	display_name = "Medical Cyborg Upgrades"
-	description = "Let them follow Asimov's First Law."
+	display_name = "Обновление Медицинский Киборгов"
+	description = "Пусть они следуют первому закону Азимова."
 	prereq_ids = list(TECHWEB_NODE_BORG_SERVICES, TECHWEB_NODE_SURGERY_ADV)
 	design_ids = list(
 		"borg_upgrade_pinpointer",
@@ -95,8 +95,8 @@
 
 /datum/techweb_node/borg_utility
 	id = TECHWEB_NODE_BORG_UTILITY
-	display_name = "Utility Cyborg Upgrades"
-	description = "Let them wipe our floors for us."
+	display_name = "Обновление Хозяйственных Киборгов"
+	description = "Пусть они вытирают за нас полы."
 	prereq_ids = list(TECHWEB_NODE_BORG_SERVICES, TECHWEB_NODE_SANITATION)
 	design_ids = list(
 		"borg_upgrade_advancedmop",
@@ -119,8 +119,8 @@
 
 /datum/techweb_node/borg_engi
 	id = TECHWEB_NODE_BORG_ENGI
-	display_name = "Engineering Cyborg Upgrades"
-	description = "To slack even more."
+	display_name = "Обновление Инженерных Киборгов"
+	description = "Чтобы еще больше расслабиться."
 	prereq_ids = list(TECHWEB_NODE_BORG_MINING, TECHWEB_NODE_PARTS_UPG)
 	design_ids = list(
 		"borg_upgrade_rped",
@@ -134,8 +134,8 @@
 // Implants root node
 /datum/techweb_node/passive_implants
 	id = TECHWEB_NODE_PASSIVE_IMPLANTS
-	display_name = "Passive Implants"
-	description = "Implants designed to operate seamlessly without active user input, enhancing various physiological functions or providing continuous benefits."
+	display_name = "Пассивные Имплантаты"
+	description = "Имплантаты, разработанные для бесперебойной работы без активного участия пользователя, улучшающие различные физиологические функции или обеспечивающие постоянную пользу."
 	prereq_ids = list(TECHWEB_NODE_AUGMENTATION)
 	design_ids = list(
 		"skill_station",
@@ -154,8 +154,8 @@
 
 /datum/techweb_node/cyber/cyber_implants
 	id = TECHWEB_NODE_CYBER_IMPLANTS
-	display_name = "Cybernetic Implants"
-	description = "Advanced technological enhancements integrated into the body, offering improved physical capabilities."
+	display_name = "Кибернетические Имплантаты"
+	description = "Продвинутые технологические усовершенствования, интегрированные в тело, обеспечивают улучшение физических возможностей."
 	prereq_ids = list(TECHWEB_NODE_PASSIVE_IMPLANTS, TECHWEB_NODE_CYBERNETICS)
 	design_ids = list(
 		"ci-breather",
@@ -174,8 +174,8 @@
 
 /datum/techweb_node/cyber/combat_implants
 	id = TECHWEB_NODE_COMBAT_IMPLANTS
-	display_name = "Combat Implants"
-	description = "To make sure that you can wake the f*** up, samurai."
+	display_name = "Боевые Имплантаты"
+	description = "Проснись уже блять, самурай, время сжечь эту станцию."
 	prereq_ids = list(TECHWEB_NODE_CYBER_IMPLANTS)
 	design_ids = list(
 		"ci-reviver",
@@ -187,8 +187,8 @@
 
 /datum/techweb_node/cyber/integrated_toolsets
 	id = TECHWEB_NODE_INTERGRATED_TOOLSETS
-	display_name = "Integrated Toolsets"
-	description = "Decades of contraband smuggling by assistants have led to the development of a full toolbox that fits seamlessly into your arm."
+	display_name = "Интегрированный Инструментарий"
+	description = "Десятилетия контрабанды ассистентами привели к созданию полноценного ящика для инструментов, который легко помещается в руке."
 	prereq_ids = list(TECHWEB_NODE_COMBAT_IMPLANTS, TECHWEB_NODE_EXP_TOOLS)
 	design_ids = list(
 		"ci-nutrimentplus",
@@ -200,8 +200,8 @@
 
 /datum/techweb_node/cyber/cyber_organs
 	id = TECHWEB_NODE_CYBER_ORGANS
-	display_name = "Cybernetic Organs"
-	description = "We have the technology to rebuild him."
+	display_name = "Кибернетические Органы"
+	description = "У нас есть технология, чтобы восстановить его."
 	prereq_ids = list(TECHWEB_NODE_CYBERNETICS)
 	design_ids = list(
 		"cybernetic_eyes_improved",
@@ -217,8 +217,8 @@
 
 /datum/techweb_node/cyber/cyber_organs_upgraded
 	id = TECHWEB_NODE_CYBER_ORGANS_UPGRADED
-	display_name = "Upgraded Cybernetic Organs"
-	description = "We have the technology to upgrade him."
+	display_name = "Модернизированные Кибернетические Органы"
+	description = "У нас есть технология для его модернизации."
 	prereq_ids = list(TECHWEB_NODE_CYBER_ORGANS)
 	design_ids = list(
 		"ci-gloweyes",
@@ -237,8 +237,8 @@
 
 /datum/techweb_node/cyber/cyber_organs_adv
 	id = TECHWEB_NODE_CYBER_ORGANS_ADV
-	display_name = "Advanced Cybernetic Organs"
-	description = "Cutting-edge cybernetic organs offering enhanced sensory capabilities, making it easier than ever to detect ERP."
+	display_name = "Продвинутые Кибернетические Органы"
+	description = "Самые современные кибернетические органы с расширенными сенсорными возможностями позволяют обнаруживать ERP как никогда легко."
 	prereq_ids = list(TECHWEB_NODE_CYBER_ORGANS_UPGRADED, TECHWEB_NODE_NIGHT_VISION)
 	design_ids = list(
 		"cybernetic_ears_xray",
