@@ -171,9 +171,7 @@ const VoteOptions = (props) => {
                             : null
                         }
                         content={
-                          option.config === VoteConfig.Enabled
-                            ? 'Вкл'
-                            : 'Выкл'
+                          option.config === VoteConfig.Enabled ? 'Вкл' : 'Выкл'
                         }
                         onClick={() =>
                           act('toggleVote', {
@@ -455,7 +453,7 @@ const ChoicesPanel = (props) => {
           </LabeledList>
         ) : null}
         {/* SPLURT EDIT ADDITION - End */}
-        {currentVote ? null : <NoticeBox>No vote active!</NoticeBox>}
+        {currentVote ? null : <NoticeBox>Нет активных голосований!</NoticeBox>}
       </Section>
     </Stack.Item>
   );
