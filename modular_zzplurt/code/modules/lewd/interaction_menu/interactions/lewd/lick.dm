@@ -1,14 +1,18 @@
 // Действия языком
 
-/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, среднее дополнение ЕРП контента.
 /datum/interaction/lewd/rimjob
-	name = "Полизать Зад (Римминг)"
-	description = "Полижи чей-нибудь зад, не будь пуськой."
+	name = "Полизать зад (Римминг)"
+	description = "Полижи чей-нибудь зад, не будь пуськой. (Это заводит, Немного приятно)"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_ANUS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_BOTH)
 	message = list(
 		"Лижет задницу %TARGET%.",
+		"С пристрастием вылизывает попку %TARGET%.",
+		"Грамотно и надежно полизывает анальчик %TARGET%.",
+		"Проходится своим языком по попке %TARGET%.",
+		"Полизывает попеньку %TARGET% словно это леденец.",
 		"Глубоко погружает язык в попку %TARGET%.",
 		"Зарывается языком в попку %TARGET%.",
 		"Прижимает язык к попке %TARGET%.",
@@ -25,11 +29,15 @@
 	target_arousal = 6
 
 /datum/interaction/lewd/lickfeet
-	name = "Полизать Ножку"
-	description = "Полижи чью-нибудь ножку, ты же не пуська."
+	name = "Полизать ножку"
+	description = "Полижи чью-нибудь ножку, ты же не пуська. (Это только заводит)"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH, INTERACTION_REQUIRE_TARGET_FEET)
 	message = list(
 		"Лижет босые ноги %TARGET%.",
+		"Вылизывает ножки %TARGET%.",
+		"Страстно облизывает ножки %TARGET%.",
+		"Чувственно проходится языком по ножке %TARGET%.",
+		"Аккуратно и дразняще лижет ножку %TARGET%.",
 		"Проводит языком по подошвам %TARGET%.",
 		"Лижет пальцы ног %TARGET%.",
 		"Пробует на вкус босые ноги %TARGET%."
@@ -59,13 +67,16 @@
 	message = original_messages
 
 /datum/interaction/lewd/lick_nuts
-	name = "Лизать Яйца"
-	description = "Полижи чьи-нибудь Яйца, будь смелее."
+	name = "Лизать яйца"
+	description = "Полижи чьи-нибудь Яйца, будь смелее. (Это заводит, Немного приятно)"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_MOUTH)
 	target_required_parts = list(ORGAN_SLOT_TESTICLES = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	message = list(
 		"Лижет яйца %TARGET%.",
+		"Посасывает яички %TARGET% в процессе вылизывания.",
+		"Брежно проходится язычком по яйцам %TARGET%.",
+		"Агрессивно сосет и вылизывает яички %TARGET%.",
 		"Сосет яички %TARGET%.",
 		"Лижет язычком яйца %TARGET%.",
 		"Приклонно лижет яйца %TARGET% своим языком."

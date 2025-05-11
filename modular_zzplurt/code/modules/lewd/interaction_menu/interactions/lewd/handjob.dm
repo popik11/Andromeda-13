@@ -1,38 +1,49 @@
-// Действия руками
+// Действия с членом при помощи ручек
 
-/// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
+/// ADD ANDROMEDA-13 (@ms_kira): Перевод, масштабное дополнение ЕРП контента.
 /datum/interaction/lewd/handjob
 	name = "Подрочить член (ХэндДжоб)"
-	description = "Поработай ручками с кем-нибудь."
+	description = "Поработай ручками с кем-нибудь. (Это заводит, Немного приятно)"
 	interaction_requires = list(INTERACTION_REQUIRE_SELF_HAND)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_target = list(CLIMAX_POSITION_TARGET = null)
 	additional_details = list(INTERACTION_FILLS_CONTAINERS)
 	message = list(
-		"Вздрачивает член %TARGET%",
-		"Работае со стволом %TARGET% своими руками",
-		"Жестко вздрачивает %TARGET% за член"
+		"Вздрачивает член %TARGET%.",
+		"Грубо подрачивает пенис %TARGET%.",
+		"Неаккуратно продрачивает член %TARGET%.",
+		"Ласково играется с пенисом %TARGET%.",
+		"Брутально надрачивает член %TARGET%.",
+		"Резкими движениями дрочит член %TARGET%.",
+		"Работает со стволом %TARGET% своими руками.",
+		"Жестко вздрачивает %TARGET% за член."
 	)
 	cum_message_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"Кончает на руки %USER%!",
-			"Выплескивает свои соки на руки %USER%!",
-			"Покрывает семенем пальцы %USER%!"
+			"Кончает на руки %USER%.",
+			"Судорожно кончает в ладошки %USER%.",
+			"Сжав ягодицы и ноги, кончает на ручки %USER%.",
+			"Выплескивает свое семя на руки %USER%.",
+			"Покрывает семенем пальцы %USER%."
 		)
 	)
 	cum_self_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"Вы кончаете на руки %USER%!",
-			"Вы стреляете на ладошки %USER%!",
-			"Вы покрываете семенем пальчики %USER%!"
+			"Вы кончаете на руки %USER%.",
+			"Вы судорожно кончаете в ладошки %USER%.",
+			"Вы сжимаете ягодицы и поджимаете ноги, кончая на ручки %USER%.",
+			"Вы стреляете на ладошки %USER%.",
+			"Вы покрываете семенем пальчики %USER%."
 		)
 	)
 	cum_partner_text_overrides = list(
 		CLIMAX_POSITION_TARGET = list(
-			"%TARGET% Кончает на ваши руки!",
-			"%TARGET% Стреляет на ваши ладошки!",
-			"%TARGET% Покрывает семенем ваши пальчики!"
+			"%TARGET% Кончает на ваши руки.",
+			"%TARGET% Судорожно кончает в ваши ладошки.",
+			"%TARGET% Сжавшись стреляет горячим семенем на ваши ручки.",
+			"%TARGET% Стреляет на ваши ладошки.",
+			"%TARGET% Покрывает семенем ваши пальчики."
 		)
 	)
 	sound_possible = list(
