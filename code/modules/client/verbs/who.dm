@@ -70,7 +70,7 @@
 	to_chat(src, fieldset_block(span_bold("Нынешние игроки"), span_infoplain(msg), "boxed_message"), type = MESSAGE_TYPE_INFO)
 
 /client/verb/adminwho()
-	set category = "Admin"
+	set category = "Админ"
 	set name = "Онлайн администрации"
 
 	var/list/lines = list()

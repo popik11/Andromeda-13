@@ -68,7 +68,7 @@
 	embed.colour = "#[CONFIG_GET(string/roundend_embed_color)]"
 
 	// Author
-	embed.author = new("Новости Белых Лун")
+	embed.author = new("Новости Андромеда-13")
 	embed.author.url = embed.url
 
 	// Title

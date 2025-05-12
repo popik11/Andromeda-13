@@ -13,7 +13,7 @@
 	name = "HALT!"
 
 /obj/item/clothing/mask/gas/syndicate/cool_version/verb/maskhalt()
-	set category = "Object"
+	set category = "Объект"
 	set name = "HALT!"
 	set src in usr
 	if(!isliving(usr))

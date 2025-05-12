@@ -170,8 +170,8 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 //Checks admin notice
 /client/verb/admin_notice()
 	set name = "Adminnotice"
-	set category = "Admin"
-	set desc ="Check the admin notice if it has been set"
+	set category = "Админ"
+	set desc ="Проверьте уведомление администратора, если оно было установлено."
 
 	if(GLOB.admin_notice)
 		to_chat(src, "[span_boldnotice("Admin Notice:")]\n \t [GLOB.admin_notice]")
@@ -444,9 +444,9 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 		if(p)
 			policytext += p
 			policytext += "<hr>"
-			anything = TRUE
+			anything = FALSE
 	if(!anything)
-		policytext += "Правил не найдено."
+		policytext += "Правила расписаны на Дискорд сервере."
 
 	var/datum/browser/browser = new(usr, "policy", "ПРАВИЛА СЕРВЕРА", 600, 500)
 	browser.set_content(policytext.Join(""))
@@ -468,7 +468,7 @@ ADMIN_VERB(reset_ooc_color, R_FUN, "Reset Player OOC Color", "Returns player OOC
 	prefs.savefile.export_json_to_client(usr, ckey)
 
 /client/verb/map_vote_tally_count()
-	set name = "База очков у Карт"
+	set name = "Очки приоритета Карты"
 	set desc = "Просмотрите текущий подсчет голосов на карте."
-	set category = "Server"
+	set category = "Сервер"
 	to_chat(mob, SSmap_vote.tally_printout)

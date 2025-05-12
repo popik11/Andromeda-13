@@ -94,7 +94,7 @@
 
 /obj/item/clothing/suit/storage/fluff/fedcoat/verb/toggle()
 	set name = "Toggle coat buttons"
-	set category = "Object"
+	set category = "Объект"
 	set src in usr
 
 	var/mob/living/L = usr

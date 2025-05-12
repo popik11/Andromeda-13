@@ -273,7 +273,7 @@ IPINTEL_REJECT_BAD
 
 ###---ДИСКОРД---
 ## Discord bot command prefix, if the discord bot is used
-# DISCORDBOTCOMMANDPREFIX ?
+#DISCORDBOTCOMMANDPREFIX ?
 
 
 ## Round specific stats address
@@ -521,20 +521,35 @@ MINUTE_CLICK_LIMIT 400
 ## i.e. CHANNEL_ANNOUNCE_NEW_GAME chat_channel_tag_1
 ## i.e. CHANNEL_ANNOUNCE_NEW_GAME chat_channel_tag_2
 
+## Различные сообщения для отправки в подключенные каналы чата.
+## Снятие комментария включит их, по умолчанию они будут транслироваться в игровые каналы чата на TGS3 или неадминские каналы на TGS>=4.
+## Если используется TGS>=4, параметр string может быть задан как один из нескольких тегов чат-каналов (разделенных ','), чтобы ограничить сообщение каналами с именем этого тега (с учетом регистра). На TGS3 это не влияет.
+## Вы также можете указать несколько тегов каналов, используя опцию config несколько раз,
+## например, CHANNEL_ANNOUNCE_NEW_GAME chat_channel_tag_1
+## т.е. CHANNEL_ANNOUNCE_NEW_GAME chat_channel_tag_2
+
+
 ## Which channels will have a message about a new game starting, message includes the station name.
+## На каких каналах будет сообщение о начале новой игры, сообщение включает название станции.
 #CHANNEL_ANNOUNCE_NEW_GAME
 
 ## Which channels will have a message about a new game starting, message includes the round ID of the game that has just ended.
+## На каких каналах будет сообщение о начале новой игры, сообщение включает в себя ID раунда только что закончившейся игры.
 #CHANNEL_ANNOUNCE_END_GAME
 
 ## Ping users who use the `notify` command when a new game starts.
+## Пингуйте пользователей, использующих команду `notify`, когда начинается новая игра.
 #CHAT_NEW_GAME_NOTIFICATIONS
 
 ## Uncomment this flag to validate admin commands from discord by requiring they come from linked discord accounts and that those discord accounts link to a ckey with the right admin permissions.
+## Снимите этот флаг, чтобы проверять команды администратора из discord, требуя, чтобы они исходили от связанных аккаунтов discord и чтобы эти аккаунты discord были связаны с ckey с правильными правами администратора.
 # SECURE_CHAT_COMMANDS
 
 ## Allow admin hrefs that don't use the new token system, will eventually be removed
+## Разрешите админу hrefs, которые не используют новую систему токенов, со временем они будут удалены.
 #DEBUG_ADMIN_HREFS
+
+
 
 ###Master Controller High Pop Mode###
 

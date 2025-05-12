@@ -30,5 +30,4 @@
 		if(current_vote.vote_sound && (late_voter.prefs.read_preference(/datum/preference/toggle/sound_announcements)))
 			SEND_SOUND(late_voter, sound(current_vote.vote_sound))
 
-		to_chat(late_voter, custom_boxed_message("purple_box", vote_font("[span_bold("[current_vote.name] Vote")]\n<hr>Пришло время сделать свой выбор! Нажмите на 'vote' (<a href='byond://winset?command=vote'>here</a>), чтобы отдать свой голос.")))
-
+		to_chat(late_voter, custom_boxed_message("purple_box", vote_font("[span_bold("Голосование за [current_vote.name]а")]\n<hr>Пришло время сделать свой выбор! Если не появилось окно голосования, то нажмите OOC и Голосование.")))

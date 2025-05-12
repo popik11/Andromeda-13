@@ -16,17 +16,17 @@ export const ShuttleManipulator = (props) => {
   const [tab, setTab] = useState(1);
 
   return (
-    <Window title="Shuttle Manipulator" width={800} height={600} theme="admin">
+    <Window title="Управление Шаттлами" width={800} height={600} theme="admin">
       <Window.Content scrollable>
         <Tabs>
           <Tabs.Tab selected={tab === 1} onClick={() => setTab(1)}>
-            Status
+            Статус
           </Tabs.Tab>
           <Tabs.Tab selected={tab === 2} onClick={() => setTab(2)}>
-            Templates
+            Шаблоны
           </Tabs.Tab>
           <Tabs.Tab selected={tab === 3} onClick={() => setTab(3)}>
-            Modification
+            Модификации
           </Tabs.Tab>
         </Tabs>
         {tab === 1 && <ShuttleManipulatorStatus />}
@@ -47,7 +47,7 @@ export const ShuttleManipulatorStatus = (props) => {
           <Table.Row key={shuttle.id}>
             <Table.Cell>
               <Button
-                content="JMP"
+                content="ТП"
                 key={shuttle.id}
                 onClick={() =>
                   act('jump_to', {
@@ -59,7 +59,7 @@ export const ShuttleManipulatorStatus = (props) => {
             </Table.Cell>
             <Table.Cell>
               <Button
-                content="Fly"
+                content="Отправить"
                 key={shuttle.id}
                 disabled={!shuttle.can_fly}
                 onClick={() =>
@@ -78,7 +78,7 @@ export const ShuttleManipulatorStatus = (props) => {
                 <>
                   ({shuttle.timeleft})
                   <Button
-                    content="Fast Travel"
+                    content="Быстрый Полёт"
                     key={shuttle.id}
                     disabled={!shuttle.can_fast_travel}
                     onClick={() =>
@@ -134,7 +134,7 @@ export const ShuttleManipulatorTemplates = (props) => {
                 key={actualTemplate.shuttle_id}
                 buttons={
                   <Button
-                    content={isSelected ? 'Selected' : 'Select'}
+                    content={isSelected ? 'Избранное' : 'Выбрать'}
                     selected={isSelected}
                     onClick={() =>
                       act('select_template', {
@@ -148,12 +148,12 @@ export const ShuttleManipulatorTemplates = (props) => {
                   !!actualTemplate.admin_notes) && (
                   <LabeledList>
                     {!!actualTemplate.description && (
-                      <LabeledList.Item label="Description">
+                      <LabeledList.Item label="Описание">
                         {actualTemplate.description}
                       </LabeledList.Item>
                     )}
                     {!!actualTemplate.admin_notes && (
-                      <LabeledList.Item label="Admin Notes">
+                      <LabeledList.Item label="Заметки Админа">
                         {actualTemplate.admin_notes}
                       </LabeledList.Item>
                     )}
@@ -180,12 +180,12 @@ export const ShuttleManipulatorModification = (props) => {
             {(!!selected.description || !!selected.admin_notes) && (
               <LabeledList>
                 {!!selected.description && (
-                  <LabeledList.Item label="Description">
+                  <LabeledList.Item label="Описание">
                     {selected.description}
                   </LabeledList.Item>
                 )}
                 {!!selected.admin_notes && (
-                  <LabeledList.Item label="Admin Notes">
+                  <LabeledList.Item label="Заметки Админа">
                     {selected.admin_notes}
                   </LabeledList.Item>
                 )}
@@ -195,14 +195,14 @@ export const ShuttleManipulatorModification = (props) => {
           {existingShuttle ? (
             <Section
               level={2}
-              title={'Existing Shuttle: ' + existingShuttle.name}
+              title={'Существующий шаттл: ' + existingShuttle.name}
             >
               <LabeledList>
                 <LabeledList.Item
-                  label="Status"
+                  label="Статус"
                   buttons={
                     <Button
-                      content="Jump To"
+                      content="ТП к шаттлу"
                       onClick={() =>
                         act('jump_to', {
                           type: 'mobile',
@@ -218,11 +218,11 @@ export const ShuttleManipulatorModification = (props) => {
               </LabeledList>
             </Section>
           ) : (
-            <Section level={2} title="Existing Shuttle: None" />
+            <Section level={2} title="Существующий шаттл: Отсутствует" />
           )}
-          <Section level={2} title="Status">
+          <Section level={2} title="Статус">
             <Button
-              content="Load"
+              content="Загрузить"
               color="good"
               onClick={() =>
                 act('load', {
@@ -231,7 +231,7 @@ export const ShuttleManipulatorModification = (props) => {
               }
             />
             <Button
-              content="Preview"
+              content="Предпросмотр"
               onClick={() =>
                 act('preview', {
                   shuttle_id: selected.shuttle_id,
@@ -239,7 +239,7 @@ export const ShuttleManipulatorModification = (props) => {
               }
             />
             <Button
-              content="Replace"
+              content="Заменить"
               color="bad"
               onClick={() =>
                 act('replace', {
@@ -250,7 +250,7 @@ export const ShuttleManipulatorModification = (props) => {
           </Section>
         </>
       ) : (
-        'No shuttle selected'
+        'Не выбран шаттл'
       )}
     </Section>
   );

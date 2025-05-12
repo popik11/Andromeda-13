@@ -1,11 +1,11 @@
-ADMIN_VERB(change_shuttle_events, R_ADMIN|R_FUN, "Change Shuttle Events", "Change the events on a shuttle.", ADMIN_CATEGORY_SHUTTLE)
+ADMIN_VERB(change_shuttle_events, R_ADMIN|R_FUN, "Изменеть Событие На Шаттле", "Измените события на шаттле.", ADMIN_CATEGORY_SHUTTLE)
 	//At least for now, just letting admins modify the emergency shuttle is fine
 	var/obj/docking_port/mobile/port = SSshuttle.emergency
 
 	if(!port)
-		to_chat(user, span_admin("Uh oh, couldn't find the escape shuttle!"))
+		to_chat(user, span_admin("Ой, не могу найти спасательный шаттл!"))
 
-	var/list/options = list("Clear"="Clear")
+	var/list/options = list("Очистить"="Очистить")
 
 	//Grab the active events so we know which ones we can Add or Remove
 	var/list/active = list()
@@ -13,61 +13,61 @@ ADMIN_VERB(change_shuttle_events, R_ADMIN|R_FUN, "Change Shuttle Events", "Chang
 		active[event.type] = event
 
 	for(var/datum/shuttle_event/event as anything in subtypesof(/datum/shuttle_event))
-		options[((event in active) ? "(Remove)" : "(Add)") + initial(event.name)] = event
+		options[((event in active) ? "(Удалить)" : "(Добавить)") + initial(event.name)] = event
 
 	//Throw up an ugly menu with the shuttle events and the options to add or remove them, or clear them all
-	var/result = input(user, "Choose an event to add/remove", "Shuttle Events") as null|anything in sort_list(options)
+	var/result = input(user, "Выберите событие для добавления/удаления", "События На Шаттле") as null|anything in sort_list(options)
 
-	if(result == "Clear")
+	if(result == "Очистить")
 		port.event_list.Cut()
-		message_admins("[key_name_admin(user)] has cleared the shuttle events on: [port]")
+		message_admins("Администратор [key_name_admin(user)] очистил события шаттле: [port]")
 	else if(options[result])
 		var/typepath = options[result]
 		if(typepath in active)
 			port.event_list.Remove(active[options[result]])
-			message_admins("[key_name_admin(user)] has removed '[active[result]]' from [port].")
+			message_admins("[key_name_admin(user)] удалил '[active[result]]' с [port].")
 		else
-			message_admins("[key_name_admin(user)] has added '[typepath]' to [port].")
+			message_admins("[key_name_admin(user)] добавил '[typepath]' на [port].")
 			port.add_shuttle_event(typepath)
 
-ADMIN_VERB(call_shuttle, R_ADMIN, "Call Shuttle", "Force a shuttle call with additional modifiers.", ADMIN_CATEGORY_SHUTTLE)
+ADMIN_VERB(call_shuttle, R_ADMIN, "Вызвать Шаттл", "Принудительный вызов шаттла с дополнительными модификаторами.", ADMIN_CATEGORY_SHUTTLE)
 	if(EMERGENCY_AT_LEAST_DOCKED)
 		return
 
-	var/confirm = tgui_alert(user, "You sure?", "Confirm", list("Yes", "Yes (No Recall)", "No"))
+	var/confirm = tgui_alert(user, "Вы уверены?", "Подтвердите", list("Да", "Да (Не отзывать)", "Нет"))
 	switch(confirm)
-		if(null, "No")
+		if(null, "Нет")
 			return
-		if("Yes (No Recall)")
+		if("Да (Не отзывать)")
 			SSshuttle.admin_emergency_no_recall = TRUE
 			SSshuttle.emergency.mode = SHUTTLE_IDLE
 
 	SSshuttle.emergency.request()
-	BLACKBOX_LOG_ADMIN_VERB("Call Shuttle")
-	log_admin("[key_name(user)] admin-called the emergency shuttle.")
-	message_admins(span_adminnotice("[key_name_admin(user)] admin-called the emergency shuttle[confirm == "Yes (No Recall)" ? " (non-recallable)" : ""]."))
+	BLACKBOX_LOG_ADMIN_VERB("Вызвать Шаттл")
+	log_admin("Администратор [key_name(user)] вызвал аварийный шаттл.")
+	message_admins(span_adminnotice("Администратор [key_name_admin(user)] вызвал аварийный шаттл[confirm == "Да (Не отзывать)" ? " (non-recallable)" : ""]."))
 
-ADMIN_VERB(cancel_shuttle, R_ADMIN, "Cancel Shuttle", "Recall the shuttle, regardless of circumstances.", ADMIN_CATEGORY_SHUTTLE)
+ADMIN_VERB(cancel_shuttle, R_ADMIN, "Отменить Шаттл", "Отозвать шаттл, независимо от обстоятельств.", ADMIN_CATEGORY_SHUTTLE)
 	if(EMERGENCY_AT_LEAST_DOCKED)
 		return
 
-	if(tgui_alert(user, "You sure?", "Confirm", list("Yes", "No")) != "Yes")
+	if(tgui_alert(user, "Вы уверены?", "Подтвердите", list("Да", "Нет")) != "Да")
 		return
 	SSshuttle.admin_emergency_no_recall = FALSE
 	SSshuttle.emergency.cancel()
-	BLACKBOX_LOG_ADMIN_VERB("Cancel Shuttle")
-	log_admin("[key_name(user)] admin-recalled the emergency shuttle.")
-	message_admins(span_adminnotice("[key_name_admin(user)] admin-recalled the emergency shuttle."))
+	BLACKBOX_LOG_ADMIN_VERB("Отменить Шаттл")
+	log_admin("Администратор [key_name(user)] отозвал аварийный шаттл.")
+	message_admins(span_adminnotice("Администратор [key_name_admin(user)] отозвал аварийный шаттл."))
 
-ADMIN_VERB(disable_shuttle, R_ADMIN, "Disable Shuttle", "Those fuckers aren't getting out.", ADMIN_CATEGORY_SHUTTLE)
+ADMIN_VERB(disable_shuttle, R_ADMIN, "Отключить Шаттл", "Этим ублюдкам не выбраться.", ADMIN_CATEGORY_SHUTTLE)
 	if(SSshuttle.emergency.mode == SHUTTLE_DISABLED)
-		to_chat(user, span_warning("Error, shuttle is already disabled."))
+		to_chat(user, span_warning("Ошибка, шаттл уже отключен."))
 		return
 
-	if(tgui_alert(user, "You sure?", "Confirm", list("Yes", "No")) != "Yes")
+	if(tgui_alert(user, "Вы уверены?", "Подтвердите", list("Да", "Нет")) != "Да")
 		return
 
-	message_admins(span_adminnotice("[key_name_admin(user)] disabled the shuttle."))
+	message_admins(span_adminnotice("Администратор [key_name_admin(user)] отключил аварийный шаттл."))
 
 	SSshuttle.last_mode = SSshuttle.emergency.mode
 	SSshuttle.last_call_time = SSshuttle.emergency.timeLeft(1)
@@ -82,15 +82,15 @@ ADMIN_VERB(disable_shuttle, R_ADMIN, "Disable Shuttle", "Those fuckers aren't ge
 		color_override = "grey",
 	)
 
-ADMIN_VERB(enable_shuttle, R_ADMIN, "Enable Shuttle", "Those fuckers ARE getting out.", ADMIN_CATEGORY_SHUTTLE)
+ADMIN_VERB(enable_shuttle, R_ADMIN, "Включить Шаттл", "Эти ублюдки выходят на свободу.", ADMIN_CATEGORY_SHUTTLE)
 	if(SSshuttle.emergency.mode != SHUTTLE_DISABLED)
-		to_chat(user, span_warning("Error, shuttle not disabled."))
+		to_chat(user, span_warning("Ошибка, шаттл не отключен."))
 		return
 
-	if(tgui_alert(user, "You sure?", "Confirm", list("Yes", "No")) != "Yes")
+	if(tgui_alert(user, "Вы уверены?", "Подтвердите", list("Да", "Нет")) != "Да")
 		return
 
-	message_admins(span_adminnotice("[key_name_admin(user)] enabled the emergency shuttle."))
+	message_admins(span_adminnotice("Администратор [key_name_admin(user)] включил аварийный шаттл."))
 	SSshuttle.admin_emergency_no_recall = FALSE
 	SSshuttle.emergency_no_recall = FALSE
 	if(SSshuttle.last_mode == SHUTTLE_DISABLED) //If everything goes to shit, fix it.
@@ -108,26 +108,26 @@ ADMIN_VERB(enable_shuttle, R_ADMIN, "Enable Shuttle", "Those fuckers ARE getting
 		color_override = "green",
 	)
 
-ADMIN_VERB(hostile_environment, R_ADMIN, "Hostile Environment", "Disable the shuttle, naturally.", ADMIN_CATEGORY_SHUTTLE)
-	switch(tgui_alert(user, "Select an Option", "Hostile Environment Manager", list("Enable", "Disable", "Clear All")))
-		if("Enable")
+ADMIN_VERB(hostile_environment, R_ADMIN, "Враждебная Обстановка", "Выведите шаттл из строя, естественно.", ADMIN_CATEGORY_SHUTTLE)
+	switch(tgui_alert(user, "Выберите вариант", "Менеджер по работе с враждебной средой", list("Включить", "Отключить", "Очистить все")))
+		if("Включить")
 			if (SSshuttle.hostile_environments["Admin"] == TRUE)
-				to_chat(user, span_warning("Error, admin hostile environment already enabled."))
+				to_chat(user, span_warning("Ошибка, враждебное окружение уже включено."))
 			else
-				message_admins(span_adminnotice("[key_name_admin(user)] Enabled an admin hostile environment"))
+				message_admins(span_adminnotice("Администратор [key_name_admin(user)] включил враждебное окружение"))
 				SSshuttle.registerHostileEnvironment("Admin")
-		if("Disable")
+		if("Отключить")
 			if (!SSshuttle.hostile_environments["Admin"])
-				to_chat(user, span_warning("Error, no admin hostile environment found."))
+				to_chat(user, span_warning("Ошибка, не найдено враждебное окружение не включено."))
 			else
-				message_admins(span_adminnotice("[key_name_admin(user)] Disabled the admin hostile environment"))
+				message_admins(span_adminnotice("Администратор [key_name_admin(user)] отключил враждебное окружение"))
 				SSshuttle.clearHostileEnvironment("Admin")
-		if("Clear All")
-			message_admins(span_adminnotice("[key_name_admin(user)] Disabled all current hostile environment sources"))
+		if("Очистить все")
+			message_admins(span_adminnotice("Администратор [key_name_admin(user)] очистил всё враждебное окружение"))
 			SSshuttle.hostile_environments.Cut()
 			SSshuttle.checkHostileEnvironment()
 
-ADMIN_VERB(shuttle_panel, R_ADMIN, "Shuttle Manipulator", "Opens the shuttle manipulator UI.", ADMIN_CATEGORY_SHUTTLE)
+ADMIN_VERB(shuttle_panel, R_ADMIN, "Управление Шаттлами", "Открывает пользовательский интерфейс манипулятора шаттла.", ADMIN_CATEGORY_SHUTTLE)
 	SSshuttle.ui_interact(user.mob)
 
 /obj/docking_port/mobile/proc/admin_fly_shuttle(mob/user)
@@ -141,27 +141,27 @@ ADMIN_VERB(shuttle_panel, R_ADMIN, "Shuttle Manipulator", "Opens the shuttle man
 			options[S.name || S.shuttle_id] = S
 
 	options += "--------"
-	options += "Infinite Transit"
-	options += "Delete Shuttle"
-	options += "Into The Sunset (delete & greentext 'escape')"
+	options += "Бесконечный Транзит"
+	options += "Удалить Шаттл"
+	options += "Навстречу Закату (удалить и сделать зеленый текст 'побег')"
 
-	var/selection = tgui_input_list(user, "Select where to fly [name || shuttle_id]:", "Fly Shuttle", options)
+	var/selection = tgui_input_list(user, "Выберите место назначения [name || shuttle_id]:", "Полет на Шаттле", options)
 	if(isnull(selection))
 		return
 
 	switch(selection)
-		if("Infinite Transit")
+		if("Бесконечный Транзит")
 			destination = null
 			mode = SHUTTLE_IGNITING
 			setTimer(ignitionTime)
 
-		if("Delete Shuttle")
-			if(tgui_alert(user, "Really delete [name || shuttle_id]?", "Delete Shuttle", list("Cancel", "Really!")) != "Really!")
+		if("Удалить Шаттл")
+			if(tgui_alert(user, "Удалить шаттл [name || shuttle_id]?", "Удалить Шаттл", list("Отмена", "Серьезно!")) != "Серьезно!")
 				return
 			jumpToNullSpace()
 
-		if("Into The Sunset (delete & greentext 'escape')")
-			if(tgui_alert(user, "Really delete [name || shuttle_id] and greentext escape objectives?", "Delete Shuttle", list("Cancel", "Really!")) != "Really!")
+		if("Навстречу Закату (удалить и сделать зеленый текст 'побег')")
+			if(tgui_alert(user, "Действительно удаляете [name || shuttle_id] и зелёный текст после побега?", "Удалить Шаттл", list("Отмена", "Серьезно!")) != "Серьезно!")
 				return
 			intoTheSunset()
 
@@ -173,10 +173,10 @@ ADMIN_VERB(shuttle_panel, R_ADMIN, "Shuttle Manipulator", "Opens the shuttle man
 	return  // use the existing verbs for this
 
 /obj/docking_port/mobile/arrivals/admin_fly_shuttle(mob/user)
-	switch(tgui_alert(user, "Would you like to fly the arrivals shuttle once or change its destination?", "Fly Shuttle", list("Fly", "Retarget", "Cancel")))
-		if("Cancel")
+	switch(tgui_alert(user, "Хотите ли вы лететь на шаттле один раз или изменить его направление?", "Полет на Шаттле", list("Полёт", "Перенаправить", "Отмена")))
+		if("Отмена")
 			return
-		if("Fly")
+		if("Полёт")
 			return ..()
 
 	var/list/options = list()
@@ -188,7 +188,7 @@ ADMIN_VERB(shuttle_panel, R_ADMIN, "Shuttle Manipulator", "Opens the shuttle man
 		if (canDock(S) == SHUTTLE_CAN_DOCK)
 			options[S.name || S.shuttle_id] = S
 
-	var/selection = tgui_input_list(user, "New arrivals destination", "Fly Shuttle", options)
+	var/selection = tgui_input_list(user, "Место назначения новых прибытий", "Полет на Шаттле", options)
 	if(isnull(selection))
 		return
 	target_dock = options[selection]

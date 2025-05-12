@@ -1,53 +1,111 @@
 # Discord verification channel name
 ## This config has no actual function, it's only aesthetic lol ##
 ## Use the actual name of the channel ##
+
+# Имя канала верификации Discord
+## Этот конфиг не имеет никакой реальной функции, он только эстетический лол ##
+## Используйте реальное название канала ##
 #VERIFICATION_CHANNEL verification
 
 # Discord verification command name
 ## The name of the command you use for verification, only in case you've set up an alias for it ##
 ## Defaults to "verify" ##
+
+# Имя команды проверки Discord
+## Имя команды, которую вы используете для верификации, только в том случае, если вы установили для нее псевдоним ##
+## По умолчанию «verify» ##
 #VERIFICATION_COMMAND verify
 
 # Need discord account to join
 ## Uncomment to make players need to link their discord accounts to ckeys in order to join the game_mode ##
 ## The discord verification system makes use of https://github.com/optimumtact/orangescogs ##
 ## Needs a working database with the station's current schema ##
+
+# Нужна учетная запись discord, чтобы присоединиться
+## Отмените комментарий, чтобы игроки могли привязать свои аккаунты discord к ключам, чтобы присоединиться к game_mode ##
+## Система проверки дискорд-аккаунта использует https://github.com/optimumtact/orangescogs ##
+## Необходима рабочая база данных с текущей схемой станции ##
 #DISCORD_BUNKER
 
 # Discord forcing mode
 ## Uncomment this if your players need to remain in the discord to keep verification ##
 ## Note, this only produces aesthetic changes, the real magic happens with the redbot modules
+# Режим форсирования дискорда
+
+## Отметьте это, если ваши игроки должны оставаться в дискорде, чтобы продолжать верификацию ##
+## Обратите внимание, что это приводит только к эстетическим изменениям, настоящая магия происходит с модулями redbot
 #FORCED_DISCORD_STAY
+
+
 
 # Roundend embeds
 ## Overrides the roundend messages with a custom embed system
+
+# Вставка конца раунда
+## Переопределяет сообщения roundend с пользовательской системой встраивания.
 #ROUNDEND_EMBEDS
+
+
 
 # Roundend embed color
 ## Color that'll be displayed in the embed's message
+
+# Цвет вставки конца раунда
+## Цвет, который будет отображаться в сообщении вставки.
 #ROUNDEND_EMBED_COLOR ff4ff0
+
+
 
 # Roundend ping role
 ## Role to ping with the roundend message. So we can ping users when the round ends so they can prepare and also when the round starts.
+
+# Пинг роли начала/конца раунда
+## Роль для пинга с сообщением о завершении раунда. Таким образом, мы можем пинговать пользователей, когда раунд заканчивается, чтобы они могли подготовиться, а также когда раунд начинается.
 #ROUNDEND_PING_ROLE
+
+
 
 # Roundend image URL
 ## The URL of the image to show in the roundend embed
+
+# URL-адрес изображения в раунде
+## URL-адрес изображения, которое будет показано при встраивании в раундэнд.
 #ROUNDEND_IMAGE_URL
+
+
 
 # Roundend thumbnail URL
 ## The URL of the thumbnail to show in the roundend embed
+
+# URL миниатюры Roundend
+## URL-адрес миниатюры, которая будет показана при встраивании Roundend.
 #ROUNDEND_THUMBNAIL_URL
+
+
 
 # Roundend splashscreen URL
 ## The URL to use in case we want to override the discord roundend embed image with a splashscreen
+
+# URL заставки Roundend
+## URL-адрес, который нужно использовать в случае, если мы хотим заменить картинку, встроенную в раундэнд discord, на заставку
 #ROUNDEND_SPLASHSCREEN_URL
+
+
 
 # Splashscreen webserver path
 ## The path to copy splashscreen images to on the webserver so they can be loaded later by discord
+
+# Путь к веб-серверу сплешскрина
+## Путь для копирования изображений сплешскрина на веб-сервер, чтобы они могли быть загружены позже в discord
 #SPLASHSCREEN_WEBSERVER_PATH
+
+
 
 # Admin logs channels
 ## Channel tag to which all logs of admin actions will be sent
 ## Can be a list of channels
+
+# Каналы журналов администратора
+## Метка канала, на который будут отправляться все логи действий администратора.
+## Может быть списком каналов
 #ADMIN_LOGS_CHANNEL

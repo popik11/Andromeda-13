@@ -76,19 +76,19 @@ _ADMIN_VERB(verb_path_name, verb_permissions, verb_name, verb_desc, verb_categor
 #define ADMIN_CATEGORY_HIDDEN null
 
 // Admin verb categories
-#define ADMIN_CATEGORY_MAIN "Admin"
-#define ADMIN_CATEGORY_EVENTS "Admin.Events"
-#define ADMIN_CATEGORY_FUN "Admin.Fun"
-#define ADMIN_CATEGORY_GAME "Admin.Game"
-#define ADMIN_CATEGORY_SHUTTLE "Admin.Shuttle"
+#define ADMIN_CATEGORY_MAIN "Админ"
+#define ADMIN_CATEGORY_EVENTS "Админ.Ивенты"
+#define ADMIN_CATEGORY_FUN "Админ.Веселье"
+#define ADMIN_CATEGORY_GAME "Админ.Игра"
+#define ADMIN_CATEGORY_SHUTTLE "Админ.Шаттл"
 
 // Special categories that are separated
-#define ADMIN_CATEGORY_DEBUG "Debug"
-#define ADMIN_CATEGORY_SERVER "Server"
-#define ADMIN_CATEGORY_OBJECT "Object"
-#define ADMIN_CATEGORY_MAPPING "Mapping"
-#define ADMIN_CATEGORY_PROFILE "Profile"
-#define ADMIN_CATEGORY_IPINTEL "Admin.IPIntel"
+#define ADMIN_CATEGORY_DEBUG "Дебаг"
+#define ADMIN_CATEGORY_SERVER "Сервер"
+#define ADMIN_CATEGORY_OBJECT "Объект"
+#define ADMIN_CATEGORY_MAPPING "Маппинг"
+#define ADMIN_CATEGORY_PROFILE "Профиль"
+#define ADMIN_CATEGORY_IPINTEL "Админ.IPIntel"
 
 // Visibility flags
-#define ADMIN_VERB_VISIBLITY_FLAG_MAPPING_DEBUG "Map-Debug"
+#define ADMIN_VERB_VISIBLITY_FLAG_MAPPING_DEBUG "Карат-Дебаг"
