@@ -13,7 +13,7 @@
 	human.equipOutfit(new outfit ())
 
 /datum/shuttle_event/simple_spawner/player_controlled/human/greytide
-	name = "Greytide! (10 assistants)"
+	name = "Грейтид! (10 ассистентов)"
 	spawning_list = list(/mob/living/carbon/human = 10)
 	spawning_flags = SHUTTLE_EVENT_HIT_SHUTTLE
 	outfit = /datum/outfit/job/assistant/breath_mask
@@ -24,42 +24,42 @@
 	spawns_per_spawn = 10
 
 	spawn_anyway_if_no_player = TRUE
-	ghost_alert_string = "Would you like to be an assistant shot at the shuttle?"
+	ghost_alert_string = "Хотите стать ассистентом в шаттле?"
 	remove_from_list_when_spawned = TRUE
 	self_destruct_when_empty = TRUE
 
 	role_type = ROLE_HERMIT
 
 /datum/outfit/job/assistant/breath_mask
-	name = "Assistant - Breathmask"
+	name = "Ассистент - дыхательная маска"
 	mask = /obj/item/clothing/mask/breath
 	l_pocket = /obj/item/tank/internals/emergency_oxygen
 	internals_slot = ITEM_SLOT_LPOCKET
 
 /datum/shuttle_event/simple_spawner/player_controlled/human/greytide/interns
-	name = "Intern Wave (Unarmed, 10 interns)"
+	name = "Волна стажеров (Безоружный, 10 стажеров)"
 	event_probability = 0
 	outfit = /datum/outfit/centcom/centcom_intern/unarmed
 
 	spawn_anyway_if_no_player = FALSE
-	ghost_alert_string = "Would you like to be a centcom intern shot at the shuttle?"
+	ghost_alert_string = "Хотели бы вы стать стажером ЦентКома, попавшим на шаттл?"
 
 /datum/shuttle_event/simple_spawner/player_controlled/human/greytide/interns/activate()
 	..()
 
-	minor_announce("We're sending you our bravest interns, please let them in when they arrive.",
+	minor_announce("Мы отправляем к вам наших самых смелых стажеров, пожалуйста, впустите их, когда они прибудут.",
 		title = "Emergency Shuttle", alert = TRUE)
 
 /datum/shuttle_event/simple_spawner/player_controlled/human/greytide/interns/armed
-	name = "Intern Wave (Armed, 10 interns)"
+	name = "Стажерская волна (ВАооружен, 10 стажеров)"
 	event_probability = 0
 	outfit = /datum/outfit/centcom/centcom_intern
 
 	spawn_anyway_if_no_player = FALSE
-	ghost_alert_string = "Would you like to be a centcom intern shot at the shuttle?"
+	ghost_alert_string = "Хотели бы вы стать стажером ЦентКома, попавшим на шаттл?"
 
 /datum/shuttle_event/simple_spawner/player_controlled/human/hitchhiker
-	name = "Hitchhiker! (Harmless, single ghost spawn)"
+	name = "Автостопщик! (Безобидное, одиночное призрачное отродье)"
 	spawning_list = list(/mob/living/carbon/human = 1)
 	spawning_flags = SHUTTLE_EVENT_HIT_SHUTTLE
 	outfit = /datum/outfit/job/assistant/hitchhiker
@@ -69,7 +69,7 @@
 	activation_fraction = 0.2
 
 	spawn_anyway_if_no_player = TRUE
-	ghost_alert_string = "Would you like to be an assistant shot at the shuttle?"
+	ghost_alert_string = "Хотите стать помощником стрелка на шаттле?"
 	remove_from_list_when_spawned = TRUE
 	self_destruct_when_empty = TRUE
 
@@ -85,7 +85,7 @@
 	internals_slot = ITEM_SLOT_LPOCKET
 
 /datum/shuttle_event/simple_spawner/player_controlled/human/nukie
-	name = "Nuclear Operative (Dangerous as heck)!"
+	name = "Оперативник-ядерщик (Опасный, как черт)!"
 	spawning_list = list(/mob/living/carbon/human = 1)
 	spawning_flags = SHUTTLE_EVENT_HIT_SHUTTLE
 	outfit = /datum/outfit/deathmatch_loadout/nukie

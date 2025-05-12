@@ -57,13 +57,13 @@
 				display = prefs.read_preference(/datum/preference/name/real_name)
 			//If our player is a member of Command or a Silicon, we want to sort them to the top of the list. Otherwise, just add them to the end of the list.
 		if(J.departments_bitflags & (DEPARTMENT_BITFLAG_COMMAND | DEPARTMENT_BITFLAG_SILICON))
-			player_ready_data.Insert(1, "* [display] as [title]")
+			player_ready_data.Insert(1, "* [display] как [title]")
 		else
-			player_ready_data += "* [display] as [title]"
+			player_ready_data += "* [display] как [title]"
 
 	//The title line for the job estimation panel, obviously needs to be at the top
 	if(length(player_ready_data))
 		player_ready_data.Insert(1, "------------------")
-		player_ready_data.Insert(1, "Job Estimation:")
+		player_ready_data.Insert(1, "Составление сметы работ:")
 		player_ready_data.Insert(1, "")
 	return player_ready_data

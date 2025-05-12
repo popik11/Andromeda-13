@@ -403,7 +403,7 @@ SUBSYSTEM_DEF(shuttle)
 
 	call_reason = trim(html_encode(call_reason))
 
-	var/emergency_reason = "\n\nNature of emergency:\n[call_reason]"
+	var/emergency_reason = "\n\nХарактер чрезвычайной ситуации:\n[call_reason]"
 
 	emergency.request(
 		signal_origin = signal_origin,

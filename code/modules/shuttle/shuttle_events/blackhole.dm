@@ -1,6 +1,6 @@
 ///Sensors indicate that a black hole's gravitational field is affecting the region of space we were headed through
 /datum/shuttle_event/simple_spawner/black_hole
-	name = "Black Hole (Oh no!)"
+	name = "Черная дыра (О нет!)"
 	event_probability = 0 // only admin spawnable
 	spawn_probability_per_process = 10
 	activation_fraction = 0.35
@@ -12,7 +12,7 @@
 
 ///Kobayashi Maru version
 /datum/shuttle_event/simple_spawner/black_hole/adminbus
-	name = "Black Holes (OH GOD!)"
+	name = "Черные дыры (О, Боже!)"
 	spawn_probability_per_process = 50
 	activation_fraction = 0.2
 	spawning_list = list(/obj/singularity/shuttle_event = 10)
@@ -20,7 +20,7 @@
 
 /// No Escape traitor final objective
 /datum/shuttle_event/simple_spawner/black_hole/no_escape
-	name = "Black Hole Massive (is not admin spawnable)"
+	name = "Массивная черная дыра (не может быть порождена администратором)"
 	spawn_probability_per_process = -1.875 // starts in the negative but increases over time
 	activation_fraction = 0 // no delay
 	spawning_list = list(/obj/singularity/shuttle_event/no_escape = 1)

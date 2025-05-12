@@ -14,33 +14,33 @@ GLOBAL_LIST_INIT(meteors_candy_halloween, list(
 	/// Number of SSevent ticks for the wave to last (TG original: 60)
 	var/wave_duration = 45
 	/// Prefix for the announcement
-	var/announce_prefix = "Meteor Alert"
+	var/announce_prefix = "Предупреждение о метеоритах"
 	/// Description for the announcement
-	var/announce_desc = "Meteors"
+	var/announce_desc = "Метеоры"
 	/// Added to the announcement giving a preview of the wave intensity
-	var/announce_fluff = "Crew are advised to take shelter within the central areas of the station."
+	var/announce_fluff = "Экипажам рекомендуется укрыться в центральных районах станции."
 
 /datum/round_event/meteor_wave/threatening
 	warning_time = 420 EVENT_SECONDS // smoke a joint and start your mindless repairs
-	announce_fluff = "Portable shield generators may be procured by the cargo department. Ensure all sensitive areas and equipment are shielded."
+	announce_fluff = "Портативные генераторы экранов могут быть приобретены грузовым отделом. Убедитесь, что все чувствительные зоны и оборудование экранированы."
 
 /datum/round_event/meteor_wave/catastrophic
 	warning_time = 420 EVENT_SECONDS
-	announce_fluff = "Portable shield generators may be procured by the cargo department. Ensure all sensitive areas and equipment are shielded."
+	announce_fluff = "Портативные генераторы экранов могут быть приобретены грузовым отделом. Убедитесь, что все чувствительные зоны и оборудование экранированы."
 
 /datum/round_event/meteor_wave/dust_storm
 	warning_time = 6 EVENT_SECONDS
 
 /datum/round_event/meteor_wave/meaty
-	announce_prefix = "Oh crap, get the mop."
-	announce_desc = "Meaty ores"
-	announce_fluff = "Please refrain from eating the space meat. We know it's tempting, but this is not the time to test your culinary curiosity."
+	announce_prefix = "Вот дерьмо, доставай швабру."
+	announce_desc = "Мясные руды"
+	announce_fluff = "Пожалуйста, воздержитесь от употребления космического мяса. Мы знаем, что это заманчиво, но сейчас не время испытывать свое кулинарное любопытство."
 
 /datum/round_event/meteor_wave/candy
 	wave_name = "candy"
-	announce_prefix = "2SPOOKY DELIVERY INCOMING"
-	announce_desc = "Spooky packages"
-	announce_fluff = "We're not responsible for what happens if you try to stick fragments in your mouth. Why do we even have to tell you that?"
+	announce_prefix = "2СТРАШНАЯ ДОСТАВКА"
+	announce_desc = "Жуткие пакеты"
+	announce_fluff = "Мы не несем ответственности за то, что случится, если вы попытаетесь засунуть фрагменты в рот. Почему мы вообще должны говорить вам об этом?"
 
 /datum/round_event/meteor_wave/New()
 	. = ..()
@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(meteors_candy_halloween, list(
 		if("candy")
 			wave_type = GLOB.meteors_candy_halloween
 		else
-			stack_trace("Wave name of [wave_name] not recognised.")
+			stack_trace("Имя волны [wave_name] не распознано.")
 			kill()
 
 /datum/round_event/meteor_wave/announce(fake)
@@ -110,17 +110,17 @@ GLOBAL_LIST_INIT(meteors_candy_halloween, list(
 		)
 
 /datum/round_event_control/meteor_wave/candy
-	name = "Meteor Wave: Candy"
+	name = "Метеоритная волна: Конфеты"
 	typepath = /datum/round_event/meteor_wave/candy
 	weight = 0
-	description = "A meteor wave for the holidays, filled with candy."
+	description = "Метеоритная волна на праздники, наполненная конфетами."
 
 /obj/effect/meteor
 	lifetime = 45 SECONDS
 
 /obj/effect/meteor/candy
-	name = "debug candy meteor"
-	desc = "if you see this, shove a twink bar into your nearest coder"
+	name = "отладка метеоритных конфет"
+	desc = "Если вы увидите это, засуньте батончик в ближайшего кодера."
 	dropamt = 8
 	meteordrop = list(
 		/obj/item/food/candy/hundred_credit_bar,
