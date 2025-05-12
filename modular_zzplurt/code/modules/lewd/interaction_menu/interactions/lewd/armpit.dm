@@ -1,35 +1,35 @@
-///	Действия подмышкой/ с подмышкой
+///	Действия подмышкой/ с подмышкой/ в подмышку
 
 	//-// -Rewokin_comment //-//
 	// Ну не знаю, это не щит ЕРП конечно...
 
 /// ADD ANDROMEDA-13 (@ms_kira): Перевод, дополнение ЕРП контента.
 /datum/interaction/lewd/armpit_fuck
-	name = "Трахнуть в подмышку"
-	description = "Трахните подмышку партнера."
+	name = "Трахнуть в подмышку (Членом)"
+	description = "Трахните подмышку партнера. (Это заводит, Немного приятно)"
 	interaction_requires = list(INTERACTION_REQUIRE_TARGET_TOPLESS)
 	user_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_USER = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"Кончает на всю подмышку %TARGET%!",
-		"Выпускает все свои соки в подмышку %TARGET%!",
-		"Покрывает подмышку %TARGET% своими соками!"
+		"%USER% Кончает на всю подмышку %TARGET%.",
+		"%USER% Выпускает все свои соки в подмышку %TARGET%.",
+		"%USER% Покрывает подмышку %TARGET% своими соками."
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"Вы кончаете на всю подмышку %TARGET%!",
-		"Вы выпускаете свои соки в подмышку %TARGET%!",
-		"вы покрываете подмышку %TARGET% своими соками!"
+		"Вы кончаете на всю подмышку %TARGET%.",
+		"Вы выпускаете свои соки в подмышку %TARGET%.",
+		"вы покрываете подмышку %TARGET% своими соками."
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_USER = list(
-		"%USER% Кончает на вашу подмышку своими соками!",
-		"%USER% Выпускает на вашу подмышку свои соки!",
-		"%USER% Покрывает вашу подмышку своими соками!"
+		"%USER% Кончает на вашу подмышку своими соками.",
+		"%USER% Выпускает на вашу подмышку свои соки.",
+		"%USER% Покрывает вашу подмышку своими соками."
 	))
 	message = list(
-		"Входит в подмышку %TARGET% с сочным шлепком!",
-		"Вгоняет свой член в подмышку %TARGET%!",
-		"Вставляет свой член в ямку %TARGET%!",
-		"Долбится своим членом в подмышку %TARGET%!"
+		"Входит в подмышку %TARGET% с сочным шлепком.",
+		"Вгоняет свой член в подмышку %TARGET%.",
+		"Вставляет свой член в ямку %TARGET%.",
+		"Долбится своим членом в подмышку %TARGET%."
 	)
 	user_messages = list(
 		"Вы чувствуете теплую ямку %TARGET% вокруг своего члена.",
@@ -49,14 +49,14 @@
 	)
 	sound_range = 1
 	sound_use = TRUE
-	user_pleasure = 3
+	user_pleasure = 2
 	target_pleasure = 0
 	user_arousal = 5
 	target_arousal = 2
 
 /datum/interaction/lewd/armpit_lick
-	name = "Вылизать подмышку"
-	description = "Облизать подмышку партнера"
+	name = "Вылизать подмышку (Языком)"
+	description = "Облизать подмышку партнера. (Это только заводит)"
 	interaction_requires = list(
 		INTERACTION_REQUIRE_SELF_MOUTH,
 		INTERACTION_REQUIRE_TARGET_TOPLESS
@@ -90,16 +90,16 @@
 
 /datum/interaction/lewd/armpit_smother
 	name = "Прижаться подмышкой к лицу"
-	description = "Прижми своей подмышкой лицо партнера."
+	description = "Прижми своей подмышкой лицо партнера. (Это только заводит)"
 	interaction_requires = list(
 		INTERACTION_REQUIRE_TARGET_MOUTH,
 		INTERACTION_REQUIRE_SELF_TOPLESS
 	)
 	message = list(
-		"Прижимает свою подмышку к лицу %TARGET%!",
-		"Властно прижимает лицо %TARGET% своей подмышкой!",
-		"Вдавливает лицо %TARGET% в свою подмышку!",
-		"Придавливает лицо %TARGET% к своей подмышке!"
+		"Прижимает свою подмышку к лицу %TARGET%.",
+		"Властно прижимает лицо %TARGET% своей подмышкой.",
+		"Вдавливает лицо %TARGET% в свою подмышку.",
+		"Придавливает лицо %TARGET% к своей подмышке."
 	)
 	user_messages = list(
 		"Вы чувствуете как лицо %TARGET% прижимается к вашей подмышке.",
@@ -119,31 +119,31 @@
 	target_arousal = 3
 
 /datum/interaction/lewd/armpit_pitjob
-	name = "Сделать приятно подмышкой"
-	description = "Развлеките член своего партнера своей подмышкой."
+	name = "Сделать приятно подмышкой (Члену)"
+	description = "Развлеките член своего партнера своей подмышкой. (Это заводит, Немного приятно)"
 	interaction_requires = list(
 		INTERACTION_REQUIRE_SELF_TOPLESS
 	)
 	target_required_parts = list(ORGAN_SLOT_PENIS = REQUIRE_GENITAL_EXPOSED)
 	cum_genital = list(CLIMAX_POSITION_TARGET = CLIMAX_PENIS)
 	cum_message_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"Кончает на всю подмышку %USER%!",
-		"Выпускает свои горячие соки в подмышку %USER%!",
-		"Покрывает подмышку %USER% своими соками!"
+		"%TARGET% Кончает на всю подмышку %USER%.",
+		"%TARGET% Выпускает свои горячие соки в подмышку %USER%.",
+		"%TARGET% Покрывает подмышку %USER% своими соками."
 	))
 	cum_self_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"Вы кончаете на всю подмышку %USER%!",
-		"Вы выпускаете свои соки в подмышку %USER%!",
-		"Вы покрываете подмышку %USER% своими соками!"
+		"Вы кончаете на всю подмышку %USER%.",
+		"Вы выпускаете свои соки в подмышку %USER%.",
+		"Вы покрываете подмышку %USER% своими соками."
 	))
 	cum_partner_text_overrides = list(CLIMAX_POSITION_TARGET = list(
-		"%TARGET% Кончает на всю вашу подмышку!",
-		"%TARGET% Выпускает свои горячие соки в вашу подмышку!",
-		"%TARGET% Покрывает вашу подмышку своими соками!"
+		"%TARGET% Кончает на всю вашу подмышку.",
+		"%TARGET% Выпускает свои горячие соки в вашу подмышку.",
+		"%TARGET% Покрывает вашу подмышку своими соками."
 	))
 	message = list(
 		"Работает своей подмышкой, развлекая член %TARGET%.",
-		"Зажимает член %TARGET% между своим телом и рукой!",
+		"Зажимает член %TARGET% между своим телом и рукой.",
 		"Вздраичвает член %TARGET% при помощи своей подмышки.",
 		"Ласкает пенис %TARGET% своим подреберьем."
 	)
@@ -165,6 +165,6 @@
 	sound_range = 1
 	sound_use = TRUE
 	user_pleasure = 0
-	target_pleasure = 3
+	target_pleasure = 2
 	user_arousal = 2
 	target_arousal = 5
