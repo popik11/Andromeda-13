@@ -126,7 +126,7 @@
 	target_pleasure = 0
 	user_arousal = 8
 	target_arousal = 4
-    target_pain = 1
+	target_pain = 1
 //-// -Rewokin_fun_comment //-//
 // Гок-гок-гок
 
