@@ -1,5 +1,5 @@
 /datum/surgery/blood_filter
-	name = "Filter blood"
+	name = "Фильтрация крови"
 	possible_locs = list(BODY_ZONE_CHEST)
 	steps = list(
 		/datum/surgery_step/incise,
@@ -11,7 +11,7 @@
 
 
 /datum/surgery/blood_filter/mechanic
-	name = "Hydraulics Purge"
+	name = "Фильтрация гидравлики"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -31,9 +31,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begin filtering [target]'s blood..."),
-		span_notice("[user] uses [tool] to filter [target]'s blood."),
-		span_notice("[user] uses [tool] on [target]'s chest."),
+		span_notice("Вы начинаете фильтровать кровь у [target]..."),
+		span_notice("[user] использует [tool] для фильтрации крови у [target]."),
+		span_notice("[user] использует [tool] на груди у [target]."),
 	)
 	if(!..())
 		return
@@ -57,7 +57,7 @@
 		return TRUE
 	// BUBBER EDIT ADDITION END
 	if(!length(target.reagents?.reagent_list))
-		bloodfilter.audible_message(span_notice("[bloodfilter] pings as it reports no chemicals detected in [target]'s blood."))
+		bloodfilter.audible_message(span_notice("[bloodfilter] сигнализирует об отсутствии химикатов в крови у [target]."))
 		playsound(get_turf(target), 'sound/machines/ping.ogg', 75, TRUE, falloff_exponent = 12, falloff_distance = 1)
 		return FALSE
 
@@ -71,14 +71,14 @@
 	return FALSE
 
 /datum/surgery_step/filter_blood
-	name = "Filter blood (blood filter)"
+	name = "Проведите фильтрацию крови (фильтр крови)"
 	implements = list(/obj/item/blood_filter = 95)
 	repeatable = TRUE
 	time = 2.5 SECONDS
 	success_sound = 'sound/machines/card_slide.ogg'
 
 /datum/surgery_step/filter_blood/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_pain(target, "You feel a throbbing pain in your chest!")
+	display_pain(target, "Вы чувствуете ужасную боль в груди!")
 
 /datum/surgery_step/filter_blood/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, default_display_results = FALSE)
 	var/obj/item/blood_filter/bloodfilter = tool
@@ -90,9 +90,9 @@
 	display_results(
 		user,
 		target,
-		span_notice("\The [tool] completes a cycle filtering [target]'s blood."),
-		span_notice("\The [tool] whirrs as it filters [target]'s blood."),
-		span_notice("\The [tool] whirrs as it pumps."),
+		span_notice("[tool] сигнализирует о завершении фильтрация крови у [target]."),
+		span_notice("[tool] сигнализирует об окончании перекачивания крови у [target]."),
+		span_notice("[tool] сигнализирует об окончании перекачивания крови."),
 	)
 
 	if(locate(/obj/item/healthanalyzer) in user.held_items)
@@ -104,8 +104,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("You screw up, bruising [target]'s chest!"),
-		span_warning("[user] screws up, brusing [target]'s chest!"),
-		span_warning("[user] screws up!"),
+		span_warning("Вы ошибаетесь, оставляя ушиб на груди у [target]!"),
+		span_warning("[user] ошибается, оставляя ушиб на груди у [target]!"),
+		span_warning("[user] ошибается!"),
 	)
 	target.adjustBruteLoss(5)

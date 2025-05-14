@@ -1,5 +1,5 @@
 /datum/surgery/autopsy
-	name = "Autopsy"
+	name = "Вскрытие"
 	surgery_flags = SURGERY_IGNORE_CLOTHES | SURGERY_REQUIRE_RESTING | SURGERY_REQUIRE_LIMB | SURGERY_MORBID_CURIOSITY
 	possible_locs = list(BODY_ZONE_CHEST)
 	steps = list(
@@ -10,7 +10,7 @@
 	)
 
 /datum/surgery/autopsy/mechanic
-	name = "System Failure Analysis"
+	name = "Анализ системного сбоя"
 	requires_bodypart_type = BODYTYPE_ROBOTIC
 	steps = list(
 		/datum/surgery_step/mechanic_open,
@@ -38,11 +38,11 @@
 	display_results(
 		user,
 		target,
-		span_notice("You begins performing an autopsy on [target]..."),
-		span_notice("[user] uses [tool] to perform an autopsy on [target]."),
-		span_notice("[user] uses [tool] on [target]'s chest."),
+		span_notice("Вы приступаете к вскрытию [target]..."),
+		span_notice("[user] использует [tool] для вскрытия [target]."),
+		span_notice("[user] использует [tool] на груди у [target]."),
 	)
-	display_pain(target, "You feel a burning sensation in your chest!")
+	display_pain(target, "Вы чувствуете жжение в груди!")
 
 /datum/surgery_step/autopsy/success(mob/living/user, mob/living/carbon/target, target_zone, obj/item/autopsy_scanner/tool, datum/surgery/surgery, default_display_results = FALSE)
 	ADD_TRAIT(target, TRAIT_DISSECTED, AUTOPSY_TRAIT)
@@ -59,8 +59,8 @@
 	display_results(
 		user,
 		target,
-		span_warning("You screw up, bruising [target]'s chest!"),
-		span_warning("[user] screws up, brusing [target]'s chest!"),
-		span_warning("[user] screws up!"),
+		span_warning("Вы ошибаетесь, оставляя ушиб на груди у [target]!"),
+		span_warning("[user] ошибается, оставляя ушиб на груди у [target]!"),
+		span_warning("[user] ошибается!"),
 	)
 	target.adjustBruteLoss(5)
